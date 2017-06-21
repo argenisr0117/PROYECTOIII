@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevComponents.DotNetBar.Metro;
+using DevComponents.DotNetBar;
 
-namespace ProyectoIII
+namespace ProyectoIII.Mentenimientos
 {
-    public partial class Form1 : Form
+    public partial class frmEmpleado : MetroForm
     {
-        public Form1()
+        public frmEmpleado()
         {
             InitializeComponent();
         }
