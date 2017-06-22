@@ -11,6 +11,7 @@ namespace ProyectoIII.Controles
 {
     public partial class textbox : TextBox
     {
+        System.Drawing.FontFamily obj = new System.Drawing.FontFamily("Verdana");
         public textbox()
         {
             InitializeComponent();
@@ -20,7 +21,6 @@ namespace ProyectoIII.Controles
             set;
             get;
         }
-
         public textbox(IContainer container)
         {
             container.Add(this);
