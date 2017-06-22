@@ -12,19 +12,11 @@ using DevComponents.DotNetBar;
 
 namespace ProyectoIII
 {
-    public partial class frmLogin : MetroForm
+    public partial class frmMenu : MetroForm
     {
-        public frmLogin()
+        public frmMenu()
         {
             InitializeComponent();
-        }
-
-        private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            frmMenu obj = new frmMenu();
-            this.Hide();
-            obj.ShowDialog();
-            this.Close();
         }
     }
 }

@@ -34,14 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label4 = new System.Windows.Forms.Label();
             this.txtContrasena = new ProyectoIII.Controles.textbox(this.components);
             this.txtUsuario = new ProyectoIII.Controles.textbox(this.components);
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnEntrar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,19 +74,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "USUARIO:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(-13, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(562, 23);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "______________________________________________";
-            // 
             // txtContrasena
             // 
             this.txtContrasena.BackColor = System.Drawing.Color.White;
@@ -110,6 +97,58 @@
             this.txtUsuario.TabIndex = 0;
             this.toolTip1.SetToolTip(this.txtUsuario, "USUARIO");
             this.txtUsuario.Validar = true;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
+            this.btnSalir.FlatAppearance.BorderSize = 3;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Image = global::ProyectoIII.Properties.Resources.salir2;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.Location = new System.Drawing.Point(299, 269);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(122, 56);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.btnSalir, "SALIR");
+            this.btnSalir.UseVisualStyleBackColor = false;
+            // 
+            // btnEntrar
+            // 
+            this.btnEntrar.BackColor = System.Drawing.Color.White;
+            this.btnEntrar.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
+            this.btnEntrar.FlatAppearance.BorderSize = 3;
+            this.btnEntrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntrar.ForeColor = System.Drawing.Color.Black;
+            this.btnEntrar.Image = global::ProyectoIII.Properties.Resources.go;
+            this.btnEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEntrar.Location = new System.Drawing.Point(99, 269);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(122, 56);
+            this.btnEntrar.TabIndex = 2;
+            this.btnEntrar.Text = "ENTRAR";
+            this.btnEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.btnEntrar, "ENTRAR AL SISTEMA");
+            this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(-13, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(562, 23);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "______________________________________________";
             // 
             // label5
             // 
@@ -147,44 +186,6 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = global::ProyectoIII.Properties.Resources.salir2;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(299, 269);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 56);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "SALIR";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.button2, "SALIR");
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = global::ProyectoIII.Properties.Resources.go;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(99, 269);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 56);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "ENTRAR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.button1, "ENTRAR AL SISTEMA");
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -196,8 +197,8 @@
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.DoubleBuffered = true;
@@ -219,9 +220,9 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label4;
         private Controles.textbox txtUsuario;
         private Controles.textbox txtContrasena;
