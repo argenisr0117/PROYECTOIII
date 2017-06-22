@@ -34,14 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtContrasena = new ProyectoIII.Controles.textbox(this.components);
-            this.txtUsuario = new ProyectoIII.Controles.textbox(this.components);
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtContrasena = new ProyectoIII.Controles.textbox(this.components);
+            this.txtUsuario = new ProyectoIII.Controles.textbox(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,30 +73,6 @@
             this.label3.Size = new System.Drawing.Size(95, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "USUARIO:";
-            // 
-            // txtContrasena
-            // 
-            this.txtContrasena.BackColor = System.Drawing.Color.White;
-            this.txtContrasena.ForeColor = System.Drawing.Color.Black;
-            this.txtContrasena.Location = new System.Drawing.Point(198, 187);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '*';
-            this.txtContrasena.Size = new System.Drawing.Size(202, 30);
-            this.txtContrasena.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.txtContrasena, "CONTRASEÑA");
-            this.txtContrasena.UseSystemPasswordChar = true;
-            this.txtContrasena.Validar = true;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.White;
-            this.txtUsuario.ForeColor = System.Drawing.Color.Black;
-            this.txtUsuario.Location = new System.Drawing.Point(198, 144);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(202, 30);
-            this.txtUsuario.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtUsuario, "USUARIO");
-            this.txtUsuario.Validar = true;
             // 
             // btnSalir
             // 
@@ -150,17 +126,41 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "______________________________________________";
             // 
-            // label5
+            // pictureBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(61, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Sistema de Facturación";
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.ForeColor = System.Drawing.Color.Black;
+            this.pictureBox1.Image = global::ProyectoIII.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.BackColor = System.Drawing.Color.White;
+            this.txtContrasena.ForeColor = System.Drawing.Color.Black;
+            this.txtContrasena.Location = new System.Drawing.Point(198, 187);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
+            this.txtContrasena.Size = new System.Drawing.Size(202, 30);
+            this.txtContrasena.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtContrasena, "CONTRASEÑA");
+            this.txtContrasena.UseSystemPasswordChar = true;
+            this.txtContrasena.Validar = true;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
+            this.txtUsuario.ForeColor = System.Drawing.Color.Black;
+            this.txtUsuario.Location = new System.Drawing.Point(198, 144);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(202, 30);
+            this.txtUsuario.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtUsuario, "USUARIO");
+            this.txtUsuario.Validar = true;
             // 
             // label6
             // 
@@ -174,17 +174,17 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "FactSYS";
             // 
-            // pictureBox1
+            // label5
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.ForeColor = System.Drawing.Color.Black;
-            this.pictureBox1.Image = global::ProyectoIII.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(61, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(142, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Sistema de Facturación";
             // 
             // frmLogin
             // 
@@ -227,9 +227,9 @@
         private Controles.textbox txtUsuario;
         private Controles.textbox txtContrasena;
         private DevComponents.DotNetBar.StyleManager styleManager1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
 
