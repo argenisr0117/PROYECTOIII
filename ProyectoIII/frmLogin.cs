@@ -26,5 +26,14 @@ namespace ProyectoIII
             obj.ShowDialog();
             this.Close();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBoxEx.Show("¿Desea Salir?", "FactSYS", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Dispose();
+                this.Close();
+            }
+        }
     }
 }

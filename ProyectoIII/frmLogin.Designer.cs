@@ -36,10 +36,10 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtContrasena = new ProyectoIII.Controles.textbox(this.components);
             this.txtUsuario = new ProyectoIII.Controles.textbox(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,6 +92,7 @@
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.btnSalir, "SALIR");
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEntrar
             // 
@@ -112,6 +113,30 @@
             this.toolTip1.SetToolTip(this.btnEntrar, "ENTRAR AL SISTEMA");
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.BackColor = System.Drawing.Color.White;
+            this.txtContrasena.ForeColor = System.Drawing.Color.Black;
+            this.txtContrasena.Location = new System.Drawing.Point(198, 187);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
+            this.txtContrasena.Size = new System.Drawing.Size(202, 30);
+            this.txtContrasena.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtContrasena, "CONTRASEÑA");
+            this.txtContrasena.UseSystemPasswordChar = true;
+            this.txtContrasena.Validar = true;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
+            this.txtUsuario.ForeColor = System.Drawing.Color.Black;
+            this.txtUsuario.Location = new System.Drawing.Point(198, 144);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(202, 30);
+            this.txtUsuario.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtUsuario, "USUARIO");
+            this.txtUsuario.Validar = true;
             // 
             // label4
             // 
@@ -137,30 +162,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtContrasena
-            // 
-            this.txtContrasena.BackColor = System.Drawing.Color.White;
-            this.txtContrasena.ForeColor = System.Drawing.Color.Black;
-            this.txtContrasena.Location = new System.Drawing.Point(198, 187);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '*';
-            this.txtContrasena.Size = new System.Drawing.Size(202, 30);
-            this.txtContrasena.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.txtContrasena, "CONTRASEÑA");
-            this.txtContrasena.UseSystemPasswordChar = true;
-            this.txtContrasena.Validar = true;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.White;
-            this.txtUsuario.ForeColor = System.Drawing.Color.Black;
-            this.txtUsuario.Location = new System.Drawing.Point(198, 144);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(202, 30);
-            this.txtUsuario.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtUsuario, "USUARIO");
-            this.txtUsuario.Validar = true;
             // 
             // label6
             // 
