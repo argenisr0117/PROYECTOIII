@@ -8,7 +8,7 @@ using Conexion;
 
 namespace Entidades
 {
-    public class clsProducto
+    public class clsTransacciones
     {
         private clsManejador M = new clsManejador();
     }
