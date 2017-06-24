@@ -149,13 +149,49 @@
     <value>EMPLEADO</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Text" xml:space="preserve">
     <value>ENTIDADES</value>
   </data>
+  <data name="pAISToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="pAISToolStripMenuItem.Text" xml:space="preserve">
+    <value>PAIS</value>
+  </data>
+  <data name="rEGIONToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="rEGIONToolStripMenuItem.Text" xml:space="preserve">
+    <value>REGION</value>
+  </data>
+  <data name="cIUDADToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="cIUDADToolStripMenuItem.Text" xml:space="preserve">
+    <value>CIUDAD</value>
+  </data>
+  <data name="bARRIOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="bARRIOToolStripMenuItem.Text" xml:space="preserve">
+    <value>BARRIO</value>
+  </data>
+  <data name="dIRECCIONToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="dIRECCIONToolStripMenuItem.Text" xml:space="preserve">
+    <value>DIRECCION</value>
+  </data>
+  <data name="nACIONALIDADToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="nACIONALIDADToolStripMenuItem.Text" xml:space="preserve">
+    <value>NACIONALIDAD</value>
+  </data>
   <data name="gENERALESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="gENERALESToolStripMenuItem.Text" xml:space="preserve">
     <value>GENERALES</value>
@@ -741,6 +777,18 @@
   <data name="&gt;&gt;gENERALESToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;dIRECCIONToolStripMenuItem.Name" xml:space="preserve">
+    <value>dIRECCIONToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;dIRECCIONToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nACIONALIDADToolStripMenuItem.Name" xml:space="preserve">
+    <value>nACIONALIDADToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nACIONALIDADToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;procesosToolStripMenuItem.Name" xml:space="preserve">
     <value>procesosToolStripMenuItem</value>
   </data>
@@ -806,6 +854,30 @@
   </data>
   <data name="&gt;&gt;timer1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pAISToolStripMenuItem.Name" xml:space="preserve">
+    <value>pAISToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pAISToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rEGIONToolStripMenuItem.Name" xml:space="preserve">
+    <value>rEGIONToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;rEGIONToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cIUDADToolStripMenuItem.Name" xml:space="preserve">
+    <value>cIUDADToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;cIUDADToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bARRIOToolStripMenuItem.Name" xml:space="preserve">
+    <value>bARRIOToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;bARRIOToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmMenu</value>

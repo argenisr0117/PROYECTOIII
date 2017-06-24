@@ -38,6 +38,8 @@
             this.cLIENTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eMPLEADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gENERALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dIRECCIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nACIONALIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRANSACCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,13 +52,17 @@
             this.cXCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbFecha = new System.Windows.Forms.Label();
             this.lbHora = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbMenu = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbFecha = new System.Windows.Forms.Label();
+            this.pAISToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEGIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cIUDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bARRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -116,8 +122,27 @@
             // 
             // gENERALESToolStripMenuItem
             // 
+            this.gENERALESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dIRECCIONToolStripMenuItem,
+            this.nACIONALIDADToolStripMenuItem});
             this.gENERALESToolStripMenuItem.Name = "gENERALESToolStripMenuItem";
             resources.ApplyResources(this.gENERALESToolStripMenuItem, "gENERALESToolStripMenuItem");
+            // 
+            // dIRECCIONToolStripMenuItem
+            // 
+            this.dIRECCIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pAISToolStripMenuItem,
+            this.rEGIONToolStripMenuItem,
+            this.cIUDADToolStripMenuItem,
+            this.bARRIOToolStripMenuItem});
+            this.dIRECCIONToolStripMenuItem.Name = "dIRECCIONToolStripMenuItem";
+            resources.ApplyResources(this.dIRECCIONToolStripMenuItem, "dIRECCIONToolStripMenuItem");
+            this.dIRECCIONToolStripMenuItem.Click += new System.EventHandler(this.dIRECCIONToolStripMenuItem_Click);
+            // 
+            // nACIONALIDADToolStripMenuItem
+            // 
+            this.nACIONALIDADToolStripMenuItem.Name = "nACIONALIDADToolStripMenuItem";
+            resources.ApplyResources(this.nACIONALIDADToolStripMenuItem, "nACIONALIDADToolStripMenuItem");
             // 
             // procesosToolStripMenuItem
             // 
@@ -204,6 +229,13 @@
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
+            // lbFecha
+            // 
+            resources.ApplyResources(this.lbFecha, "lbFecha");
+            this.lbFecha.BackColor = System.Drawing.Color.White;
+            this.lbFecha.ForeColor = System.Drawing.Color.Black;
+            this.lbFecha.Name = "lbFecha";
+            // 
             // lbHora
             // 
             resources.ApplyResources(this.lbHora, "lbHora");
@@ -246,12 +278,27 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lbFecha
+            // pAISToolStripMenuItem
             // 
-            resources.ApplyResources(this.lbFecha, "lbFecha");
-            this.lbFecha.BackColor = System.Drawing.Color.White;
-            this.lbFecha.ForeColor = System.Drawing.Color.Black;
-            this.lbFecha.Name = "lbFecha";
+            this.pAISToolStripMenuItem.Name = "pAISToolStripMenuItem";
+            resources.ApplyResources(this.pAISToolStripMenuItem, "pAISToolStripMenuItem");
+            this.pAISToolStripMenuItem.Click += new System.EventHandler(this.pAISToolStripMenuItem_Click);
+            // 
+            // rEGIONToolStripMenuItem
+            // 
+            this.rEGIONToolStripMenuItem.Name = "rEGIONToolStripMenuItem";
+            resources.ApplyResources(this.rEGIONToolStripMenuItem, "rEGIONToolStripMenuItem");
+            this.rEGIONToolStripMenuItem.Click += new System.EventHandler(this.rEGIONToolStripMenuItem_Click);
+            // 
+            // cIUDADToolStripMenuItem
+            // 
+            this.cIUDADToolStripMenuItem.Name = "cIUDADToolStripMenuItem";
+            resources.ApplyResources(this.cIUDADToolStripMenuItem, "cIUDADToolStripMenuItem");
+            // 
+            // bARRIOToolStripMenuItem
+            // 
+            this.bARRIOToolStripMenuItem.Name = "bARRIOToolStripMenuItem";
+            resources.ApplyResources(this.bARRIOToolStripMenuItem, "bARRIOToolStripMenuItem");
             // 
             // frmMenu
             // 
@@ -308,5 +355,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbFecha;
+        private System.Windows.Forms.ToolStripMenuItem dIRECCIONToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nACIONALIDADToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pAISToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEGIONToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cIUDADToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bARRIOToolStripMenuItem;
     }
 }

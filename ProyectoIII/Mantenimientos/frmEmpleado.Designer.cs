@@ -1,4 +1,4 @@
-﻿namespace ProyectoIII.Mentenimientos
+﻿namespace ProyectoIII.Mantenimientos
 {
     partial class frmEmpleado
     {

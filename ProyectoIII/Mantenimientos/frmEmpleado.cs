@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevComponents.DotNetBar.Metro;
 using DevComponents.DotNetBar;
 
-namespace ProyectoIII.Mentenimientos
+namespace ProyectoIII.Mantenimientos
 {
     public partial class frmEmpleado : MetroForm
     {

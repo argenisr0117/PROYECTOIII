@@ -38,5 +38,24 @@ namespace ProyectoIII
         {
             ObtenerHora();
         }
+
+        private void dIRECCIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pAISToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmDireccion obj = new Mantenimientos.frmDireccion();
+            obj.Valor = 0;
+            obj.ShowDialog();
+        }
+
+        private void rEGIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmDireccion obj = new Mantenimientos.frmDireccion();
+            obj.Valor = 1;
+            obj.ShowDialog();
+        }
     }
 }

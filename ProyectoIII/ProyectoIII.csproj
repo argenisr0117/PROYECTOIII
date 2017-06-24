@@ -78,10 +78,16 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mentenimientos\frmEmpleado.cs">
+    <Compile Include="Mantenimientos\frmDireccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mentenimientos\frmEmpleado.Designer.cs">
+    <Compile Include="Mantenimientos\frmDireccion.Designer.cs">
+      <DependentUpon>frmDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEmpleado.Designer.cs">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -96,7 +102,10 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mentenimientos\frmEmpleado.resx">
+    <EmbeddedResource Include="Mantenimientos\frmDireccion.resx">
+      <DependentUpon>frmDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -154,6 +163,15 @@
       <Project>{ada8c2eb-0815-47e4-bffe-d728d8c28d62}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\save %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\edit %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\cancel %282%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
