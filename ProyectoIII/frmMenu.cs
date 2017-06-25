@@ -57,5 +57,19 @@ namespace ProyectoIII
             obj.Valor = 1;
             obj.ShowDialog();
         }
+
+        private void cIUDADToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmDireccion obj = new Mantenimientos.frmDireccion();
+            obj.Valor = 2;
+            obj.ShowDialog();
+        }
+
+        private void bARRIOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmDireccion obj = new Mantenimientos.frmDireccion();
+            obj.Valor = 3;
+            obj.ShowDialog();
+        }
     }
 }

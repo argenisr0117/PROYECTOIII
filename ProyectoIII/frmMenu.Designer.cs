@@ -39,6 +39,10 @@
             this.eMPLEADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gENERALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dIRECCIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pAISToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEGIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cIUDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bARRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nACIONALIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,10 +63,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbMenu = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pAISToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEGIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cIUDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bARRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -138,6 +138,30 @@
             this.dIRECCIONToolStripMenuItem.Name = "dIRECCIONToolStripMenuItem";
             resources.ApplyResources(this.dIRECCIONToolStripMenuItem, "dIRECCIONToolStripMenuItem");
             this.dIRECCIONToolStripMenuItem.Click += new System.EventHandler(this.dIRECCIONToolStripMenuItem_Click);
+            // 
+            // pAISToolStripMenuItem
+            // 
+            this.pAISToolStripMenuItem.Name = "pAISToolStripMenuItem";
+            resources.ApplyResources(this.pAISToolStripMenuItem, "pAISToolStripMenuItem");
+            this.pAISToolStripMenuItem.Click += new System.EventHandler(this.pAISToolStripMenuItem_Click);
+            // 
+            // rEGIONToolStripMenuItem
+            // 
+            this.rEGIONToolStripMenuItem.Name = "rEGIONToolStripMenuItem";
+            resources.ApplyResources(this.rEGIONToolStripMenuItem, "rEGIONToolStripMenuItem");
+            this.rEGIONToolStripMenuItem.Click += new System.EventHandler(this.rEGIONToolStripMenuItem_Click);
+            // 
+            // cIUDADToolStripMenuItem
+            // 
+            this.cIUDADToolStripMenuItem.Name = "cIUDADToolStripMenuItem";
+            resources.ApplyResources(this.cIUDADToolStripMenuItem, "cIUDADToolStripMenuItem");
+            this.cIUDADToolStripMenuItem.Click += new System.EventHandler(this.cIUDADToolStripMenuItem_Click);
+            // 
+            // bARRIOToolStripMenuItem
+            // 
+            this.bARRIOToolStripMenuItem.Name = "bARRIOToolStripMenuItem";
+            resources.ApplyResources(this.bARRIOToolStripMenuItem, "bARRIOToolStripMenuItem");
+            this.bARRIOToolStripMenuItem.Click += new System.EventHandler(this.bARRIOToolStripMenuItem_Click);
             // 
             // nACIONALIDADToolStripMenuItem
             // 
@@ -277,28 +301,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pAISToolStripMenuItem
-            // 
-            this.pAISToolStripMenuItem.Name = "pAISToolStripMenuItem";
-            resources.ApplyResources(this.pAISToolStripMenuItem, "pAISToolStripMenuItem");
-            this.pAISToolStripMenuItem.Click += new System.EventHandler(this.pAISToolStripMenuItem_Click);
-            // 
-            // rEGIONToolStripMenuItem
-            // 
-            this.rEGIONToolStripMenuItem.Name = "rEGIONToolStripMenuItem";
-            resources.ApplyResources(this.rEGIONToolStripMenuItem, "rEGIONToolStripMenuItem");
-            this.rEGIONToolStripMenuItem.Click += new System.EventHandler(this.rEGIONToolStripMenuItem_Click);
-            // 
-            // cIUDADToolStripMenuItem
-            // 
-            this.cIUDADToolStripMenuItem.Name = "cIUDADToolStripMenuItem";
-            resources.ApplyResources(this.cIUDADToolStripMenuItem, "cIUDADToolStripMenuItem");
-            // 
-            // bARRIOToolStripMenuItem
-            // 
-            this.bARRIOToolStripMenuItem.Name = "bARRIOToolStripMenuItem";
-            resources.ApplyResources(this.bARRIOToolStripMenuItem, "bARRIOToolStripMenuItem");
             // 
             // frmMenu
             // 

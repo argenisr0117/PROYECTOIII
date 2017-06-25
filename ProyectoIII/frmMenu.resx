@@ -783,6 +783,30 @@
   <data name="&gt;&gt;dIRECCIONToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;pAISToolStripMenuItem.Name" xml:space="preserve">
+    <value>pAISToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pAISToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rEGIONToolStripMenuItem.Name" xml:space="preserve">
+    <value>rEGIONToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;rEGIONToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cIUDADToolStripMenuItem.Name" xml:space="preserve">
+    <value>cIUDADToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;cIUDADToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bARRIOToolStripMenuItem.Name" xml:space="preserve">
+    <value>bARRIOToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;bARRIOToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;nACIONALIDADToolStripMenuItem.Name" xml:space="preserve">
     <value>nACIONALIDADToolStripMenuItem</value>
   </data>
@@ -854,30 +878,6 @@
   </data>
   <data name="&gt;&gt;timer1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pAISToolStripMenuItem.Name" xml:space="preserve">
-    <value>pAISToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pAISToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rEGIONToolStripMenuItem.Name" xml:space="preserve">
-    <value>rEGIONToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;rEGIONToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cIUDADToolStripMenuItem.Name" xml:space="preserve">
-    <value>cIUDADToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;cIUDADToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bARRIOToolStripMenuItem.Name" xml:space="preserve">
-    <value>bARRIOToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;bARRIOToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmMenu</value>
