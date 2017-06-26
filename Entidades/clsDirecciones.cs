@@ -14,15 +14,11 @@ namespace Entidades
         int Mid;
         int Mid2;
         int Mvalor;
-        int Midregion;
-        int Midciudad;
-        int Midbarrio;
         string Mdescripcion;
-        string Mencargado;
         string Mdireccion;
         Boolean Mestado;
-        string Mcampo = "id_almacen";
-        string Mtabla = "Almacen";
+        string Mcampo;
+        string Mtabla;
 
         public int Id
         {
@@ -59,7 +55,21 @@ namespace Entidades
             get { return Mdescripcion; }
             set { Mdescripcion = value; }
         }
-
+        public string Campo
+        {
+            get { return Mcampo; }
+            set { Mcampo = value; }
+        }
+        public string Tabla
+        {
+            get { return Mtabla; }
+            set { Mtabla = value; }
+        }
+        public Boolean Estado
+        {
+            get { return Mestado; }
+            set { Mestado = value; }
+        }
         //Registrar
 
         public string Registrar()
@@ -85,20 +95,20 @@ namespace Entidades
             return dt = M.Listado("listado_prcb", lst);
 
         }
-        //public string ActivarAlmacen()
-        //{
-        //    string mensaje = "";
-        //    List<clsParametros> lst = new List<clsParametros>();
-        //    lst.Add(new clsParametros("@id", Midalmacen));
-        //    lst.Add(new clsParametros("@valor", Mestado));
-        //    lst.Add(new clsParametros("@table", Mtabla));
-        //    lst.Add(new clsParametros("@campo", Mcampo));
-        //    lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
-        //    M.EjecutarSP("actdes_entidades", ref lst);
-        //    mensaje = lst[4].Valor.ToString();
-        //    return mensaje;
-        //}
-        
+        public string Activar()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@id", Mid));
+            lst.Add(new clsParametros("@valor", Mestado));
+            lst.Add(new clsParametros("@table", Mtabla));
+            lst.Add(new clsParametros("@campo", Mcampo));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actdes_entidades", ref lst);
+            mensaje = lst[4].Valor.ToString();
+            return mensaje;
+        }
+
 
         //public string ActualizarAlmacen()
         //{

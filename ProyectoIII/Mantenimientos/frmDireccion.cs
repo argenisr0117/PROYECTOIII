@@ -185,6 +185,7 @@ namespace ProyectoIII.Mantenimientos
                     dtgPais.Rows.Add(dt.Rows[x][0]);
                     dtgPais.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
                     dtgPais.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
+                    dtgPais.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
 
                 }
                 dtgPais.ClearSelection();
@@ -224,6 +225,8 @@ namespace ProyectoIII.Mantenimientos
                     dtgRegion.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
                     dtgRegion.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
                     dtgRegion.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
+                    dtgRegion.Rows[x].Cells[3].Value = dt.Rows[x][3].ToString();
+
                 }
                 dtgRegion.ClearSelection();
             }
@@ -320,6 +323,8 @@ namespace ProyectoIII.Mantenimientos
                     dtgCiudad.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
                     dtgCiudad.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
                     dtgCiudad.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
+                    dtgCiudad.Rows[x].Cells[3].Value = dt.Rows[x][3].ToString();
+
                 }
                 dtgCiudad.ClearSelection();
             }
@@ -415,6 +420,8 @@ namespace ProyectoIII.Mantenimientos
                     dtgBarrio.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
                     dtgBarrio.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
                     dtgBarrio.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
+                    dtgBarrio.Rows[x].Cells[3].Value = dt.Rows[x][3].ToString();
+
                 }
                 dtgBarrio.ClearSelection();
             }
@@ -496,6 +503,136 @@ namespace ProyectoIII.Mantenimientos
             }
         }
 
-       
+        private void btnCancelarPais_Click(object sender, EventArgs e)
+        {
+            string mensaje = "";
+            try
+            {
+                if (dtgPais.SelectedRows.Count > 0)
+                {
+                    D.Id =Convert.ToInt32(dtgPais.CurrentRow.Cells[0].Value);
+                    D.Estado = Convert.ToBoolean(dtgPais.CurrentRow.Cells[2].Value);
+                    D.Campo = "id_pais";
+                    D.Tabla = "Pais";
+                    mensaje = D.Activar();
+                    if (mensaje == "0")
+                    {
+                        MessageBoxEx.Show("Cancelado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBoxEx.Show("Activado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBoxEx.Show("Seleccione un registro!", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show("Error:" + ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LlenarGridPais();
+        }
+
+        private void btnCancelarR_Click(object sender, EventArgs e)
+        {
+            string mensaje = "";
+            try
+            {
+                if (dtgRegion.SelectedRows.Count > 0)
+                {
+                    D.Id = Convert.ToInt32(dtgRegion.CurrentRow.Cells[0].Value);
+                    D.Estado = Convert.ToBoolean(dtgRegion.CurrentRow.Cells[3].Value);
+                    D.Campo = "id_region";
+                    D.Tabla = "Region";
+                    mensaje = D.Activar();
+                    if (mensaje == "0")
+                    {
+                        MessageBoxEx.Show("Cancelado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBoxEx.Show("Activado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBoxEx.Show("Seleccione un registro!", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show("Error:" + ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LlenarGridRegion();
+        }
+
+        private void btnCancelarC_Click(object sender, EventArgs e)
+        {
+            string mensaje = "";
+            try
+            {
+                if (dtgCiudad.SelectedRows.Count > 0)
+                {
+                    D.Id = Convert.ToInt32(dtgCiudad.CurrentRow.Cells[0].Value);
+                    D.Estado = Convert.ToBoolean(dtgCiudad.CurrentRow.Cells[3].Value);
+                    D.Campo = "id_ciudad";
+                    D.Tabla = "Ciudad";
+                    mensaje = D.Activar();
+                    if (mensaje == "0")
+                    {
+                        MessageBoxEx.Show("Cancelado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBoxEx.Show("Activado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBoxEx.Show("Seleccione un registro!", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show("Error:" + ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LlenarGridCiudad();
+        }
+
+        private void btnCancelarB_Click(object sender, EventArgs e)
+        {
+            string mensaje = "";
+            try
+            {
+                if (dtgBarrio.SelectedRows.Count > 0)
+                {
+                    D.Id = Convert.ToInt32(dtgBarrio.CurrentRow.Cells[0].Value);
+                    D.Estado = Convert.ToBoolean(dtgBarrio.CurrentRow.Cells[3].Value);
+                    D.Campo = "id_barrio";
+                    D.Tabla = "Barrio";
+                    mensaje = D.Activar();
+                    if (mensaje == "0")
+                    {
+                        MessageBoxEx.Show("Cancelado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBoxEx.Show("Activado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBoxEx.Show("Seleccione un registro!", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show("Error:" + ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LlenarGridBarrio();
+        }
     }
 }

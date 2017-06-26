@@ -38,6 +38,7 @@
             this.dtgPais = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegistrarPais = new System.Windows.Forms.Button();
             this.txtDescripcionPais = new ProyectoIII.Controles.textbox(this.components);
             this.label3 = new System.Windows.Forms.Label();
@@ -52,53 +53,56 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardarR = new System.Windows.Forms.Button();
             this.txtDescripcionR = new ProyectoIII.Controles.textbox(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabCiudad = new System.Windows.Forms.TabPage();
-            this.tabBarrio = new System.Windows.Forms.TabPage();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.cbRegion = new System.Windows.Forms.ComboBox();
             this.btnCancelarC = new System.Windows.Forms.Button();
             this.btnEditarC = new System.Windows.Forms.Button();
             this.dtgCiudad = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardarC = new System.Windows.Forms.Button();
             this.txtDescripcionC = new ProyectoIII.Controles.textbox(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.tabBarrio = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
             this.cbCiudad = new System.Windows.Forms.ComboBox();
             this.btnCancelarB = new System.Windows.Forms.Button();
             this.btnEditarB = new System.Windows.Forms.Button();
             this.dtgBarrio = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardarB = new System.Windows.Forms.Button();
             this.txtDescripcionB = new ProyectoIII.Controles.textbox(this.components);
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPais)).BeginInit();
             this.tabRegion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRegion)).BeginInit();
             this.tabCiudad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCiudad)).BeginInit();
             this.tabBarrio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgBarrio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCiudad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgBarrio)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -163,6 +167,7 @@
             this.btnCancelarPais.Text = "CANCELAR";
             this.btnCancelarPais.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelarPais.UseVisualStyleBackColor = false;
+            this.btnCancelarPais.Click += new System.EventHandler(this.btnCancelarPais_Click);
             // 
             // btnEditarPais
             // 
@@ -192,7 +197,8 @@
             this.dtgPais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgPais.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
-            this.descripcion});
+            this.descripcion,
+            this.estado});
             this.dtgPais.Location = new System.Drawing.Point(9, 128);
             this.dtgPais.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgPais.MultiSelect = false;
@@ -214,6 +220,12 @@
             this.descripcion.HeaderText = "DESCRIPCIÓN";
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             // 
             // btnRegistrarPais
             // 
@@ -334,6 +346,7 @@
             this.btnCancelarR.Text = "CANCELAR";
             this.btnCancelarR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelarR.UseVisualStyleBackColor = false;
+            this.btnCancelarR.Click += new System.EventHandler(this.btnCancelarR_Click);
             // 
             // btnEditarR
             // 
@@ -364,7 +377,8 @@
             this.dtgRegion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.pais});
+            this.pais,
+            this.estador});
             this.dtgRegion.Location = new System.Drawing.Point(10, 128);
             this.dtgRegion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgRegion.MultiSelect = false;
@@ -397,6 +411,12 @@
             this.pais.Name = "pais";
             this.pais.ReadOnly = true;
             this.pais.Width = 69;
+            // 
+            // estador
+            // 
+            this.estador.HeaderText = "ESTADO";
+            this.estador.Name = "estador";
+            this.estador.ReadOnly = true;
             // 
             // btnGuardarR
             // 
@@ -479,60 +499,6 @@
             this.tabCiudad.Text = "CIUDAD";
             this.tabCiudad.UseVisualStyleBackColor = true;
             // 
-            // tabBarrio
-            // 
-            this.tabBarrio.Controls.Add(this.label12);
-            this.tabBarrio.Controls.Add(this.cbCiudad);
-            this.tabBarrio.Controls.Add(this.btnCancelarB);
-            this.tabBarrio.Controls.Add(this.btnEditarB);
-            this.tabBarrio.Controls.Add(this.dtgBarrio);
-            this.tabBarrio.Controls.Add(this.btnGuardarB);
-            this.tabBarrio.Controls.Add(this.txtDescripcionB);
-            this.tabBarrio.Controls.Add(this.label13);
-            this.tabBarrio.Controls.Add(this.label14);
-            this.tabBarrio.Controls.Add(this.label15);
-            this.tabBarrio.Location = new System.Drawing.Point(4, 28);
-            this.tabBarrio.Name = "tabBarrio";
-            this.tabBarrio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBarrio.Size = new System.Drawing.Size(538, 324);
-            this.tabBarrio.TabIndex = 3;
-            this.tabBarrio.Text = "BARRIO";
-            this.tabBarrio.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.White;
-            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
-            this.btnSalir.FlatAppearance.BorderSize = 3;
-            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Image = global::ProyectoIII.Properties.Resources.salir2;
-            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.Location = new System.Drawing.Point(424, 0);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(110, 46);
-            this.btnSalir.TabIndex = 8;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnSalir);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 310);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(546, 46);
-            this.panel1.TabIndex = 2;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -570,6 +536,7 @@
             this.btnCancelarC.Text = "CANCELAR";
             this.btnCancelarC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelarC.UseVisualStyleBackColor = false;
+            this.btnCancelarC.Click += new System.EventHandler(this.btnCancelarC_Click);
             // 
             // btnEditarC
             // 
@@ -600,7 +567,8 @@
             this.dtgCiudad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.dataGridViewTextBoxColumn5,
+            this.estadoc});
             this.dtgCiudad.Location = new System.Drawing.Point(8, 129);
             this.dtgCiudad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgCiudad.MultiSelect = false;
@@ -609,6 +577,36 @@
             this.dtgCiudad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgCiudad.Size = new System.Drawing.Size(406, 150);
             this.dtgCiudad.TabIndex = 24;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn3.HeaderText = "CÓDIGO";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn4.HeaderText = "DESCRIPCIÓN";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 137;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn5.HeaderText = "REGIÓN";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 93;
+            // 
+            // estadoc
+            // 
+            this.estadoc.HeaderText = "ESTADO";
+            this.estadoc.Name = "estadoc";
+            this.estadoc.ReadOnly = true;
             // 
             // btnGuardarC
             // 
@@ -671,6 +669,26 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "REGISTRO DE CIUDAD";
             // 
+            // tabBarrio
+            // 
+            this.tabBarrio.Controls.Add(this.label12);
+            this.tabBarrio.Controls.Add(this.cbCiudad);
+            this.tabBarrio.Controls.Add(this.btnCancelarB);
+            this.tabBarrio.Controls.Add(this.btnEditarB);
+            this.tabBarrio.Controls.Add(this.dtgBarrio);
+            this.tabBarrio.Controls.Add(this.btnGuardarB);
+            this.tabBarrio.Controls.Add(this.txtDescripcionB);
+            this.tabBarrio.Controls.Add(this.label13);
+            this.tabBarrio.Controls.Add(this.label14);
+            this.tabBarrio.Controls.Add(this.label15);
+            this.tabBarrio.Location = new System.Drawing.Point(4, 28);
+            this.tabBarrio.Name = "tabBarrio";
+            this.tabBarrio.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBarrio.Size = new System.Drawing.Size(538, 324);
+            this.tabBarrio.TabIndex = 3;
+            this.tabBarrio.Text = "BARRIO";
+            this.tabBarrio.UseVisualStyleBackColor = true;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -708,6 +726,7 @@
             this.btnCancelarB.Text = "CANCELAR";
             this.btnCancelarB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelarB.UseVisualStyleBackColor = false;
+            this.btnCancelarB.Click += new System.EventHandler(this.btnCancelarB_Click);
             // 
             // btnEditarB
             // 
@@ -738,7 +757,8 @@
             this.dtgBarrio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
+            this.dataGridViewTextBoxColumn8,
+            this.estadob});
             this.dtgBarrio.Location = new System.Drawing.Point(9, 129);
             this.dtgBarrio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgBarrio.MultiSelect = false;
@@ -747,6 +767,36 @@
             this.dtgBarrio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgBarrio.Size = new System.Drawing.Size(406, 150);
             this.dtgBarrio.TabIndex = 24;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn6.HeaderText = "CÓDIGO";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn7.HeaderText = "DESCRIPCIÓN";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 137;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn8.HeaderText = "CIUDAD";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 94;
+            // 
+            // estadob
+            // 
+            this.estadob.HeaderText = "ESTADO";
+            this.estadob.Name = "estadob";
+            this.estadob.ReadOnly = true;
             // 
             // btnGuardarB
             // 
@@ -809,53 +859,39 @@
             this.label15.TabIndex = 20;
             this.label15.Text = "REGISTRO DE BARRIO";
             // 
-            // dataGridViewTextBoxColumn6
+            // btnSalir
             // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn6.HeaderText = "CÓDIGO";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 96;
+            this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
+            this.btnSalir.FlatAppearance.BorderSize = 3;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Image = global::ProyectoIII.Properties.Resources.salir2;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.Location = new System.Drawing.Point(424, 0);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(110, 46);
+            this.btnSalir.TabIndex = 8;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dataGridViewTextBoxColumn7
+            // errorProvider1
             // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn7.HeaderText = "DESCRIPCIÓN";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 137;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // dataGridViewTextBoxColumn8
+            // panel1
             // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn8.HeaderText = "CIUDAD";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 94;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn3.HeaderText = "CÓDIGO";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn4.HeaderText = "DESCRIPCIÓN";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 137;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn5.HeaderText = "REGIÓN";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 93;
+            this.panel1.Controls.Add(this.btnSalir);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 310);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(546, 46);
+            this.panel1.TabIndex = 2;
             // 
             // frmDireccion
             // 
@@ -882,12 +918,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgRegion)).EndInit();
             this.tabCiudad.ResumeLayout(false);
             this.tabCiudad.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCiudad)).EndInit();
             this.tabBarrio.ResumeLayout(false);
             this.tabBarrio.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgBarrio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCiudad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgBarrio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -952,5 +988,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadob;
     }
 }
