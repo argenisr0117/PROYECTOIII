@@ -71,5 +71,11 @@ namespace ProyectoIII
             obj.Valor = 3;
             obj.ShowDialog();
         }
+
+        private void nACIONALIDADToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmNacionalidad obj = new Mantenimientos.frmNacionalidad();
+            obj.ShowDialog();
+        }
     }
 }

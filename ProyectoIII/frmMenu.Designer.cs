@@ -167,6 +167,7 @@
             // 
             this.nACIONALIDADToolStripMenuItem.Name = "nACIONALIDADToolStripMenuItem";
             resources.ApplyResources(this.nACIONALIDADToolStripMenuItem, "nACIONALIDADToolStripMenuItem");
+            this.nACIONALIDADToolStripMenuItem.Click += new System.EventHandler(this.nACIONALIDADToolStripMenuItem_Click);
             // 
             // procesosToolStripMenuItem
             // 

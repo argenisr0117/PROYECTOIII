@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIII.Mantenimientos
 {
-    partial class frmNacionalidad
+    partial class frmCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -29,26 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNacionalidad));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoria));
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.dtgNacionalidad = new System.Windows.Forms.DataGridView();
+            this.dtgCategoria = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.txtDescripcion = new ProyectoIII.Controles.textbox(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbPais = new System.Windows.Forms.ComboBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtDescripcion = new ProyectoIII.Controles.textbox(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgNacionalidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -78,7 +73,6 @@
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -99,26 +93,24 @@
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // dtgNacionalidad
+            // dtgCategoria
             // 
-            this.dtgNacionalidad.AllowUserToAddRows = false;
-            this.dtgNacionalidad.AllowUserToDeleteRows = false;
-            this.dtgNacionalidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgNacionalidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgCategoria.AllowUserToAddRows = false;
+            this.dtgCategoria.AllowUserToDeleteRows = false;
+            this.dtgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.descripcion,
-            this.pais,
             this.estado});
-            this.dtgNacionalidad.Location = new System.Drawing.Point(12, 137);
-            this.dtgNacionalidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtgNacionalidad.MultiSelect = false;
-            this.dtgNacionalidad.Name = "dtgNacionalidad";
-            this.dtgNacionalidad.ReadOnly = true;
-            this.dtgNacionalidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgNacionalidad.Size = new System.Drawing.Size(406, 199);
-            this.dtgNacionalidad.TabIndex = 25;
+            this.dtgCategoria.Location = new System.Drawing.Point(12, 137);
+            this.dtgCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgCategoria.MultiSelect = false;
+            this.dtgCategoria.Name = "dtgCategoria";
+            this.dtgCategoria.ReadOnly = true;
+            this.dtgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgCategoria.Size = new System.Drawing.Size(406, 199);
+            this.dtgCategoria.TabIndex = 25;
             // 
             // codigo
             // 
@@ -135,14 +127,6 @@
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             this.descripcion.Width = 137;
-            // 
-            // pais
-            // 
-            this.pais.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.pais.HeaderText = "PAÍS";
-            this.pais.Name = "pais";
-            this.pais.ReadOnly = true;
-            this.pais.Width = 69;
             // 
             // estado
             // 
@@ -171,7 +155,15 @@
             this.btnRegistrar.Text = "GUARDAR";
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistrar.UseVisualStyleBackColor = false;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(143, 60);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(274, 27);
+            this.txtDescripcion.TabIndex = 20;
+            this.txtDescripcion.Validar = true;
             // 
             // label3
             // 
@@ -200,9 +192,9 @@
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(124, -4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(304, 23);
+            this.label1.Size = new System.Drawing.Size(265, 23);
             this.label1.TabIndex = 21;
-            this.label1.Text = "REGISTRO DE NACIONALIDAD";
+            this.label1.Text = "REGISTRO DE CATEGORIA";
             // 
             // btnSalir
             // 
@@ -223,51 +215,17 @@
             this.btnSalir.Text = "SALIR";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 19);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "PAÍS:";
-            // 
-            // cbPais
-            // 
-            this.cbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPais.FormattingEnabled = true;
-            this.cbPais.Location = new System.Drawing.Point(143, 98);
-            this.cbPais.Name = "cbPais";
-            this.cbPais.Size = new System.Drawing.Size(274, 27);
-            this.cbPais.TabIndex = 33;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(143, 60);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(274, 27);
-            this.txtDescripcion.TabIndex = 20;
-            this.txtDescripcion.Validar = true;
-            // 
-            // frmNacionalidad
+            // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 347);
-            this.Controls.Add(this.cbPais);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.dtgNacionalidad);
+            this.Controls.Add(this.dtgCategoria);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label3);
@@ -279,12 +237,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "frmNacionalidad";
+            this.Name = "frmCategoria";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Load += new System.EventHandler(this.frmNacionalidad_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgNacionalidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,19 +250,15 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.DataGridView dtgNacionalidad;
+        private System.Windows.Forms.DataGridView dtgCategoria;
         private System.Windows.Forms.Button btnRegistrar;
         private Controles.textbox txtDescripcion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pais;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbPais;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

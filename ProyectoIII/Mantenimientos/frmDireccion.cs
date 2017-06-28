@@ -242,7 +242,7 @@ namespace ProyectoIII.Mantenimientos
 
                 txtCodigo.Text = dtgRegion.CurrentRow.Cells[0].Value.ToString();
                 txtDescripcionR.Text = dtgRegion.CurrentRow.Cells[1].Value.ToString();
-                cbPais.SelectedItem = dtgRegion.CurrentRow.Cells[2].Value.ToString();
+                cbPais.Text = dtgRegion.CurrentRow.Cells[2].Value.ToString();
                 Program.Evento = 1;
             }
             else
@@ -396,7 +396,7 @@ namespace ProyectoIII.Mantenimientos
 
                 txtCodigo.Text = dtgCiudad.CurrentRow.Cells[0].Value.ToString();
                 txtDescripcionC.Text = dtgCiudad.CurrentRow.Cells[1].Value.ToString();
-                cbPais.SelectedItem = dtgCiudad.CurrentRow.Cells[2].Value.ToString();
+                cbRegion.Text = dtgCiudad.CurrentRow.Cells[2].Value.ToString();
                 Program.Evento = 1;
             }
             else
@@ -494,7 +494,8 @@ namespace ProyectoIII.Mantenimientos
 
                 txtCodigo.Text = dtgBarrio.CurrentRow.Cells[0].Value.ToString();
                 txtDescripcionB.Text = dtgBarrio.CurrentRow.Cells[1].Value.ToString();
-                cbCiudad.SelectedItem = dtgBarrio.CurrentRow.Cells[2].Value.ToString();
+                cbCiudad.Text = dtgBarrio.CurrentRow.Cells[2].Value.ToString();
+                MessageBox.Show(cbCiudad.SelectedItem.ToString());
                 Program.Evento = 1;
             }
             else
