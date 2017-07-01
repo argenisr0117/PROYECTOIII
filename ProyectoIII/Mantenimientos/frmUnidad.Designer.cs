@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIII.Mantenimientos
 {
-    partial class frmCategoria
+    partial class frmUnidad
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoria));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUnidad));
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.dtgCategoria = new System.Windows.Forms.DataGridView();
+            this.dtgUnidad = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abreviacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegistrar = new System.Windows.Forms.Button();
@@ -44,7 +45,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoria)).BeginInit();
+            this.txtAbreviacion = new ProyectoIII.Controles.textbox(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgUnidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,23 +101,24 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // dtgCategoria
+            // dtgUnidad
             // 
-            this.dtgCategoria.AllowUserToAddRows = false;
-            this.dtgCategoria.AllowUserToDeleteRows = false;
-            this.dtgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgUnidad.AllowUserToAddRows = false;
+            this.dtgUnidad.AllowUserToDeleteRows = false;
+            this.dtgUnidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgUnidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
+            this.abreviacion,
             this.descripcion,
             this.estado});
-            this.dtgCategoria.Location = new System.Drawing.Point(12, 137);
-            this.dtgCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtgCategoria.MultiSelect = false;
-            this.dtgCategoria.Name = "dtgCategoria";
-            this.dtgCategoria.ReadOnly = true;
-            this.dtgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCategoria.Size = new System.Drawing.Size(406, 199);
-            this.dtgCategoria.TabIndex = 25;
+            this.dtgUnidad.Location = new System.Drawing.Point(12, 137);
+            this.dtgUnidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgUnidad.MultiSelect = false;
+            this.dtgUnidad.Name = "dtgUnidad";
+            this.dtgUnidad.ReadOnly = true;
+            this.dtgUnidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgUnidad.Size = new System.Drawing.Size(406, 199);
+            this.dtgUnidad.TabIndex = 25;
             // 
             // codigo
             // 
@@ -123,6 +127,14 @@
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
             this.codigo.Width = 96;
+            // 
+            // abreviacion
+            // 
+            this.abreviacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.abreviacion.HeaderText = "ABREVIACIÓN";
+            this.abreviacion.Name = "abreviacion";
+            this.abreviacion.ReadOnly = true;
+            this.abreviacion.Width = 139;
             // 
             // descripcion
             // 
@@ -195,11 +207,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(124, -4);
+            this.label1.Location = new System.Drawing.Point(153, -4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 23);
+            this.label1.Size = new System.Drawing.Size(229, 23);
             this.label1.TabIndex = 21;
-            this.label1.Text = "REGISTRO DE CATEGORIA";
+            this.label1.Text = "REGISTRO DE UNIDAD";
             // 
             // btnSalir
             // 
@@ -226,16 +238,36 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // frmCategoria
+            // txtAbreviacion
+            // 
+            this.txtAbreviacion.Location = new System.Drawing.Point(143, 91);
+            this.txtAbreviacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAbreviacion.Name = "txtAbreviacion";
+            this.txtAbreviacion.Size = new System.Drawing.Size(274, 27);
+            this.txtAbreviacion.TabIndex = 32;
+            this.txtAbreviacion.Validar = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 93);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 19);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "ABREVIACIÓN:";
+            // 
+            // frmUnidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 347);
+            this.Controls.Add(this.txtAbreviacion);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.dtgCategoria);
+            this.Controls.Add(this.dtgUnidad);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label3);
@@ -247,11 +279,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "frmCategoria";
+            this.Name = "frmUnidad";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Load += new System.EventHandler(this.frmCategoria_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoria)).EndInit();
+            this.Load += new System.EventHandler(this.frmUnidad_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgUnidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,16 +294,19 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.DataGridView dtgCategoria;
+        private System.Windows.Forms.DataGridView dtgUnidad;
         private System.Windows.Forms.Button btnRegistrar;
         private Controles.textbox txtDescripcion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abreviacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private Controles.textbox txtAbreviacion;
+        private System.Windows.Forms.Label label4;
     }
 }

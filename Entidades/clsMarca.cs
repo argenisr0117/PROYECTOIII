@@ -8,16 +8,15 @@ using Conexion;
 
 namespace Entidades
 {
-    public class clsUnidad
+    public class clsMarca
     {
         private clsManejador M = new clsManejador();
         int Mid;
         int Mvalor;
         string Mdescripcion;
-        string Mabreviacion;
         Boolean Mestado;
-        string Mcampo = "id_unidad";
-        string Mtabla = "Unidad";
+        string Mcampo = "id_marca";
+        string Mtabla = "Marca";
 
         public int Id
         {
@@ -28,11 +27,6 @@ namespace Entidades
         {
             get { return Mvalor; }
             set { Mvalor = value; }
-        }
-        public string Abreviacion
-        {
-            get { return Mabreviacion; }
-            set { Mabreviacion = value; }
         }
         public string Descripcion
         {
@@ -51,11 +45,10 @@ namespace Entidades
             string mensaje = "";
             List<clsParametros> lst = new List<clsParametros>();
             lst.Add(new clsParametros("@descripcion", Mdescripcion));
-            lst.Add(new clsParametros("@abreviacion", Mabreviacion));
             lst.Add(new clsParametros("@id", Mid));
             lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
-            M.EjecutarSP("registrar_unidad", ref lst);
-            mensaje = lst[3].Valor.ToString();
+            M.EjecutarSP("registrar_marca", ref lst);
+            mensaje = lst[2].Valor.ToString();
             return mensaje;
         }
 
@@ -64,7 +57,7 @@ namespace Entidades
             DataTable dt = new DataTable();
             List<clsParametros> lst = new List<clsParametros>();
             lst.Add(new clsParametros("@estado", objEstado));
-            return dt = M.Listado("listado_unidad", lst);
+            return dt = M.Listado("listado_marca", lst);
 
         }
         public string Activar()

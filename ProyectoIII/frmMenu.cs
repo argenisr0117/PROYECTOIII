@@ -77,5 +77,29 @@ namespace ProyectoIII
             Mantenimientos.frmNacionalidad obj = new Mantenimientos.frmNacionalidad();
             obj.ShowDialog();
         }
+
+        private void cATEGORIAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmCategoria obj = new Mantenimientos.frmCategoria();
+            obj.ShowDialog();
+        }
+
+        private void uNIDADToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmUnidad obj = new Mantenimientos.frmUnidad();
+            obj.ShowDialog();
+        }
+
+        private void mARCAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmMarca obj = new Mantenimientos.frmMarca();
+            obj.ShowDialog();
+        }
+
+        private void cARGOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmCargo obj = new Mantenimientos.frmCargo();
+            obj.ShowDialog();
+        }
     }
 }

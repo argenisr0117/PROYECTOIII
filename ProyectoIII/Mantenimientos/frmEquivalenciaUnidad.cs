@@ -13,29 +13,30 @@ using Entidades;
 
 namespace ProyectoIII.Mantenimientos
 {
-    public partial class frmCategoria : MetroForm
+    public partial class frmEquivalenciaUnidad : MetroForm
     {
-        clsCategoria C = new clsCategoria();
-        public frmCategoria()
+        clsUnidad U = new clsUnidad();
+        public frmEquivalenciaUnidad()
         {
             InitializeComponent();
         }
-        private void LlenarGridCategoria()
+        private void LlenarGridUnidad()
         {
             DataTable dt = new DataTable();
-            dt = C.Listar(true);
+            dt = U.Listar(true);
             try
             {
-                dtgCategoria.Rows.Clear();
+                dtgUnidad.Rows.Clear();
                 for (int x = 0; x < dt.Rows.Count; x++)
                 {
-                    dtgCategoria.Rows.Add(dt.Rows[x][0]);
-                    dtgCategoria.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
-                    dtgCategoria.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
-                    dtgCategoria.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
+                    dtgUnidad.Rows.Add(dt.Rows[x][0]);
+                    dtgUnidad.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
+                    dtgUnidad.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
+                    dtgUnidad.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
+                    dtgUnidad.Rows[x].Cells[3].Value = dt.Rows[x][3].ToString();
 
                 }
-                dtgCategoria.ClearSelection();
+                dtgUnidad.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -45,6 +46,7 @@ namespace ProyectoIII.Mantenimientos
         private void Limpiar()
         {
             txtDescripcion.Clear();
+            //txtAbreviacion.Clear();
             txtDescripcion.Focus();
         }
         private void btnSalir_Click(object sender, EventArgs e)
@@ -68,9 +70,10 @@ namespace ProyectoIII.Mantenimientos
             {
                 if (Program.Evento == 0)
                 {
-                    C.Id = 0;
-                    C.Descripcion = txtDescripcion.Text;
-                    mensaje = C.Registrar();
+                    U.Id = 0;
+                    U.Descripcion = txtDescripcion.Text;
+                   // U.Abreviacion = txtAbreviacion.Text;
+                    mensaje = U.Registrar();
                     if (mensaje == "1")
                     {
                         MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,9 +86,10 @@ namespace ProyectoIII.Mantenimientos
                 }
                 else
                 {
-                    C.Descripcion = txtDescripcion.Text;
-                    C.Id = Convert.ToInt32(txtCodigo.Text);
-                    mensaje = C.Registrar();
+                    U.Descripcion = txtDescripcion.Text;
+                    U.Id = Convert.ToInt32(txtCodigo.Text);
+                    //U.Abreviacion = txtAbreviacion.Text;
+                    mensaje = U.Registrar();
                     if (mensaje == "2")
                     {
                         MessageBoxEx.Show("Actualizado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -97,7 +101,7 @@ namespace ProyectoIII.Mantenimientos
                         //Limpiar();
                     }
                 }
-                LlenarGridCategoria();
+                LlenarGridUnidad();
                 Program.Evento = 0;
                 //Limpiar();
             }
@@ -110,11 +114,12 @@ namespace ProyectoIII.Mantenimientos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dtgCategoria.SelectedRows.Count > 0)
+            if (dtgUnidad.SelectedRows.Count > 0)
             {
 
-                txtCodigo.Text = dtgCategoria.CurrentRow.Cells[0].Value.ToString();
-                txtDescripcion.Text = dtgCategoria.CurrentRow.Cells[1].Value.ToString();
+                txtCodigo.Text = dtgUnidad.CurrentRow.Cells[0].Value.ToString();
+               // txtAbreviacion.Text = dtgUnidad.CurrentRow.Cells[1].Value.ToString();
+                txtDescripcion.Text = dtgUnidad.CurrentRow.Cells[2].Value.ToString();
                 Program.Evento = 1;
             }
             else
@@ -128,11 +133,11 @@ namespace ProyectoIII.Mantenimientos
             string mensaje = "";
             try
             {
-                if (dtgCategoria.SelectedRows.Count > 0)
+                if (dtgUnidad.SelectedRows.Count > 0)
                 {
-                    C.Id = Convert.ToInt32(dtgCategoria.CurrentRow.Cells[0].Value);
-                    C.Estado = Convert.ToBoolean(dtgCategoria.CurrentRow.Cells[2].Value);
-                    mensaje = C.Activar();
+                    U.Id = Convert.ToInt32(dtgUnidad.CurrentRow.Cells[0].Value);
+                    U.Estado = Convert.ToBoolean(dtgUnidad.CurrentRow.Cells[3].Value);
+                    mensaje = U.Activar();
                     if (mensaje == "0")
                     {
                         MessageBoxEx.Show("Cancelado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -151,12 +156,12 @@ namespace ProyectoIII.Mantenimientos
             {
                 MessageBoxEx.Show("Error:" + ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LlenarGridCategoria();
+            LlenarGridUnidad();
         }
-
-        private void frmCategoria_Load(object sender, EventArgs e)
+        private void frmUnidad_Load(object sender, EventArgs e)
         {
-            LlenarGridCategoria();
+
+            LlenarGridUnidad();
             Program.Evento = 0;
         }
     }

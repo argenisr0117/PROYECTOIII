@@ -13,29 +13,29 @@ using Entidades;
 
 namespace ProyectoIII.Mantenimientos
 {
-    public partial class frmCategoria : MetroForm
+    public partial class frmMarca : MetroForm
     {
-        clsCategoria C = new clsCategoria();
-        public frmCategoria()
+        clsMarca M = new clsMarca();
+        public frmMarca()
         {
             InitializeComponent();
         }
-        private void LlenarGridCategoria()
+        private void LlenarGridMarca()
         {
             DataTable dt = new DataTable();
-            dt = C.Listar(true);
+            dt = M.Listar(true);
             try
             {
-                dtgCategoria.Rows.Clear();
+                dtgMarca.Rows.Clear();
                 for (int x = 0; x < dt.Rows.Count; x++)
                 {
-                    dtgCategoria.Rows.Add(dt.Rows[x][0]);
-                    dtgCategoria.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
-                    dtgCategoria.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
-                    dtgCategoria.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
+                    dtgMarca.Rows.Add(dt.Rows[x][0]);
+                    dtgMarca.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
+                    dtgMarca.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
+                    dtgMarca.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
 
                 }
-                dtgCategoria.ClearSelection();
+                dtgMarca.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -68,9 +68,9 @@ namespace ProyectoIII.Mantenimientos
             {
                 if (Program.Evento == 0)
                 {
-                    C.Id = 0;
-                    C.Descripcion = txtDescripcion.Text;
-                    mensaje = C.Registrar();
+                    M.Id = 0;
+                    M.Descripcion = txtDescripcion.Text;
+                    mensaje = M.Registrar();
                     if (mensaje == "1")
                     {
                         MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,9 +83,9 @@ namespace ProyectoIII.Mantenimientos
                 }
                 else
                 {
-                    C.Descripcion = txtDescripcion.Text;
-                    C.Id = Convert.ToInt32(txtCodigo.Text);
-                    mensaje = C.Registrar();
+                    M.Descripcion = txtDescripcion.Text;
+                    M.Id = Convert.ToInt32(txtCodigo.Text);
+                    mensaje = M.Registrar();
                     if (mensaje == "2")
                     {
                         MessageBoxEx.Show("Actualizado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -97,7 +97,7 @@ namespace ProyectoIII.Mantenimientos
                         //Limpiar();
                     }
                 }
-                LlenarGridCategoria();
+                LlenarGridMarca();
                 Program.Evento = 0;
                 //Limpiar();
             }
@@ -110,11 +110,11 @@ namespace ProyectoIII.Mantenimientos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dtgCategoria.SelectedRows.Count > 0)
+            if (dtgMarca.SelectedRows.Count > 0)
             {
 
-                txtCodigo.Text = dtgCategoria.CurrentRow.Cells[0].Value.ToString();
-                txtDescripcion.Text = dtgCategoria.CurrentRow.Cells[1].Value.ToString();
+                txtCodigo.Text = dtgMarca.CurrentRow.Cells[0].Value.ToString();
+                txtDescripcion.Text = dtgMarca.CurrentRow.Cells[1].Value.ToString();
                 Program.Evento = 1;
             }
             else
@@ -128,11 +128,11 @@ namespace ProyectoIII.Mantenimientos
             string mensaje = "";
             try
             {
-                if (dtgCategoria.SelectedRows.Count > 0)
+                if (dtgMarca.SelectedRows.Count > 0)
                 {
-                    C.Id = Convert.ToInt32(dtgCategoria.CurrentRow.Cells[0].Value);
-                    C.Estado = Convert.ToBoolean(dtgCategoria.CurrentRow.Cells[2].Value);
-                    mensaje = C.Activar();
+                    M.Id = Convert.ToInt32(dtgMarca.CurrentRow.Cells[0].Value);
+                    M.Estado = Convert.ToBoolean(dtgMarca.CurrentRow.Cells[2].Value);
+                    mensaje = M.Activar();
                     if (mensaje == "0")
                     {
                         MessageBoxEx.Show("Cancelado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -151,12 +151,11 @@ namespace ProyectoIII.Mantenimientos
             {
                 MessageBoxEx.Show("Error:" + ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LlenarGridCategoria();
+            LlenarGridMarca();
         }
-
-        private void frmCategoria_Load(object sender, EventArgs e)
+        private void frmMarca_Load(object sender, EventArgs e)
         {
-            LlenarGridCategoria();
+            LlenarGridMarca();
             Program.Evento = 0;
         }
     }

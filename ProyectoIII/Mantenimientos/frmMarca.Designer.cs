@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIII.Mantenimientos
 {
-    partial class frmCategoria
+    partial class frmMarca
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoria));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMarca));
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.dtgCategoria = new System.Windows.Forms.DataGridView();
+            this.dtgMarca = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMarca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,23 +98,23 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // dtgCategoria
+            // dtgMarca
             // 
-            this.dtgCategoria.AllowUserToAddRows = false;
-            this.dtgCategoria.AllowUserToDeleteRows = false;
-            this.dtgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgMarca.AllowUserToAddRows = false;
+            this.dtgMarca.AllowUserToDeleteRows = false;
+            this.dtgMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgMarca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.descripcion,
             this.estado});
-            this.dtgCategoria.Location = new System.Drawing.Point(12, 137);
-            this.dtgCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtgCategoria.MultiSelect = false;
-            this.dtgCategoria.Name = "dtgCategoria";
-            this.dtgCategoria.ReadOnly = true;
-            this.dtgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCategoria.Size = new System.Drawing.Size(406, 199);
-            this.dtgCategoria.TabIndex = 25;
+            this.dtgMarca.Location = new System.Drawing.Point(12, 137);
+            this.dtgMarca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgMarca.MultiSelect = false;
+            this.dtgMarca.Name = "dtgMarca";
+            this.dtgMarca.ReadOnly = true;
+            this.dtgMarca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgMarca.Size = new System.Drawing.Size(406, 199);
+            this.dtgMarca.TabIndex = 25;
             // 
             // codigo
             // 
@@ -195,11 +195,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(124, -4);
+            this.label1.Location = new System.Drawing.Point(157, -4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 23);
+            this.label1.Size = new System.Drawing.Size(220, 23);
             this.label1.TabIndex = 21;
-            this.label1.Text = "REGISTRO DE CATEGORIA";
+            this.label1.Text = "REGISTRO DE MARCA";
             // 
             // btnSalir
             // 
@@ -226,7 +226,7 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // frmCategoria
+            // frmMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -235,7 +235,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.dtgCategoria);
+            this.Controls.Add(this.dtgMarca);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label3);
@@ -247,11 +247,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "frmCategoria";
+            this.Name = "frmMarca";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Load += new System.EventHandler(this.frmCategoria_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoria)).EndInit();
+            this.Load += new System.EventHandler(this.frmMarca_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMarca)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,7 +262,7 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.DataGridView dtgCategoria;
+        private System.Windows.Forms.DataGridView dtgMarca;
         private System.Windows.Forms.Button btnRegistrar;
         private Controles.textbox txtDescripcion;
         private System.Windows.Forms.Label label3;

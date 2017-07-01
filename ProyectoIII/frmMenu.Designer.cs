@@ -30,6 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbMenu = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbFecha = new System.Windows.Forms.Label();
+            this.lbHora = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eNTIDADESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +53,10 @@
             this.cIUDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bARRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nACIONALIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cATEGORIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uNIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eQUIVALENCIAUNIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mARCAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRANSACCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,20 +67,82 @@
             this.iNVENTARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cXCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lbFecha = new System.Windows.Forms.Label();
-            this.lbHora = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lbMenu = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.menuStrip1.SuspendLayout();
+            this.cARGOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lbMenu);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.ForeColor = System.Drawing.Color.Black;
+            this.panel2.Name = "panel2";
+            // 
+            // lbMenu
+            // 
+            resources.ApplyResources(this.lbMenu, "lbMenu");
+            this.lbMenu.BackColor = System.Drawing.Color.White;
+            this.lbMenu.ForeColor = System.Drawing.Color.Black;
+            this.lbMenu.Name = "lbMenu";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackgroundImage = global::ProyectoIII.Properties.Resources.logo;
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.menuStrip1);
+            this.panel1.ForeColor = System.Drawing.Color.Black;
+            this.panel1.Name = "panel1";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.lbFecha);
+            this.panel3.Controls.Add(this.lbHora);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
+            // 
+            // lbFecha
+            // 
+            resources.ApplyResources(this.lbFecha, "lbFecha");
+            this.lbFecha.BackColor = System.Drawing.Color.White;
+            this.lbFecha.ForeColor = System.Drawing.Color.Black;
+            this.lbFecha.Name = "lbFecha";
+            // 
+            // lbHora
+            // 
+            resources.ApplyResources(this.lbHora, "lbHora");
+            this.lbHora.BackColor = System.Drawing.Color.White;
+            this.lbHora.ForeColor = System.Drawing.Color.Black;
+            this.lbHora.Name = "lbHora";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Name = "label2";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Name = "label1";
             // 
             // menuStrip1
             // 
@@ -124,7 +199,12 @@
             // 
             this.gENERALESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dIRECCIONToolStripMenuItem,
-            this.nACIONALIDADToolStripMenuItem});
+            this.nACIONALIDADToolStripMenuItem,
+            this.cATEGORIAToolStripMenuItem,
+            this.uNIDADToolStripMenuItem,
+            this.eQUIVALENCIAUNIDADToolStripMenuItem,
+            this.mARCAToolStripMenuItem,
+            this.cARGOToolStripMenuItem});
             this.gENERALESToolStripMenuItem.Name = "gENERALESToolStripMenuItem";
             resources.ApplyResources(this.gENERALESToolStripMenuItem, "gENERALESToolStripMenuItem");
             // 
@@ -168,6 +248,29 @@
             this.nACIONALIDADToolStripMenuItem.Name = "nACIONALIDADToolStripMenuItem";
             resources.ApplyResources(this.nACIONALIDADToolStripMenuItem, "nACIONALIDADToolStripMenuItem");
             this.nACIONALIDADToolStripMenuItem.Click += new System.EventHandler(this.nACIONALIDADToolStripMenuItem_Click);
+            // 
+            // cATEGORIAToolStripMenuItem
+            // 
+            this.cATEGORIAToolStripMenuItem.Name = "cATEGORIAToolStripMenuItem";
+            resources.ApplyResources(this.cATEGORIAToolStripMenuItem, "cATEGORIAToolStripMenuItem");
+            this.cATEGORIAToolStripMenuItem.Click += new System.EventHandler(this.cATEGORIAToolStripMenuItem_Click);
+            // 
+            // uNIDADToolStripMenuItem
+            // 
+            this.uNIDADToolStripMenuItem.Name = "uNIDADToolStripMenuItem";
+            resources.ApplyResources(this.uNIDADToolStripMenuItem, "uNIDADToolStripMenuItem");
+            this.uNIDADToolStripMenuItem.Click += new System.EventHandler(this.uNIDADToolStripMenuItem_Click);
+            // 
+            // eQUIVALENCIAUNIDADToolStripMenuItem
+            // 
+            this.eQUIVALENCIAUNIDADToolStripMenuItem.Name = "eQUIVALENCIAUNIDADToolStripMenuItem";
+            resources.ApplyResources(this.eQUIVALENCIAUNIDADToolStripMenuItem, "eQUIVALENCIAUNIDADToolStripMenuItem");
+            // 
+            // mARCAToolStripMenuItem
+            // 
+            this.mARCAToolStripMenuItem.Name = "mARCAToolStripMenuItem";
+            resources.ApplyResources(this.mARCAToolStripMenuItem, "mARCAToolStripMenuItem");
+            this.mARCAToolStripMenuItem.Click += new System.EventHandler(this.mARCAToolStripMenuItem_Click);
             // 
             // procesosToolStripMenuItem
             // 
@@ -233,75 +336,11 @@
             this.cXCToolStripMenuItem1.Name = "cXCToolStripMenuItem1";
             resources.ApplyResources(this.cXCToolStripMenuItem1, "cXCToolStripMenuItem1");
             // 
-            // panel1
+            // cARGOToolStripMenuItem
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BackgroundImage = global::ProyectoIII.Properties.Resources.logo;
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.menuStrip1);
-            this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Name = "panel1";
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.lbFecha);
-            this.panel3.Controls.Add(this.lbHora);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label1);
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
-            // 
-            // lbFecha
-            // 
-            resources.ApplyResources(this.lbFecha, "lbFecha");
-            this.lbFecha.BackColor = System.Drawing.Color.White;
-            this.lbFecha.ForeColor = System.Drawing.Color.Black;
-            this.lbFecha.Name = "lbFecha";
-            // 
-            // lbHora
-            // 
-            resources.ApplyResources(this.lbHora, "lbHora");
-            this.lbHora.BackColor = System.Drawing.Color.White;
-            this.lbHora.ForeColor = System.Drawing.Color.Black;
-            this.lbHora.Name = "lbHora";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Name = "label2";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Name = "label1";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.lbMenu);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Name = "panel2";
-            // 
-            // lbMenu
-            // 
-            resources.ApplyResources(this.lbMenu, "lbMenu");
-            this.lbMenu.BackColor = System.Drawing.Color.White;
-            this.lbMenu.ForeColor = System.Drawing.Color.Black;
-            this.lbMenu.Name = "lbMenu";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.cARGOToolStripMenuItem.Name = "cARGOToolStripMenuItem";
+            resources.ApplyResources(this.cARGOToolStripMenuItem, "cARGOToolStripMenuItem");
+            this.cARGOToolStripMenuItem.Click += new System.EventHandler(this.cARGOToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -317,14 +356,14 @@
             this.Name = "frmMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -364,5 +403,10 @@
         private System.Windows.Forms.ToolStripMenuItem rEGIONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cIUDADToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bARRIOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cATEGORIAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uNIDADToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eQUIVALENCIAUNIDADToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mARCAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cARGOToolStripMenuItem;
     }
 }
