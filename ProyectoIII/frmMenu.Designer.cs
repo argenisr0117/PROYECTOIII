@@ -57,6 +57,10 @@
             this.uNIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eQUIVALENCIAUNIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mARCAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cARGOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tIPOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cONTACTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fACTURAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRANSACCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +71,6 @@
             this.iNVENTARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cXCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cARGOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -184,6 +187,7 @@
             // 
             this.pROVEEDORToolStripMenuItem.Name = "pROVEEDORToolStripMenuItem";
             resources.ApplyResources(this.pROVEEDORToolStripMenuItem, "pROVEEDORToolStripMenuItem");
+            this.pROVEEDORToolStripMenuItem.Click += new System.EventHandler(this.pROVEEDORToolStripMenuItem_Click);
             // 
             // cLIENTEToolStripMenuItem
             // 
@@ -204,7 +208,8 @@
             this.uNIDADToolStripMenuItem,
             this.eQUIVALENCIAUNIDADToolStripMenuItem,
             this.mARCAToolStripMenuItem,
-            this.cARGOToolStripMenuItem});
+            this.cARGOToolStripMenuItem,
+            this.tIPOSToolStripMenuItem});
             this.gENERALESToolStripMenuItem.Name = "gENERALESToolStripMenuItem";
             resources.ApplyResources(this.gENERALESToolStripMenuItem, "gENERALESToolStripMenuItem");
             // 
@@ -272,6 +277,32 @@
             resources.ApplyResources(this.mARCAToolStripMenuItem, "mARCAToolStripMenuItem");
             this.mARCAToolStripMenuItem.Click += new System.EventHandler(this.mARCAToolStripMenuItem_Click);
             // 
+            // cARGOToolStripMenuItem
+            // 
+            this.cARGOToolStripMenuItem.Name = "cARGOToolStripMenuItem";
+            resources.ApplyResources(this.cARGOToolStripMenuItem, "cARGOToolStripMenuItem");
+            this.cARGOToolStripMenuItem.Click += new System.EventHandler(this.cARGOToolStripMenuItem_Click);
+            // 
+            // tIPOSToolStripMenuItem
+            // 
+            this.tIPOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cONTACTOToolStripMenuItem,
+            this.fACTURAToolStripMenuItem});
+            this.tIPOSToolStripMenuItem.Name = "tIPOSToolStripMenuItem";
+            resources.ApplyResources(this.tIPOSToolStripMenuItem, "tIPOSToolStripMenuItem");
+            // 
+            // cONTACTOToolStripMenuItem
+            // 
+            this.cONTACTOToolStripMenuItem.Name = "cONTACTOToolStripMenuItem";
+            resources.ApplyResources(this.cONTACTOToolStripMenuItem, "cONTACTOToolStripMenuItem");
+            this.cONTACTOToolStripMenuItem.Click += new System.EventHandler(this.cONTACTOToolStripMenuItem_Click);
+            // 
+            // fACTURAToolStripMenuItem
+            // 
+            this.fACTURAToolStripMenuItem.Name = "fACTURAToolStripMenuItem";
+            resources.ApplyResources(this.fACTURAToolStripMenuItem, "fACTURAToolStripMenuItem");
+            this.fACTURAToolStripMenuItem.Click += new System.EventHandler(this.fACTURAToolStripMenuItem_Click);
+            // 
             // procesosToolStripMenuItem
             // 
             this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -335,12 +366,6 @@
             // 
             this.cXCToolStripMenuItem1.Name = "cXCToolStripMenuItem1";
             resources.ApplyResources(this.cXCToolStripMenuItem1, "cXCToolStripMenuItem1");
-            // 
-            // cARGOToolStripMenuItem
-            // 
-            this.cARGOToolStripMenuItem.Name = "cARGOToolStripMenuItem";
-            resources.ApplyResources(this.cARGOToolStripMenuItem, "cARGOToolStripMenuItem");
-            this.cARGOToolStripMenuItem.Click += new System.EventHandler(this.cARGOToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -408,5 +433,8 @@
         private System.Windows.Forms.ToolStripMenuItem eQUIVALENCIAUNIDADToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mARCAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cARGOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tIPOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cONTACTOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fACTURAToolStripMenuItem;
     }
 }

@@ -346,25 +346,25 @@
     <value>Tahoma, 9.75pt</value>
   </data>
   <data name="pRODUCTOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pRODUCTOToolStripMenuItem.Text" xml:space="preserve">
     <value>PRODUCTO</value>
   </data>
   <data name="pROVEEDORToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pROVEEDORToolStripMenuItem.Text" xml:space="preserve">
     <value>PROVEEDOR</value>
   </data>
   <data name="cLIENTEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="cLIENTEToolStripMenuItem.Text" xml:space="preserve">
     <value>CLIENTE</value>
   </data>
   <data name="eMPLEADOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="eMPLEADOToolStripMenuItem.Text" xml:space="preserve">
     <value>EMPLEADO</value>
@@ -440,6 +440,24 @@
   </data>
   <data name="cARGOToolStripMenuItem.Text" xml:space="preserve">
     <value>CARGO</value>
+  </data>
+  <data name="cONTACTOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
+  </data>
+  <data name="cONTACTOToolStripMenuItem.Text" xml:space="preserve">
+    <value>DESCRIPCION_TIPO</value>
+  </data>
+  <data name="fACTURAToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
+  </data>
+  <data name="fACTURAToolStripMenuItem.Text" xml:space="preserve">
+    <value>TIPOS</value>
+  </data>
+  <data name="tIPOSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="tIPOSToolStripMenuItem.Text" xml:space="preserve">
+    <value>TIPOS</value>
   </data>
   <data name="gENERALESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
@@ -771,9 +789,6 @@
         /j/SDzVTgM4CvgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
@@ -888,6 +903,30 @@
   <data name="&gt;&gt;mARCAToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;cARGOToolStripMenuItem.Name" xml:space="preserve">
+    <value>cARGOToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;cARGOToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tIPOSToolStripMenuItem.Name" xml:space="preserve">
+    <value>tIPOSToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;tIPOSToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cONTACTOToolStripMenuItem.Name" xml:space="preserve">
+    <value>cONTACTOToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;cONTACTOToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fACTURAToolStripMenuItem.Name" xml:space="preserve">
+    <value>fACTURAToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;fACTURAToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;procesosToolStripMenuItem.Name" xml:space="preserve">
     <value>procesosToolStripMenuItem</value>
   </data>
@@ -946,12 +985,6 @@
     <value>cXCToolStripMenuItem1</value>
   </data>
   <data name="&gt;&gt;cXCToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cARGOToolStripMenuItem.Name" xml:space="preserve">
-    <value>cARGOToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;cARGOToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

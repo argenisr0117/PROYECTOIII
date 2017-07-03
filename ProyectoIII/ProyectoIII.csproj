@@ -78,6 +78,12 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\frmDesTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmDesTipo.Designer.cs">
+      <DependentUpon>frmDesTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,18 @@
     </Compile>
     <Compile Include="Mantenimientos\frmCargo.Designer.cs">
       <DependentUpon>frmCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmTipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmTipos.Designer.cs">
+      <DependentUpon>frmTipos.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\frmUnidad.cs">
       <SubType>Form</SubType>
@@ -138,6 +156,9 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmDesTipo.resx">
+      <DependentUpon>frmDesTipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +167,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmCargo.resx">
       <DependentUpon>frmCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmTipos.resx">
+      <DependentUpon>frmTipos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmUnidad.resx">
       <DependentUpon>frmUnidad.cs</DependentUpon>
@@ -226,6 +253,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\cancel %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\add %283%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

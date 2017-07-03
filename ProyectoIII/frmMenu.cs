@@ -101,5 +101,23 @@ namespace ProyectoIII
             Mantenimientos.frmCargo obj = new Mantenimientos.frmCargo();
             obj.ShowDialog();
         }
+
+        private void cONTACTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmDesTipo obj = new Mantenimientos.frmDesTipo();
+            obj.ShowDialog();
+        }
+
+        private void fACTURAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmTipos obj = new Mantenimientos.frmTipos();
+            obj.ShowDialog();
+        }
+
+        private void pROVEEDORToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmProveedor obj = new Mantenimientos.frmProveedor();
+            obj.ShowDialog();
+        }
     }
 }

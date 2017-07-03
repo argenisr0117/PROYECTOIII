@@ -40,10 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsCategoria.cs" />
     <Compile Include="clsMarca.cs" />
     <Compile Include="clsNacionalidad.cs" />
     <Compile Include="clsProveedor.cs" />
-    <Compile Include="clsCategoria.cs" />
+    <Compile Include="clsTipos.cs" />
     <Compile Include="clsCargo.cs" />
     <Compile Include="clsUnidad.cs" />
     <Compile Include="clsDirecciones.cs" />
