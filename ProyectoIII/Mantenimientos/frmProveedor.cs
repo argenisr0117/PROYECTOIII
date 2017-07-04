@@ -17,6 +17,7 @@ namespace ProyectoIII.Mantenimientos
     {
         clsDirecciones D = new clsDirecciones();
         clsTipos T = new clsTipos();
+        clsProveedor P = new clsProveedor();
         public frmProveedor()
         {
             InitializeComponent();
@@ -148,7 +149,7 @@ namespace ProyectoIII.Mantenimientos
                 }
                 if(Program.Evento==0)
                 {
-                    dtgContacto.Rows.Add(0, txtContacto.Text, cbTipoContacto.SelectedValue, cbTipoContacto.Text, "EDITAR");
+                    dtgContacto.Rows.Add(0, txtContacto.Text, cbTipoContacto.SelectedValue, cbTipoContacto.Text, "");
                     txtContacto.Clear();
                 }
                 else if (Program.Evento == 1)
@@ -170,6 +171,8 @@ namespace ProyectoIII.Mantenimientos
             {
                 txtContacto.Text = dtgContacto.CurrentRow.Cells[1].Value.ToString();
                 cbTipoContacto.Text= dtgContacto.CurrentRow.Cells[3].Value.ToString();
+                //Program.Evento = 1;
+                dtgContacto.Rows.RemoveAt(e.RowIndex);
             }
         }
 
@@ -184,8 +187,8 @@ namespace ProyectoIII.Mantenimientos
                 }
                 if (Program.Evento == 0)
                 {
-                    //dtgContacto.Rows.Add(0, txtContacto.Text, cbTipoContacto.SelectedValue, cbTipoContacto.Text, "EDITAR");
-                    //txtContacto.Clear();
+                    dtgDireccion.Rows.Add(0, cbRegion.Text +"," + cbCiudad.Text + "," + cbBarrio.Text + "," + txtDireccion.Text, cbBarrio.SelectedValue, cbCiudad.SelectedValue, cbRegion.SelectedValue,"");
+                    txtDireccion.Clear();
                 }
                 else if (Program.Evento == 1)
                 {
@@ -198,6 +201,136 @@ namespace ProyectoIII.Mantenimientos
                 MessageBoxEx.Show(ex.Message);
             }
 
+        }
+
+        private void dtgContacto_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex >= 0 && this.dtgContacto.Columns[e.ColumnIndex].Name == "editarc" && e.RowIndex >= 0)
+                {
+                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                    DataGridViewButtonCell celBoton = this.dtgContacto.Rows[e.RowIndex].Cells["editarc"] as DataGridViewButtonCell;
+                    Icon icoEditar = new Icon(Environment.CurrentDirectory + @"\Recursos\" +@"edit (2).ico");
+                    e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 20, e.CellBounds.Top + 3);
+                    this.dtgContacto.Rows[e.RowIndex].Height = icoEditar.Height+5;
+                    this.dtgContacto.Columns[e.ColumnIndex].Width = icoEditar.Width+40;
+
+                    e.Handled = true;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            string mensaje = "";
+            try
+            {
+                errorProvider1.Clear();
+                if (Utilidades.ValidarForm(this, errorProvider1) == false)
+                {
+                    return;
+                }
+                if (Program.Evento == 0)
+                {
+                    P.Nombre = txtNombre.Text;                  
+                    P.Idtipot = Convert.ToInt32(cbTipoProveedor.SelectedValue);
+                    mensaje = P.Registrar();
+                    if(mensaje=="1")
+                    {
+                        P.Identificacion = txtIdentificacion.Text;
+                        if (cbTipoProveedor.Text == "Empresa")
+                        {
+                            P.Idtipoi = 8;
+                        }
+                        else if (cbTipoProveedor.Text == "Persona")
+                        {
+                            P.Idtipoi = 6;
+                        }
+                        mensaje = P.RegistrarI();
+                        for(int x=0; x < dtgContacto.Rows.Count; x++)
+                        {
+                            P.Contacto = dtgContacto.Rows[x].Cells[1].Value.ToString();
+                            P.Idtipoc = Convert.ToInt32(dtgContacto.Rows[x].Cells[2].Value);
+                            mensaje = P.RegistrarC();
+                        }
+                        for (int x = 0; x < dtgDireccion.Rows.Count; x++)
+                        {
+                            P.Direccion = dtgDireccion.Rows[x].Cells[1].Value.ToString();
+                            P.Idbarrio = Convert.ToInt32(dtgDireccion.Rows[x].Cells[2].Value);
+                            P.Idciudad = Convert.ToInt32(dtgDireccion.Rows[x].Cells[3].Value);
+                            P.Idregion = Convert.ToInt32(dtgDireccion.Rows[x].Cells[4].Value);
+                            mensaje = P.RegistrarD();
+                        }
+                        if (mensaje == "1")
+                        {
+                            MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpiar();
+                        }
+                    }
+                    
+                }
+                else if (Program.Evento == 1)
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+
+        private void Limpiar()
+        {
+            txtNombre.Clear();
+            txtIdentificacion.Clear();
+            txtDireccion.Clear();
+            txtContacto.Clear();
+            txtNombre.Focus();
+            dtgContacto.Rows.Clear();
+            dtgDireccion.Rows.Clear();
+        }
+        private void dtgDireccion_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex >= 0 && this.dtgDireccion.Columns[e.ColumnIndex].Name == "editard" && e.RowIndex >= 0)
+                {
+                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                    DataGridViewButtonCell celBoton = this.dtgDireccion.Rows[e.RowIndex].Cells["editard"] as DataGridViewButtonCell;
+                    Icon icoEditar = new Icon(Environment.CurrentDirectory + @"\Recursos\" + @"edit (2).ico");
+                    e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 20, e.CellBounds.Top + 3);
+
+                    this.dtgDireccion.Rows[e.RowIndex].Height = icoEditar.Height + 5;
+                    this.dtgDireccion.Columns[e.ColumnIndex].Width = icoEditar.Width + 40;
+
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+
+        private void dtgDireccion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex==5)
+            {
+                txtDireccion.Text = dtgDireccion.CurrentRow.Cells[1].Value.ToString();
+                cbBarrio.SelectedValue = dtgDireccion.CurrentRow.Cells[2].Value.ToString();
+                cbCiudad.SelectedValue = dtgDireccion.CurrentRow.Cells[3].Value.ToString();
+                cbRegion.SelectedValue = dtgDireccion.CurrentRow.Cells[4].Value.ToString();
+                dtgDireccion.Rows.RemoveAt(e.RowIndex);
+            }
         }
     }
 }

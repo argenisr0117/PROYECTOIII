@@ -44,11 +44,7 @@
             this.btnAgregarC = new System.Windows.Forms.Button();
             this.gbDireccion = new System.Windows.Forms.GroupBox();
             this.btnAgregarD = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dtgDireccion = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cbRegion = new System.Windows.Forms.ComboBox();
@@ -56,7 +52,7 @@
             this.cbCiudad = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cbBarrio = new System.Windows.Forms.ComboBox();
-            this.btnRegistrarPais = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -64,15 +60,21 @@
             this.contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editarc = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtDireccion = new ProyectoIII.Controles.textbox(this.components);
             this.txtContacto = new ProyectoIII.Controles.textbox(this.components);
             this.txtIdentificacion = new ProyectoIII.Controles.textbox(this.components);
             this.txtNombre = new ProyectoIII.Controles.textbox(this.components);
+            this.codigod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idbarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idregion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editard = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbContacto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContacto)).BeginInit();
             this.gbDireccion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDireccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,15 +170,16 @@
             this.contacto,
             this.tipoc,
             this.tipo,
-            this.editar});
+            this.editarc});
             this.dtgContacto.Location = new System.Drawing.Point(10, 126);
             this.dtgContacto.MultiSelect = false;
             this.dtgContacto.Name = "dtgContacto";
             this.dtgContacto.ReadOnly = true;
             this.dtgContacto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgContacto.Size = new System.Drawing.Size(394, 134);
+            this.dtgContacto.Size = new System.Drawing.Size(410, 134);
             this.dtgContacto.TabIndex = 39;
             this.dtgContacto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgContacto_CellContentClick);
+            this.dtgContacto.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgContacto_CellPainting);
             // 
             // label7
             // 
@@ -224,7 +227,7 @@
             this.gbDireccion.Controls.Add(this.label10);
             this.gbDireccion.Controls.Add(this.cbCiudad);
             this.gbDireccion.Controls.Add(this.btnAgregarD);
-            this.gbDireccion.Controls.Add(this.dataGridView2);
+            this.gbDireccion.Controls.Add(this.dtgDireccion);
             this.gbDireccion.Controls.Add(this.label8);
             this.gbDireccion.Controls.Add(this.txtDireccion);
             this.gbDireccion.Controls.Add(this.label9);
@@ -257,47 +260,25 @@
             this.btnAgregarD.UseVisualStyleBackColor = false;
             this.btnAgregarD.Click += new System.EventHandler(this.btnAgregarD_Click);
             // 
-            // dataGridView2
+            // dtgDireccion
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewButtonColumn1});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 203);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(444, 134);
-            this.dataGridView2.TabIndex = 39;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "CÓDIGO";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "CONTACTO";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "TIPO";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "EDITAR";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "EDITAR";
+            this.dtgDireccion.AllowUserToAddRows = false;
+            this.dtgDireccion.AllowUserToDeleteRows = false;
+            this.dtgDireccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDireccion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigod,
+            this.direccion,
+            this.idbarrio,
+            this.idciudad,
+            this.idregion,
+            this.editard});
+            this.dtgDireccion.Location = new System.Drawing.Point(12, 203);
+            this.dtgDireccion.Name = "dtgDireccion";
+            this.dtgDireccion.ReadOnly = true;
+            this.dtgDireccion.Size = new System.Drawing.Size(444, 134);
+            this.dtgDireccion.TabIndex = 39;
+            this.dtgDireccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDireccion_CellContentClick);
+            this.dtgDireccion.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgDireccion_CellPainting);
             // 
             // label8
             // 
@@ -364,26 +345,27 @@
             this.cbBarrio.Size = new System.Drawing.Size(296, 27);
             this.cbBarrio.TabIndex = 8;
             // 
-            // btnRegistrarPais
+            // btnRegistrar
             // 
-            this.btnRegistrarPais.BackColor = System.Drawing.Color.White;
-            this.btnRegistrarPais.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
-            this.btnRegistrarPais.FlatAppearance.BorderSize = 3;
-            this.btnRegistrarPais.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnRegistrarPais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarPais.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarPais.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarPais.Image = global::ProyectoIII.Properties.Resources.save__2_;
-            this.btnRegistrarPais.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistrarPais.Location = new System.Drawing.Point(532, 442);
-            this.btnRegistrarPais.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRegistrarPais.Name = "btnRegistrarPais";
-            this.btnRegistrarPais.Size = new System.Drawing.Size(110, 46);
-            this.btnRegistrarPais.TabIndex = 45;
-            this.btnRegistrarPais.Text = "GUARDAR";
-            this.btnRegistrarPais.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.btnRegistrarPais, "Guardar");
-            this.btnRegistrarPais.UseVisualStyleBackColor = false;
+            this.btnRegistrar.BackColor = System.Drawing.Color.White;
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
+            this.btnRegistrar.FlatAppearance.BorderSize = 3;
+            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrar.Image = global::ProyectoIII.Properties.Resources.save__2_;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistrar.Location = new System.Drawing.Point(532, 442);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(110, 46);
+            this.btnRegistrar.TabIndex = 45;
+            this.btnRegistrar.Text = "GUARDAR";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.btnRegistrar, "Guardar");
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnSalir
             // 
@@ -441,12 +423,13 @@
             this.tipo.ReadOnly = true;
             this.tipo.Width = 71;
             // 
-            // editar
+            // editarc
             // 
-            this.editar.HeaderText = "";
-            this.editar.Name = "editar";
-            this.editar.ReadOnly = true;
-            this.editar.Text = "";
+            this.editarc.HeaderText = "EDITAR";
+            this.editarc.Name = "editarc";
+            this.editarc.ReadOnly = true;
+            this.editarc.Text = "";
+            this.editarc.ToolTipText = "Editar";
             // 
             // txtDireccion
             // 
@@ -486,13 +469,56 @@
             this.txtNombre.TabIndex = 0;
             this.txtNombre.Validar = true;
             // 
+            // codigod
+            // 
+            this.codigod.HeaderText = "CÓDIGO";
+            this.codigod.Name = "codigod";
+            this.codigod.ReadOnly = true;
+            this.codigod.Visible = false;
+            // 
+            // direccion
+            // 
+            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.direccion.HeaderText = "DIRECCIÓN";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Width = 119;
+            // 
+            // idbarrio
+            // 
+            this.idbarrio.HeaderText = "IDBARRIO";
+            this.idbarrio.Name = "idbarrio";
+            this.idbarrio.ReadOnly = true;
+            this.idbarrio.Visible = false;
+            // 
+            // idciudad
+            // 
+            this.idciudad.HeaderText = "IDCIUDAD";
+            this.idciudad.Name = "idciudad";
+            this.idciudad.ReadOnly = true;
+            this.idciudad.Visible = false;
+            // 
+            // idregion
+            // 
+            this.idregion.HeaderText = "IDREGIÓN";
+            this.idregion.Name = "idregion";
+            this.idregion.ReadOnly = true;
+            this.idregion.Visible = false;
+            // 
+            // editard
+            // 
+            this.editard.HeaderText = "EDITAR";
+            this.editard.Name = "editard";
+            this.editard.ReadOnly = true;
+            this.editard.Text = "";
+            // 
             // frmProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 534);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnRegistrarPais);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.gbDireccion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbTipoProveedor);
@@ -517,7 +543,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgContacto)).EndInit();
             this.gbDireccion.ResumeLayout(false);
             this.gbDireccion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDireccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -547,16 +573,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbCiudad;
         private System.Windows.Forms.Button btnAgregarD;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridView dtgDireccion;
         private System.Windows.Forms.Label label8;
         private Controles.textbox txtDireccion;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbRegion;
-        private System.Windows.Forms.Button btnRegistrarPais;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -564,6 +586,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn contacto;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
-        private System.Windows.Forms.DataGridViewButtonColumn editar;
+        private System.Windows.Forms.DataGridViewButtonColumn editarc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idbarrio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idciudad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idregion;
+        private System.Windows.Forms.DataGridViewButtonColumn editard;
     }
 }
