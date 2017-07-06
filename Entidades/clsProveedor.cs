@@ -29,11 +29,19 @@ namespace Entidades
         string Mcampo;
         string Mtabla;
         int Mvalor;
+        int Mtipo;
+        string Mvalor1;
+
 
         public int Idtercero
         {
             get { return Midtercero; }
             set { Midtercero = value; }
+        }
+        public int Tipo
+        {
+            get { return Mtipo; }
+            set { Mtipo = value; }
         }
         public string Nombre
         {
@@ -50,6 +58,12 @@ namespace Entidades
         {
             get { return Mvalor; }
             set { Mvalor = value; }
+        }
+
+        public string Valor1
+        {
+            get { return Mvalor1; }
+            set { Mvalor1 = value; }
         }
 
         //direccion
@@ -181,16 +195,39 @@ namespace Entidades
             return mensaje;
         }
 
-        //public DataTable Listar(Boolean objEstado)
-        //{
-        //    DataTable dt = new DataTable();
-        //    List<clsParametros> lst = new List<clsParametros>();
-        //    lst.Add(new clsParametros("@valor", Mvalor));
-        //    lst.Add(new clsParametros("@estado", objEstado));
-        //    lst.Add(new clsParametros("@id", Mid));
-        //    return dt = M.Listado("listado_prcb", lst);
+        public DataTable Listar()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@valor", Mvalor1));
+            lst.Add(new clsParametros("@tipo", Mtipo));
+            return dt = M.Listado("buscar_proveedor", lst);
 
-        //}
+        }
+        public DataTable DatosProveedor()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@codigo", Midtercero));
+            return dt = M.Listado("obtener_datos_proveedor", lst);
+
+        }
+        public DataTable DatosContacto()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@codigo", Midtercero));
+            return dt = M.Listado("obtener_datos_contactos", lst);
+
+        }
+        public DataTable DatosDireccion()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@codigo", Midtercero));
+            return dt = M.Listado("obtener_datos_direccion", lst);
+
+        }
         //public string Activar()
         //{
         //    string mensaje = "";

@@ -93,6 +93,16 @@ namespace ProyectoIII.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap apply__2_ {
+            get {
+                object obj = ResourceManager.GetObject("apply (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel__2_ {
             get {
                 object obj = ResourceManager.GetObject("cancel (2)", resourceCulture);
@@ -156,6 +166,16 @@ namespace ProyectoIII.Properties {
         internal static System.Drawing.Bitmap logout_32 {
             get {
                 object obj = ResourceManager.GetObject("logout-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap page_edit {
+            get {
+                object obj = ResourceManager.GetObject("page_edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -116,7 +116,7 @@ namespace ProyectoIII
 
         private void pROVEEDORToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Mantenimientos.frmProveedor obj = new Mantenimientos.frmProveedor();
+            Consultas.frmcProveedor obj = new Consultas.frmcProveedor();
             obj.ShowDialog();
         }
     }

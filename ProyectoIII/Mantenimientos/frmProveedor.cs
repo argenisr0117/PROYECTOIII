@@ -100,6 +100,38 @@ namespace ProyectoIII.Mantenimientos
             LlenarComboTipoC();
             LlenarComboTipoP();
             Program.Evento = 0;
+            if(Program.Editar==1)
+            {
+                LlenarCampos();
+            }
+        }
+        private void LlenarCampos()
+        {
+            P.Idtercero = Program.Codigo;
+            DataTable dt = P.DatosProveedor();
+            DataTable dt2 = P.DatosContacto();
+            DataTable dt3 = P.DatosDireccion();
+            txtNombre.Text= dt.Rows[0][1].ToString();
+            txtIdentificacion.Text= dt.Rows[0][3].ToString();
+            cbTipoProveedor.SelectedValue= dt.Rows[0][4].ToString();
+            for(int x=0; x < dt3.Rows.Count; x++)
+            {
+                dtgDireccion.Rows.Add(dt3.Rows[x][0]);
+                dtgDireccion.Rows[x].Cells[0].Value = dt3.Rows[x][0].ToString();
+                dtgDireccion.Rows[x].Cells[1].Value = dt3.Rows[x][1].ToString();
+                dtgDireccion.Rows[x].Cells[2].Value = dt3.Rows[x][2].ToString();
+                dtgDireccion.Rows[x].Cells[3].Value = dt3.Rows[x][3].ToString();
+                dtgDireccion.Rows[x].Cells[4].Value = dt3.Rows[x][4].ToString();
+            }
+            for (int x = 0; x < dt2.Rows.Count; x++)
+            {
+                dtgContacto.Rows.Add(dt2.Rows[x][0]);
+                dtgContacto.Rows[x].Cells[0].Value = dt2.Rows[x][0].ToString();
+                dtgContacto.Rows[x].Cells[1].Value = dt2.Rows[x][1].ToString();
+                dtgContacto.Rows[x].Cells[2].Value = dt2.Rows[x][2].ToString();
+                dtgContacto.Rows[x].Cells[3].Value = dt2.Rows[x][3].ToString();
+            }
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
