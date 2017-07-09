@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIII.Consultas
 {
-    partial class frmcProveedor
+    partial class frmcProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -29,62 +29,63 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcProveedor));
-            this.dtgProveedor = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcProducto));
+            this.dtgProducto = new System.Windows.Forms.DataGridView();
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rnc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reorden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rbRnc = new System.Windows.Forms.RadioButton();
-            this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.rbCodigo = new System.Windows.Forms.RadioButton();
+            this.rbReferencia = new System.Windows.Forms.RadioButton();
+            this.rbDescripcion = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBusqueda = new ProyectoIII.Controles.textbox(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnElegir = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).BeginInit();
+            this.txtBusqueda = new ProyectoIII.Controles.textbox(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dtgProveedor
+            // dtgProducto
             // 
-            this.dtgProveedor.AllowUserToAddRows = false;
-            this.dtgProveedor.AllowUserToDeleteRows = false;
-            this.dtgProveedor.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.dtgProveedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtgProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgProducto.AllowUserToAddRows = false;
+            this.dtgProducto.AllowUserToDeleteRows = false;
+            this.dtgProducto.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.dtgProducto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.editar,
             this.codigo,
-            this.nombre,
-            this.rnc,
-            this.telefono,
-            this.correo,
-            this.direccion});
-            this.dtgProveedor.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dtgProveedor.Location = new System.Drawing.Point(0, 139);
-            this.dtgProveedor.MultiSelect = false;
-            this.dtgProveedor.Name = "dtgProveedor";
-            this.dtgProveedor.ReadOnly = true;
-            this.dtgProveedor.RowHeadersWidth = 20;
-            this.dtgProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProveedor.Size = new System.Drawing.Size(920, 308);
-            this.dtgProveedor.TabIndex = 0;
-            this.dtgProveedor.TabStop = false;
-            this.dtgProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedor_CellContentClick);
-            this.dtgProveedor.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgProveedor_CellPainting);
+            this.descripcion,
+            this.referencia,
+            this.unidad,
+            this.existencia,
+            this.reorden});
+            this.dtgProducto.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dtgProducto.Location = new System.Drawing.Point(0, 139);
+            this.dtgProducto.MultiSelect = false;
+            this.dtgProducto.Name = "dtgProducto";
+            this.dtgProducto.ReadOnly = true;
+            this.dtgProducto.RowHeadersWidth = 20;
+            this.dtgProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgProducto.Size = new System.Drawing.Size(920, 308);
+            this.dtgProducto.TabIndex = 0;
+            this.dtgProducto.TabStop = false;
+            this.dtgProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProducto_CellContentClick);
+            this.dtgProducto.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgProducto_CellPainting_1);
             // 
             // editar
             // 
@@ -104,45 +105,45 @@
             this.codigo.ReadOnly = true;
             this.codigo.Width = 96;
             // 
-            // nombre
+            // descripcion
             // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.nombre.HeaderText = "NOMBRE";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 97;
+            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.descripcion.HeaderText = "DESCRIPCIÓN";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 137;
             // 
-            // rnc
+            // referencia
             // 
-            this.rnc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.rnc.HeaderText = "RNC/CÉDULA";
-            this.rnc.Name = "rnc";
-            this.rnc.ReadOnly = true;
-            this.rnc.Width = 131;
+            this.referencia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.referencia.HeaderText = "REFERENCIA";
+            this.referencia.Name = "referencia";
+            this.referencia.ReadOnly = true;
+            this.referencia.Width = 127;
             // 
-            // telefono
+            // unidad
             // 
-            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.telefono.HeaderText = "TELÉFONO";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Width = 113;
+            this.unidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.unidad.HeaderText = "UNIDAD";
+            this.unidad.Name = "unidad";
+            this.unidad.ReadOnly = true;
+            this.unidad.Width = 95;
             // 
-            // correo
+            // existencia
             // 
-            this.correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.correo.HeaderText = "CORREO";
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            this.correo.Width = 97;
+            this.existencia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.existencia.HeaderText = "EXISTENCIA";
+            this.existencia.Name = "existencia";
+            this.existencia.ReadOnly = true;
+            this.existencia.Width = 124;
             // 
-            // direccion
+            // reorden
             // 
-            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.direccion.HeaderText = "DIRECCIÓN";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            this.direccion.Width = 119;
+            this.reorden.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.reorden.HeaderText = "REORDEN";
+            this.reorden.Name = "reorden";
+            this.reorden.ReadOnly = true;
+            this.reorden.Width = 106;
             // 
             // panel1
             // 
@@ -171,18 +172,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(360, 13);
+            this.label1.Location = new System.Drawing.Point(372, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 23);
+            this.label1.Size = new System.Drawing.Size(276, 23);
             this.label1.TabIndex = 25;
-            this.label1.Text = "BÚSQUEDA DE PROVEEDORES";
+            this.label1.Text = "BÚSQUEDA DE PRODUCTOS";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.rbRnc);
-            this.panel2.Controls.Add(this.rbNombre);
+            this.panel2.Controls.Add(this.rbCodigo);
+            this.panel2.Controls.Add(this.rbReferencia);
+            this.panel2.Controls.Add(this.rbDescripcion);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtBusqueda);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -191,29 +193,41 @@
             this.panel2.Size = new System.Drawing.Size(1024, 67);
             this.panel2.TabIndex = 2;
             // 
-            // rbRnc
+            // rbCodigo
             // 
-            this.rbRnc.AutoSize = true;
-            this.rbRnc.Location = new System.Drawing.Point(199, 37);
-            this.rbRnc.Name = "rbRnc";
-            this.rbRnc.Size = new System.Drawing.Size(58, 23);
-            this.rbRnc.TabIndex = 3;
-            this.rbRnc.TabStop = true;
-            this.rbRnc.Text = "RNC";
-            this.rbRnc.UseVisualStyleBackColor = true;
-            this.rbRnc.CheckedChanged += new System.EventHandler(this.rbRnc_CheckedChanged);
+            this.rbCodigo.AutoSize = true;
+            this.rbCodigo.Location = new System.Drawing.Point(365, 36);
+            this.rbCodigo.Name = "rbCodigo";
+            this.rbCodigo.Size = new System.Drawing.Size(89, 23);
+            this.rbCodigo.TabIndex = 4;
+            this.rbCodigo.TabStop = true;
+            this.rbCodigo.Text = "CÓDIGO";
+            this.rbCodigo.UseVisualStyleBackColor = true;
+            this.rbCodigo.CheckedChanged += new System.EventHandler(this.rbCodigo_CheckedChanged);
             // 
-            // rbNombre
+            // rbReferencia
             // 
-            this.rbNombre.AutoSize = true;
-            this.rbNombre.Location = new System.Drawing.Point(103, 37);
-            this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(90, 23);
-            this.rbNombre.TabIndex = 2;
-            this.rbNombre.TabStop = true;
-            this.rbNombre.Text = "NOMBRE";
-            this.rbNombre.UseVisualStyleBackColor = true;
-            this.rbNombre.CheckedChanged += new System.EventHandler(this.rbNombre_CheckedChanged);
+            this.rbReferencia.AutoSize = true;
+            this.rbReferencia.Location = new System.Drawing.Point(239, 37);
+            this.rbReferencia.Name = "rbReferencia";
+            this.rbReferencia.Size = new System.Drawing.Size(120, 23);
+            this.rbReferencia.TabIndex = 3;
+            this.rbReferencia.TabStop = true;
+            this.rbReferencia.Text = "REFERENCIA";
+            this.rbReferencia.UseVisualStyleBackColor = true;
+            this.rbReferencia.CheckedChanged += new System.EventHandler(this.rbReferencia_CheckedChanged);
+            // 
+            // rbDescripcion
+            // 
+            this.rbDescripcion.AutoSize = true;
+            this.rbDescripcion.Location = new System.Drawing.Point(103, 37);
+            this.rbDescripcion.Name = "rbDescripcion";
+            this.rbDescripcion.Size = new System.Drawing.Size(130, 23);
+            this.rbDescripcion.TabIndex = 2;
+            this.rbDescripcion.TabStop = true;
+            this.rbDescripcion.Text = "DESCRIPCIÓN";
+            this.rbDescripcion.UseVisualStyleBackColor = true;
+            this.rbDescripcion.CheckedChanged += new System.EventHandler(this.rbDescripcion_CheckedChanged);
             // 
             // label3
             // 
@@ -223,15 +237,6 @@
             this.label3.Size = new System.Drawing.Size(98, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "BÚSQUEDA:";
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Location = new System.Drawing.Point(103, 6);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(430, 27);
-            this.txtBusqueda.TabIndex = 0;
-            this.txtBusqueda.Validar = false;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // panel4
             // 
@@ -321,12 +326,21 @@
             this.panel3.Size = new System.Drawing.Size(1024, 54);
             this.panel3.TabIndex = 3;
             // 
-            // frmcProveedor
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(103, 6);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(430, 27);
+            this.txtBusqueda.TabIndex = 0;
+            this.txtBusqueda.Validar = false;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // frmcProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 501);
-            this.Controls.Add(this.dtgProveedor);
+            this.Controls.Add(this.dtgProducto);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -337,10 +351,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "frmcProveedor";
+            this.Name = "frmcProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Load += new System.EventHandler(this.frmcProveedor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).EndInit();
+            this.Load += new System.EventHandler(this.frmcProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -352,13 +366,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dtgProveedor;
+        private System.Windows.Forms.DataGridView dtgProducto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton rbRnc;
-        private System.Windows.Forms.RadioButton rbNombre;
+        private System.Windows.Forms.RadioButton rbReferencia;
+        private System.Windows.Forms.RadioButton rbDescripcion;
         private System.Windows.Forms.Label label3;
         private Controles.textbox txtBusqueda;
         private System.Windows.Forms.Panel panel4;
@@ -366,13 +380,14 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnElegir;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewButtonColumn editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rnc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn referencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn existencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reorden;
+        private System.Windows.Forms.RadioButton rbCodigo;
     }
 }

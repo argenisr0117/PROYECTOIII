@@ -136,7 +136,7 @@ namespace ProyectoIII.Consultas
                     e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
                     DataGridViewButtonCell celBoton = this.dtgProveedor.Rows[e.RowIndex].Cells["editar"] as DataGridViewButtonCell;
-                    Icon icoEditar = new Icon(Environment.CurrentDirectory + @"\Recursos\" + @"edit (2).ico");
+                    Icon icoEditar = new Icon(Environment.CurrentDirectory + @"\Recursos\" + @"edit1.ico");
                     e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 10, e.CellBounds.Top + 3);
                     this.dtgProveedor.Rows[e.RowIndex].Height = icoEditar.Height + 5;
                     this.dtgProveedor.Columns[e.ColumnIndex].Width = icoEditar.Width + 20;
@@ -159,6 +159,21 @@ namespace ProyectoIII.Consultas
                 Mantenimientos.frmProveedor obj = new Mantenimientos.frmProveedor();
                 obj.ShowDialog();
                 LlenarGridProveedor();
+            }
+        }
+
+        private void btnElegir_Click(object sender, EventArgs e)
+        {
+            if (dtgProveedor.SelectedRows.Count>0)
+            {
+                Program.Codigo = Convert.ToInt32(dtgProveedor.CurrentRow.Cells[1].Value);
+                Program.Proveedor = dtgProveedor.CurrentRow.Cells[2].Value.ToString();
+                this.Close();
+            }
+            else
+            {
+                MessageBoxEx.Show("Debe seleccionar un registro", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
         }
     }

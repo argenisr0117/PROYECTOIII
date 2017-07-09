@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIII.Mantenimientos
 {
-    partial class frmEmpleado
+    partial class frmCliente
     {
         /// <summary>
         /// Required designer variable.

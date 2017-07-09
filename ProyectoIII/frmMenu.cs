@@ -119,5 +119,11 @@ namespace ProyectoIII
             Consultas.frmcProveedor obj = new Consultas.frmcProveedor();
             obj.ShowDialog();
         }
+
+        private void pRODUCTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           Consultas.frmcProducto obj = new Consultas.frmcProducto();
+            obj.ShowDialog();
+        }
     }
 }

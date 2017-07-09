@@ -182,6 +182,7 @@
             // 
             this.pRODUCTOToolStripMenuItem.Name = "pRODUCTOToolStripMenuItem";
             resources.ApplyResources(this.pRODUCTOToolStripMenuItem, "pRODUCTOToolStripMenuItem");
+            this.pRODUCTOToolStripMenuItem.Click += new System.EventHandler(this.pRODUCTOToolStripMenuItem_Click);
             // 
             // pROVEEDORToolStripMenuItem
             // 

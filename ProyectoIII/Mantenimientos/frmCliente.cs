@@ -13,12 +13,12 @@ using Entidades;
 
 namespace ProyectoIII.Mantenimientos
 {
-    public partial class frmProveedor : MetroForm
+    public partial class frmCliente : MetroForm
     {
         clsDirecciones D = new clsDirecciones();
         clsTipos T = new clsTipos();
         clsProveedor P = new clsProveedor();
-        public frmProveedor()
+        public frmCliente()
         {
             InitializeComponent();
         }

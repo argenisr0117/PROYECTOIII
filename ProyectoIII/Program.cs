@@ -11,6 +11,8 @@ namespace ProyectoIII
         public static int Evento;
         public static int Editar;
         public static int Codigo;
+        public static int Id;
+        public static string Proveedor;
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

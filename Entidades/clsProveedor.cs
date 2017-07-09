@@ -195,6 +195,61 @@ namespace Entidades
             return mensaje;
         }
 
+        public string Actualizar()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idtercero", Midtercero));
+            lst.Add(new clsParametros("@nombre", Mnombre));
+            lst.Add(new clsParametros("@idtipot", Midtipot));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actualizar_proveedor", ref lst);
+            mensaje = lst[3].Valor.ToString();
+            return mensaje;
+        }
+        public string ActualizarI()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@ididentificacion", Mididentificacion));
+            lst.Add(new clsParametros("@idtercero", Midtercero));
+            lst.Add(new clsParametros("@identificacion", Midentificacion));
+            lst.Add(new clsParametros("@idtipoi", Midtipoi));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actualizar_identificacion", ref lst);
+            mensaje = lst[4].Valor.ToString();
+            return mensaje;
+        }
+
+        public string ActualizarC()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idcontacto", Midcontacto));
+            lst.Add(new clsParametros("@idtercero", Midtercero));
+            lst.Add(new clsParametros("@contacto", Mcontacto));
+            lst.Add(new clsParametros("@idtipoc", Midtipoc));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actualizar_contacto", ref lst);
+            mensaje = lst[4].Valor.ToString();
+            return mensaje;
+        }
+
+        public string ActualizarD()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@iddireccion", Middireccion));
+            lst.Add(new clsParametros("@idtercero", Midtercero));
+            lst.Add(new clsParametros("@descripcion", Mdireccion));
+            lst.Add(new clsParametros("@idbarrio", Midbarrio));
+            lst.Add(new clsParametros("@idciudad", Midciudad));
+            lst.Add(new clsParametros("@idregion", Midregion));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actualizar_direccion", ref lst);
+            mensaje = lst[6].Valor.ToString();
+            return mensaje;
+        }
         public DataTable Listar()
         {
             DataTable dt = new DataTable();

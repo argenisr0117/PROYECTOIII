@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\frmcProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmcProducto.Designer.cs">
+      <DependentUpon>frmcProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmcProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,24 @@
     <Compile Include="Mantenimientos\frmCargo.Designer.cs">
       <DependentUpon>frmCargo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEmpleado.Designer.cs">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,15 +168,12 @@
     <Compile Include="Mantenimientos\frmDireccion.Designer.cs">
       <DependentUpon>frmDireccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\frmEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mantenimientos\frmEmpleado.Designer.cs">
-      <DependentUpon>frmEmpleado.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="Consultas\frmcProducto.resx">
+      <DependentUpon>frmcProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcProveedor.resx">
       <DependentUpon>frmcProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +198,15 @@
     <EmbeddedResource Include="Mantenimientos\frmCargo.resx">
       <DependentUpon>frmCargo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmEmpleado.resx">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,9 +224,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmDireccion.resx">
       <DependentUpon>frmDireccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\frmEmpleado.resx">
-      <DependentUpon>frmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -271,6 +298,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\page_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\search %282%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
