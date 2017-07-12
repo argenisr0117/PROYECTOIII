@@ -13,46 +13,38 @@ using Entidades;
 
 namespace ProyectoIII.Mantenimientos
 {
-    public partial class frmTipos : MetroForm
+    public partial class frmEmpresa : MetroForm
     {
-        clsTipos T = new clsTipos();
-        public frmTipos()
+        clsEmpresa C = new clsEmpresa();
+        public frmEmpresa()
         {
             InitializeComponent();
         }
-        private void LlenarComboTipos()
-        {
-            try
-            {
-                //T.Valor = 0;
-                cbTipo.DataSource = T.Listar(true);
-                cbTipo.DisplayMember = "DESCRIPCION";
-                cbTipo.ValueMember = "ID_DES_TIPO";
-            }
-            catch (Exception ex)
-            {
-                MessageBoxEx.Show(ex.Message);
-            }
-        }
-
-        private void LlenarGridTipos()
+        private void LlenarGridCategoria()
         {
             DataTable dt = new DataTable();
-            T.Iddestipo = 0;
-            dt = T.ListarT(true);
+            if(rbActivo.Checked)
+            {
+                dt = C.Listar(true);
+
+            }
+            else if (rbInactivo.Checked)
+            {
+                dt = C.Listar(false);
+            }
             try
             {
-                dtgTipos.Rows.Clear();
+                dtgEmpresa.Rows.Clear();
                 for (int x = 0; x < dt.Rows.Count; x++)
                 {
-                    dtgTipos.Rows.Add(dt.Rows[x][0]);
-                    dtgTipos.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
-                    dtgTipos.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
-                    dtgTipos.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
-                    dtgTipos.Rows[x].Cells[3].Value = dt.Rows[x][3].ToString();
+                    dtgEmpresa.Rows.Add(dt.Rows[x][0]);
+                    dtgEmpresa.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
+                    dtgEmpresa.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
+                    dtgEmpresa.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
+                    dtgEmpresa.Rows[x].Cells[3].Value = dt.Rows[x][3].ToString();
 
                 }
-                dtgTipos.ClearSelection();
+                dtgEmpresa.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -62,7 +54,8 @@ namespace ProyectoIII.Mantenimientos
         private void Limpiar()
         {
             txtDescripcion.Clear();
-            cbTipo.SelectedValue = 0;
+            txtRnc.Clear();
+            txtDescripcion.Focus();
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -85,10 +78,10 @@ namespace ProyectoIII.Mantenimientos
             {
                 if (Program.Evento == 0)
                 {
-                    T.Id = 0;
-                    T.Descripcion = txtDescripcion.Text;
-                    T.Iddestipo = Convert.ToInt32(cbTipo.SelectedValue);
-                    mensaje = T.RegistrarT();
+                    C.Id = 0;
+                    C.Descripcion = txtDescripcion.Text;
+                    C.Rnc = txtRnc.Text;
+                    mensaje = C.Registrar();
                     if (mensaje == "1")
                     {
                         MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -101,10 +94,10 @@ namespace ProyectoIII.Mantenimientos
                 }
                 else
                 {
-                    T.Descripcion = txtDescripcion.Text;
-                    T.Id = Convert.ToInt32(txtCodigo.Text);
-                    T.Iddestipo = Convert.ToInt32(cbTipo.SelectedValue);
-                    mensaje = T.RegistrarT();
+                    C.Descripcion = txtDescripcion.Text;
+                    C.Id = Convert.ToInt32(txtCodigo.Text);
+                    C.Rnc = txtRnc.Text;
+                    mensaje = C.Registrar();
                     if (mensaje == "2")
                     {
                         MessageBoxEx.Show("Actualizado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -116,7 +109,7 @@ namespace ProyectoIII.Mantenimientos
                         //Limpiar();
                     }
                 }
-                LlenarGridTipos();
+                LlenarGridCategoria();
                 Program.Evento = 0;
                 //Limpiar();
             }
@@ -129,12 +122,12 @@ namespace ProyectoIII.Mantenimientos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dtgTipos.SelectedRows.Count > 0)
+            if (dtgEmpresa.SelectedRows.Count > 0)
             {
 
-                txtCodigo.Text = dtgTipos.CurrentRow.Cells[0].Value.ToString();
-                txtDescripcion.Text = dtgTipos.CurrentRow.Cells[1].Value.ToString();
-                cbTipo.Text = dtgTipos.CurrentRow.Cells[2].Value.ToString();
+                txtCodigo.Text = dtgEmpresa.CurrentRow.Cells[0].Value.ToString();
+                txtDescripcion.Text = dtgEmpresa.CurrentRow.Cells[1].Value.ToString();
+                txtRnc.Text = dtgEmpresa.CurrentRow.Cells[2].Value.ToString();
                 Program.Evento = 1;
             }
             else
@@ -148,16 +141,14 @@ namespace ProyectoIII.Mantenimientos
             string mensaje = "";
             try
             {
-                if (dtgTipos.SelectedRows.Count > 0)
+                if (dtgEmpresa.SelectedRows.Count > 0)
                 {
-                    T.Id = Convert.ToInt32(dtgTipos.CurrentRow.Cells[0].Value);
-                    T.Estado = Convert.ToBoolean(dtgTipos.CurrentRow.Cells[3].Value);
-                    T.Campo = "id_tipo";
-                    T.Tabla = "Tipos";
-                    mensaje = T.Activar();
+                    C.Id = Convert.ToInt32(dtgEmpresa.CurrentRow.Cells[0].Value);
+                    C.Estado = Convert.ToBoolean(dtgEmpresa.CurrentRow.Cells[3].Value);
+                    mensaje = C.Activar();
                     if (mensaje == "0")
                     {
-                        MessageBoxEx.Show("Cancelado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBoxEx.Show("Desactivado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -173,14 +164,24 @@ namespace ProyectoIII.Mantenimientos
             {
                 MessageBoxEx.Show("Error:" + ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LlenarGridTipos();
+            LlenarGridCategoria();
         }
 
-        private void frmTipos_Load(object sender, EventArgs e)
+        private void frmCategoria_Load(object sender, EventArgs e)
         {
+            LlenarGridCategoria();
+            rbActivo.Checked = true;
             Program.Evento = 0;
-            LlenarComboTipos();
-            LlenarGridTipos();
+        }
+
+        private void rbActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarGridCategoria();
+        }
+
+        private void rbInactivo_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarGridCategoria();
         }
     }
 }

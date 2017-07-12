@@ -46,6 +46,7 @@
             this.pROVEEDORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLIENTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eMPLEADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sUCURSALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gENERALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dIRECCIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pAISToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +64,9 @@
             this.fACTURAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aSIGNARALMACENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dEPARTAMENTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMPRESAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMPRESAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sUCURSALToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRANSACCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,7 +170,8 @@
             // 
             this.mantToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.eNTIDADESToolStripMenuItem,
-            this.gENERALESToolStripMenuItem});
+            this.gENERALESToolStripMenuItem,
+            this.eMPRESAToolStripMenuItem});
             this.mantToolStripMenuItem.Image = global::ProyectoIII.Properties.Resources.app_preferences;
             resources.ApplyResources(this.mantToolStripMenuItem, "mantToolStripMenuItem");
             this.mantToolStripMenuItem.Name = "mantToolStripMenuItem";
@@ -178,7 +183,8 @@
             this.pRODUCTOToolStripMenuItem,
             this.pROVEEDORToolStripMenuItem,
             this.cLIENTEToolStripMenuItem,
-            this.eMPLEADOToolStripMenuItem});
+            this.eMPLEADOToolStripMenuItem,
+            this.sUCURSALToolStripMenuItem});
             this.eNTIDADESToolStripMenuItem.Name = "eNTIDADESToolStripMenuItem";
             resources.ApplyResources(this.eNTIDADESToolStripMenuItem, "eNTIDADESToolStripMenuItem");
             // 
@@ -203,6 +209,11 @@
             // 
             this.eMPLEADOToolStripMenuItem.Name = "eMPLEADOToolStripMenuItem";
             resources.ApplyResources(this.eMPLEADOToolStripMenuItem, "eMPLEADOToolStripMenuItem");
+            // 
+            // sUCURSALToolStripMenuItem
+            // 
+            this.sUCURSALToolStripMenuItem.Name = "sUCURSALToolStripMenuItem";
+            resources.ApplyResources(this.sUCURSALToolStripMenuItem, "sUCURSALToolStripMenuItem");
             // 
             // gENERALESToolStripMenuItem
             // 
@@ -321,6 +332,26 @@
             this.dEPARTAMENTOToolStripMenuItem.Name = "dEPARTAMENTOToolStripMenuItem";
             resources.ApplyResources(this.dEPARTAMENTOToolStripMenuItem, "dEPARTAMENTOToolStripMenuItem");
             this.dEPARTAMENTOToolStripMenuItem.Click += new System.EventHandler(this.dEPARTAMENTOToolStripMenuItem_Click);
+            // 
+            // eMPRESAToolStripMenuItem
+            // 
+            this.eMPRESAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eMPRESAToolStripMenuItem1,
+            this.sUCURSALToolStripMenuItem1});
+            this.eMPRESAToolStripMenuItem.Name = "eMPRESAToolStripMenuItem";
+            resources.ApplyResources(this.eMPRESAToolStripMenuItem, "eMPRESAToolStripMenuItem");
+            // 
+            // eMPRESAToolStripMenuItem1
+            // 
+            this.eMPRESAToolStripMenuItem1.Name = "eMPRESAToolStripMenuItem1";
+            resources.ApplyResources(this.eMPRESAToolStripMenuItem1, "eMPRESAToolStripMenuItem1");
+            this.eMPRESAToolStripMenuItem1.Click += new System.EventHandler(this.eMPRESAToolStripMenuItem1_Click);
+            // 
+            // sUCURSALToolStripMenuItem1
+            // 
+            this.sUCURSALToolStripMenuItem1.Name = "sUCURSALToolStripMenuItem1";
+            resources.ApplyResources(this.sUCURSALToolStripMenuItem1, "sUCURSALToolStripMenuItem1");
+            this.sUCURSALToolStripMenuItem1.Click += new System.EventHandler(this.sUCURSALToolStripMenuItem1_Click);
             // 
             // procesosToolStripMenuItem
             // 
@@ -464,5 +495,9 @@
         private System.Windows.Forms.ToolStripMenuItem aSIGNARALMACENToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dEPARTAMENTOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uTILIDADESToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sUCURSALToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eMPRESAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eMPRESAToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sUCURSALToolStripMenuItem1;
     }
 }

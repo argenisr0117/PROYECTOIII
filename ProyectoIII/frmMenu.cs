@@ -137,5 +137,17 @@ namespace ProyectoIII
             Mantenimientos.frmDepartamento obj = new Mantenimientos.frmDepartamento();
             obj.ShowDialog();
         }
+
+        private void eMPRESAToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmEmpresa obj = new Mantenimientos.frmEmpresa();
+            obj.ShowDialog();
+        }
+
+        private void sUCURSALToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmSucursal obj = new Mantenimientos.frmSucursal();
+            obj.ShowDialog();
+        }
     }
 }

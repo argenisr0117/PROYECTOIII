@@ -102,6 +102,18 @@
     <Compile Include="Mantenimientos\frmAlmacen.Designer.cs">
       <DependentUpon>frmAlmacen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\frmSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmSucursal.Designer.cs">
+      <DependentUpon>frmSucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEmpresa.Designer.cs">
+      <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmDepartamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +221,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmAlmacen.resx">
       <DependentUpon>frmAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmSucursal.resx">
+      <DependentUpon>frmSucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmEmpresa.resx">
+      <DependentUpon>frmEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmDepartamento.resx">
       <DependentUpon>frmDepartamento.cs</DependentUpon>
