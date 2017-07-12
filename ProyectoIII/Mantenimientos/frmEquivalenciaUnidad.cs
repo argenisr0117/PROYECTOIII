@@ -16,27 +16,53 @@ namespace ProyectoIII.Mantenimientos
     public partial class frmEquivalenciaUnidad : MetroForm
     {
         clsUnidad U = new clsUnidad();
+        clsProducto P = new clsProducto();
         public frmEquivalenciaUnidad()
         {
             InitializeComponent();
         }
-        private void LlenarGridUnidad()
+        private void LlenarComboUnidad()
         {
-            DataTable dt = new DataTable();
-            dt = U.Listar(true);
             try
             {
-                dtgUnidad.Rows.Clear();
+                cbUnidad.DataSource = U.Listar(true);
+                cbUnidad.DisplayMember = "DESCRIPCION";
+                cbUnidad.ValueMember = "ID_UNIDAD";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+        private void LlenarGrid()
+        {
+            DataTable dt = new DataTable();
+            if (rbActivo.Checked)
+            {
+                P.Estado = true;
+            }
+            else
+            {
+                P.Estado = false;
+            }
+            dt = P.ListadoEquivalenciaP();
+            try
+            {
+                dtgEquivalencia.Rows.Clear();
                 for (int x = 0; x < dt.Rows.Count; x++)
                 {
-                    dtgUnidad.Rows.Add(dt.Rows[x][0]);
-                    dtgUnidad.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
-                    dtgUnidad.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
-                    dtgUnidad.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
-                    dtgUnidad.Rows[x].Cells[3].Value = dt.Rows[x][3].ToString();
+                    dtgEquivalencia.Rows.Add(dt.Rows[x][0]);
+                    dtgEquivalencia.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
+                    dtgEquivalencia.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
+                    dtgEquivalencia.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
+                    dtgEquivalencia.Rows[x].Cells[3].Value = dt.Rows[x][3].ToString();
+                    dtgEquivalencia.Rows[x].Cells[4].Value = dt.Rows[x][4].ToString();
+                    dtgEquivalencia.Rows[x].Cells[5].Value = dt.Rows[x][5].ToString();
+                    dtgEquivalencia.Rows[x].Cells[6].Value = dt.Rows[x][6].ToString();
+                    dtgEquivalencia.Rows[x].Cells[7].Value = dt.Rows[x][7].ToString();
 
                 }
-                dtgUnidad.ClearSelection();
+                dtgEquivalencia.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -45,9 +71,11 @@ namespace ProyectoIII.Mantenimientos
         }
         private void Limpiar()
         {
-            txtDescripcion.Clear();
+            txtUnidadb.Clear();
+            txtEquivalencia.Clear();
+            txtProducto.Clear();
             //txtAbreviacion.Clear();
-            txtDescripcion.Focus();
+            txtUnidadb.Focus();
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -70,10 +98,12 @@ namespace ProyectoIII.Mantenimientos
             {
                 if (Program.Evento == 0)
                 {
-                    U.Id = 0;
-                    U.Descripcion = txtDescripcion.Text;
+                    P.Idproducto = Program.Idproducto;
+                    P.Unidadb = txtUnidadb.Text;
+                    P.Idunidad = Convert.ToInt32(cbUnidad.SelectedValue);
+                    P.Equivalencia = Convert.ToDouble(txtEquivalencia.Text);
                    // U.Abreviacion = txtAbreviacion.Text;
-                    mensaje = U.Registrar();
+                    mensaje = P.RegistrarEp();
                     if (mensaje == "1")
                     {
                         MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -84,13 +114,15 @@ namespace ProyectoIII.Mantenimientos
                         MessageBoxEx.Show("Registro ya existe", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+                else if(Program.Evento==1)
                 {
-                    U.Descripcion = txtDescripcion.Text;
-                    U.Id = Convert.ToInt32(txtCodigo.Text);
-                    //U.Abreviacion = txtAbreviacion.Text;
-                    mensaje = U.Registrar();
-                    if (mensaje == "2")
+                    P.Idproducto = Program.Idproducto;
+                    P.Idequivalencia = Convert.ToInt32(txtCodigo.Text);
+                    P.Unidadb = txtUnidadb.Text;
+                    P.Idunidad = Convert.ToInt32(cbUnidad.SelectedValue);
+                    P.Equivalencia = Convert.ToDouble(txtEquivalencia.Text);
+                    mensaje = P.ActualizarEp();
+                    if (mensaje == "1")
                     {
                         MessageBoxEx.Show("Actualizado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
@@ -101,7 +133,7 @@ namespace ProyectoIII.Mantenimientos
                         //Limpiar();
                     }
                 }
-                LlenarGridUnidad();
+                LlenarGrid();
                 Program.Evento = 0;
                 //Limpiar();
             }
@@ -114,12 +146,15 @@ namespace ProyectoIII.Mantenimientos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dtgUnidad.SelectedRows.Count > 0)
+            if (dtgEquivalencia.SelectedRows.Count > 0)
             {
 
-                txtCodigo.Text = dtgUnidad.CurrentRow.Cells[0].Value.ToString();
-               // txtAbreviacion.Text = dtgUnidad.CurrentRow.Cells[1].Value.ToString();
-                txtDescripcion.Text = dtgUnidad.CurrentRow.Cells[2].Value.ToString();
+                txtCodigo.Text = dtgEquivalencia.CurrentRow.Cells[0].Value.ToString();
+                Program.Idproducto = Convert.ToInt32(dtgEquivalencia.CurrentRow.Cells[1].Value);
+                txtProducto.Text = dtgEquivalencia.CurrentRow.Cells[2].Value.ToString();
+                cbUnidad.Text= dtgEquivalencia.CurrentRow.Cells[5].Value.ToString();
+                txtUnidadb.Text = dtgEquivalencia.CurrentRow.Cells[3].Value.ToString();
+                txtEquivalencia.Text= dtgEquivalencia.CurrentRow.Cells[6].Value.ToString();
                 Program.Evento = 1;
             }
             else
@@ -133,10 +168,10 @@ namespace ProyectoIII.Mantenimientos
             string mensaje = "";
             try
             {
-                if (dtgUnidad.SelectedRows.Count > 0)
+                if (dtgEquivalencia.SelectedRows.Count > 0)
                 {
-                    U.Id = Convert.ToInt32(dtgUnidad.CurrentRow.Cells[0].Value);
-                    U.Estado = Convert.ToBoolean(dtgUnidad.CurrentRow.Cells[3].Value);
+                    U.Id = Convert.ToInt32(dtgEquivalencia.CurrentRow.Cells[0].Value);
+                    U.Estado = Convert.ToBoolean(dtgEquivalencia.CurrentRow.Cells[3].Value);
                     mensaje = U.Activar();
                     if (mensaje == "0")
                     {
@@ -156,13 +191,40 @@ namespace ProyectoIII.Mantenimientos
             {
                 MessageBoxEx.Show("Error:" + ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LlenarGridUnidad();
+            LlenarGrid();
         }
-        private void frmUnidad_Load(object sender, EventArgs e)
-        {
 
-            LlenarGridUnidad();
+        private void btnBuscarP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Consultas.frmcProducto obj = new Consultas.frmcProducto();
+                obj.ShowDialog();
+                txtProducto.Text = Program.Producto;
+                txtUnidadb.Text = Program.Unidad;
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+
+        private void frmEquivalencia_Load(object sender, EventArgs e)
+        {
+            LlenarComboUnidad();
+            //LlenarGridUnidad();
             Program.Evento = 0;
+            rbActivo.Checked = true;
+        }
+
+        private void rbActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarGrid();
+        }
+
+        private void rbInactivo_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarGrid();
         }
     }
 }

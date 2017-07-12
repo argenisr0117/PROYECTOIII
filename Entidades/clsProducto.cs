@@ -12,6 +12,7 @@ namespace Entidades
     {
         private clsManejador M = new clsManejador();
 
+        int Mid;
         int Midproducto;
         string Mdescripcion;
         string Mreferencia;
@@ -32,7 +33,31 @@ namespace Entidades
         string Mvalor1;
         int Mtipo;
         Boolean Mestado;
+        int Midequivalencia;
+        string Munidadb;
+        string Munidad;
+        double Mequivalencia;
 
+        public int Idequivalencia
+        {
+            get { return Midequivalencia; }
+            set { Midequivalencia = value; }
+        }
+        public double Equivalencia
+        {
+            get { return Mequivalencia; }
+            set { Mequivalencia = value; }
+        }
+        public string Unidadb
+        {
+            get { return Munidadb; }
+            set { Munidadb = value; }
+        }
+        public string Unidad
+        {
+            get { return Munidad; }
+            set { Munidad = value; }
+        }
         public string Valor1
         {
             get { return Mvalor1; }
@@ -42,6 +67,11 @@ namespace Entidades
         {
             get { return Midproducto; }
             set { Midproducto = value; }
+        }
+        public int Id
+        {
+            get { return Mid; }
+            set { Mid = value; }
         }
         public int Tipo
         {
@@ -161,13 +191,56 @@ namespace Entidades
             mensaje = lst[11].Valor.ToString();
             return mensaje;
         }
+        public string Actualizar()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@descripcion", Mdescripcion));
+            lst.Add(new clsParametros("@referencia", Mreferencia));
+            lst.Add(new clsParametros("@idcategoria", Midcategoria));
+            lst.Add(new clsParametros("@idmarca", Midmarca));
+            lst.Add(new clsParametros("@idunidad", Midunidad));
+            lst.Add(new clsParametros("@iditbis", Miditbis));
+            lst.Add(new clsParametros("@puntore", Mpuntor));
+            lst.Add(new clsParametros("@puntomax", Mpuntom));
+            lst.Add(new clsParametros("@costoc", Mcostoc));
+            lst.Add(new clsParametros("@costop", Mcostop));
+            lst.Add(new clsParametros("@codigob", Mcodigob));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actualizar_producto", ref lst);
+            mensaje = lst[12].Valor.ToString();
+            return mensaje;
+
+        }
+        public string Activar()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@id", Mid));
+            lst.Add(new clsParametros("@valor", Mestado));
+            lst.Add(new clsParametros("@table", Mtabla));
+            lst.Add(new clsParametros("@campo", Mcampo));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actdes_entidades", ref lst);
+            mensaje = lst[4].Valor.ToString();
+            return mensaje;
+        }
         public string RegistrarP()
         {
             string mensaje = "";
             List<clsParametros> lst = new List<clsParametros>();
             lst.Add(new clsParametros("@idproveedor", Midproveedor));
+            lst.Add(new clsParametros("@idproducto", Midproducto));
             M.EjecutarSP("registrar_producto_proveedor", ref lst);
             return mensaje;
+        }
+        public void EliminarP()
+        {
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@idproveedor", Midproveedor));
+            M.EjecutarSP("eliminar_proveedor_producto", ref lst);
         }
         public DataTable ListarI()
         {
@@ -182,7 +255,62 @@ namespace Entidades
             List<clsParametros> lst = new List<clsParametros>();
             lst.Add(new clsParametros("@valor", Mvalor1));
             lst.Add(new clsParametros("@tipo", Mtipo));
+            lst.Add(new clsParametros("@estado", Mestado));
             return dt = M.Listado("buscar_producto", lst);
+
+        }
+        public DataTable DatosProducto()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@codigo", Midproducto));
+            return dt = M.Listado("obtener_datos_producto", lst);
+
+        }
+        public DataTable DatosProveedores()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@codigo", Midproducto));
+            return dt = M.Listado("obtener_proveedores_producto", lst);
+
+        }
+
+        public string RegistrarEp()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@idunidad", Midunidad));
+            lst.Add(new clsParametros("@unidadb", Munidadb));
+            lst.Add(new clsParametros("@equivalencia", Mequivalencia));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("registrar_equivalencia_producto", ref lst);
+            mensaje = lst[4].Valor.ToString();
+            return mensaje;
+        }
+
+        public string ActualizarEp()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idequivalencia", Midequivalencia));
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@idunidad", Midunidad));
+            lst.Add(new clsParametros("@unidadb", Munidadb));
+            lst.Add(new clsParametros("@equivalencia", Mequivalencia));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actualizar_equivalencia_producto", ref lst);
+            mensaje = lst[5].Valor.ToString();
+            return mensaje;
+        }
+
+        public DataTable ListadoEquivalenciaP()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@estado", Mestado));
+            return dt = M.Listado("listado_equivalencia_producto", lst);
 
         }
     }

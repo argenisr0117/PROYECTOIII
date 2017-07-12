@@ -90,6 +90,24 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\frmAsignarAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmAsignarAlmacen.Designer.cs">
+      <DependentUpon>frmAsignarAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmAlmacen.Designer.cs">
+      <DependentUpon>frmAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmDepartamento.Designer.cs">
+      <DependentUpon>frmDepartamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmDesTipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +203,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmAsignarAlmacen.resx">
+      <DependentUpon>frmAsignarAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmAlmacen.resx">
+      <DependentUpon>frmAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmDepartamento.resx">
+      <DependentUpon>frmDepartamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmDesTipo.resx">
       <DependentUpon>frmDesTipo.cs</DependentUpon>
@@ -301,6 +328,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\search %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\refresh %283%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\preferences.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

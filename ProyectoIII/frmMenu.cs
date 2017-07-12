@@ -125,5 +125,17 @@ namespace ProyectoIII
            Consultas.frmcProducto obj = new Consultas.frmcProducto();
             obj.ShowDialog();
         }
+
+        private void eQUIVALENCIAUNIDADToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmEquivalenciaUnidad obj = new Mantenimientos.frmEquivalenciaUnidad();
+            obj.ShowDialog();
+        }
+
+        private void dEPARTAMENTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmDepartamento obj = new Mantenimientos.frmDepartamento();
+            obj.ShowDialog();
+        }
     }
 }

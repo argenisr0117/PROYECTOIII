@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIII.Mantenimientos
 {
-    partial class frmEquivalenciaUnidad
+    partial class frmDepartamento
     {
         /// <summary>
         /// Required designer variable.
@@ -29,39 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEquivalenciaUnidad));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDepartamento));
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.dtgEquivalencia = new System.Windows.Forms.DataGridView();
+            this.dtgDepartamento = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abreviacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idunidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equivalencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.txtDescripcion = new ProyectoIII.Controles.textbox(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtUnidadb = new ProyectoIII.Controles.textbox(this.components);
-            this.cbUnidad = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtEquivalencia = new ProyectoIII.Controles.textboxn(this.components);
-            this.txtProducto = new ProyectoIII.Controles.textbox(this.components);
-            this.btnBuscarP = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.rbInactivo = new System.Windows.Forms.RadioButton();
             this.rbActivo = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgEquivalencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDepartamento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -83,12 +71,12 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.Image = global::ProyectoIII.Properties.Resources.refresh__3_;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCancelar.Location = new System.Drawing.Point(602, 290);
+            this.btnCancelar.Location = new System.Drawing.Point(422, 239);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(110, 46);
             this.btnCancelar.TabIndex = 27;
-            this.btnCancelar.Text = "DESCATIVAR/ ACTIVAR";
+            this.btnCancelar.Text = "DESACTIVAR/ ACTIVAR";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -104,7 +92,7 @@
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
             this.btnEditar.Image = global::ProyectoIII.Properties.Resources.edit__2_;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.Location = new System.Drawing.Point(602, 239);
+            this.btnEditar.Location = new System.Drawing.Point(422, 188);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(110, 46);
@@ -114,28 +102,23 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // dtgEquivalencia
+            // dtgDepartamento
             // 
-            this.dtgEquivalencia.AllowUserToAddRows = false;
-            this.dtgEquivalencia.AllowUserToDeleteRows = false;
-            this.dtgEquivalencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgEquivalencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgDepartamento.AllowUserToAddRows = false;
+            this.dtgDepartamento.AllowUserToDeleteRows = false;
+            this.dtgDepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDepartamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
-            this.idproducto,
-            this.abreviacion,
             this.descripcion,
-            this.idunidad,
-            this.unidad,
-            this.equivalencia,
             this.estado});
-            this.dtgEquivalencia.Location = new System.Drawing.Point(12, 188);
-            this.dtgEquivalencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtgEquivalencia.MultiSelect = false;
-            this.dtgEquivalencia.Name = "dtgEquivalencia";
-            this.dtgEquivalencia.ReadOnly = true;
-            this.dtgEquivalencia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgEquivalencia.Size = new System.Drawing.Size(584, 199);
-            this.dtgEquivalencia.TabIndex = 25;
+            this.dtgDepartamento.Location = new System.Drawing.Point(12, 137);
+            this.dtgDepartamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgDepartamento.MultiSelect = false;
+            this.dtgDepartamento.Name = "dtgDepartamento";
+            this.dtgDepartamento.ReadOnly = true;
+            this.dtgDepartamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgDepartamento.Size = new System.Drawing.Size(406, 199);
+            this.dtgDepartamento.TabIndex = 25;
             // 
             // codigo
             // 
@@ -145,47 +128,13 @@
             this.codigo.ReadOnly = true;
             this.codigo.Width = 96;
             // 
-            // idproducto
-            // 
-            this.idproducto.HeaderText = "idproducto";
-            this.idproducto.Name = "idproducto";
-            this.idproducto.ReadOnly = true;
-            this.idproducto.Visible = false;
-            // 
-            // abreviacion
-            // 
-            this.abreviacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.abreviacion.HeaderText = "PRODUCTO";
-            this.abreviacion.Name = "abreviacion";
-            this.abreviacion.ReadOnly = true;
-            this.abreviacion.Width = 119;
-            // 
             // descripcion
             // 
             this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.descripcion.HeaderText = "UNIDAD BASE";
+            this.descripcion.HeaderText = "DESCRIPCIÓN";
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 138;
-            // 
-            // idunidad
-            // 
-            this.idunidad.HeaderText = "idunidad";
-            this.idunidad.Name = "idunidad";
-            this.idunidad.ReadOnly = true;
-            this.idunidad.Visible = false;
-            // 
-            // unidad
-            // 
-            this.unidad.HeaderText = "UNIDAD";
-            this.unidad.Name = "unidad";
-            this.unidad.ReadOnly = true;
-            // 
-            // equivalencia
-            // 
-            this.equivalencia.HeaderText = "EQUIV.";
-            this.equivalencia.Name = "equivalencia";
-            this.equivalencia.ReadOnly = true;
+            this.descripcion.Width = 137;
             // 
             // estado
             // 
@@ -206,7 +155,7 @@
             this.btnRegistrar.ForeColor = System.Drawing.Color.Black;
             this.btnRegistrar.Image = global::ProyectoIII.Properties.Resources.save__2_;
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistrar.Location = new System.Drawing.Point(602, 188);
+            this.btnRegistrar.Location = new System.Drawing.Point(422, 137);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(110, 46);
@@ -216,14 +165,23 @@
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(142, 79);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(244, 27);
+            this.txtDescripcion.TabIndex = 20;
+            this.txtDescripcion.Validar = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(433, 65);
+            this.label3.Location = new System.Drawing.Point(6, 81);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 19);
+            this.label3.Size = new System.Drawing.Size(118, 19);
             this.label3.TabIndex = 23;
-            this.label3.Text = "UNIDAD BASE:";
+            this.label3.Text = "DESCRIPCIÓN:";
             // 
             // label2
             // 
@@ -232,20 +190,20 @@
             this.label2.ForeColor = System.Drawing.Color.Goldenrod;
             this.label2.Location = new System.Drawing.Point(-5, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(742, 23);
+            this.label2.Size = new System.Drawing.Size(562, 23);
             this.label2.TabIndex = 22;
-            this.label2.Text = "_____________________________________________________________";
+            this.label2.Text = "______________________________________________";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(212, -4);
+            this.label1.Location = new System.Drawing.Point(124, -4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 23);
+            this.label1.Size = new System.Drawing.Size(311, 23);
             this.label1.TabIndex = 21;
-            this.label1.Text = "EQUIVALENCIA DE UNIDADES";
+            this.label1.Text = "REGISTRO DE DEPARTAMENTO";
             // 
             // btnSalir
             // 
@@ -258,7 +216,7 @@
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Image = global::ProyectoIII.Properties.Resources.salir2;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.Location = new System.Drawing.Point(602, 341);
+            this.btnSalir.Location = new System.Drawing.Point(422, 290);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(110, 46);
@@ -272,105 +230,20 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label4
+            // panel5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 19);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "PRODUCTO:";
-            // 
-            // txtUnidadb
-            // 
-            this.txtUnidadb.Enabled = false;
-            this.txtUnidadb.Location = new System.Drawing.Point(552, 62);
-            this.txtUnidadb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUnidadb.Name = "txtUnidadb";
-            this.txtUnidadb.Size = new System.Drawing.Size(160, 27);
-            this.txtUnidadb.TabIndex = 20;
-            this.txtUnidadb.Validar = true;
-            // 
-            // cbUnidad
-            // 
-            this.cbUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUnidad.FormattingEnabled = true;
-            this.cbUnidad.Location = new System.Drawing.Point(143, 103);
-            this.cbUnidad.Name = "cbUnidad";
-            this.cbUnidad.Size = new System.Drawing.Size(274, 27);
-            this.cbUnidad.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 19);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "UNIDAD:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 151);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 19);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "EQUIVALENCIA:";
-            // 
-            // txtEquivalencia
-            // 
-            this.txtEquivalencia.Location = new System.Drawing.Point(143, 148);
-            this.txtEquivalencia.Name = "txtEquivalencia";
-            this.txtEquivalencia.Size = new System.Drawing.Size(122, 27);
-            this.txtEquivalencia.TabIndex = 2;
-            this.txtEquivalencia.Validar = true;
-            this.txtEquivalencia.Valor = ProyectoIII.Controles.textboxn.Tipo.Números;
-            // 
-            // txtProducto
-            // 
-            this.txtProducto.Enabled = false;
-            this.txtProducto.Location = new System.Drawing.Point(143, 59);
-            this.txtProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(238, 27);
-            this.txtProducto.TabIndex = 0;
-            this.txtProducto.Validar = true;
-            // 
-            // btnBuscarP
-            // 
-            this.btnBuscarP.BackColor = System.Drawing.Color.White;
-            this.btnBuscarP.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
-            this.btnBuscarP.FlatAppearance.BorderSize = 3;
-            this.btnBuscarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnBuscarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarP.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscarP.Image = global::ProyectoIII.Properties.Resources.search__2_;
-            this.btnBuscarP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarP.Location = new System.Drawing.Point(387, 59);
-            this.btnBuscarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBuscarP.Name = "btnBuscarP";
-            this.btnBuscarP.Size = new System.Drawing.Size(40, 28);
-            this.btnBuscarP.TabIndex = 41;
-            this.btnBuscarP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarP.UseVisualStyleBackColor = false;
-            this.btnBuscarP.Click += new System.EventHandler(this.btnBuscarP_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.rbInactivo);
-            this.panel1.Controls.Add(this.rbActivo);
-            this.panel1.Location = new System.Drawing.Point(552, 106);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 64);
-            this.panel1.TabIndex = 42;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.rbInactivo);
+            this.panel5.Controls.Add(this.rbActivo);
+            this.panel5.Location = new System.Drawing.Point(422, 74);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(110, 58);
+            this.panel5.TabIndex = 46;
             // 
             // rbInactivo
             // 
             this.rbInactivo.AutoSize = true;
-            this.rbInactivo.Location = new System.Drawing.Point(25, 35);
+            this.rbInactivo.Location = new System.Drawing.Point(3, 31);
             this.rbInactivo.Name = "rbInactivo";
             this.rbInactivo.Size = new System.Drawing.Size(90, 23);
             this.rbInactivo.TabIndex = 1;
@@ -382,7 +255,7 @@
             // rbActivo
             // 
             this.rbActivo.AutoSize = true;
-            this.rbActivo.Location = new System.Drawing.Point(25, 8);
+            this.rbActivo.Location = new System.Drawing.Point(3, 7);
             this.rbActivo.Name = "rbActivo";
             this.rbActivo.Size = new System.Drawing.Size(78, 23);
             this.rbActivo.TabIndex = 0;
@@ -391,26 +264,19 @@
             this.rbActivo.UseVisualStyleBackColor = true;
             this.rbActivo.CheckedChanged += new System.EventHandler(this.rbActivo_CheckedChanged);
             // 
-            // frmEquivalenciaUnidad
+            // frmDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 440);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnBuscarP);
-            this.Controls.Add(this.txtProducto);
-            this.Controls.Add(this.txtEquivalencia);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbUnidad);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(535, 347);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.dtgEquivalencia);
+            this.Controls.Add(this.dtgDepartamento);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.txtUnidadb);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -420,14 +286,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "frmEquivalenciaUnidad";
+            this.Name = "frmDepartamento";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Load += new System.EventHandler(this.frmEquivalencia_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgEquivalencia)).EndInit();
+            this.Load += new System.EventHandler(this.frmCategoria_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDepartamento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,30 +303,18 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.DataGridView dtgEquivalencia;
+        private System.Windows.Forms.DataGridView dtgDepartamento;
         private System.Windows.Forms.Button btnRegistrar;
+        private Controles.textbox txtDescripcion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label label4;
-        private Controles.textboxn txtEquivalencia;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbUnidad;
-        private System.Windows.Forms.Label label5;
-        private Controles.textbox txtUnidadb;
-        private Controles.textbox txtProducto;
-        private System.Windows.Forms.Button btnBuscarP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idproducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abreviacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idunidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equivalencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.RadioButton rbInactivo;
         private System.Windows.Forms.RadioButton rbActivo;
     }

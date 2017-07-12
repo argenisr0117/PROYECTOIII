@@ -24,6 +24,14 @@ namespace ProyectoIII.Consultas
         private void LlenarGridProducto()
         {
             DataTable dt = new DataTable();
+            if (rbActivo.Checked)
+            {
+                P.Estado = true;
+            }
+            else if (rbInactivo.Checked)
+            {
+                P.Estado = false;
+            }
             dt = P.Listar();
             try
             {
@@ -37,6 +45,7 @@ namespace ProyectoIII.Consultas
                     dtgProducto.Rows[x].Cells[4].Value = dt.Rows[x][3].ToString();
                     dtgProducto.Rows[x].Cells[5].Value = dt.Rows[x][4].ToString();
                     dtgProducto.Rows[x].Cells[6].Value = dt.Rows[x][5].ToString();
+                    dtgProducto.Rows[x].Cells[7].Value = dt.Rows[x][6].ToString();
 
                 }
                 dtgProducto.ClearSelection();
@@ -90,7 +99,10 @@ namespace ProyectoIII.Consultas
         {
             if (dtgProducto.SelectedRows.Count>0)
             {
-                Program.Codigo = Convert.ToInt32(dtgProducto.CurrentRow.Cells[1].Value);
+                Program.Idproducto = Convert.ToInt32(dtgProducto.CurrentRow.Cells[1].Value);
+                Program.Producto = dtgProducto.CurrentRow.Cells[2].Value.ToString();
+                Program.Unidad= dtgProducto.CurrentRow.Cells[4].Value.ToString();
+                this.Close();
             }
             else
             {
@@ -104,7 +116,7 @@ namespace ProyectoIII.Consultas
             if (e.ColumnIndex == 0)
             {
                 Program.Editar = 1;
-                Program.Codigo = Convert.ToInt32(dtgProducto.CurrentRow.Cells[1].Value);
+                Program.Idproducto = Convert.ToInt32(dtgProducto.CurrentRow.Cells[1].Value);
                 Mantenimientos.frmProducto obj = new Mantenimientos.frmProducto();
                 obj.ShowDialog();
                 LlenarGridProducto();
@@ -137,6 +149,7 @@ namespace ProyectoIII.Consultas
         private void frmcProducto_Load(object sender, EventArgs e)
         {
             rbDescripcion.Checked = true;
+            rbActivo.Checked = true;
             //txtBusqueda.Focus();
             P.Valor1 = "";
             P.Tipo = 1;
@@ -187,6 +200,49 @@ namespace ProyectoIII.Consultas
             {
                 MessageBoxEx.Show(ex.Message);
             }
+        }
+
+        private void btnActivar_Click(object sender, EventArgs e)
+        {
+            string mensaje = "";
+            try
+            {
+                if (dtgProducto.SelectedRows.Count > 0)
+                {
+                    P.Id = Convert.ToInt32(dtgProducto.CurrentRow.Cells[1].Value);
+                    P.Estado = Convert.ToBoolean(dtgProducto.CurrentRow.Cells[7].Value);
+                    P.Tabla = "Producto";
+                    P.Campo = "id_producto";
+                    mensaje = P.Activar();
+                    if (mensaje == "0")
+                    {
+                        MessageBoxEx.Show("Desactivado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBoxEx.Show("Activado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBoxEx.Show("Seleccione un registro!", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show("Error:" + ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LlenarGridProducto();
+        }
+
+        private void rbActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarGridProducto();
+        }
+
+        private void rbInactivo_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarGridProducto();
         }
     }
 }

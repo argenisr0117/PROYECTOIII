@@ -24,6 +24,7 @@ namespace ProyectoIII.Consultas
         private void frmcProveedor_Load(object sender, EventArgs e)
         {
             rbNombre.Checked = true;
+            rbActivo.Checked = true;
             //txtBusqueda.Focus();
             P.Valor1 = "";
             P.Tipo = 1;
@@ -33,6 +34,14 @@ namespace ProyectoIII.Consultas
         private void LlenarGridProveedor()
         {
             DataTable dt = new DataTable();
+            if (rbActivo.Checked)
+            {
+                P.Estado = true;
+            }
+            else if (rbInactivo.Checked)
+            {
+                P.Estado = false;
+            }
             dt = P.Listar();
             try
             {
@@ -46,6 +55,7 @@ namespace ProyectoIII.Consultas
                     dtgProveedor.Rows[x].Cells[4].Value = dt.Rows[x][3].ToString();
                     dtgProveedor.Rows[x].Cells[5].Value = dt.Rows[x][4].ToString();
                     dtgProveedor.Rows[x].Cells[6].Value = dt.Rows[x][5].ToString();
+                    dtgProveedor.Rows[x].Cells[7].Value = dt.Rows[x][6].ToString();
 
                 }
                 dtgProveedor.ClearSelection();
@@ -175,6 +185,49 @@ namespace ProyectoIII.Consultas
                 MessageBoxEx.Show("Debe seleccionar un registro", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
+        }
+
+        private void btnActivar_Click(object sender, EventArgs e)
+        {
+            string mensaje = "";
+            try
+            {
+                if (dtgProveedor.SelectedRows.Count > 0)
+                {
+                    P.Id = Convert.ToInt32(dtgProveedor.CurrentRow.Cells[1].Value);
+                    P.Estado = Convert.ToBoolean(dtgProveedor.CurrentRow.Cells[7].Value);
+                    P.Tabla = "Tercero";
+                    P.Campo = "id_tercero";
+                    mensaje = P.Activar();
+                    if (mensaje == "0")
+                    {
+                        MessageBoxEx.Show("Desactivado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBoxEx.Show("Activado", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBoxEx.Show("Seleccione un registro!", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show("Error:" + ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LlenarGridProveedor();
+        }
+
+        private void rbActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarGridProveedor();
+        }
+
+        private void rbInactivo_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarGridProveedor();
         }
     }
 }

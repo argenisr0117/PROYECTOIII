@@ -346,31 +346,31 @@
     <value>Tahoma, 9.75pt</value>
   </data>
   <data name="pRODUCTOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>147, 22</value>
   </data>
   <data name="pRODUCTOToolStripMenuItem.Text" xml:space="preserve">
     <value>PRODUCTO</value>
   </data>
   <data name="pROVEEDORToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>147, 22</value>
   </data>
   <data name="pROVEEDORToolStripMenuItem.Text" xml:space="preserve">
     <value>PROVEEDOR</value>
   </data>
   <data name="cLIENTEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>147, 22</value>
   </data>
   <data name="cLIENTEToolStripMenuItem.Text" xml:space="preserve">
     <value>CLIENTE</value>
   </data>
   <data name="eMPLEADOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>147, 22</value>
   </data>
   <data name="eMPLEADOToolStripMenuItem.Text" xml:space="preserve">
     <value>EMPLEADO</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Text" xml:space="preserve">
     <value>ENTIDADES</value>
@@ -459,8 +459,20 @@
   <data name="tIPOSToolStripMenuItem.Text" xml:space="preserve">
     <value>TIPOS</value>
   </data>
+  <data name="aSIGNARALMACENToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="aSIGNARALMACENToolStripMenuItem.Text" xml:space="preserve">
+    <value>ASIGNAR ALMACEN</value>
+  </data>
+  <data name="dEPARTAMENTOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="dEPARTAMENTOToolStripMenuItem.Text" xml:space="preserve">
+    <value>DEPARTAMENTO</value>
+  </data>
   <data name="gENERALESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="gENERALESToolStripMenuItem.Text" xml:space="preserve">
     <value>GENERALES</value>
@@ -547,6 +559,18 @@
     <value>CONSULTAS/REPORTES</value>
   </data>
   <data name="cONSULTASToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="uTILIDADESToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="uTILIDADESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 68</value>
+  </data>
+  <data name="uTILIDADESToolStripMenuItem.Text" xml:space="preserve">
+    <value>UTILIDADES</value>
+  </data>
+  <data name="uTILIDADESToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageAboveText</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
@@ -789,6 +813,9 @@
         /j/SDzVTgM4CvgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
@@ -927,6 +954,18 @@
   <data name="&gt;&gt;fACTURAToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;aSIGNARALMACENToolStripMenuItem.Name" xml:space="preserve">
+    <value>aSIGNARALMACENToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aSIGNARALMACENToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dEPARTAMENTOToolStripMenuItem.Name" xml:space="preserve">
+    <value>dEPARTAMENTOToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;dEPARTAMENTOToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;procesosToolStripMenuItem.Name" xml:space="preserve">
     <value>procesosToolStripMenuItem</value>
   </data>
@@ -985,6 +1024,12 @@
     <value>cXCToolStripMenuItem1</value>
   </data>
   <data name="&gt;&gt;cXCToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uTILIDADESToolStripMenuItem.Name" xml:space="preserve">
+    <value>uTILIDADESToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;uTILIDADESToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

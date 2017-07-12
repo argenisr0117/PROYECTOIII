@@ -12,7 +12,13 @@ namespace ProyectoIII
         public static int Editar;
         public static int Codigo;
         public static int Id;
+        public static int Idproducto;
+        public static int Idunidad;
         public static string Proveedor;
+        public static string Producto;
+        public static string Unidad;
+
+
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

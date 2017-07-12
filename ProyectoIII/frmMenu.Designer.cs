@@ -61,6 +61,8 @@
             this.tIPOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONTACTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fACTURAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aSIGNARALMACENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dEPARTAMENTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRANSACCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,6 +73,7 @@
             this.iNVENTARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cXCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.uTILIDADESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -155,7 +158,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mantToolStripMenuItem,
             this.procesosToolStripMenuItem,
-            this.cONSULTASToolStripMenuItem});
+            this.cONSULTASToolStripMenuItem,
+            this.uTILIDADESToolStripMenuItem});
             this.menuStrip1.Name = "menuStrip1";
             // 
             // mantToolStripMenuItem
@@ -210,7 +214,9 @@
             this.eQUIVALENCIAUNIDADToolStripMenuItem,
             this.mARCAToolStripMenuItem,
             this.cARGOToolStripMenuItem,
-            this.tIPOSToolStripMenuItem});
+            this.tIPOSToolStripMenuItem,
+            this.aSIGNARALMACENToolStripMenuItem,
+            this.dEPARTAMENTOToolStripMenuItem});
             this.gENERALESToolStripMenuItem.Name = "gENERALESToolStripMenuItem";
             resources.ApplyResources(this.gENERALESToolStripMenuItem, "gENERALESToolStripMenuItem");
             // 
@@ -271,6 +277,7 @@
             // 
             this.eQUIVALENCIAUNIDADToolStripMenuItem.Name = "eQUIVALENCIAUNIDADToolStripMenuItem";
             resources.ApplyResources(this.eQUIVALENCIAUNIDADToolStripMenuItem, "eQUIVALENCIAUNIDADToolStripMenuItem");
+            this.eQUIVALENCIAUNIDADToolStripMenuItem.Click += new System.EventHandler(this.eQUIVALENCIAUNIDADToolStripMenuItem_Click);
             // 
             // mARCAToolStripMenuItem
             // 
@@ -303,6 +310,17 @@
             this.fACTURAToolStripMenuItem.Name = "fACTURAToolStripMenuItem";
             resources.ApplyResources(this.fACTURAToolStripMenuItem, "fACTURAToolStripMenuItem");
             this.fACTURAToolStripMenuItem.Click += new System.EventHandler(this.fACTURAToolStripMenuItem_Click);
+            // 
+            // aSIGNARALMACENToolStripMenuItem
+            // 
+            this.aSIGNARALMACENToolStripMenuItem.Name = "aSIGNARALMACENToolStripMenuItem";
+            resources.ApplyResources(this.aSIGNARALMACENToolStripMenuItem, "aSIGNARALMACENToolStripMenuItem");
+            // 
+            // dEPARTAMENTOToolStripMenuItem
+            // 
+            this.dEPARTAMENTOToolStripMenuItem.Name = "dEPARTAMENTOToolStripMenuItem";
+            resources.ApplyResources(this.dEPARTAMENTOToolStripMenuItem, "dEPARTAMENTOToolStripMenuItem");
+            this.dEPARTAMENTOToolStripMenuItem.Click += new System.EventHandler(this.dEPARTAMENTOToolStripMenuItem_Click);
             // 
             // procesosToolStripMenuItem
             // 
@@ -367,6 +385,12 @@
             // 
             this.cXCToolStripMenuItem1.Name = "cXCToolStripMenuItem1";
             resources.ApplyResources(this.cXCToolStripMenuItem1, "cXCToolStripMenuItem1");
+            // 
+            // uTILIDADESToolStripMenuItem
+            // 
+            this.uTILIDADESToolStripMenuItem.Image = global::ProyectoIII.Properties.Resources.preferences;
+            resources.ApplyResources(this.uTILIDADESToolStripMenuItem, "uTILIDADESToolStripMenuItem");
+            this.uTILIDADESToolStripMenuItem.Name = "uTILIDADESToolStripMenuItem";
             // 
             // frmMenu
             // 
@@ -437,5 +461,8 @@
         private System.Windows.Forms.ToolStripMenuItem tIPOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cONTACTOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fACTURAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aSIGNARALMACENToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dEPARTAMENTOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uTILIDADESToolStripMenuItem;
     }
 }

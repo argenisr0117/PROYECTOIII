@@ -12,6 +12,7 @@ namespace Entidades
     {
         private clsManejador M = new clsManejador();
         int Midtercero;
+        int Mid;
         string Mnombre;
         int Midtipot;      
         int Middireccion;
@@ -37,6 +38,11 @@ namespace Entidades
         {
             get { return Midtercero; }
             set { Midtercero = value; }
+        }
+        public int Id
+        {
+            get { return Mid; }
+            set { Mid = value; }
         }
         public int Tipo
         {
@@ -256,6 +262,7 @@ namespace Entidades
             List<clsParametros> lst = new List<clsParametros>();
             lst.Add(new clsParametros("@valor", Mvalor1));
             lst.Add(new clsParametros("@tipo", Mtipo));
+            lst.Add(new clsParametros("@estado", Mestado));
             return dt = M.Listado("buscar_proveedor", lst);
 
         }
@@ -283,19 +290,19 @@ namespace Entidades
             return dt = M.Listado("obtener_datos_direccion", lst);
 
         }
-        //public string Activar()
-        //{
-        //    string mensaje = "";
-        //    List<clsParametros> lst = new List<clsParametros>();
-        //    lst.Add(new clsParametros("@id", Mid));
-        //    lst.Add(new clsParametros("@valor", Mestado));
-        //    lst.Add(new clsParametros("@table", Mtabla));
-        //    lst.Add(new clsParametros("@campo", Mcampo));
-        //    lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
-        //    M.EjecutarSP("actdes_entidades", ref lst);
-        //    mensaje = lst[4].Valor.ToString();
-        //    return mensaje;
-        //}
+        public string Activar()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@id", Mid));
+            lst.Add(new clsParametros("@valor", Mestado));
+            lst.Add(new clsParametros("@table", Mtabla));
+            lst.Add(new clsParametros("@campo", Mcampo));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actdes_entidades", ref lst);
+            mensaje = lst[4].Valor.ToString();
+            return mensaje;
+        }
 
     }
 }

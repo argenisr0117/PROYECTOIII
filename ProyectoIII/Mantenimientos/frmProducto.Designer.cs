@@ -45,28 +45,28 @@
             this.cbItbis = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnBuscarP = new System.Windows.Forms.Button();
+            this.btnAgregarP = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.txtReferencia = new ProyectoIII.Controles.textbox(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.gbProveedor = new System.Windows.Forms.GroupBox();
             this.dtgProveedor = new System.Windows.Forms.DataGridView();
-            this.label15 = new System.Windows.Forms.Label();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnBuscarP = new System.Windows.Forms.Button();
-            this.btnAgregarP = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtProveedor = new ProyectoIII.Controles.textbox(this.components);
+            this.label15 = new System.Windows.Forms.Label();
             this.txtCodigoB = new ProyectoIII.Controles.textboxn(this.components);
             this.txtCostoP = new ProyectoIII.Controles.textboxn(this.components);
             this.txtCostoC = new ProyectoIII.Controles.textboxn(this.components);
             this.txtPuntoMax = new ProyectoIII.Controles.textboxn(this.components);
             this.txtPuntoR = new ProyectoIII.Controles.textboxn(this.components);
-            this.txtReferencia = new ProyectoIII.Controles.textbox(this.components);
             this.txtDescripcion = new ProyectoIII.Controles.textbox(this.components);
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gbProveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).BeginInit();
@@ -197,107 +197,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 254);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 19);
-            this.label9.TabIndex = 48;
-            this.label9.Text = "PUNTO MAX:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(32, 287);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(137, 19);
-            this.label11.TabIndex = 50;
-            this.label11.Text = "COSTO COMPRA:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(32, 320);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(121, 19);
-            this.label12.TabIndex = 52;
-            this.label12.Text = "COSTO PROM.:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(32, 353);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(133, 19);
-            this.label13.TabIndex = 54;
-            this.label13.Text = "CÓDIGO BARRA:";
-            // 
-            // gbProveedor
-            // 
-            this.gbProveedor.Controls.Add(this.btnBuscarP);
-            this.gbProveedor.Controls.Add(this.btnAgregarP);
-            this.gbProveedor.Controls.Add(this.dtgProveedor);
-            this.gbProveedor.Controls.Add(this.txtProveedor);
-            this.gbProveedor.Controls.Add(this.label15);
-            this.gbProveedor.Location = new System.Drawing.Point(538, 157);
-            this.gbProveedor.Name = "gbProveedor";
-            this.gbProveedor.Size = new System.Drawing.Size(472, 219);
-            this.gbProveedor.TabIndex = 56;
-            this.gbProveedor.TabStop = false;
-            this.gbProveedor.Text = "PROVEEDORES";
-            // 
-            // dtgProveedor
-            // 
-            this.dtgProveedor.AllowUserToAddRows = false;
-            this.dtgProveedor.AllowUserToDeleteRows = false;
-            this.dtgProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigo,
-            this.contacto,
-            this.eliminar});
-            this.dtgProveedor.Location = new System.Drawing.Point(10, 78);
-            this.dtgProveedor.MultiSelect = false;
-            this.dtgProveedor.Name = "dtgProveedor";
-            this.dtgProveedor.ReadOnly = true;
-            this.dtgProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProveedor.Size = new System.Drawing.Size(410, 134);
-            this.dtgProveedor.TabIndex = 39;
-            this.dtgProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedor_CellContentClick);
-            this.dtgProveedor.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgProveedor_CellPainting);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 39);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(78, 19);
-            this.label15.TabIndex = 36;
-            this.label15.Text = "NOMBRE:";
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "CÓDIGO";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Visible = false;
-            // 
-            // contacto
-            // 
-            this.contacto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.contacto.HeaderText = "PROVEEDOR";
-            this.contacto.Name = "contacto";
-            this.contacto.ReadOnly = true;
-            this.contacto.Width = 126;
-            // 
-            // eliminar
-            // 
-            this.eliminar.HeaderText = "ELIMINAR";
-            this.eliminar.Name = "eliminar";
-            this.eliminar.ReadOnly = true;
-            this.eliminar.Text = "";
-            this.eliminar.ToolTipText = "ELIMINAR";
-            // 
             // btnBuscarP
             // 
             this.btnBuscarP.BackColor = System.Drawing.Color.White;
@@ -384,6 +283,85 @@
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
+            // txtReferencia
+            // 
+            this.txtReferencia.Location = new System.Drawing.Point(180, 115);
+            this.txtReferencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtReferencia.Name = "txtReferencia";
+            this.txtReferencia.Size = new System.Drawing.Size(328, 27);
+            this.txtReferencia.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtReferencia, "Referencia");
+            this.txtReferencia.Validar = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(32, 254);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 19);
+            this.label9.TabIndex = 48;
+            this.label9.Text = "PUNTO MAX:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(32, 287);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(137, 19);
+            this.label11.TabIndex = 50;
+            this.label11.Text = "COSTO COMPRA:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(32, 320);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(121, 19);
+            this.label12.TabIndex = 52;
+            this.label12.Text = "COSTO PROM.:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(32, 353);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(133, 19);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "CÓDIGO BARRA:";
+            // 
+            // gbProveedor
+            // 
+            this.gbProveedor.Controls.Add(this.btnBuscarP);
+            this.gbProveedor.Controls.Add(this.btnAgregarP);
+            this.gbProveedor.Controls.Add(this.dtgProveedor);
+            this.gbProveedor.Controls.Add(this.txtProveedor);
+            this.gbProveedor.Controls.Add(this.label15);
+            this.gbProveedor.Location = new System.Drawing.Point(538, 157);
+            this.gbProveedor.Name = "gbProveedor";
+            this.gbProveedor.Size = new System.Drawing.Size(472, 219);
+            this.gbProveedor.TabIndex = 56;
+            this.gbProveedor.TabStop = false;
+            this.gbProveedor.Text = "PROVEEDORES";
+            // 
+            // dtgProveedor
+            // 
+            this.dtgProveedor.AllowUserToAddRows = false;
+            this.dtgProveedor.AllowUserToDeleteRows = false;
+            this.dtgProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
+            this.contacto,
+            this.eliminar});
+            this.dtgProveedor.Location = new System.Drawing.Point(10, 78);
+            this.dtgProveedor.MultiSelect = false;
+            this.dtgProveedor.Name = "dtgProveedor";
+            this.dtgProveedor.ReadOnly = true;
+            this.dtgProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgProveedor.Size = new System.Drawing.Size(410, 134);
+            this.dtgProveedor.TabIndex = 39;
+            this.dtgProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedor_CellContentClick);
+            this.dtgProveedor.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgProveedor_CellPainting);
+            // 
             // txtProveedor
             // 
             this.txtProveedor.Enabled = false;
@@ -393,6 +371,15 @@
             this.txtProveedor.Size = new System.Drawing.Size(251, 27);
             this.txtProveedor.TabIndex = 3;
             this.txtProveedor.Validar = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 39);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(78, 19);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "NOMBRE:";
             // 
             // txtCodigoB
             // 
@@ -439,16 +426,6 @@
             this.txtPuntoR.Validar = true;
             this.txtPuntoR.Valor = ProyectoIII.Controles.textboxn.Tipo.Números;
             // 
-            // txtReferencia
-            // 
-            this.txtReferencia.Location = new System.Drawing.Point(180, 115);
-            this.txtReferencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(328, 27);
-            this.txtReferencia.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.txtReferencia, "Referencia");
-            this.txtReferencia.Validar = true;
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(180, 81);
@@ -457,6 +434,31 @@
             this.txtDescripcion.Size = new System.Drawing.Size(328, 27);
             this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.Validar = true;
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "CÓDIGO";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Visible = false;
+            // 
+            // contacto
+            // 
+            this.contacto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.contacto.HeaderText = "PROVEEDOR";
+            this.contacto.Name = "contacto";
+            this.contacto.ReadOnly = true;
+            this.contacto.Width = 126;
+            // 
+            // eliminar
+            // 
+            this.eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.eliminar.HeaderText = "ELIMINAR";
+            this.eliminar.Name = "eliminar";
+            this.eliminar.ReadOnly = true;
+            this.eliminar.Text = "";
+            this.eliminar.ToolTipText = "ELIMINAR";
+            this.eliminar.Width = 88;
             // 
             // frmProducto
             // 

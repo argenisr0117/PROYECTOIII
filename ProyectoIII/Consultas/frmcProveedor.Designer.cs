@@ -52,10 +52,16 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnActivar = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.rbInactivo = new System.Windows.Forms.RadioButton();
+            this.rbActivo = new System.Windows.Forms.RadioButton();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgProveedor
@@ -72,7 +78,8 @@
             this.rnc,
             this.telefono,
             this.correo,
-            this.direccion});
+            this.direccion,
+            this.estado});
             this.dtgProveedor.Dock = System.Windows.Forms.DockStyle.Left;
             this.dtgProveedor.Location = new System.Drawing.Point(0, 139);
             this.dtgProveedor.MultiSelect = false;
@@ -181,6 +188,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.rbRnc);
             this.panel2.Controls.Add(this.rbNombre);
             this.panel2.Controls.Add(this.label3);
@@ -237,6 +245,7 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.btnSalir);
+            this.panel4.Controls.Add(this.btnActivar);
             this.panel4.Controls.Add(this.btnElegir);
             this.panel4.Controls.Add(this.btnNuevo);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
@@ -257,7 +266,7 @@
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Image = global::ProyectoIII.Properties.Resources.salir2;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.Location = new System.Drawing.Point(0, 126);
+            this.btnSalir.Location = new System.Drawing.Point(0, 188);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(97, 62);
@@ -321,6 +330,69 @@
             this.panel3.Size = new System.Drawing.Size(1024, 54);
             this.panel3.TabIndex = 3;
             // 
+            // btnActivar
+            // 
+            this.btnActivar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnActivar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnActivar.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
+            this.btnActivar.FlatAppearance.BorderSize = 0;
+            this.btnActivar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActivar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivar.ForeColor = System.Drawing.Color.Black;
+            this.btnActivar.Image = global::ProyectoIII.Properties.Resources.refresh__3_;
+            this.btnActivar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnActivar.Location = new System.Drawing.Point(0, 126);
+            this.btnActivar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnActivar.Name = "btnActivar";
+            this.btnActivar.Size = new System.Drawing.Size(97, 62);
+            this.btnActivar.TabIndex = 50;
+            this.btnActivar.Text = "DESACTIVAR/ACTIVAR";
+            this.btnActivar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActivar.UseVisualStyleBackColor = false;
+            this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.rbInactivo);
+            this.panel5.Controls.Add(this.rbActivo);
+            this.panel5.Location = new System.Drawing.Point(916, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(101, 58);
+            this.panel5.TabIndex = 44;
+            // 
+            // rbInactivo
+            // 
+            this.rbInactivo.AutoSize = true;
+            this.rbInactivo.Location = new System.Drawing.Point(3, 31);
+            this.rbInactivo.Name = "rbInactivo";
+            this.rbInactivo.Size = new System.Drawing.Size(90, 23);
+            this.rbInactivo.TabIndex = 1;
+            this.rbInactivo.TabStop = true;
+            this.rbInactivo.Text = "Inactivos";
+            this.rbInactivo.UseVisualStyleBackColor = true;
+            this.rbInactivo.CheckedChanged += new System.EventHandler(this.rbInactivo_CheckedChanged);
+            // 
+            // rbActivo
+            // 
+            this.rbActivo.AutoSize = true;
+            this.rbActivo.Location = new System.Drawing.Point(3, 7);
+            this.rbActivo.Name = "rbActivo";
+            this.rbActivo.Size = new System.Drawing.Size(78, 23);
+            this.rbActivo.TabIndex = 0;
+            this.rbActivo.TabStop = true;
+            this.rbActivo.Text = "Activos";
+            this.rbActivo.UseVisualStyleBackColor = true;
+            this.rbActivo.CheckedChanged += new System.EventHandler(this.rbActivo_CheckedChanged);
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Visible = false;
+            // 
             // frmcProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -346,6 +418,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -374,5 +448,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnActivar;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RadioButton rbInactivo;
+        private System.Windows.Forms.RadioButton rbActivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }
