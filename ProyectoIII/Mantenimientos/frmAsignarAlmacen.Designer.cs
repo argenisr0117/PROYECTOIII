@@ -33,16 +33,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarP = new System.Windows.Forms.Button();
-            this.txtProducto = new ProyectoIII.Controles.textbox(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbAlmacen = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dtgAlmacen = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idalmacen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.almacen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtProducto = new ProyectoIII.Controles.textbox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlmacen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -77,28 +81,19 @@
             this.btnBuscarP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarP.ForeColor = System.Drawing.Color.Black;
             this.btnBuscarP.Image = global::ProyectoIII.Properties.Resources.search__2_;
-            this.btnBuscarP.Location = new System.Drawing.Point(434, 76);
+            this.btnBuscarP.Location = new System.Drawing.Point(390, 80);
             this.btnBuscarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarP.Name = "btnBuscarP";
             this.btnBuscarP.Size = new System.Drawing.Size(40, 28);
             this.btnBuscarP.TabIndex = 44;
             this.btnBuscarP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarP.UseVisualStyleBackColor = false;
-            // 
-            // txtProducto
-            // 
-            this.txtProducto.Enabled = false;
-            this.txtProducto.Location = new System.Drawing.Point(161, 76);
-            this.txtProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(267, 27);
-            this.txtProducto.TabIndex = 42;
-            this.txtProducto.Validar = true;
+            this.btnBuscarP.Click += new System.EventHandler(this.btnBuscarP_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 79);
+            this.label4.Location = new System.Drawing.Point(11, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 19);
             this.label4.TabIndex = 43;
@@ -107,7 +102,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(55, 112);
+            this.label8.Location = new System.Drawing.Point(11, 116);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 19);
             this.label8.TabIndex = 46;
@@ -117,7 +112,7 @@
             // 
             this.cbAlmacen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAlmacen.FormattingEnabled = true;
-            this.cbAlmacen.Location = new System.Drawing.Point(161, 109);
+            this.cbAlmacen.Location = new System.Drawing.Point(117, 113);
             this.cbAlmacen.Name = "cbAlmacen";
             this.cbAlmacen.Size = new System.Drawing.Size(267, 27);
             this.cbAlmacen.TabIndex = 45;
@@ -132,13 +127,14 @@
             this.btnAgregar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.Black;
             this.btnAgregar.Image = global::ProyectoIII.Properties.Resources.add__3_;
-            this.btnAgregar.Location = new System.Drawing.Point(434, 108);
+            this.btnAgregar.Location = new System.Drawing.Point(390, 112);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(40, 28);
             this.btnAgregar.TabIndex = 47;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dtgAlmacen
             // 
@@ -148,12 +144,22 @@
             this.dtgAlmacen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idalmacen,
             this.almacen,
-            this.eliminar});
+            this.eliminar,
+            this.idproducto,
+            this.estado});
             this.dtgAlmacen.Location = new System.Drawing.Point(12, 154);
+            this.dtgAlmacen.MultiSelect = false;
             this.dtgAlmacen.Name = "dtgAlmacen";
             this.dtgAlmacen.ReadOnly = true;
+            this.dtgAlmacen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgAlmacen.Size = new System.Drawing.Size(504, 191);
             this.dtgAlmacen.TabIndex = 48;
+            this.dtgAlmacen.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlmacen_CellContentClick);
+            this.dtgAlmacen.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgAlmacen_CellPainting);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // idalmacen
             // 
@@ -171,11 +177,36 @@
             // 
             // eliminar
             // 
-            this.eliminar.HeaderText = "";
+            this.eliminar.HeaderText = "BLOQUEAR";
             this.eliminar.Name = "eliminar";
             this.eliminar.ReadOnly = true;
             this.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // idproducto
+            // 
+            this.idproducto.HeaderText = "IDPRODUCTO";
+            this.idproducto.Name = "idproducto";
+            this.idproducto.ReadOnly = true;
+            this.idproducto.Visible = false;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Visible = false;
+            // 
+            // txtProducto
+            // 
+            this.txtProducto.Enabled = false;
+            this.txtProducto.Location = new System.Drawing.Point(117, 80);
+            this.txtProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(267, 27);
+            this.txtProducto.TabIndex = 42;
+            this.txtProducto.Validar = true;
+            this.txtProducto.TextChanged += new System.EventHandler(this.txtProducto_TextChanged);
             // 
             // frmAsignarAlmacen
             // 
@@ -199,7 +230,9 @@
             this.MaximizeBox = false;
             this.Name = "frmAsignarAlmacen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.frmAsignarAlmacen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlmacen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,8 +249,11 @@
         private System.Windows.Forms.ComboBox cbAlmacen;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dtgAlmacen;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idalmacen;
         private System.Windows.Forms.DataGridViewTextBoxColumn almacen;
         private System.Windows.Forms.DataGridViewButtonColumn eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idproducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

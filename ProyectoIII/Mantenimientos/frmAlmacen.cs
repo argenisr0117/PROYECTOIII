@@ -15,15 +15,39 @@ namespace ProyectoIII.Mantenimientos
 {
     public partial class frmAlmacen : MetroForm
     {
-        clsCategoria C = new clsCategoria();
+        clsAlmacen C = new clsAlmacen();
+        clsSucursal S = new clsSucursal();
         public frmAlmacen()
         {
             InitializeComponent();
         }
+        private void LlenarComboSucursal()
+        {
+            try
+            {
+                cbSucursal.DataSource = S.Listar(true);
+                cbSucursal.DisplayMember = "descripcion";
+                cbSucursal.ValueMember = "id_sucursal";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
         private void LlenarGridCategoria()
         {
             DataTable dt = new DataTable();
-            dt = C.Listar(true);
+            if (rbActivo.Checked)
+            {
+                C.Idsucursal = 0;
+                dt = C.Listar(true);
+            }
+            else if (rbInactivo.Checked)
+            {
+                C.Idsucursal = 0;
+                dt = C.Listar(false);
+            }
+         
             try
             {
                 dtgAlmacen.Rows.Clear();
@@ -33,6 +57,8 @@ namespace ProyectoIII.Mantenimientos
                     dtgAlmacen.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
                     dtgAlmacen.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
                     dtgAlmacen.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
+                    dtgAlmacen.Rows[x].Cells[3].Value = dt.Rows[x][3].ToString();
+                    dtgAlmacen.Rows[x].Cells[4].Value = dt.Rows[x][4].ToString();
 
                 }
                 dtgAlmacen.ClearSelection();
@@ -45,6 +71,7 @@ namespace ProyectoIII.Mantenimientos
         private void Limpiar()
         {
             txtDescripcion.Clear();
+            txtIdentificador.Clear();
             txtDescripcion.Focus();
         }
         private void btnSalir_Click(object sender, EventArgs e)
@@ -70,6 +97,8 @@ namespace ProyectoIII.Mantenimientos
                 {
                     C.Id = 0;
                     C.Descripcion = txtDescripcion.Text;
+                    C.Identificador = txtIdentificador.Text;
+                    C.Idsucursal = Convert.ToInt32(cbSucursal.SelectedValue);
                     mensaje = C.Registrar();
                     if (mensaje == "1")
                     {
@@ -85,6 +114,8 @@ namespace ProyectoIII.Mantenimientos
                 {
                     C.Descripcion = txtDescripcion.Text;
                     C.Id = Convert.ToInt32(txtCodigo.Text);
+                    C.Identificador = txtIdentificador.Text;
+                    C.Idsucursal = Convert.ToInt32(cbSucursal.SelectedValue);
                     mensaje = C.Registrar();
                     if (mensaje == "2")
                     {
@@ -115,6 +146,8 @@ namespace ProyectoIII.Mantenimientos
 
                 txtCodigo.Text = dtgAlmacen.CurrentRow.Cells[0].Value.ToString();
                 txtDescripcion.Text = dtgAlmacen.CurrentRow.Cells[1].Value.ToString();
+                txtIdentificador.Text = dtgAlmacen.CurrentRow.Cells[2].Value.ToString();
+                cbSucursal.Text= dtgAlmacen.CurrentRow.Cells[3].Value.ToString();
                 Program.Evento = 1;
             }
             else
@@ -131,7 +164,7 @@ namespace ProyectoIII.Mantenimientos
                 if (dtgAlmacen.SelectedRows.Count > 0)
                 {
                     C.Id = Convert.ToInt32(dtgAlmacen.CurrentRow.Cells[0].Value);
-                    C.Estado = Convert.ToBoolean(dtgAlmacen.CurrentRow.Cells[2].Value);
+                    C.Estado = Convert.ToBoolean(dtgAlmacen.CurrentRow.Cells[4].Value);
                     mensaje = C.Activar();
                     if (mensaje == "0")
                     {
@@ -157,7 +190,19 @@ namespace ProyectoIII.Mantenimientos
         private void frmCategoria_Load(object sender, EventArgs e)
         {
             LlenarGridCategoria();
+            LlenarComboSucursal();
             Program.Evento = 0;
+            rbActivo.Checked = true;
+        }
+
+        private void rbActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarGridCategoria();
+        }
+
+        private void rbInactivo_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarGridCategoria();
         }
     }
 }

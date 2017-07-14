@@ -14,9 +14,11 @@ namespace Entidades
 
         int Mid;
         int Midproducto;
+        int Midsucursal;
         string Mdescripcion;
         string Mreferencia;
         int Midcategoria;
+        int Midalmacen;
         int Midmarca;
         int Midunidad;
         int Miditbis;
@@ -67,6 +69,16 @@ namespace Entidades
         {
             get { return Midproducto; }
             set { Midproducto = value; }
+        }
+        public int Idsucursal
+        {
+            get { return Midsucursal; }
+            set { Midsucursal = value; }
+        }
+        public int Idalmacen
+        {
+            get { return Midalmacen; }
+            set { Midalmacen = value; }
         }
         public int Id
         {
@@ -190,6 +202,39 @@ namespace Entidades
             M.EjecutarSP("registrar_producto", ref lst);
             mensaje = lst[11].Valor.ToString();
             return mensaje;
+        }
+        public string AsignarAlmacen()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@idalmacen", Midalmacen));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("asignar_almacen", ref lst);
+            mensaje = lst[2].Valor.ToString();
+            return mensaje;
+        }
+        public string BloquearAlmacen()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@idalmacen", Midalmacen));
+            lst.Add(new clsParametros("@estado", Mestado));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("bloquear_almacen", ref lst);
+            mensaje = lst[3].Valor.ToString();
+            return mensaje;
+        }
+        public DataTable AlmacenesProducto()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@estado", Mestado));
+            lst.Add(new clsParametros("@idsucursal", Midsucursal));
+            return dt = M.Listado("almacenes_producto", lst);
+
         }
         public string Actualizar()
         {

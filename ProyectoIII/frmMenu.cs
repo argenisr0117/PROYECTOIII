@@ -149,5 +149,23 @@ namespace ProyectoIII
             Mantenimientos.frmSucursal obj = new Mantenimientos.frmSucursal();
             obj.ShowDialog();
         }
+
+        private void aLMACENToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmAlmacen obj = new Mantenimientos.frmAlmacen();
+            obj.ShowDialog();
+        }
+
+        private void aSIGNARALMACENToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmAsignarAlmacen obj = new Mantenimientos.frmAsignarAlmacen();
+            obj.ShowDialog();
+        }
+
+        private void eMPLEADOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmEmpleado obj = new Mantenimientos.frmEmpleado();
+            obj.ShowDialog();
+        }
     }
 }

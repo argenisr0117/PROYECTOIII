@@ -98,15 +98,17 @@ namespace ProyectoIII.Mantenimientos
             DataTable dt = new DataTable();
             if(rbActivo.Checked)
             {
+                C.Idtercero = 0;
                 dt = C.Listar(true);
 
             }
             else if (rbInactivo.Checked)
             {
+                C.Idtercero = 0;
                 dt = C.Listar(false);
 
             }
-            C.Idtercero = 0;
+          
             try
             {
                 dtgSucursal.Rows.Clear();
@@ -184,15 +186,26 @@ namespace ProyectoIII.Mantenimientos
                         MessageBoxEx.Show("Registro ya existe", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+                else if(Program.Evento==1)
                 {
-                    C.Descripcion = txtDescripcion.Text;
-                    C.Id = Convert.ToInt32(txtCodigo.Text);
-                    mensaje = C.Registrar();
-                    if (mensaje == "2")
+                    C.Iddireccion = Program.Iddireccion;
+                    C.Direccion = txtDireccion.Text + "," + cbBarrio.Text + "," + cbCiudad.Text + "," + cbRegion.Text;
+                    C.Idbarrio = Convert.ToInt32(cbBarrio.SelectedValue);
+                    C.Idciudad = Convert.ToInt32(cbCiudad.SelectedValue);
+                    C.Idregion = Convert.ToInt32(cbRegion.SelectedValue);
+                    mensaje = C.ActualizarD();
+                    if (mensaje == "1")
                     {
-                        MessageBoxEx.Show("Actualizado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Limpiar();
+                        C.Id = Convert.ToInt32(txtCodigo.Text);
+                        C.Descripcion = txtDescripcion.Text;
+                        C.Idtercero = Convert.ToInt32(cbEmpresa.SelectedValue);
+                        C.Idtipo = Convert.ToInt32(cbTipo.SelectedValue);
+                        mensaje = C.Actualizar();
+                        if (mensaje == "1")
+                        {
+                            MessageBoxEx.Show("Actualizado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpiar();
+                        }
                     }
                     else
                     {
@@ -217,6 +230,7 @@ namespace ProyectoIII.Mantenimientos
             {
 
                 txtCodigo.Text = dtgSucursal.CurrentRow.Cells[0].Value.ToString();
+                Program.Iddireccion = Convert.ToInt32(dtgSucursal.CurrentRow.Cells[3].Value);
                 txtDescripcion.Text = dtgSucursal.CurrentRow.Cells[1].Value.ToString();
                 txtDireccion.Text= dtgSucursal.CurrentRow.Cells[4].Value.ToString();
                 cbRegion.SelectedValue = Convert.ToInt32(dtgSucursal.CurrentRow.Cells[8].Value);

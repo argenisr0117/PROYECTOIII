@@ -10,6 +10,7 @@ namespace ProyectoIII
     {
         public static int Evento;
         public static int Editar;
+        public static int Iddireccion;
         public static int Codigo;
         public static int Id;
         public static int Idproducto;

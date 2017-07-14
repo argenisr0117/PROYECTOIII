@@ -346,34 +346,28 @@
     <value>Tahoma, 9.75pt</value>
   </data>
   <data name="pRODUCTOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pRODUCTOToolStripMenuItem.Text" xml:space="preserve">
     <value>PRODUCTO</value>
   </data>
   <data name="pROVEEDORToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pROVEEDORToolStripMenuItem.Text" xml:space="preserve">
     <value>PROVEEDOR</value>
   </data>
   <data name="cLIENTEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="cLIENTEToolStripMenuItem.Text" xml:space="preserve">
     <value>CLIENTE</value>
   </data>
   <data name="eMPLEADOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="eMPLEADOToolStripMenuItem.Text" xml:space="preserve">
     <value>EMPLEADO</value>
-  </data>
-  <data name="sUCURSALToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
-  </data>
-  <data name="sUCURSALToolStripMenuItem.Text" xml:space="preserve">
-    <value>SUCURSAL</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
@@ -416,6 +410,12 @@
   </data>
   <data name="nACIONALIDADToolStripMenuItem.Text" xml:space="preserve">
     <value>NACIONALIDAD</value>
+  </data>
+  <data name="aLMACENToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="aLMACENToolStripMenuItem.Text" xml:space="preserve">
+    <value>ALMACEN</value>
   </data>
   <data name="cATEGORIAToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
@@ -484,13 +484,13 @@
     <value>GENERALES</value>
   </data>
   <data name="eMPRESAToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>138, 22</value>
   </data>
   <data name="eMPRESAToolStripMenuItem1.Text" xml:space="preserve">
     <value>EMPRESA</value>
   </data>
   <data name="sUCURSALToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>138, 22</value>
   </data>
   <data name="sUCURSALToolStripMenuItem1.Text" xml:space="preserve">
     <value>SUCURSAL</value>
@@ -885,12 +885,6 @@
   <data name="&gt;&gt;eMPLEADOToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;sUCURSALToolStripMenuItem.Name" xml:space="preserve">
-    <value>sUCURSALToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;sUCURSALToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;gENERALESToolStripMenuItem.Name" xml:space="preserve">
     <value>gENERALESToolStripMenuItem</value>
   </data>
@@ -931,6 +925,12 @@
     <value>nACIONALIDADToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;nACIONALIDADToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aLMACENToolStripMenuItem.Name" xml:space="preserve">
+    <value>aLMACENToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aLMACENToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cATEGORIAToolStripMenuItem.Name" xml:space="preserve">

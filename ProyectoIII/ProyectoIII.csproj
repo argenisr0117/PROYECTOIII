@@ -60,6 +60,12 @@
     <Compile Include="Consultas\frmcProducto.Designer.cs">
       <DependentUpon>frmcProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\frmcEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmcEmpleado.Designer.cs">
+      <DependentUpon>frmcEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmcProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="Consultas\frmcProducto.resx">
       <DependentUpon>frmcProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmcEmpleado.resx">
+      <DependentUpon>frmcEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcProveedor.resx">
       <DependentUpon>frmcProveedor.cs</DependentUpon>

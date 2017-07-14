@@ -46,7 +46,6 @@
             this.pROVEEDORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLIENTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eMPLEADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sUCURSALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gENERALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dIRECCIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pAISToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +53,7 @@
             this.cIUDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bARRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nACIONALIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aLMACENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cATEGORIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uNIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eQUIVALENCIAUNIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -183,8 +183,7 @@
             this.pRODUCTOToolStripMenuItem,
             this.pROVEEDORToolStripMenuItem,
             this.cLIENTEToolStripMenuItem,
-            this.eMPLEADOToolStripMenuItem,
-            this.sUCURSALToolStripMenuItem});
+            this.eMPLEADOToolStripMenuItem});
             this.eNTIDADESToolStripMenuItem.Name = "eNTIDADESToolStripMenuItem";
             resources.ApplyResources(this.eNTIDADESToolStripMenuItem, "eNTIDADESToolStripMenuItem");
             // 
@@ -209,17 +208,14 @@
             // 
             this.eMPLEADOToolStripMenuItem.Name = "eMPLEADOToolStripMenuItem";
             resources.ApplyResources(this.eMPLEADOToolStripMenuItem, "eMPLEADOToolStripMenuItem");
-            // 
-            // sUCURSALToolStripMenuItem
-            // 
-            this.sUCURSALToolStripMenuItem.Name = "sUCURSALToolStripMenuItem";
-            resources.ApplyResources(this.sUCURSALToolStripMenuItem, "sUCURSALToolStripMenuItem");
+            this.eMPLEADOToolStripMenuItem.Click += new System.EventHandler(this.eMPLEADOToolStripMenuItem_Click);
             // 
             // gENERALESToolStripMenuItem
             // 
             this.gENERALESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dIRECCIONToolStripMenuItem,
             this.nACIONALIDADToolStripMenuItem,
+            this.aLMACENToolStripMenuItem,
             this.cATEGORIAToolStripMenuItem,
             this.uNIDADToolStripMenuItem,
             this.eQUIVALENCIAUNIDADToolStripMenuItem,
@@ -271,6 +267,12 @@
             this.nACIONALIDADToolStripMenuItem.Name = "nACIONALIDADToolStripMenuItem";
             resources.ApplyResources(this.nACIONALIDADToolStripMenuItem, "nACIONALIDADToolStripMenuItem");
             this.nACIONALIDADToolStripMenuItem.Click += new System.EventHandler(this.nACIONALIDADToolStripMenuItem_Click);
+            // 
+            // aLMACENToolStripMenuItem
+            // 
+            this.aLMACENToolStripMenuItem.Name = "aLMACENToolStripMenuItem";
+            resources.ApplyResources(this.aLMACENToolStripMenuItem, "aLMACENToolStripMenuItem");
+            this.aLMACENToolStripMenuItem.Click += new System.EventHandler(this.aLMACENToolStripMenuItem_Click);
             // 
             // cATEGORIAToolStripMenuItem
             // 
@@ -326,6 +328,7 @@
             // 
             this.aSIGNARALMACENToolStripMenuItem.Name = "aSIGNARALMACENToolStripMenuItem";
             resources.ApplyResources(this.aSIGNARALMACENToolStripMenuItem, "aSIGNARALMACENToolStripMenuItem");
+            this.aSIGNARALMACENToolStripMenuItem.Click += new System.EventHandler(this.aSIGNARALMACENToolStripMenuItem_Click);
             // 
             // dEPARTAMENTOToolStripMenuItem
             // 
@@ -495,9 +498,9 @@
         private System.Windows.Forms.ToolStripMenuItem aSIGNARALMACENToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dEPARTAMENTOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uTILIDADESToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sUCURSALToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eMPRESAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eMPRESAToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sUCURSALToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aLMACENToolStripMenuItem;
     }
 }

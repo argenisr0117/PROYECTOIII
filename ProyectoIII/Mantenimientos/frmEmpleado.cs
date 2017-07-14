@@ -18,6 +18,7 @@ namespace ProyectoIII.Mantenimientos
         clsDirecciones D = new clsDirecciones();
         clsTipos T = new clsTipos();
         clsProveedor P = new clsProveedor();
+        clsNacionalidad N = new clsNacionalidad();
         public frmEmpleado()
         {
             InitializeComponent();
@@ -78,14 +79,27 @@ namespace ProyectoIII.Mantenimientos
                 MessageBoxEx.Show(ex.Message);
             }
         }
-        private void LlenarComboTipoP()
+        private void LlenarComboTipoI()
         {
             try
             {
-                T.Iddestipo = 6;
-                cbTipoProveedor.DataSource = T.ListarT(true);
-                cbTipoProveedor.DisplayMember = "DESCRIPCION";
-                cbTipoProveedor.ValueMember = "ID_TIPO";
+                T.Iddestipo = 3;
+                cbTipoIdentificacion.DataSource = T.ListarT(true);
+                cbTipoIdentificacion.DisplayMember = "DESCRIPCION";
+                cbTipoIdentificacion.ValueMember = "ID_TIPO";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+        private void LlenarComboNacionalidad()
+        {
+            try
+            {
+                cbNacionalidad.DataSource = N.Listar(true);
+                cbNacionalidad.DisplayMember = "DESCRIPCION";
+                cbNacionalidad.ValueMember = "ID_nacionalidad";
             }
             catch (Exception ex)
             {
@@ -95,10 +109,11 @@ namespace ProyectoIII.Mantenimientos
         private void frmProveedor_Load(object sender, EventArgs e)
         {
             LlenarComboCiudad();
+            LlenarComboTipoI();
             LlenarComboRegion();
             LlenarComboBarrio();
             LlenarComboTipoC();
-            LlenarComboTipoP();
+            LlenarComboNacionalidad();
             Program.Evento = 0;
             if(Program.Editar==1)
             {
@@ -115,8 +130,8 @@ namespace ProyectoIII.Mantenimientos
                 DataTable dt2 = P.DatosContacto();
                 DataTable dt3 = P.DatosDireccion();
                 txtNombre.Text = dt.Rows[0][1].ToString();
-                txtIdentificacion.Text = dt.Rows[0][3].ToString();
-                cbTipoProveedor.SelectedValue = dt.Rows[0][4].ToString();
+                txtApellidos.Text = dt.Rows[0][3].ToString();
+                cbNacionalidad.SelectedValue = dt.Rows[0][4].ToString();
                 for (int x = 0; x < dt3.Rows.Count; x++)
                 {
                     dtgDireccion.Rows.Add(dt3.Rows[x][0]);
@@ -283,19 +298,12 @@ namespace ProyectoIII.Mantenimientos
                 if (Program.Evento == 0)
                 {
                     P.Nombre = txtNombre.Text;                  
-                    P.Idtipot = Convert.ToInt32(cbTipoProveedor.SelectedValue);
+                    P.Idtipot = Convert.ToInt32(cbNacionalidad.SelectedValue);
                     mensaje = P.Registrar();
                     if(mensaje=="1")
                     {
-                        P.Identificacion = txtIdentificacion.Text;
-                        if (cbTipoProveedor.Text == "Empresa")
-                        {
-                            P.Idtipoi = 8;
-                        }
-                        else if (cbTipoProveedor.Text == "Persona")
-                        {
-                            P.Idtipoi = 6;
-                        }
+                        P.Identificacion = txtApellidos.Text;
+                        P.Idtipoi = 8;
                         mensaje = P.RegistrarI();
                         for(int x=0; x < dtgContacto.Rows.Count; x++)
                         {
@@ -323,16 +331,16 @@ namespace ProyectoIII.Mantenimientos
                 {
                     P.Idtercero = Program.Codigo;
                     P.Nombre = txtNombre.Text;
-                    P.Idtipot = Convert.ToInt32(cbTipoProveedor.SelectedValue);
+                    P.Idtipot = Convert.ToInt32(cbNacionalidad.SelectedValue);
                     mensaje = P.Actualizar();
                     if (mensaje == "1")
                     {
-                        P.Identificacion = txtIdentificacion.Text;
-                        if (cbTipoProveedor.Text == "Empresa")
+                        P.Identificacion = txtApellidos.Text;
+                        if (cbNacionalidad.Text == "Empresa")
                         {
                             P.Idtipoi = 8;
                         }
-                        else if (cbTipoProveedor.Text == "Persona")
+                        else if (cbNacionalidad.Text == "Persona")
                         {
                             P.Idtipoi = 6;
                         }
@@ -371,7 +379,7 @@ namespace ProyectoIII.Mantenimientos
         private void Limpiar()
         {
             txtNombre.Clear();
-            txtIdentificacion.Clear();
+            txtApellidos.Clear();
             txtDireccion.Clear();
             txtContacto.Clear();
             txtNombre.Focus();

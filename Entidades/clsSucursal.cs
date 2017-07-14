@@ -94,6 +94,19 @@ namespace Entidades
             mensaje = lst[3].Valor.ToString();
             return mensaje;
         }
+        public string Actualizar()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idsucursal", Mid));
+            lst.Add(new clsParametros("@descripcion", Mdescripcion));
+            lst.Add(new clsParametros("@idtercero", Midtercero));
+            lst.Add(new clsParametros("@idtipo", Midtipo));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actualizar_sucursal", ref lst);
+            mensaje = lst[4].Valor.ToString();
+            return mensaje;
+        }
 
         public DataTable Listar(Boolean objEstado)
         {
@@ -128,6 +141,20 @@ namespace Entidades
             lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
             M.EjecutarSP("registrar_direccion2", ref lst);
             mensaje = lst[4].Valor.ToString();
+            return mensaje;
+        }
+        public string ActualizarD()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@iddireccion", Middireccion));
+            lst.Add(new clsParametros("@descripcion", Mdireccion));
+            lst.Add(new clsParametros("@idbarrio", Midbarrio));
+            lst.Add(new clsParametros("@idciudad", Midciudad));
+            lst.Add(new clsParametros("@idregion", Midregion));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("actualizar_direccion2", ref lst);
+            mensaje = lst[5].Valor.ToString();
             return mensaje;
         }
     }
