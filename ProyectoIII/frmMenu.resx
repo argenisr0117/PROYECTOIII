@@ -484,13 +484,13 @@
     <value>GENERALES</value>
   </data>
   <data name="eMPRESAToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="eMPRESAToolStripMenuItem1.Text" xml:space="preserve">
     <value>EMPRESA</value>
   </data>
   <data name="sUCURSALToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="sUCURSALToolStripMenuItem1.Text" xml:space="preserve">
     <value>SUCURSAL</value>
@@ -500,6 +500,24 @@
   </data>
   <data name="eMPRESAToolStripMenuItem.Text" xml:space="preserve">
     <value>EMPRESA</value>
+  </data>
+  <data name="uSUARIOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="uSUARIOToolStripMenuItem.Text" xml:space="preserve">
+    <value>USUARIO</value>
+  </data>
+  <data name="pERFILToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="pERFILToolStripMenuItem.Text" xml:space="preserve">
+    <value>PERFIL</value>
+  </data>
+  <data name="aCCESOSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="aCCESOSToolStripMenuItem.Text" xml:space="preserve">
+    <value>ACCESOS</value>
   </data>
   <data name="mantToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -1075,6 +1093,24 @@
     <value>uTILIDADESToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;uTILIDADESToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aCCESOSToolStripMenuItem.Name" xml:space="preserve">
+    <value>aCCESOSToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aCCESOSToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uSUARIOToolStripMenuItem.Name" xml:space="preserve">
+    <value>uSUARIOToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;uSUARIOToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pERFILToolStripMenuItem.Name" xml:space="preserve">
+    <value>pERFILToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pERFILToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

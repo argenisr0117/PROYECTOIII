@@ -30,23 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcEmpleado));
-            this.dtgProveedor = new System.Windows.Forms.DataGridView();
-            this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rnc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgEmpleado = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rbApellidos = new System.Windows.Forms.RadioButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.rbInactivo = new System.Windows.Forms.RadioButton();
             this.rbActivo = new System.Windows.Forms.RadioButton();
-            this.rbRnc = new System.Windows.Forms.RadioButton();
+            this.rbIdentificacion = new System.Windows.Forms.RadioButton();
             this.rbNombre = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBusqueda = new ProyectoIII.Controles.textbox(this.components);
@@ -57,107 +50,51 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).BeginInit();
+            this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rnc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleado)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dtgProveedor
+            // dtgEmpleado
             // 
-            this.dtgProveedor.AllowUserToAddRows = false;
-            this.dtgProveedor.AllowUserToDeleteRows = false;
-            this.dtgProveedor.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.dtgProveedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtgProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgEmpleado.AllowUserToAddRows = false;
+            this.dtgEmpleado.AllowUserToDeleteRows = false;
+            this.dtgEmpleado.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.dtgEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.editar,
             this.codigo,
             this.nombre,
+            this.apellidos,
             this.rnc,
             this.telefono,
             this.correo,
             this.direccion,
             this.estado});
-            this.dtgProveedor.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dtgProveedor.Location = new System.Drawing.Point(0, 139);
-            this.dtgProveedor.MultiSelect = false;
-            this.dtgProveedor.Name = "dtgProveedor";
-            this.dtgProveedor.ReadOnly = true;
-            this.dtgProveedor.RowHeadersWidth = 20;
-            this.dtgProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProveedor.Size = new System.Drawing.Size(920, 308);
-            this.dtgProveedor.TabIndex = 0;
-            this.dtgProveedor.TabStop = false;
-            this.dtgProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedor_CellContentClick);
-            this.dtgProveedor.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgProveedor_CellPainting);
-            // 
-            // editar
-            // 
-            this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editar.HeaderText = "";
-            this.editar.Name = "editar";
-            this.editar.ReadOnly = true;
-            this.editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.editar.ToolTipText = "Editar";
-            // 
-            // codigo
-            // 
-            this.codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.codigo.HeaderText = "CÓDIGO";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 96;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.nombre.HeaderText = "NOMBRE";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 97;
-            // 
-            // rnc
-            // 
-            this.rnc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.rnc.HeaderText = "RNC/CÉDULA";
-            this.rnc.Name = "rnc";
-            this.rnc.ReadOnly = true;
-            this.rnc.Width = 131;
-            // 
-            // telefono
-            // 
-            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.telefono.HeaderText = "TELÉFONO";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Width = 113;
-            // 
-            // correo
-            // 
-            this.correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.correo.HeaderText = "CORREO";
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            this.correo.Width = 97;
-            // 
-            // direccion
-            // 
-            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.direccion.HeaderText = "DIRECCIÓN";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            this.direccion.Width = 119;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "ESTADO";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Visible = false;
+            this.dtgEmpleado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dtgEmpleado.Location = new System.Drawing.Point(0, 139);
+            this.dtgEmpleado.MultiSelect = false;
+            this.dtgEmpleado.Name = "dtgEmpleado";
+            this.dtgEmpleado.ReadOnly = true;
+            this.dtgEmpleado.RowHeadersWidth = 20;
+            this.dtgEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgEmpleado.Size = new System.Drawing.Size(920, 308);
+            this.dtgEmpleado.TabIndex = 0;
+            this.dtgEmpleado.TabStop = false;
+            this.dtgEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedor_CellContentClick);
+            this.dtgEmpleado.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgProveedor_CellPainting);
             // 
             // panel1
             // 
@@ -196,9 +133,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Controls.Add(this.rbApellidos);
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.rbRnc);
+            this.panel2.Controls.Add(this.rbIdentificacion);
             this.panel2.Controls.Add(this.rbNombre);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtBusqueda);
@@ -207,6 +144,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1024, 67);
             this.panel2.TabIndex = 2;
+            // 
+            // rbApellidos
+            // 
+            this.rbApellidos.AutoSize = true;
+            this.rbApellidos.Location = new System.Drawing.Point(199, 37);
+            this.rbApellidos.Name = "rbApellidos";
+            this.rbApellidos.Size = new System.Drawing.Size(110, 23);
+            this.rbApellidos.TabIndex = 45;
+            this.rbApellidos.TabStop = true;
+            this.rbApellidos.Text = "APELLIDOS";
+            this.rbApellidos.UseVisualStyleBackColor = true;
+            this.rbApellidos.CheckedChanged += new System.EventHandler(this.rbApellidos_CheckedChanged);
             // 
             // panel5
             // 
@@ -242,17 +191,17 @@
             this.rbActivo.UseVisualStyleBackColor = true;
             this.rbActivo.CheckedChanged += new System.EventHandler(this.rbActivo_CheckedChanged);
             // 
-            // rbRnc
+            // rbIdentificacion
             // 
-            this.rbRnc.AutoSize = true;
-            this.rbRnc.Location = new System.Drawing.Point(315, 37);
-            this.rbRnc.Name = "rbRnc";
-            this.rbRnc.Size = new System.Drawing.Size(154, 23);
-            this.rbRnc.TabIndex = 3;
-            this.rbRnc.TabStop = true;
-            this.rbRnc.Text = "IDENTIFICACIÓN";
-            this.rbRnc.UseVisualStyleBackColor = true;
-            this.rbRnc.CheckedChanged += new System.EventHandler(this.rbRnc_CheckedChanged);
+            this.rbIdentificacion.AutoSize = true;
+            this.rbIdentificacion.Location = new System.Drawing.Point(315, 37);
+            this.rbIdentificacion.Name = "rbIdentificacion";
+            this.rbIdentificacion.Size = new System.Drawing.Size(154, 23);
+            this.rbIdentificacion.TabIndex = 3;
+            this.rbIdentificacion.TabStop = true;
+            this.rbIdentificacion.Text = "IDENTIFICACIÓN";
+            this.rbIdentificacion.UseVisualStyleBackColor = true;
+            this.rbIdentificacion.CheckedChanged += new System.EventHandler(this.rbRnc_CheckedChanged);
             // 
             // rbNombre
             // 
@@ -395,23 +344,83 @@
             this.panel3.Size = new System.Drawing.Size(1024, 54);
             this.panel3.TabIndex = 3;
             // 
-            // radioButton1
+            // editar
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(199, 37);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(110, 23);
-            this.radioButton1.TabIndex = 45;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "APELLIDOS";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editar.HeaderText = "";
+            this.editar.Name = "editar";
+            this.editar.ReadOnly = true;
+            this.editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.editar.ToolTipText = "Editar";
+            // 
+            // codigo
+            // 
+            this.codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.codigo.HeaderText = "CÓDIGO";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 96;
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 97;
+            // 
+            // apellidos
+            // 
+            this.apellidos.HeaderText = "APELLIDOS";
+            this.apellidos.Name = "apellidos";
+            this.apellidos.ReadOnly = true;
+            // 
+            // rnc
+            // 
+            this.rnc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.rnc.HeaderText = "IDENTIFICACIÓN";
+            this.rnc.Name = "rnc";
+            this.rnc.ReadOnly = true;
+            this.rnc.Width = 161;
+            // 
+            // telefono
+            // 
+            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.telefono.HeaderText = "TELÉFONO";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 113;
+            // 
+            // correo
+            // 
+            this.correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.correo.HeaderText = "CORREO";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            this.correo.Width = 97;
+            // 
+            // direccion
+            // 
+            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.direccion.HeaderText = "DIRECCIÓN";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Width = 119;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Visible = false;
             // 
             // frmcEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 501);
-            this.Controls.Add(this.dtgProveedor);
+            this.Controls.Add(this.dtgEmpleado);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -425,7 +434,7 @@
             this.Name = "frmcEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.frmcProveedor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleado)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -439,12 +448,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dtgProveedor;
+        private System.Windows.Forms.DataGridView dtgEmpleado;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton rbRnc;
+        private System.Windows.Forms.RadioButton rbIdentificacion;
         private System.Windows.Forms.RadioButton rbNombre;
         private System.Windows.Forms.Label label3;
         private Controles.textbox txtBusqueda;
@@ -453,19 +462,20 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnElegir;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridViewButtonColumn editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rnc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnActivar;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.RadioButton rbInactivo;
         private System.Windows.Forms.RadioButton rbActivo;
+        private System.Windows.Forms.RadioButton rbApellidos;
+        private System.Windows.Forms.DataGridViewButtonColumn editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rnc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

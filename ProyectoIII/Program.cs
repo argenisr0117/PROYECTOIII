@@ -13,9 +13,14 @@ namespace ProyectoIII
         public static int Iddireccion;
         public static int Codigo;
         public static int Id;
+        public static int Idusuario;
+        public static int Idcontacto;
+        public static int Idsucursal;
+        public static int IdIdentificacion;
         public static int Idproducto;
         public static int Idunidad;
         public static string Proveedor;
+        public static string Empleado;
         public static string Producto;
         public static string Unidad;
 

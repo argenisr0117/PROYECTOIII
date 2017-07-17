@@ -108,6 +108,12 @@
     <Compile Include="Mantenimientos\frmAlmacen.Designer.cs">
       <DependentUpon>frmAlmacen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,12 @@
     <Compile Include="Mantenimientos\frmDireccion.Designer.cs">
       <DependentUpon>frmDireccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\frmOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\frmOrdenCompra.Designer.cs">
+      <DependentUpon>frmOrdenCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades.cs" />
@@ -230,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmAlmacen.resx">
       <DependentUpon>frmAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmSucursal.resx">
       <DependentUpon>frmSucursal.cs</DependentUpon>
@@ -278,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmDireccion.resx">
       <DependentUpon>frmDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\frmOrdenCompra.resx">
+      <DependentUpon>frmOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

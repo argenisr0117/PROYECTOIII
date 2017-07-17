@@ -17,11 +17,91 @@ namespace ProyectoIII.Mantenimientos
     {
         clsDirecciones D = new clsDirecciones();
         clsTipos T = new clsTipos();
-        clsProveedor P = new clsProveedor();
+        clsEmpleado P = new clsEmpleado();
         clsNacionalidad N = new clsNacionalidad();
+        clsCargo C = new clsCargo();
+        clsDepartamento Dp = new clsDepartamento();
         public frmEmpleado()
         {
             InitializeComponent();
+        }
+        private void LlenarComboHorario()
+        {
+            try
+            {
+                cbHorario.DataSource = P.ListadoHorario();
+                cbHorario.DisplayMember = "DESCRIPCION";
+                cbHorario.ValueMember = "ID_horario";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+        private void LlenarComboEstadoc()
+        {
+            try
+            {
+                cbEstadoCivil.DataSource = P.ListadoEstadoc();
+                cbEstadoCivil.DisplayMember = "DESCRIPCION";
+                cbEstadoCivil.ValueMember = "ID_estadoc";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+        private void LlenarComboGenero()
+        {
+            try
+            {
+                cbGenero.DataSource = P.ListadoGenero();
+                cbGenero.DisplayMember = "DESCRIPCION";
+                cbGenero.ValueMember = "ID_genero";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+        private void LlenarComboDpto()
+        {
+            try
+            {
+                cbDpto.DataSource = Dp.Listar(true);
+                cbDpto.DisplayMember = "DESCRIPCION";
+                cbDpto.ValueMember = "ID_departamento";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+        private void LlenarComboCargo()
+        {
+            try
+            {
+                cbCargo.DataSource = C.Listar(true);
+                cbCargo.DisplayMember = "DESCRIPCION";
+                cbCargo.ValueMember = "ID_cargo";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+        private void LlenarComboSeguro()
+        {
+            try
+            {
+                cbSeguro.DataSource = P.ListadoSeguro();
+                cbSeguro.DisplayMember = "DESCRIPCION";
+                cbSeguro.ValueMember = "ID_seguro";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
         }
         private void LlenarComboRegion()
         {
@@ -108,6 +188,12 @@ namespace ProyectoIII.Mantenimientos
         }
         private void frmProveedor_Load(object sender, EventArgs e)
         {
+            LlenarComboHorario();
+            LlenarComboGenero();
+            LlenarComboEstadoc();
+            LlenarComboCargo();
+            LlenarComboDpto();
+            LlenarComboSeguro();
             LlenarComboCiudad();
             LlenarComboTipoI();
             LlenarComboRegion();
@@ -125,13 +211,22 @@ namespace ProyectoIII.Mantenimientos
             try
             {
                 Program.Evento = 1;
-                P.Idtercero = Program.Codigo;
-                DataTable dt = P.DatosProveedor();
+                P.Idempleado = Program.Codigo;
+                DataTable dt = P.DatosEmpleado();
+                DataTable dt1 = P.DatosIdentificacion();
                 DataTable dt2 = P.DatosContacto();
                 DataTable dt3 = P.DatosDireccion();
                 txtNombre.Text = dt.Rows[0][1].ToString();
-                txtApellidos.Text = dt.Rows[0][3].ToString();
-                cbNacionalidad.SelectedValue = dt.Rows[0][4].ToString();
+                txtApellidos.Text = dt.Rows[0][2].ToString();
+                dtpFechanac.Value = Convert.ToDateTime(dt.Rows[0][3]);
+                cbNacionalidad.SelectedValue = Convert.ToInt32(dt.Rows[0][4]);
+                cbGenero.SelectedValue = dt.Rows[0][5].ToString();
+                cbEstadoCivil.SelectedValue = dt.Rows[0][6].ToString();
+                cbCargo.SelectedValue= Convert.ToInt32(dt.Rows[0][7]);
+                cbDpto.SelectedValue = Convert.ToInt32(dt.Rows[0][8]);
+                cbHorario.SelectedValue = Convert.ToInt32(dt.Rows[0][9]);
+                cbSeguro.SelectedValue = Convert.ToInt32(dt.Rows[0][10]);
+                txtSueldo.Text = dt.Rows[0][11].ToString();
                 for (int x = 0; x < dt3.Rows.Count; x++)
                 {
                     dtgDireccion.Rows.Add(dt3.Rows[x][0]);
@@ -148,6 +243,14 @@ namespace ProyectoIII.Mantenimientos
                     dtgContacto.Rows[x].Cells[1].Value = dt2.Rows[x][1].ToString();
                     dtgContacto.Rows[x].Cells[2].Value = dt2.Rows[x][2].ToString();
                     dtgContacto.Rows[x].Cells[3].Value = dt2.Rows[x][3].ToString();
+                }
+                for (int x = 0; x < dt1.Rows.Count; x++)
+                {
+                    dtgIdentificacion.Rows.Add(dt2.Rows[x][0]);
+                    dtgIdentificacion.Rows[x].Cells[0].Value = dt1.Rows[x][0].ToString();
+                    dtgIdentificacion.Rows[x].Cells[1].Value = dt1.Rows[x][1].ToString();
+                    dtgIdentificacion.Rows[x].Cells[2].Value = dt1.Rows[x][2].ToString();
+                    dtgIdentificacion.Rows[x].Cells[3].Value = dt1.Rows[x][3].ToString();
                 }
             }
             catch(Exception ex)
@@ -210,7 +313,7 @@ namespace ProyectoIII.Mantenimientos
                 }
                 else if (Program.Evento == 1)
                 {
-                    dtgContacto.Rows.Add(Program.Id, txtContacto.Text, cbTipoContacto.SelectedValue, cbTipoContacto.Text, "");
+                    dtgContacto.Rows.Add(Program.Idcontacto, txtContacto.Text, cbTipoContacto.SelectedValue, cbTipoContacto.Text, "");
                     txtContacto.Clear();
                 }
                 
@@ -228,7 +331,7 @@ namespace ProyectoIII.Mantenimientos
             {
                 txtContacto.Text = dtgContacto.CurrentRow.Cells[1].Value.ToString();
                 cbTipoContacto.Text= dtgContacto.CurrentRow.Cells[3].Value.ToString();
-                Program.Id= Convert.ToInt32(dtgContacto.CurrentRow.Cells[0].Value);
+                Program.Idcontacto= Convert.ToInt32(dtgContacto.CurrentRow.Cells[0].Value);
                 //Program.Evento = 1;
                 dtgContacto.Rows.RemoveAt(e.RowIndex);
             }
@@ -250,7 +353,7 @@ namespace ProyectoIII.Mantenimientos
                 }
                 else if (Program.Evento == 1)
                 {
-                    dtgDireccion.Rows.Add(Program.Id, cbRegion.Text + "," + cbCiudad.Text + "," + cbBarrio.Text + "," + txtDireccion.Text, cbBarrio.SelectedValue, cbCiudad.SelectedValue, cbRegion.SelectedValue, "");
+                    dtgDireccion.Rows.Add(Program.Iddireccion, cbRegion.Text + "," + cbCiudad.Text + "," + cbBarrio.Text + "," + txtDireccion.Text, cbBarrio.SelectedValue, cbCiudad.SelectedValue, cbRegion.SelectedValue, "");
                     txtDireccion.Clear();
                 }
 
@@ -297,78 +400,120 @@ namespace ProyectoIII.Mantenimientos
                 }
                 if (Program.Evento == 0)
                 {
-                    P.Nombre = txtNombre.Text;                  
-                    P.Idtipot = Convert.ToInt32(cbNacionalidad.SelectedValue);
-                    mensaje = P.Registrar();
-                    if(mensaje=="1")
+                    int anos = DateTime.Now.Date.Year;
+                    anos = anos - dtpFechanac.Value.Year;
+                    if (anos >= 18)
                     {
-                        P.Identificacion = txtApellidos.Text;
-                        P.Idtipoi = 8;
-                        mensaje = P.RegistrarI();
-                        for(int x=0; x < dtgContacto.Rows.Count; x++)
-                        {
-                            P.Contacto = dtgContacto.Rows[x].Cells[1].Value.ToString();
-                            P.Idtipoc = Convert.ToInt32(dtgContacto.Rows[x].Cells[2].Value);
-                            mensaje = P.RegistrarC();
-                        }
-                        for (int x = 0; x < dtgDireccion.Rows.Count; x++)
-                        {
-                            P.Direccion = dtgDireccion.Rows[x].Cells[1].Value.ToString();
-                            P.Idbarrio = Convert.ToInt32(dtgDireccion.Rows[x].Cells[2].Value);
-                            P.Idciudad = Convert.ToInt32(dtgDireccion.Rows[x].Cells[3].Value);
-                            P.Idregion = Convert.ToInt32(dtgDireccion.Rows[x].Cells[4].Value);
-                            mensaje = P.RegistrarD();
-                        }
+                        P.Nombre = txtNombre.Text;
+                        P.Apellidos = txtApellidos.Text;
+                        P.FechaNac = dtpFechanac.Value;
+                        P.Idnacionalidad = Convert.ToInt32(cbNacionalidad.SelectedValue);
+                        P.Idgenero = cbGenero.SelectedValue.ToString();
+                        P.Idestadoc = Convert.ToInt32(cbEstadoCivil.SelectedValue);
+                        P.Sueldo = Convert.ToDouble(txtSueldo.Text);
+                        P.Idcargo = Convert.ToInt32(cbCargo.SelectedValue);
+                        P.Iddpto = Convert.ToInt32(cbDpto.SelectedValue);
+                        P.Idhorario = Convert.ToInt32(cbHorario.SelectedValue);
+                        P.Idseguro = Convert.ToInt32(cbHorario.SelectedValue);
+                        P.Idsucursal = Program.Idsucursal;
+                        mensaje = P.Registrar();
                         if (mensaje == "1")
                         {
-                            MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Limpiar();
+                            for (int x = 0; x < dtgIdentificacion.Rows.Count; x++)
+                            {
+                                P.Identificacion = dtgIdentificacion.Rows[x].Cells[1].Value.ToString();
+                                P.Idtipoi = Convert.ToInt32(dtgIdentificacion.Rows[x].Cells[2].Value);
+                                mensaje = P.RegistrarI();
+                            }
+
+                            for (int x = 0; x < dtgContacto.Rows.Count; x++)
+                            {
+                                P.Contacto = dtgContacto.Rows[x].Cells[1].Value.ToString();
+                                P.Idtipoc = Convert.ToInt32(dtgContacto.Rows[x].Cells[2].Value);
+                                mensaje = P.RegistrarC();
+                            }
+                            for (int x = 0; x < dtgDireccion.Rows.Count; x++)
+                            {
+                                P.Direccion = dtgDireccion.Rows[x].Cells[1].Value.ToString();
+                                P.Idbarrio = Convert.ToInt32(dtgDireccion.Rows[x].Cells[2].Value);
+                                P.Idciudad = Convert.ToInt32(dtgDireccion.Rows[x].Cells[3].Value);
+                                P.Idregion = Convert.ToInt32(dtgDireccion.Rows[x].Cells[4].Value);
+                                mensaje = P.RegistrarD();
+                            }
+                            if (mensaje == "1")
+                            {
+                                MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Limpiar();
+                            }
                         }
+
                     }
-                    
+                    else
+                    {
+                        MessageBoxEx.Show("Empleado debe ser mayor de 18 años", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
                 else if (Program.Evento == 1)
                 {
-                    P.Idtercero = Program.Codigo;
-                    P.Nombre = txtNombre.Text;
-                    P.Idtipot = Convert.ToInt32(cbNacionalidad.SelectedValue);
-                    mensaje = P.Actualizar();
-                    if (mensaje == "1")
+                    int anos = DateTime.Now.Date.Year;
+                    anos = anos - dtpFechanac.Value.Year;
+                    if (anos >= 18)
                     {
-                        P.Identificacion = txtApellidos.Text;
-                        if (cbNacionalidad.Text == "Empresa")
-                        {
-                            P.Idtipoi = 8;
-                        }
-                        else if (cbNacionalidad.Text == "Persona")
-                        {
-                            P.Idtipoi = 6;
-                        }
-                        mensaje = P.ActualizarI();
-                        for (int x = 0; x < dtgContacto.Rows.Count; x++)
-                        {
-                            P.Idcontacto= Convert.ToInt32(dtgContacto.Rows[x].Cells[0].Value);
-                            P.Contacto = dtgContacto.Rows[x].Cells[1].Value.ToString();
-                            P.Idtipoc = Convert.ToInt32(dtgContacto.Rows[x].Cells[2].Value);
-                            mensaje = P.ActualizarC();
-                        }
-                        for (int x = 0; x < dtgDireccion.Rows.Count; x++)
-                        {
-                            P.Iddireccion= Convert.ToInt32(dtgDireccion.Rows[x].Cells[0].Value);
-                            P.Direccion = dtgDireccion.Rows[x].Cells[1].Value.ToString();
-                            P.Idbarrio = Convert.ToInt32(dtgDireccion.Rows[x].Cells[2].Value);
-                            P.Idciudad = Convert.ToInt32(dtgDireccion.Rows[x].Cells[3].Value);
-                            P.Idregion = Convert.ToInt32(dtgDireccion.Rows[x].Cells[4].Value);
-                            mensaje = P.ActualizarD();
-                        }
+                        P.Idempleado = Program.Codigo;
+                        P.Nombre = txtNombre.Text;
+                        P.Apellidos = txtApellidos.Text;
+                        P.FechaNac = dtpFechanac.Value;
+                        P.Idnacionalidad = Convert.ToInt32(cbNacionalidad.SelectedValue);
+                        P.Idgenero = cbGenero.SelectedValue.ToString();
+                        P.Idestadoc = Convert.ToInt32(cbEstadoCivil.SelectedValue);
+                        P.Sueldo = Convert.ToDouble(txtSueldo.Text);
+                        P.Idcargo = Convert.ToInt32(cbCargo.SelectedValue);
+                        P.Iddpto = Convert.ToInt32(cbDpto.SelectedValue);
+                        P.Idhorario = Convert.ToInt32(cbHorario.SelectedValue);
+                        P.Idseguro = Convert.ToInt32(cbHorario.SelectedValue);
+                        P.Idsucursal = Program.Idsucursal;
+                        mensaje = P.Actualizar();
                         if (mensaje == "1")
                         {
-                            MessageBoxEx.Show("Actualizado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Limpiar();
-                        }
-                    }
-                }
+                            for (int x = 0; x < dtgIdentificacion.Rows.Count; x++)
+                            {
+                                P.Ididentificacion = Convert.ToInt32(dtgIdentificacion.Rows[x].Cells[0].Value);
+                                P.Identificacion = dtgIdentificacion.Rows[x].Cells[1].Value.ToString();
+                                P.Idtipoi = Convert.ToInt32(dtgIdentificacion.Rows[x].Cells[2].Value);
+                                mensaje = P.ActualizarI();
+                            }
 
+                            for (int x = 0; x < dtgContacto.Rows.Count; x++)
+                            {
+                                P.Idcontacto = Convert.ToInt32(dtgContacto.Rows[x].Cells[0].Value);
+                                P.Contacto = dtgContacto.Rows[x].Cells[1].Value.ToString();
+                                P.Idtipoc = Convert.ToInt32(dtgContacto.Rows[x].Cells[2].Value);
+                                mensaje = P.ActualizarC();
+                            }
+                            for (int x = 0; x < dtgDireccion.Rows.Count; x++)
+                            {
+                                P.Iddireccion = Convert.ToInt32(dtgDireccion.Rows[x].Cells[0].Value);
+                                P.Direccion = dtgDireccion.Rows[x].Cells[1].Value.ToString();
+                                P.Idbarrio = Convert.ToInt32(dtgDireccion.Rows[x].Cells[2].Value);
+                                P.Idciudad = Convert.ToInt32(dtgDireccion.Rows[x].Cells[3].Value);
+                                P.Idregion = Convert.ToInt32(dtgDireccion.Rows[x].Cells[4].Value);
+                                mensaje = P.ActualizarD();
+                            }
+                            if (mensaje == "1")
+                            {
+                                MessageBoxEx.Show("Actualizado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Limpiar();
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBoxEx.Show("Empleado debe ser mayor de 18 años", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    Program.Codigo = 0;
+                }
             }
             catch (Exception ex)
             {
@@ -379,12 +524,14 @@ namespace ProyectoIII.Mantenimientos
         private void Limpiar()
         {
             txtNombre.Clear();
+            txtSueldo.Clear();
             txtApellidos.Clear();
             txtDireccion.Clear();
             txtContacto.Clear();
             txtNombre.Focus();
             dtgContacto.Rows.Clear();
             dtgDireccion.Rows.Clear();
+            dtgIdentificacion.Rows.Clear();
         }
         private void dtgDireccion_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -418,8 +565,70 @@ namespace ProyectoIII.Mantenimientos
                 cbBarrio.SelectedValue = dtgDireccion.CurrentRow.Cells[2].Value.ToString();
                 cbCiudad.SelectedValue = dtgDireccion.CurrentRow.Cells[3].Value.ToString();
                 cbRegion.SelectedValue = dtgDireccion.CurrentRow.Cells[4].Value.ToString();
-                Program.Id = Convert.ToInt32(dtgDireccion.CurrentRow.Cells[1].Value);
+                Program.Iddireccion = Convert.ToInt32(dtgDireccion.CurrentRow.Cells[0].Value);
                 dtgDireccion.Rows.RemoveAt(e.RowIndex);
+            }
+        }
+
+        private void btnAgregarI_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                errorProvider1.Clear();
+                if (Utilidades.ValidarForm2(gbIdentificacion, errorProvider1) == false)
+                {
+                    return;
+                }
+                if (Program.Evento == 0)
+                {
+                    dtgIdentificacion.Rows.Add(0, txtIdentificacion.Text, cbTipoIdentificacion.SelectedValue, cbTipoIdentificacion.Text, "");
+                    txtIdentificacion.Clear();
+                }
+                else if (Program.Evento == 1)
+                {
+                    dtgContacto.Rows.Add(Program.IdIdentificacion, txtIdentificacion.Text, cbTipoIdentificacion.SelectedValue, cbTipoIdentificacion.Text, "");
+                    txtIdentificacion.Clear();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+
+        private void dtgIdentificacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                txtIdentificacion.Text = dtgIdentificacion.CurrentRow.Cells[1].Value.ToString();
+                cbTipoIdentificacion.Text = dtgIdentificacion.CurrentRow.Cells[3].Value.ToString();
+                Program.IdIdentificacion = Convert.ToInt32(dtgIdentificacion.CurrentRow.Cells[0].Value);
+                //Program.Evento = 1;
+                dtgIdentificacion.Rows.RemoveAt(e.RowIndex);
+            }
+        }
+
+        private void dtgIdentificacion_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex >= 0 && this.dtgIdentificacion.Columns[e.ColumnIndex].Name == "editari" && e.RowIndex >= 0)
+                {
+                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                    DataGridViewButtonCell celBoton = this.dtgIdentificacion.Rows[e.RowIndex].Cells["editari"] as DataGridViewButtonCell;
+                    Icon icoEditar = new Icon(Environment.CurrentDirectory + @"\Recursos\" + @"edit (2).ico");
+                    e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 20, e.CellBounds.Top + 3);
+                    this.dtgIdentificacion.Rows[e.RowIndex].Height = icoEditar.Height + 5;
+                    this.dtgIdentificacion.Columns[e.ColumnIndex].Width = icoEditar.Width + 40;
+
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
             }
         }
     }

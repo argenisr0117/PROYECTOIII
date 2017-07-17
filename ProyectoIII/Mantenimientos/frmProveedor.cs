@@ -410,7 +410,7 @@ namespace ProyectoIII.Mantenimientos
                 cbBarrio.SelectedValue = dtgDireccion.CurrentRow.Cells[2].Value.ToString();
                 cbCiudad.SelectedValue = dtgDireccion.CurrentRow.Cells[3].Value.ToString();
                 cbRegion.SelectedValue = dtgDireccion.CurrentRow.Cells[4].Value.ToString();
-                Program.Id = Convert.ToInt32(dtgDireccion.CurrentRow.Cells[1].Value);
+                Program.Id = Convert.ToInt32(dtgDireccion.CurrentRow.Cells[0].Value);
                 dtgDireccion.Rows.RemoveAt(e.RowIndex);
             }
         }

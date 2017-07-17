@@ -5,11 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoIII.Controles;
+using System.Security.Cryptography;
 
 namespace ProyectoIII
 {
-    class Utilidades
+    internal class Utilidades
     {
+        public static string EncodePassword(string originalPassword)
+        {
+            SHA1 sha1 = new SHA1CryptoServiceProvider();
+
+            byte[] inputBytes = (new UnicodeEncoding()).GetBytes(originalPassword);
+            byte[] hash = sha1.ComputeHash(inputBytes);
+
+            return Convert.ToBase64String(hash);
+        }
         public static bool ValidarForm2(Control objForm, ErrorProvider error)
         {
             bool valor = true;

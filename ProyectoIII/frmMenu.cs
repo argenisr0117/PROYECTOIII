@@ -164,7 +164,13 @@ namespace ProyectoIII
 
         private void eMPLEADOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Mantenimientos.frmEmpleado obj = new Mantenimientos.frmEmpleado();
+            Consultas.frmcEmpleado obj = new Consultas.frmcEmpleado();
+            obj.ShowDialog();
+        }
+
+        private void uSUARIOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmUsuario obj = new Mantenimientos.frmUsuario();
             obj.ShowDialog();
         }
     }

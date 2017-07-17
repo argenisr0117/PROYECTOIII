@@ -15,7 +15,7 @@ namespace ProyectoIII.Consultas
 {
     public partial class frmcEmpleado : MetroForm
     {
-        clsProveedor P = new clsProveedor();
+        clsEmpleado P = new clsEmpleado();
         public frmcEmpleado()
         {
             InitializeComponent();
@@ -45,20 +45,21 @@ namespace ProyectoIII.Consultas
             dt = P.Listar();
             try
             {
-                dtgProveedor.Rows.Clear();
+                dtgEmpleado.Rows.Clear();
                 for (int x = 0; x < dt.Rows.Count; x++)
                 {
-                    dtgProveedor.Rows.Add(dt.Rows[x][0]);
-                    dtgProveedor.Rows[x].Cells[1].Value = dt.Rows[x][0].ToString();
-                    dtgProveedor.Rows[x].Cells[2].Value = dt.Rows[x][1].ToString();
-                    dtgProveedor.Rows[x].Cells[3].Value = dt.Rows[x][2].ToString();
-                    dtgProveedor.Rows[x].Cells[4].Value = dt.Rows[x][3].ToString();
-                    dtgProveedor.Rows[x].Cells[5].Value = dt.Rows[x][4].ToString();
-                    dtgProveedor.Rows[x].Cells[6].Value = dt.Rows[x][5].ToString();
-                    dtgProveedor.Rows[x].Cells[7].Value = dt.Rows[x][6].ToString();
+                    dtgEmpleado.Rows.Add(dt.Rows[x][0]);
+                    dtgEmpleado.Rows[x].Cells[1].Value = dt.Rows[x][0].ToString();
+                    dtgEmpleado.Rows[x].Cells[2].Value = dt.Rows[x][1].ToString();
+                    dtgEmpleado.Rows[x].Cells[3].Value = dt.Rows[x][2].ToString();
+                    dtgEmpleado.Rows[x].Cells[4].Value = dt.Rows[x][3].ToString();
+                    dtgEmpleado.Rows[x].Cells[5].Value = dt.Rows[x][4].ToString();
+                    dtgEmpleado.Rows[x].Cells[6].Value = dt.Rows[x][5].ToString();
+                    dtgEmpleado.Rows[x].Cells[7].Value = dt.Rows[x][6].ToString();
+                    dtgEmpleado.Rows[x].Cells[8].Value = dt.Rows[x][7].ToString();
 
                 }
-                dtgProveedor.ClearSelection();
+                dtgEmpleado.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -74,7 +75,7 @@ namespace ProyectoIII.Consultas
                 {
                     P.Tipo = 1;
                 }
-                else if (rbRnc.Checked)
+                else if (rbIdentificacion.Checked)
                 {
                     P.Tipo = 2;
                 }
@@ -131,7 +132,7 @@ namespace ProyectoIII.Consultas
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Program.Editar = 0;
-            Mantenimientos.frmProveedor obj = new Mantenimientos.frmProveedor();
+            Mantenimientos.frmEmpleado obj = new Mantenimientos.frmEmpleado();
             obj.ShowDialog();
             P.Valor1 = "";
             LlenarGridProveedor();
@@ -141,15 +142,15 @@ namespace ProyectoIII.Consultas
         {
             try
             {
-                if (e.ColumnIndex >= 0 && this.dtgProveedor.Columns[e.ColumnIndex].Name == "editar" && e.RowIndex >= 0)
+                if (e.ColumnIndex >= 0 && this.dtgEmpleado.Columns[e.ColumnIndex].Name == "editar" && e.RowIndex >= 0)
                 {
                     e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                    DataGridViewButtonCell celBoton = this.dtgProveedor.Rows[e.RowIndex].Cells["editar"] as DataGridViewButtonCell;
+                    DataGridViewButtonCell celBoton = this.dtgEmpleado.Rows[e.RowIndex].Cells["editar"] as DataGridViewButtonCell;
                     Icon icoEditar = new Icon(Environment.CurrentDirectory + @"\Recursos\" + @"edit1.ico");
                     e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 10, e.CellBounds.Top + 3);
-                    this.dtgProveedor.Rows[e.RowIndex].Height = icoEditar.Height + 5;
-                    this.dtgProveedor.Columns[e.ColumnIndex].Width = icoEditar.Width + 20;
+                    this.dtgEmpleado.Rows[e.RowIndex].Height = icoEditar.Height + 5;
+                    this.dtgEmpleado.Columns[e.ColumnIndex].Width = icoEditar.Width + 20;
 
                     e.Handled = true;
                 }
@@ -165,8 +166,8 @@ namespace ProyectoIII.Consultas
             if (e.ColumnIndex == 0)
             {
                 Program.Editar = 1;
-                Program.Codigo = Convert.ToInt32(dtgProveedor.CurrentRow.Cells[1].Value);
-                Mantenimientos.frmProveedor obj = new Mantenimientos.frmProveedor();
+                Program.Codigo = Convert.ToInt32(dtgEmpleado.CurrentRow.Cells[1].Value);
+                Mantenimientos.frmEmpleado obj = new Mantenimientos.frmEmpleado();
                 obj.ShowDialog();
                 LlenarGridProveedor();
             }
@@ -174,10 +175,10 @@ namespace ProyectoIII.Consultas
 
         private void btnElegir_Click(object sender, EventArgs e)
         {
-            if (dtgProveedor.SelectedRows.Count>0)
+            if (dtgEmpleado.SelectedRows.Count>0)
             {
-                Program.Codigo = Convert.ToInt32(dtgProveedor.CurrentRow.Cells[1].Value);
-                Program.Proveedor = dtgProveedor.CurrentRow.Cells[2].Value.ToString();
+                Program.Codigo = Convert.ToInt32(dtgEmpleado.CurrentRow.Cells[1].Value);
+                Program.Empleado = dtgEmpleado.CurrentRow.Cells[2].Value.ToString();
                 this.Close();
             }
             else
@@ -192,10 +193,10 @@ namespace ProyectoIII.Consultas
             string mensaje = "";
             try
             {
-                if (dtgProveedor.SelectedRows.Count > 0)
+                if (dtgEmpleado.SelectedRows.Count > 0)
                 {
-                    P.Id = Convert.ToInt32(dtgProveedor.CurrentRow.Cells[1].Value);
-                    P.Estado = Convert.ToBoolean(dtgProveedor.CurrentRow.Cells[7].Value);
+                    P.Idempleado = Convert.ToInt32(dtgEmpleado.CurrentRow.Cells[1].Value);
+                    P.Estado = Convert.ToBoolean(dtgEmpleado.CurrentRow.Cells[8].Value);
                     P.Tabla = "Tercero";
                     P.Campo = "id_tercero";
                     mensaje = P.Activar();
@@ -228,6 +229,21 @@ namespace ProyectoIII.Consultas
         private void rbInactivo_CheckedChanged(object sender, EventArgs e)
         {
             LlenarGridProveedor();
+        }
+
+        private void rbApellidos_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                P.Tipo = 3;
+                P.Valor1 = txtBusqueda.Text;
+                LlenarGridProveedor();
+                txtBusqueda.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
         }
     }
 }
