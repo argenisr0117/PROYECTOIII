@@ -9,6 +9,7 @@ namespace ProyectoIII
     static class Program
     {
         public static int Evento;
+        public static int Idorden;
         public static int Editar;
         public static int Iddireccion;
         public static int Codigo;
@@ -26,9 +27,8 @@ namespace ProyectoIII
         public static string Proveedor;
         public static string Empleado;
         public static string Producto;
-        public static string Unidad;
-
-
+        public static double Itbis;
+        public static string Unidad;       
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

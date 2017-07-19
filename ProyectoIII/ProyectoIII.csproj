@@ -41,8 +41,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevComponents.Instrumentation.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,6 +98,12 @@
     </Compile>
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporte.Designer.cs">
+      <DependentUpon>frmReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\frmAsignarAlmacen.cs">
       <SubType>Form</SubType>
@@ -224,6 +233,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proyecto3DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proyecto3DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="Consultas\frmcProducto.resx">
       <DependentUpon>frmcProducto.cs</DependentUpon>
@@ -242,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporte.resx">
+      <DependentUpon>frmReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmAsignarAlmacen.resx">
       <DependentUpon>frmAsignarAlmacen.cs</DependentUpon>
@@ -316,6 +333,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\orden_compra.rdlc" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -329,10 +347,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Reportes\" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Proyecto3DataSet.xsc">
+      <DependentUpon>Proyecto3DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Proyecto3DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Proyecto3DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Proyecto3DataSet.xss">
+      <DependentUpon>Proyecto3DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Recursos\go.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -391,6 +418,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\folder_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\save_as.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

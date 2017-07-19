@@ -42,6 +42,7 @@
             this.rbReferencia = new System.Windows.Forms.RadioButton();
             this.rbDescripcion = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtBusqueda = new ProyectoIII.Controles.textbox(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActivar = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtBusqueda = new ProyectoIII.Controles.textbox(this.components);
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +59,7 @@
             this.reorden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itbis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -82,7 +83,8 @@
             this.existencia,
             this.reorden,
             this.estado,
-            this.costo});
+            this.costo,
+            this.itbis});
             this.dtgProducto.Dock = System.Windows.Forms.DockStyle.Left;
             this.dtgProducto.Location = new System.Drawing.Point(0, 139);
             this.dtgProducto.MultiSelect = false;
@@ -243,6 +245,17 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "BÚSQUEDA:";
             // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.BackColor = System.Drawing.Color.White;
+            this.txtBusqueda.ForeColor = System.Drawing.Color.Black;
+            this.txtBusqueda.Location = new System.Drawing.Point(103, 6);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(430, 27);
+            this.txtBusqueda.TabIndex = 0;
+            this.txtBusqueda.Validar = false;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -358,17 +371,6 @@
             this.panel3.Size = new System.Drawing.Size(1024, 54);
             this.panel3.TabIndex = 3;
             // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.BackColor = System.Drawing.Color.White;
-            this.txtBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.txtBusqueda.Location = new System.Drawing.Point(103, 6);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(430, 27);
-            this.txtBusqueda.TabIndex = 0;
-            this.txtBusqueda.Validar = false;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
             // editar
             // 
             this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -440,6 +442,13 @@
             this.costo.Name = "costo";
             this.costo.ReadOnly = true;
             // 
+            // itbis
+            // 
+            this.itbis.HeaderText = "ITBIS";
+            this.itbis.Name = "itbis";
+            this.itbis.ReadOnly = true;
+            this.itbis.Visible = false;
+            // 
             // frmcProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -502,5 +511,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reorden;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itbis;
     }
 }
