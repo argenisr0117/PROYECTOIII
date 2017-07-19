@@ -176,7 +176,7 @@ namespace ProyectoIII
 
         private void oRDENCOMPRAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Procesos.frmOrdenCompra obj = new Procesos.frmOrdenCompra();
+            Procesos.frmOrdenCompra2 obj = new Procesos.frmOrdenCompra2();
             obj.ShowDialog();
         }
     }

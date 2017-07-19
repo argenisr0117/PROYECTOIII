@@ -42,10 +42,16 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnProducto = new System.Windows.Forms.Panel();
             this.btnAgregarP = new System.Windows.Forms.Button();
+            this.txtPrecio = new ProyectoIII.Controles.textboxn(this.components);
+            this.txtCantidad = new ProyectoIII.Controles.textboxn(this.components);
             this.cbUnidad = new System.Windows.Forms.ComboBox();
+            this.txtProducto = new ProyectoIII.Controles.textbox(this.components);
+            this.txtCodigoP = new ProyectoIII.Controles.textbox(this.components);
             this.btnProducto = new System.Windows.Forms.Button();
             this.pnProveedor = new System.Windows.Forms.Panel();
             this.btnAgregarPv = new System.Windows.Forms.Button();
+            this.txtProveedor = new ProyectoIII.Controles.textbox(this.components);
+            this.txtCodigoPv = new ProyectoIII.Controles.textbox(this.components);
             this.btnProveedor = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dtgProducto = new System.Windows.Forms.DataGridView();
@@ -56,12 +62,6 @@
             this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtProveedor = new ProyectoIII.Controles.textbox(this.components);
-            this.txtCodigoPv = new ProyectoIII.Controles.textbox(this.components);
-            this.txtPrecio = new ProyectoIII.Controles.textboxn(this.components);
-            this.txtCantidad = new ProyectoIII.Controles.textboxn(this.components);
-            this.txtProducto = new ProyectoIII.Controles.textbox(this.components);
-            this.txtCodigoP = new ProyectoIII.Controles.textbox(this.components);
             this.txtNota = new ProyectoIII.Controles.textbox(this.components);
             this.txtDocumento = new ProyectoIII.Controles.textboxn(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).BeginInit();
@@ -220,6 +220,35 @@
             this.btnAgregarP.UseVisualStyleBackColor = false;
             this.btnAgregarP.Click += new System.EventHandler(this.btnAgregarP_Click);
             // 
+            // txtPrecio
+            // 
+            this.txtPrecio.BackColor = System.Drawing.Color.White;
+            this.txtPrecio.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtPrecio.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.ForeColor = System.Drawing.Color.Black;
+            this.txtPrecio.Location = new System.Drawing.Point(632, 0);
+            this.txtPrecio.Multiline = true;
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(94, 28);
+            this.txtPrecio.TabIndex = 48;
+            this.txtPrecio.Validar = true;
+            this.txtPrecio.Valor = ProyectoIII.Controles.textboxn.Tipo.Números;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.BackColor = System.Drawing.Color.White;
+            this.txtCantidad.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtCantidad.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.ForeColor = System.Drawing.Color.Black;
+            this.txtCantidad.Location = new System.Drawing.Point(549, 0);
+            this.txtCantidad.Multiline = true;
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(83, 28);
+            this.txtCantidad.TabIndex = 47;
+            this.txtCantidad.Validar = true;
+            this.txtCantidad.Valor = ProyectoIII.Controles.textboxn.Tipo.Números;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
+            // 
             // cbUnidad
             // 
             this.cbUnidad.BackColor = System.Drawing.Color.White;
@@ -231,6 +260,34 @@
             this.cbUnidad.Name = "cbUnidad";
             this.cbUnidad.Size = new System.Drawing.Size(100, 27);
             this.cbUnidad.TabIndex = 46;
+            // 
+            // txtProducto
+            // 
+            this.txtProducto.BackColor = System.Drawing.Color.White;
+            this.txtProducto.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtProducto.Enabled = false;
+            this.txtProducto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProducto.ForeColor = System.Drawing.Color.Black;
+            this.txtProducto.Location = new System.Drawing.Point(178, 0);
+            this.txtProducto.Multiline = true;
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(271, 28);
+            this.txtProducto.TabIndex = 1;
+            this.txtProducto.Validar = true;
+            // 
+            // txtCodigoP
+            // 
+            this.txtCodigoP.BackColor = System.Drawing.Color.White;
+            this.txtCodigoP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtCodigoP.Enabled = false;
+            this.txtCodigoP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoP.ForeColor = System.Drawing.Color.Black;
+            this.txtCodigoP.Location = new System.Drawing.Point(95, 0);
+            this.txtCodigoP.Multiline = true;
+            this.txtCodigoP.Name = "txtCodigoP";
+            this.txtCodigoP.Size = new System.Drawing.Size(83, 28);
+            this.txtCodigoP.TabIndex = 0;
+            this.txtCodigoP.Validar = true;
             // 
             // btnProducto
             // 
@@ -287,6 +344,32 @@
             this.btnAgregarPv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarPv.UseVisualStyleBackColor = false;
             this.btnAgregarPv.Click += new System.EventHandler(this.btnAgregarPv_Click);
+            // 
+            // txtProveedor
+            // 
+            this.txtProveedor.BackColor = System.Drawing.Color.White;
+            this.txtProveedor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtProveedor.Enabled = false;
+            this.txtProveedor.ForeColor = System.Drawing.Color.Black;
+            this.txtProveedor.Location = new System.Drawing.Point(162, 0);
+            this.txtProveedor.Multiline = true;
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Size = new System.Drawing.Size(200, 28);
+            this.txtProveedor.TabIndex = 38;
+            this.txtProveedor.Validar = true;
+            // 
+            // txtCodigoPv
+            // 
+            this.txtCodigoPv.BackColor = System.Drawing.Color.White;
+            this.txtCodigoPv.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtCodigoPv.Enabled = false;
+            this.txtCodigoPv.ForeColor = System.Drawing.Color.Black;
+            this.txtCodigoPv.Location = new System.Drawing.Point(98, 0);
+            this.txtCodigoPv.Multiline = true;
+            this.txtCodigoPv.Name = "txtCodigoPv";
+            this.txtCodigoPv.Size = new System.Drawing.Size(64, 28);
+            this.txtCodigoPv.TabIndex = 37;
+            this.txtCodigoPv.Validar = true;
             // 
             // btnProveedor
             // 
@@ -381,89 +464,6 @@
             this.costo.HeaderText = "COSTO";
             this.costo.Name = "costo";
             this.costo.ReadOnly = true;
-            // 
-            // txtProveedor
-            // 
-            this.txtProveedor.BackColor = System.Drawing.Color.White;
-            this.txtProveedor.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtProveedor.Enabled = false;
-            this.txtProveedor.ForeColor = System.Drawing.Color.Black;
-            this.txtProveedor.Location = new System.Drawing.Point(162, 0);
-            this.txtProveedor.Multiline = true;
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(200, 28);
-            this.txtProveedor.TabIndex = 38;
-            this.txtProveedor.Validar = true;
-            // 
-            // txtCodigoPv
-            // 
-            this.txtCodigoPv.BackColor = System.Drawing.Color.White;
-            this.txtCodigoPv.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtCodigoPv.Enabled = false;
-            this.txtCodigoPv.ForeColor = System.Drawing.Color.Black;
-            this.txtCodigoPv.Location = new System.Drawing.Point(98, 0);
-            this.txtCodigoPv.Multiline = true;
-            this.txtCodigoPv.Name = "txtCodigoPv";
-            this.txtCodigoPv.Size = new System.Drawing.Size(64, 28);
-            this.txtCodigoPv.TabIndex = 37;
-            this.txtCodigoPv.Validar = true;
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.BackColor = System.Drawing.Color.White;
-            this.txtPrecio.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtPrecio.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.ForeColor = System.Drawing.Color.Black;
-            this.txtPrecio.Location = new System.Drawing.Point(632, 0);
-            this.txtPrecio.Multiline = true;
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(94, 28);
-            this.txtPrecio.TabIndex = 48;
-            this.txtPrecio.Validar = true;
-            this.txtPrecio.Valor = ProyectoIII.Controles.textboxn.Tipo.Números;
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.BackColor = System.Drawing.Color.White;
-            this.txtCantidad.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtCantidad.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.ForeColor = System.Drawing.Color.Black;
-            this.txtCantidad.Location = new System.Drawing.Point(549, 0);
-            this.txtCantidad.Multiline = true;
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(83, 28);
-            this.txtCantidad.TabIndex = 47;
-            this.txtCantidad.Validar = true;
-            this.txtCantidad.Valor = ProyectoIII.Controles.textboxn.Tipo.Números;
-            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
-            // 
-            // txtProducto
-            // 
-            this.txtProducto.BackColor = System.Drawing.Color.White;
-            this.txtProducto.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtProducto.Enabled = false;
-            this.txtProducto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProducto.ForeColor = System.Drawing.Color.Black;
-            this.txtProducto.Location = new System.Drawing.Point(178, 0);
-            this.txtProducto.Multiline = true;
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(271, 28);
-            this.txtProducto.TabIndex = 1;
-            this.txtProducto.Validar = true;
-            // 
-            // txtCodigoP
-            // 
-            this.txtCodigoP.BackColor = System.Drawing.Color.White;
-            this.txtCodigoP.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtCodigoP.Enabled = false;
-            this.txtCodigoP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoP.ForeColor = System.Drawing.Color.Black;
-            this.txtCodigoP.Location = new System.Drawing.Point(95, 0);
-            this.txtCodigoP.Multiline = true;
-            this.txtCodigoP.Name = "txtCodigoP";
-            this.txtCodigoP.Size = new System.Drawing.Size(83, 28);
-            this.txtCodigoP.TabIndex = 0;
-            this.txtCodigoP.Validar = true;
             // 
             // txtNota
             // 
