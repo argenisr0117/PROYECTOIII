@@ -358,5 +358,13 @@ namespace Entidades
             return dt = M.Listado("listado_equivalencia_producto", lst);
 
         }
+        public DataTable ObtenerUnidadesProducto()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            return dt = M.Listado("obtener_unidades_producto", lst);
+
+        }
     }
 }

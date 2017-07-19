@@ -38,37 +38,37 @@
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.rbInactivo = new System.Windows.Forms.RadioButton();
+            this.rbActivo = new System.Windows.Forms.RadioButton();
             this.rbRnc = new System.Windows.Forms.RadioButton();
             this.rbNombre = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBusqueda = new ProyectoIII.Controles.textbox(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnActivar = new System.Windows.Forms.Button();
             this.btnElegir = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnActivar = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.rbInactivo = new System.Windows.Forms.RadioButton();
-            this.rbActivo = new System.Windows.Forms.RadioButton();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgProveedor
             // 
             this.dtgProveedor.AllowUserToAddRows = false;
             this.dtgProveedor.AllowUserToDeleteRows = false;
-            this.dtgProveedor.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.dtgProveedor.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dtgProveedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtgProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -151,12 +151,21 @@
             this.direccion.ReadOnly = true;
             this.direccion.Width = 119;
             // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Visible = false;
+            // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1024, 72);
@@ -165,6 +174,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Goldenrod;
             this.label2.Location = new System.Drawing.Point(139, 36);
@@ -176,6 +186,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(360, 13);
@@ -194,38 +205,85 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtBusqueda);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(0, 72);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1024, 67);
             this.panel2.TabIndex = 2;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.rbInactivo);
+            this.panel5.Controls.Add(this.rbActivo);
+            this.panel5.ForeColor = System.Drawing.Color.Black;
+            this.panel5.Location = new System.Drawing.Point(916, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(101, 58);
+            this.panel5.TabIndex = 44;
+            // 
+            // rbInactivo
+            // 
+            this.rbInactivo.AutoSize = true;
+            this.rbInactivo.BackColor = System.Drawing.Color.White;
+            this.rbInactivo.ForeColor = System.Drawing.Color.Black;
+            this.rbInactivo.Location = new System.Drawing.Point(3, 31);
+            this.rbInactivo.Name = "rbInactivo";
+            this.rbInactivo.Size = new System.Drawing.Size(90, 23);
+            this.rbInactivo.TabIndex = 1;
+            this.rbInactivo.TabStop = true;
+            this.rbInactivo.Text = "Inactivos";
+            this.rbInactivo.UseVisualStyleBackColor = false;
+            this.rbInactivo.CheckedChanged += new System.EventHandler(this.rbInactivo_CheckedChanged);
+            // 
+            // rbActivo
+            // 
+            this.rbActivo.AutoSize = true;
+            this.rbActivo.BackColor = System.Drawing.Color.White;
+            this.rbActivo.ForeColor = System.Drawing.Color.Black;
+            this.rbActivo.Location = new System.Drawing.Point(3, 7);
+            this.rbActivo.Name = "rbActivo";
+            this.rbActivo.Size = new System.Drawing.Size(78, 23);
+            this.rbActivo.TabIndex = 0;
+            this.rbActivo.TabStop = true;
+            this.rbActivo.Text = "Activos";
+            this.rbActivo.UseVisualStyleBackColor = false;
+            this.rbActivo.CheckedChanged += new System.EventHandler(this.rbActivo_CheckedChanged);
+            // 
             // rbRnc
             // 
             this.rbRnc.AutoSize = true;
+            this.rbRnc.BackColor = System.Drawing.Color.White;
+            this.rbRnc.ForeColor = System.Drawing.Color.Black;
             this.rbRnc.Location = new System.Drawing.Point(199, 37);
             this.rbRnc.Name = "rbRnc";
             this.rbRnc.Size = new System.Drawing.Size(58, 23);
             this.rbRnc.TabIndex = 3;
             this.rbRnc.TabStop = true;
             this.rbRnc.Text = "RNC";
-            this.rbRnc.UseVisualStyleBackColor = true;
+            this.rbRnc.UseVisualStyleBackColor = false;
             this.rbRnc.CheckedChanged += new System.EventHandler(this.rbRnc_CheckedChanged);
             // 
             // rbNombre
             // 
             this.rbNombre.AutoSize = true;
+            this.rbNombre.BackColor = System.Drawing.Color.White;
+            this.rbNombre.ForeColor = System.Drawing.Color.Black;
             this.rbNombre.Location = new System.Drawing.Point(103, 37);
             this.rbNombre.Name = "rbNombre";
             this.rbNombre.Size = new System.Drawing.Size(90, 23);
             this.rbNombre.TabIndex = 2;
             this.rbNombre.TabStop = true;
             this.rbNombre.Text = "NOMBRE";
-            this.rbNombre.UseVisualStyleBackColor = true;
+            this.rbNombre.UseVisualStyleBackColor = false;
             this.rbNombre.CheckedChanged += new System.EventHandler(this.rbNombre_CheckedChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(-1, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 19);
@@ -234,6 +292,8 @@
             // 
             // txtBusqueda
             // 
+            this.txtBusqueda.BackColor = System.Drawing.Color.White;
+            this.txtBusqueda.ForeColor = System.Drawing.Color.Black;
             this.txtBusqueda.Location = new System.Drawing.Point(103, 6);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(430, 27);
@@ -243,12 +303,14 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.btnSalir);
             this.panel4.Controls.Add(this.btnActivar);
             this.panel4.Controls.Add(this.btnElegir);
             this.panel4.Controls.Add(this.btnNuevo);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.ForeColor = System.Drawing.Color.Black;
             this.panel4.Location = new System.Drawing.Point(923, 139);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(101, 308);
@@ -256,7 +318,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
             this.btnSalir.FlatAppearance.BorderSize = 0;
@@ -276,9 +338,31 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnActivar
+            // 
+            this.btnActivar.BackColor = System.Drawing.Color.White;
+            this.btnActivar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnActivar.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
+            this.btnActivar.FlatAppearance.BorderSize = 0;
+            this.btnActivar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActivar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivar.ForeColor = System.Drawing.Color.Black;
+            this.btnActivar.Image = global::ProyectoIII.Properties.Resources.refresh__3_;
+            this.btnActivar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnActivar.Location = new System.Drawing.Point(0, 126);
+            this.btnActivar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnActivar.Name = "btnActivar";
+            this.btnActivar.Size = new System.Drawing.Size(97, 62);
+            this.btnActivar.TabIndex = 50;
+            this.btnActivar.Text = "DESACTIVAR/ACTIVAR";
+            this.btnActivar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActivar.UseVisualStyleBackColor = false;
+            this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
+            // 
             // btnElegir
             // 
-            this.btnElegir.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnElegir.BackColor = System.Drawing.Color.White;
             this.btnElegir.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnElegir.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
             this.btnElegir.FlatAppearance.BorderSize = 0;
@@ -300,7 +384,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNuevo.BackColor = System.Drawing.Color.White;
             this.btnNuevo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
             this.btnNuevo.FlatAppearance.BorderSize = 0;
@@ -323,75 +407,14 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(0, 447);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1024, 54);
             this.panel3.TabIndex = 3;
-            // 
-            // btnActivar
-            // 
-            this.btnActivar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnActivar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnActivar.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
-            this.btnActivar.FlatAppearance.BorderSize = 0;
-            this.btnActivar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActivar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActivar.ForeColor = System.Drawing.Color.Black;
-            this.btnActivar.Image = global::ProyectoIII.Properties.Resources.refresh__3_;
-            this.btnActivar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActivar.Location = new System.Drawing.Point(0, 126);
-            this.btnActivar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnActivar.Name = "btnActivar";
-            this.btnActivar.Size = new System.Drawing.Size(97, 62);
-            this.btnActivar.TabIndex = 50;
-            this.btnActivar.Text = "DESACTIVAR/ACTIVAR";
-            this.btnActivar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivar.UseVisualStyleBackColor = false;
-            this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.rbInactivo);
-            this.panel5.Controls.Add(this.rbActivo);
-            this.panel5.Location = new System.Drawing.Point(916, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(101, 58);
-            this.panel5.TabIndex = 44;
-            // 
-            // rbInactivo
-            // 
-            this.rbInactivo.AutoSize = true;
-            this.rbInactivo.Location = new System.Drawing.Point(3, 31);
-            this.rbInactivo.Name = "rbInactivo";
-            this.rbInactivo.Size = new System.Drawing.Size(90, 23);
-            this.rbInactivo.TabIndex = 1;
-            this.rbInactivo.TabStop = true;
-            this.rbInactivo.Text = "Inactivos";
-            this.rbInactivo.UseVisualStyleBackColor = true;
-            this.rbInactivo.CheckedChanged += new System.EventHandler(this.rbInactivo_CheckedChanged);
-            // 
-            // rbActivo
-            // 
-            this.rbActivo.AutoSize = true;
-            this.rbActivo.Location = new System.Drawing.Point(3, 7);
-            this.rbActivo.Name = "rbActivo";
-            this.rbActivo.Size = new System.Drawing.Size(78, 23);
-            this.rbActivo.TabIndex = 0;
-            this.rbActivo.TabStop = true;
-            this.rbActivo.Text = "Activos";
-            this.rbActivo.UseVisualStyleBackColor = true;
-            this.rbActivo.CheckedChanged += new System.EventHandler(this.rbActivo_CheckedChanged);
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "ESTADO";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Visible = false;
             // 
             // frmcProveedor
             // 
@@ -417,9 +440,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

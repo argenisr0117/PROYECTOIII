@@ -173,5 +173,11 @@ namespace ProyectoIII
             Mantenimientos.frmUsuario obj = new Mantenimientos.frmUsuario();
             obj.ShowDialog();
         }
+
+        private void oRDENCOMPRAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.frmOrdenCompra obj = new Procesos.frmOrdenCompra();
+            obj.ShowDialog();
+        }
     }
 }

@@ -18,6 +18,10 @@ namespace ProyectoIII
         public static int Idsucursal;
         public static int IdIdentificacion;
         public static int Idproducto;
+        public static string Idproduct;
+        public static double Costo;
+        public static string Idproveedor;
+       // public static int Idproducto;
         public static int Idunidad;
         public static string Proveedor;
         public static string Empleado;
@@ -31,6 +35,7 @@ namespace ProyectoIII
         [STAThread]
         static void Main()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());

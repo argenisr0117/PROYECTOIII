@@ -70,5 +70,13 @@ namespace ProyectoIII
             }
             return mensaje;
         }
+
+        private void txtContrasena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnEntrar_Click(sender, e);
+            }
+        }
     }
 }

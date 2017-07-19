@@ -126,6 +126,7 @@
             this.toolTip1.SetToolTip(this.txtContrasena, "CONTRASEÑA");
             this.txtContrasena.UseSystemPasswordChar = true;
             this.txtContrasena.Validar = true;
+            this.txtContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContrasena_KeyPress);
             // 
             // txtUsuario
             // 

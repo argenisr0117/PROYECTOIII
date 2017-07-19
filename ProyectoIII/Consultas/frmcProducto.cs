@@ -46,6 +46,7 @@ namespace ProyectoIII.Consultas
                     dtgProducto.Rows[x].Cells[5].Value = dt.Rows[x][4].ToString();
                     dtgProducto.Rows[x].Cells[6].Value = dt.Rows[x][5].ToString();
                     dtgProducto.Rows[x].Cells[7].Value = dt.Rows[x][6].ToString();
+                    dtgProducto.Rows[x].Cells[8].Value = dt.Rows[x][7].ToString();
 
                 }
                 dtgProducto.ClearSelection();
@@ -100,8 +101,10 @@ namespace ProyectoIII.Consultas
             if (dtgProducto.SelectedRows.Count>0)
             {
                 Program.Idproducto = Convert.ToInt32(dtgProducto.CurrentRow.Cells[1].Value);
+                Program.Idproduct = dtgProducto.CurrentRow.Cells[1].Value.ToString();
                 Program.Producto = dtgProducto.CurrentRow.Cells[2].Value.ToString();
                 Program.Unidad= dtgProducto.CurrentRow.Cells[4].Value.ToString();
+                Program.Costo= Convert.ToDouble(dtgProducto.CurrentRow.Cells[8].Value);
                 this.Close();
             }
             else

@@ -35,7 +35,7 @@ namespace ProyectoIII.Controles
                 if (e.KeyChar == (char)Keys.Enter)
                 {
                     e.Handled = true;
-                    SendKeys.Send("{TAB}");
+                    //SendKeys.Send("{TAB}");
                 }
                 else if ((char.IsDigit(e.KeyChar)) || (char.IsControl(e.KeyChar)) || ((e.KeyChar == '.' || e.KeyChar == ',' || e.KeyChar == '-')))
                 {

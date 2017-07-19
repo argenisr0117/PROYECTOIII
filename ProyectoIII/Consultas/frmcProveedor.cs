@@ -177,6 +177,7 @@ namespace ProyectoIII.Consultas
             if (dtgProveedor.SelectedRows.Count>0)
             {
                 Program.Codigo = Convert.ToInt32(dtgProveedor.CurrentRow.Cells[1].Value);
+                Program.Idproveedor = dtgProveedor.CurrentRow.Cells[1].Value.ToString();
                 Program.Proveedor = dtgProveedor.CurrentRow.Cells[2].Value.ToString();
                 this.Close();
             }

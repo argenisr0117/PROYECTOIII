@@ -67,6 +67,9 @@
             this.eMPRESAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eMPRESAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sUCURSALToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aCCESOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pERFILToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRANSACCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,9 +81,7 @@
             this.vENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cXCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.uTILIDADESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aCCESOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pERFILToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oRDENCOMPRAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -360,6 +361,25 @@
             resources.ApplyResources(this.sUCURSALToolStripMenuItem1, "sUCURSALToolStripMenuItem1");
             this.sUCURSALToolStripMenuItem1.Click += new System.EventHandler(this.sUCURSALToolStripMenuItem1_Click);
             // 
+            // aCCESOSToolStripMenuItem
+            // 
+            this.aCCESOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uSUARIOToolStripMenuItem,
+            this.pERFILToolStripMenuItem});
+            this.aCCESOSToolStripMenuItem.Name = "aCCESOSToolStripMenuItem";
+            resources.ApplyResources(this.aCCESOSToolStripMenuItem, "aCCESOSToolStripMenuItem");
+            // 
+            // uSUARIOToolStripMenuItem
+            // 
+            this.uSUARIOToolStripMenuItem.Name = "uSUARIOToolStripMenuItem";
+            resources.ApplyResources(this.uSUARIOToolStripMenuItem, "uSUARIOToolStripMenuItem");
+            this.uSUARIOToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOToolStripMenuItem_Click);
+            // 
+            // pERFILToolStripMenuItem
+            // 
+            this.pERFILToolStripMenuItem.Name = "pERFILToolStripMenuItem";
+            resources.ApplyResources(this.pERFILToolStripMenuItem, "pERFILToolStripMenuItem");
+            // 
             // procesosToolStripMenuItem
             // 
             this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -374,6 +394,8 @@
             // 
             // cOMPRASToolStripMenuItem
             // 
+            this.cOMPRASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.oRDENCOMPRAToolStripMenuItem});
             this.cOMPRASToolStripMenuItem.Name = "cOMPRASToolStripMenuItem";
             resources.ApplyResources(this.cOMPRASToolStripMenuItem, "cOMPRASToolStripMenuItem");
             // 
@@ -430,24 +452,11 @@
             resources.ApplyResources(this.uTILIDADESToolStripMenuItem, "uTILIDADESToolStripMenuItem");
             this.uTILIDADESToolStripMenuItem.Name = "uTILIDADESToolStripMenuItem";
             // 
-            // aCCESOSToolStripMenuItem
+            // oRDENCOMPRAToolStripMenuItem
             // 
-            this.aCCESOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uSUARIOToolStripMenuItem,
-            this.pERFILToolStripMenuItem});
-            this.aCCESOSToolStripMenuItem.Name = "aCCESOSToolStripMenuItem";
-            resources.ApplyResources(this.aCCESOSToolStripMenuItem, "aCCESOSToolStripMenuItem");
-            // 
-            // uSUARIOToolStripMenuItem
-            // 
-            this.uSUARIOToolStripMenuItem.Name = "uSUARIOToolStripMenuItem";
-            resources.ApplyResources(this.uSUARIOToolStripMenuItem, "uSUARIOToolStripMenuItem");
-            this.uSUARIOToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOToolStripMenuItem_Click);
-            // 
-            // pERFILToolStripMenuItem
-            // 
-            this.pERFILToolStripMenuItem.Name = "pERFILToolStripMenuItem";
-            resources.ApplyResources(this.pERFILToolStripMenuItem, "pERFILToolStripMenuItem");
+            this.oRDENCOMPRAToolStripMenuItem.Name = "oRDENCOMPRAToolStripMenuItem";
+            resources.ApplyResources(this.oRDENCOMPRAToolStripMenuItem, "oRDENCOMPRAToolStripMenuItem");
+            this.oRDENCOMPRAToolStripMenuItem.Click += new System.EventHandler(this.oRDENCOMPRAToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -528,5 +537,6 @@
         private System.Windows.Forms.ToolStripMenuItem aCCESOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uSUARIOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pERFILToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oRDENCOMPRAToolStripMenuItem;
     }
 }
