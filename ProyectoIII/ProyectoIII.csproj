@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\frmcOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmcOrdenCompra.Designer.cs">
+      <DependentUpon>frmcOrdenCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmcProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,11 +225,11 @@
     <Compile Include="Mantenimientos\frmDireccion.Designer.cs">
       <DependentUpon>frmDireccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Procesos\frmOrdenCompra.cs">
+    <Compile Include="Procesos\frmEntradaInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Procesos\frmOrdenCompra.Designer.cs">
-      <DependentUpon>frmOrdenCompra.cs</DependentUpon>
+    <Compile Include="Procesos\frmEntradaInventario.Designer.cs">
+      <DependentUpon>frmEntradaInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Procesos\frmOrdenCompra2.cs">
       <SubType>Form</SubType>
@@ -239,6 +245,9 @@
       <DependentUpon>Proyecto3DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="Consultas\frmcOrdenCompra.resx">
+      <DependentUpon>frmcOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcProducto.resx">
       <DependentUpon>frmcProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,8 +326,8 @@
     <EmbeddedResource Include="Mantenimientos\frmDireccion.resx">
       <DependentUpon>frmDireccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Procesos\frmOrdenCompra.resx">
-      <DependentUpon>frmOrdenCompra.cs</DependentUpon>
+    <EmbeddedResource Include="Procesos\frmEntradaInventario.resx">
+      <DependentUpon>frmEntradaInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\frmOrdenCompra2.resx">
       <DependentUpon>frmOrdenCompra2.cs</DependentUpon>

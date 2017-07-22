@@ -72,7 +72,9 @@
             this.pERFILToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oRDENCOMPRAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRANSACCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eNTRADAINVENTARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fACTURACIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cXCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONSULTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,7 +83,7 @@
             this.vENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cXCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.uTILIDADESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oRDENCOMPRAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bACKUPBASEDATOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -399,10 +401,24 @@
             this.cOMPRASToolStripMenuItem.Name = "cOMPRASToolStripMenuItem";
             resources.ApplyResources(this.cOMPRASToolStripMenuItem, "cOMPRASToolStripMenuItem");
             // 
+            // oRDENCOMPRAToolStripMenuItem
+            // 
+            this.oRDENCOMPRAToolStripMenuItem.Name = "oRDENCOMPRAToolStripMenuItem";
+            resources.ApplyResources(this.oRDENCOMPRAToolStripMenuItem, "oRDENCOMPRAToolStripMenuItem");
+            this.oRDENCOMPRAToolStripMenuItem.Click += new System.EventHandler(this.oRDENCOMPRAToolStripMenuItem_Click);
+            // 
             // tRANSACCIONESToolStripMenuItem
             // 
+            this.tRANSACCIONESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eNTRADAINVENTARIOToolStripMenuItem});
             this.tRANSACCIONESToolStripMenuItem.Name = "tRANSACCIONESToolStripMenuItem";
             resources.ApplyResources(this.tRANSACCIONESToolStripMenuItem, "tRANSACCIONESToolStripMenuItem");
+            // 
+            // eNTRADAINVENTARIOToolStripMenuItem
+            // 
+            this.eNTRADAINVENTARIOToolStripMenuItem.Name = "eNTRADAINVENTARIOToolStripMenuItem";
+            resources.ApplyResources(this.eNTRADAINVENTARIOToolStripMenuItem, "eNTRADAINVENTARIOToolStripMenuItem");
+            this.eNTRADAINVENTARIOToolStripMenuItem.Click += new System.EventHandler(this.eNTRADAINVENTARIOToolStripMenuItem_Click);
             // 
             // fACTURACIONToolStripMenuItem
             // 
@@ -448,15 +464,16 @@
             // 
             // uTILIDADESToolStripMenuItem
             // 
+            this.uTILIDADESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bACKUPBASEDATOSToolStripMenuItem});
             this.uTILIDADESToolStripMenuItem.Image = global::ProyectoIII.Properties.Resources.preferences;
             resources.ApplyResources(this.uTILIDADESToolStripMenuItem, "uTILIDADESToolStripMenuItem");
             this.uTILIDADESToolStripMenuItem.Name = "uTILIDADESToolStripMenuItem";
             // 
-            // oRDENCOMPRAToolStripMenuItem
+            // bACKUPBASEDATOSToolStripMenuItem
             // 
-            this.oRDENCOMPRAToolStripMenuItem.Name = "oRDENCOMPRAToolStripMenuItem";
-            resources.ApplyResources(this.oRDENCOMPRAToolStripMenuItem, "oRDENCOMPRAToolStripMenuItem");
-            this.oRDENCOMPRAToolStripMenuItem.Click += new System.EventHandler(this.oRDENCOMPRAToolStripMenuItem_Click);
+            this.bACKUPBASEDATOSToolStripMenuItem.Name = "bACKUPBASEDATOSToolStripMenuItem";
+            resources.ApplyResources(this.bACKUPBASEDATOSToolStripMenuItem, "bACKUPBASEDATOSToolStripMenuItem");
             // 
             // frmMenu
             // 
@@ -538,5 +555,7 @@
         private System.Windows.Forms.ToolStripMenuItem uSUARIOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pERFILToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oRDENCOMPRAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eNTRADAINVENTARIOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bACKUPBASEDATOSToolStripMenuItem;
     }
 }

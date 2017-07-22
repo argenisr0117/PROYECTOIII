@@ -179,5 +179,11 @@ namespace ProyectoIII
             Procesos.frmOrdenCompra2 obj = new Procesos.frmOrdenCompra2();
             obj.ShowDialog();
         }
+
+        private void eNTRADAINVENTARIOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.frmcOrdenCompra obj = new Consultas.frmcOrdenCompra();
+            obj.ShowDialog();
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace Entidades
         string Mdocumento;
         string Mnota;
         DateTime Mfecha;
+        DateTime Mfechah;
         int Midproducto;
         int Midunidad;
         int Midsucursal;
@@ -88,6 +89,11 @@ namespace Entidades
             get { return Mfecha; }
             set { Mfecha = value; }
         }
+        public DateTime Fechah
+        {
+            get { return Mfechah; }
+            set { Mfechah = value; }
+        }
         public string RegistrarOrden()
         {
             string mensaje = "";
@@ -117,6 +123,17 @@ namespace Entidades
             M.EjecutarSP("registrar_detalle_orden_compra", ref lst);
             mensaje = lst[6].Valor.ToString();
             return mensaje;
+        }
+        public DataTable BuscarOrdenes()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@fechad", Mfecha));
+            lst.Add(new clsParametros("@fechah", Mfechah));
+            lst.Add(new clsParametros("@idtercero", Midproveedor));
+            lst.Add(new clsParametros("@documento", Mdocumento));
+            return dt = M.Listado("buscar_ordenes", lst);
+
         }
     }
 }

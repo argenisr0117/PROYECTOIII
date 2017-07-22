@@ -370,7 +370,7 @@
     <value>EMPLEADO</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Text" xml:space="preserve">
     <value>ENTIDADES</value>
@@ -478,7 +478,7 @@
     <value>DEPARTAMENTO</value>
   </data>
   <data name="gENERALESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="gENERALESToolStripMenuItem.Text" xml:space="preserve">
     <value>GENERALES</value>
@@ -496,25 +496,25 @@
     <value>SUCURSAL</value>
   </data>
   <data name="eMPRESAToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="eMPRESAToolStripMenuItem.Text" xml:space="preserve">
     <value>EMPRESA</value>
   </data>
   <data name="uSUARIOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="uSUARIOToolStripMenuItem.Text" xml:space="preserve">
     <value>USUARIO</value>
   </data>
   <data name="pERFILToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pERFILToolStripMenuItem.Text" xml:space="preserve">
     <value>PERFIL</value>
   </data>
   <data name="aCCESOSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="aCCESOSToolStripMenuItem.Text" xml:space="preserve">
     <value>ACCESOS</value>
@@ -542,6 +542,12 @@
   </data>
   <data name="cOMPRASToolStripMenuItem.Text" xml:space="preserve">
     <value>COMPRAS</value>
+  </data>
+  <data name="eNTRADAINVENTARIOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="eNTRADAINVENTARIOToolStripMenuItem.Text" xml:space="preserve">
+    <value>ENTRADA INVENTARIO</value>
   </data>
   <data name="tRANSACCIONESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 22</value>
@@ -608,6 +614,12 @@
   </data>
   <data name="cONSULTASToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageAboveText</value>
+  </data>
+  <data name="bACKUPBASEDATOSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 22</value>
+  </data>
+  <data name="bACKUPBASEDATOSToolStripMenuItem.Text" xml:space="preserve">
+    <value>BACKUP BASEDATOS</value>
   </data>
   <data name="uTILIDADESToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -1065,10 +1077,22 @@
   <data name="&gt;&gt;cOMPRASToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;oRDENCOMPRAToolStripMenuItem.Name" xml:space="preserve">
+    <value>oRDENCOMPRAToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;oRDENCOMPRAToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tRANSACCIONESToolStripMenuItem.Name" xml:space="preserve">
     <value>tRANSACCIONESToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;tRANSACCIONESToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eNTRADAINVENTARIOToolStripMenuItem.Name" xml:space="preserve">
+    <value>eNTRADAINVENTARIOToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;eNTRADAINVENTARIOToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fACTURACIONToolStripMenuItem.Name" xml:space="preserve">
@@ -1119,10 +1143,10 @@
   <data name="&gt;&gt;uTILIDADESToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;oRDENCOMPRAToolStripMenuItem.Name" xml:space="preserve">
-    <value>oRDENCOMPRAToolStripMenuItem</value>
+  <data name="&gt;&gt;bACKUPBASEDATOSToolStripMenuItem.Name" xml:space="preserve">
+    <value>bACKUPBASEDATOSToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;oRDENCOMPRAToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;bACKUPBASEDATOSToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

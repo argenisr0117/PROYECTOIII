@@ -63,19 +63,19 @@ namespace ProyectoIII.Procesos
             else if (numerodoc > 9 && numerodoc < 100)
             {
                 numerodoc++;
-                string var = numerodoc.ToString().PadLeft(7, '0');
+                string var = numerodoc.ToString().PadLeft(8, '0');
                 txtDocumento.Text = var;
             }
             else if (numerodoc > 99 && numerodoc <= 999)
             {
                 numerodoc++;
-                string var = numerodoc.ToString().PadLeft(6, '0');
+                string var = numerodoc.ToString().PadLeft(7, '0');
                 txtDocumento.Text = var;
             }
             else if (numerodoc > 999 && numerodoc <= 9999)
             {
                 numerodoc++;
-                string var = numerodoc.ToString().PadLeft(5, '0');
+                string var = numerodoc.ToString().PadLeft(6, '0');
                 txtDocumento.Text = var;
             }
 
