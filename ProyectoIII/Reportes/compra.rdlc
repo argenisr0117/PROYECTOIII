@@ -540,7 +540,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Fields!itbis.Value * Fields!costo.Value)*Fields!cantidad.Value</Value>
+                              <Value />
                               <Style>
                                 <Format>n2</Format>
                               </Style>
@@ -636,181 +636,6 @@
           </Border>
         </Style>
       </Tablix>
-      <Rectangle Name="Rectangle2">
-        <ReportItems>
-          <Textbox Name="itbis2">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>TOTAL:         </Value>
-                    <Style>
-                      <FontFamily>tahoma</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Sum(Fields!sub_total.Value, "DataSet1")</Value>
-                    <Style>
-                      <FontFamily>tahoma</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                      <Format>n2</Format>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>itbis1</rd:DefaultName>
-            <Top>0.25in</Top>
-            <Height>0.25in</Height>
-            <Width>2in</Width>
-            <Style>
-              <Border>
-                <Color>LightGrey</Color>
-                <Style>Solid</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Tablix Name="Tablix4">
-            <TablixBody>
-              <TablixColumns>
-                <TablixColumn>
-                  <Width>0.10529in</Width>
-                </TablixColumn>
-              </TablixColumns>
-              <TablixRows>
-                <TablixRow>
-                  <Height>0.25in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox26">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox26</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-              </TablixRows>
-            </TablixBody>
-            <TablixColumnHierarchy>
-              <TablixMembers>
-                <TablixMember />
-              </TablixMembers>
-            </TablixColumnHierarchy>
-            <TablixRowHierarchy>
-              <TablixMembers>
-                <TablixMember>
-                  <Group Name="itbis">
-                    <GroupExpressions>
-                      <GroupExpression>=Fields!itbis.Value</GroupExpression>
-                    </GroupExpressions>
-                  </Group>
-                  <SortExpressions>
-                    <SortExpression>
-                      <Value>=Fields!itbis.Value</Value>
-                    </SortExpression>
-                  </SortExpressions>
-                  <TablixHeader>
-                    <Size>1.6632in</Size>
-                    <CellContents>
-                      <Textbox Name="itbis1">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>ITBIS:           </Value>
-                                <Style>
-                                  <FontFamily>tahoma</FontFamily>
-                                  <FontWeight>Bold</FontWeight>
-                                </Style>
-                              </TextRun>
-                              <TextRun>
-                                <Value>=Sum((Fields!itbis.Value * Fields!costo.Value)*Fields!cantidad.Value)</Value>
-                                <Style>
-                                  <FontFamily>tahoma</FontFamily>
-                                  <FontWeight>Bold</FontWeight>
-                                  <Format>n2</Format>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style>
-                              <TextAlign>Left</TextAlign>
-                            </Style>
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>itbis1</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>LightGrey</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
-                </TablixMember>
-              </TablixMembers>
-            </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
-            <Height>0.25in</Height>
-            <Width>1.76849in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Tablix>
-        </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Top>0.81819in</Top>
-        <Left>7.38416in</Left>
-        <Height>0.6875in</Height>
-        <Width>2in</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Rectangle>
     </ReportItems>
     <Height>1.5925in</Height>
     <Style />
@@ -829,7 +654,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>ORDEN DE COMPRA</Value>
+                  <Value>ENTRADA A INVENTARIO</Value>
                   <Style>
                     <FontFamily>tahoma</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -844,7 +669,7 @@
           <Top>0.17583in</Top>
           <Left>3.58333in</Left>
           <Height>0.25in</Height>
-          <Width>2.25in</Width>
+          <Width>2.67708in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -943,206 +768,6 @@
         </Textbox>
         <Rectangle Name="Rectangle1">
           <ReportItems>
-            <Textbox Name="nombre">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Solicitado a:</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value xml:space="preserve"> </Value>
-                      <Style />
-                    </TextRun>
-                    <TextRun>
-                      <Value>=First(Fields!nombre.Value, "DataSet2")</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>nombre</rd:DefaultName>
-              <Height>0.25in</Height>
-              <Width>3.44792in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="identificacion">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>RNC/Cédula:</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>=First(Fields!identificacion.Value, "DataSet2")</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>identificacion</rd:DefaultName>
-              <Top>0.27778in</Top>
-              <Height>0.25in</Height>
-              <Width>3.09375in</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="correo">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Correo:</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value xml:space="preserve"> </Value>
-                      <Style />
-                    </TextRun>
-                    <TextRun>
-                      <Value>=First(Fields!correo.Value, "DataSet2")</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>correo</rd:DefaultName>
-              <Top>0.84375in</Top>
-              <Height>0.25in</Height>
-              <Width>3.09375in</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="telefono">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Teléfono:</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value xml:space="preserve"> </Value>
-                      <Style />
-                    </TextRun>
-                    <TextRun>
-                      <Value>=First(Fields!telefono.Value, "DataSet2")</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>telefono</rd:DefaultName>
-              <Top>0.56597in</Top>
-              <Height>0.25in</Height>
-              <Width>3.09375in</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="descripcion1">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Dirección:</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>=First(Fields!descripcion.Value, "DataSet2")</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>descripcion1</rd:DefaultName>
-              <Top>1.12153in</Top>
-              <Height>0.25in</Height>
-              <Width>4.26042in</Width>
-              <ZIndex>4</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="nota">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -1171,48 +796,6 @@
               <Left>5.22569in</Left>
               <Height>0.61458in</Height>
               <Width>3.6875in</Width>
-              <ZIndex>5</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="documento2">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Condición: </Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>=First(Fields!descripcion1.Value, "DataSet1")</Value>
-                      <Style>
-                        <FontFamily>tahoma</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>DimGray</Color>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>documento</rd:DefaultName>
-              <Top>0.95549in</Top>
-              <Left>5.22569in</Left>
-              <Height>0.25in</Height>
-              <Width>1.63194in</Width>
-              <ZIndex>6</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1243,7 +826,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>No. Orden: </Value>
+                  <Value>No. Documento: </Value>
                   <Style>
                     <FontFamily>tahoma</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1263,9 +846,9 @@
           </Paragraphs>
           <rd:DefaultName>documento</rd:DefaultName>
           <Top>0.97444in</Top>
-          <Left>3.72792in</Left>
+          <Left>3.44667in</Left>
           <Height>0.25in</Height>
-          <Width>1.63194in</Width>
+          <Width>1.91319in</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -1284,7 +867,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Fecha Orden:</Value>
+                  <Value>Fecha:</Value>
                   <Style>
                     <FontFamily>tahoma</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1609,8 +1192,24 @@
           <DataField>fecha</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="factura">
+          <DataField>factura</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="id_producto">
+          <DataField>id_producto</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="referencia">
+          <DataField>referencia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="descripcion">
           <DataField>descripcion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Unidad">
+          <DataField>Unidad</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="cantidad">
@@ -1625,78 +1224,18 @@
           <DataField>sub_total</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="id_producto">
-          <DataField>id_producto</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="referencia">
-          <DataField>referencia</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Unidad">
-          <DataField>Unidad</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="itbis">
-          <DataField>itbis</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
         <Field Name="nota">
           <DataField>nota</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="descripcion1">
-          <DataField>descripcion1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Proyecto3DataSet</rd:DataSetName>
         <rd:SchemaPath>C:\Users\Argenis-PC\Documents\Visual Studio 2015\Projects\ProyectoIII\ProyectoIII\Proyecto3DataSet.xsd</rd:SchemaPath>
-        <rd:TableName>obtener_orden</rd:TableName>
+        <rd:TableName>obtener_compra</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>obtener_ordenTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DataSet2">
-      <Query>
-        <DataSourceName>Proyecto3DataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="id_tercero">
-          <DataField>id_tercero</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="nombre">
-          <DataField>nombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="identificacion">
-          <DataField>identificacion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="telefono">
-          <DataField>telefono</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="correo">
-          <DataField>correo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="descripcion">
-          <DataField>descripcion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>Proyecto3DataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Argenis-PC\Documents\Visual Studio 2015\Projects\ProyectoIII\ProyectoIII\Proyecto3DataSet.xsd</rd:SchemaPath>
-        <rd:TableName>obtener_orden_proveedor</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>obtener_orden_proveedorTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>obtener_compraTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

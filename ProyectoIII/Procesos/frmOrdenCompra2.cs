@@ -22,6 +22,21 @@ namespace ProyectoIII.Procesos
         clsProducto P = new clsProducto();
         clsTransacciones T = new clsTransacciones();
         clsCompras C = new clsCompras();
+        clsTipos Ti = new clsTipos();
+        private void LlenarComboTipo()
+        {
+            try
+            {
+                Ti.Iddestipo = 1;
+                cbTipo.DataSource = Ti.ListarT(true);
+                cbTipo.DisplayMember = "DESCRIPCION";
+                cbTipo.ValueMember = "ID_TIPO";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
         private void LlenarComboUnidad()
         {
             try
@@ -38,6 +53,7 @@ namespace ProyectoIII.Procesos
         }
         private void frmOrdenCompra2_Load(object sender, EventArgs e)
         {
+            LlenarComboTipo();
             Autocompletar();
             dtgProveedor.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10);
             dtgProducto.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10);
@@ -364,6 +380,7 @@ namespace ProyectoIII.Procesos
                     C.Fecha = dtpFecha.Value;
                     C.Idusuario = Program.Idusuario;
                     C.Idsucursal = Program.Idsucursal;
+                    C.Idtipo = Convert.ToInt32(cbTipo.SelectedValue);
                     mensaje = C.RegistrarOrden();
                     if (mensaje == "1")
                     {

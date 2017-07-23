@@ -47,32 +47,65 @@ namespace ProyectoIII.Consultas
         {
             dtgOrdenes.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9);
             dtgOrdenes.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            txtNoDocumento.Focus();
             dtpFechaD.Value= new DateTime(DateTime.Now.Year, 1, 1);
             C.Idproveedor = 0;
             C.Documento = "";
             C.Fecha = dtpFechaD.Value;
             C.Fechah = dtpFechaH.Value;
             LlenarGrid();
+            txtNoDocumento.Focus();
+
         }
 
         private void txtNoDocumento_TextChanged(object sender, EventArgs e)
         {
-            C.Idproveedor = Convert.ToInt32(txtCodigoPv.Text);
-            C.Documento = txtNoDocumento.Text;
-            C.Fecha = dtpFechaD.Value;
-            C.Fechah = dtpFechaH.Value;
-            LlenarGrid();
+            try
+            {
+                if (string.IsNullOrEmpty(txtCodigoPv.Text))
+                {
+                    C.Idproveedor = 0;
+                }
+                else
+                {
+                    C.Idproveedor = Convert.ToInt32(txtCodigoPv.Text);
+                }
+                C.Documento = txtNoDocumento.Text;
+                C.Fecha = dtpFechaD.Value;
+                C.Fechah = dtpFechaH.Value;
+                LlenarGrid();
+            }
+            catch(Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+            
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
-            frmcProveedor obj = new frmcProveedor();
+            try
+            {
+                frmcProveedor obj = new frmcProveedor();
+                obj.ShowDialog();
+                C.Idproveedor = Convert.ToInt32(Program.Idproveedor);
+                LlenarGrid();
+                txtCodigoPv.Text = Program.Idproveedor.ToString();
+                txtProveedor.Text = Program.Proveedor;
+            }
+            catch(Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+            
+        }
+
+        private void dtgOrdenes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Program.Documento = dtgOrdenes.CurrentRow.Cells[0].Value.ToString();
+            Procesos.frmEntradaInventario obj = new Procesos.frmEntradaInventario();
+            this.Hide();
             obj.ShowDialog();
-            C.Idproveedor = Convert.ToInt32(Program.Idproveedor);
-            LlenarGrid();
-            txtCodigoPv.Text = Program.Idproveedor.ToString();
-            txtProveedor.Text = Program.Proveedor;
+            this.Close();
         }
     }
 }

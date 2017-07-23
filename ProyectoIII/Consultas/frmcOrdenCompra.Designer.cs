@@ -189,10 +189,13 @@
             this.fecha,
             this.codigop});
             this.dtgOrdenes.Location = new System.Drawing.Point(1, 125);
+            this.dtgOrdenes.MultiSelect = false;
             this.dtgOrdenes.Name = "dtgOrdenes";
             this.dtgOrdenes.ReadOnly = true;
+            this.dtgOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgOrdenes.Size = new System.Drawing.Size(553, 242);
             this.dtgOrdenes.TabIndex = 63;
+            this.dtgOrdenes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgOrdenes_CellDoubleClick);
             // 
             // nodocumento
             // 

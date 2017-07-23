@@ -12,7 +12,11 @@ namespace Entidades
     {
         private clsManejador M = new clsManejador();
         int Midorden;
+        int Midtipo;
+        int Midcompra;
+        int Midalmacen;
         string Mdocumento;
+        string Mfactura;
         string Mnota;
         DateTime Mfecha;
         DateTime Mfechah;
@@ -24,6 +28,7 @@ namespace Entidades
         double Mcosto;
         double Mcantidad;
         double Mimporte;
+        double Mitbis;
         string Mdetalle;
         Boolean Mestado;
         string Mcampo = "id_cargo";
@@ -33,6 +38,21 @@ namespace Entidades
         {
             get { return Midorden; }
             set { Midorden = value; }
+        }
+        public int Idtipo
+        {
+            get { return Midtipo; }
+            set { Midtipo = value; }
+        }
+        public int Idalmacen
+        {
+            get { return Midalmacen; }
+            set { Midalmacen = value; }
+        }
+        public int Idcompra
+        {
+            get { return Midcompra; }
+            set { Midcompra = value; }
         }
         public int Idproducto
         {
@@ -64,6 +84,11 @@ namespace Entidades
             get { return Mdocumento; }
             set { Mdocumento = value; }
         }
+        public string Factura
+        {
+            get { return Mfactura; }
+            set { Mfactura = value; }
+        }
         public string Nota
         {
             get { return Mnota; }
@@ -73,6 +98,11 @@ namespace Entidades
         {
             get { return Mcosto; }
             set { Mcosto = value; }
+        }
+        public double Itbis
+        {
+            get { return Mitbis; }
+            set { Mitbis = value; }
         }
         public double Cantidad
         {
@@ -104,9 +134,10 @@ namespace Entidades
             lst.Add(new clsParametros("@idproveedor", Midproveedor));
             lst.Add(new clsParametros("@idusuario", Midusuario));
             lst.Add(new clsParametros("@idsucursal", Midsucursal));
+            lst.Add(new clsParametros("@idtipo", Midtipo));
             lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
             M.EjecutarSP("registrar_orden_compra", ref lst);
-            mensaje = lst[6].Valor.ToString();
+            mensaje = lst[7].Valor.ToString();
             return mensaje;
         }
         public string RegistrarDetalleOrden()
@@ -124,6 +155,38 @@ namespace Entidades
             mensaje = lst[6].Valor.ToString();
             return mensaje;
         }
+        public string RegistrarCompra()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@documento", Mdocumento));
+            lst.Add(new clsParametros("@factura", Mfactura));
+            lst.Add(new clsParametros("@nota", Mnota));
+            lst.Add(new clsParametros("@fecha", Mfecha));
+            lst.Add(new clsParametros("@idusuario", Midusuario));
+            lst.Add(new clsParametros("@idsucursal", Midsucursal));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("registrar_compra", ref lst);
+            mensaje = lst[6].Valor.ToString();
+            return mensaje;
+        }
+        public string RegistrarDetalleCompra()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idcompra", Midcompra));
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@idunidad", Midunidad));
+            lst.Add(new clsParametros("@idalmacen", Midalmacen));
+            lst.Add(new clsParametros("@cantidad", Mcantidad));
+            lst.Add(new clsParametros("@costo", Mcosto));
+            lst.Add(new clsParametros("@itbis", Mitbis));
+            lst.Add(new clsParametros("@importe", Mimporte));
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("registrar_detalle_compra", ref lst);
+            mensaje = lst[8].Valor.ToString();
+            return mensaje;
+        }
         public DataTable BuscarOrdenes()
         {
             DataTable dt = new DataTable();
@@ -133,6 +196,14 @@ namespace Entidades
             lst.Add(new clsParametros("@idtercero", Midproveedor));
             lst.Add(new clsParametros("@documento", Mdocumento));
             return dt = M.Listado("buscar_ordenes", lst);
+
+        }
+        public DataTable ObtenerDatosOrden()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@documento", Mdocumento));
+            return dt = M.Listado("obtener_datos_orden", lst);
 
         }
     }

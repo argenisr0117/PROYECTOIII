@@ -93,7 +93,7 @@ namespace Conexion
             }
             catch (SqlException ex)
             {
-                throw ex;
+                //throw ex;
             }
             Desconectar();
         }
