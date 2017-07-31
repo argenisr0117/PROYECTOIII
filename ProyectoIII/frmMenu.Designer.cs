@@ -73,6 +73,7 @@
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oRDENCOMPRAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dEVOLUCIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRANSACCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eNTRADAINVENTARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fACTURACIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -397,7 +398,8 @@
             // cOMPRASToolStripMenuItem
             // 
             this.cOMPRASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.oRDENCOMPRAToolStripMenuItem});
+            this.oRDENCOMPRAToolStripMenuItem,
+            this.dEVOLUCIONToolStripMenuItem});
             this.cOMPRASToolStripMenuItem.Name = "cOMPRASToolStripMenuItem";
             resources.ApplyResources(this.cOMPRASToolStripMenuItem, "cOMPRASToolStripMenuItem");
             // 
@@ -406,6 +408,12 @@
             this.oRDENCOMPRAToolStripMenuItem.Name = "oRDENCOMPRAToolStripMenuItem";
             resources.ApplyResources(this.oRDENCOMPRAToolStripMenuItem, "oRDENCOMPRAToolStripMenuItem");
             this.oRDENCOMPRAToolStripMenuItem.Click += new System.EventHandler(this.oRDENCOMPRAToolStripMenuItem_Click);
+            // 
+            // dEVOLUCIONToolStripMenuItem
+            // 
+            this.dEVOLUCIONToolStripMenuItem.Name = "dEVOLUCIONToolStripMenuItem";
+            resources.ApplyResources(this.dEVOLUCIONToolStripMenuItem, "dEVOLUCIONToolStripMenuItem");
+            this.dEVOLUCIONToolStripMenuItem.Click += new System.EventHandler(this.dEVOLUCIONToolStripMenuItem_Click);
             // 
             // tRANSACCIONESToolStripMenuItem
             // 
@@ -557,5 +565,6 @@
         private System.Windows.Forms.ToolStripMenuItem oRDENCOMPRAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eNTRADAINVENTARIOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bACKUPBASEDATOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dEVOLUCIONToolStripMenuItem;
     }
 }

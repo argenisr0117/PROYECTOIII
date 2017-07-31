@@ -22,6 +22,8 @@ namespace ProyectoIII
         public static int Idproducto;
         public static string Idproduct;
         public static double Costo;
+        public static double Costoa;
+        public static double Costop;
         public static string Idproveedor;
        // public static int Idproducto;
         public static int Idunidad;

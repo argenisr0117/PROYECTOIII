@@ -60,7 +60,6 @@ namespace ProyectoIII
             //reportViewer1.LocalReport.SetParameters(parametros);
             lc.DataSources.Add(rds);
             lc.DataSources.Add(rds1);
-
             this.reportViewer1.RefreshReport();
         }
         private void Compra()
@@ -84,7 +83,6 @@ namespace ProyectoIII
             reportViewer1.LocalReport.DataSources.Clear();
             //reportViewer1.LocalReport.SetParameters(parametros);
             lc.DataSources.Add(rds);
-
             this.reportViewer1.RefreshReport();
         }
     }

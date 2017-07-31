@@ -370,7 +370,7 @@
     <value>EMPLEADO</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Text" xml:space="preserve">
     <value>ENTIDADES</value>
@@ -478,7 +478,7 @@
     <value>DEPARTAMENTO</value>
   </data>
   <data name="gENERALESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="gENERALESToolStripMenuItem.Text" xml:space="preserve">
     <value>GENERALES</value>
@@ -496,25 +496,25 @@
     <value>SUCURSAL</value>
   </data>
   <data name="eMPRESAToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="eMPRESAToolStripMenuItem.Text" xml:space="preserve">
     <value>EMPRESA</value>
   </data>
   <data name="uSUARIOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>129, 22</value>
   </data>
   <data name="uSUARIOToolStripMenuItem.Text" xml:space="preserve">
     <value>USUARIO</value>
   </data>
   <data name="pERFILToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>129, 22</value>
   </data>
   <data name="pERFILToolStripMenuItem.Text" xml:space="preserve">
     <value>PERFIL</value>
   </data>
   <data name="aCCESOSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="aCCESOSToolStripMenuItem.Text" xml:space="preserve">
     <value>ACCESOS</value>
@@ -537,8 +537,14 @@
   <data name="oRDENCOMPRAToolStripMenuItem.Text" xml:space="preserve">
     <value>ORDEN COMPRA</value>
   </data>
+  <data name="dEVOLUCIONToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 22</value>
+  </data>
+  <data name="dEVOLUCIONToolStripMenuItem.Text" xml:space="preserve">
+    <value>DEVOLUCION</value>
+  </data>
   <data name="cOMPRASToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="cOMPRASToolStripMenuItem.Text" xml:space="preserve">
     <value>COMPRAS</value>
@@ -550,19 +556,19 @@
     <value>ENTRADA INVENTARIO</value>
   </data>
   <data name="tRANSACCIONESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tRANSACCIONESToolStripMenuItem.Text" xml:space="preserve">
-    <value>TRANSACCIONES</value>
+    <value>INVENTARIO</value>
   </data>
   <data name="fACTURACIONToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="fACTURACIONToolStripMenuItem.Text" xml:space="preserve">
-    <value>FACTURACION</value>
+    <value>VENTAS</value>
   </data>
   <data name="cXCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="cXCToolStripMenuItem.Text" xml:space="preserve">
     <value>CXC</value>
@@ -873,6 +879,9 @@
         /j/SDzVTgM4CvgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
@@ -1081,6 +1090,12 @@
     <value>oRDENCOMPRAToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;oRDENCOMPRAToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dEVOLUCIONToolStripMenuItem.Name" xml:space="preserve">
+    <value>dEVOLUCIONToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;dEVOLUCIONToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tRANSACCIONESToolStripMenuItem.Name" xml:space="preserve">

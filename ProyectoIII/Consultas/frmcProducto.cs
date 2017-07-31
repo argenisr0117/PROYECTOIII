@@ -48,6 +48,8 @@ namespace ProyectoIII.Consultas
                     dtgProducto.Rows[x].Cells[7].Value = dt.Rows[x][6].ToString();
                     dtgProducto.Rows[x].Cells[8].Value = dt.Rows[x][7].ToString();
                     dtgProducto.Rows[x].Cells[9].Value = dt.Rows[x][8].ToString();
+                    dtgProducto.Rows[x].Cells[10].Value = dt.Rows[x][9].ToString();
+                    dtgProducto.Rows[x].Cells[11].Value = dt.Rows[x][10].ToString();
 
 
                 }
@@ -107,6 +109,8 @@ namespace ProyectoIII.Consultas
                 Program.Producto = dtgProducto.CurrentRow.Cells[2].Value.ToString();
                 Program.Unidad= dtgProducto.CurrentRow.Cells[4].Value.ToString();
                 Program.Costo= Convert.ToDouble(dtgProducto.CurrentRow.Cells[8].Value);
+                Program.Costoa= Convert.ToDouble(dtgProducto.CurrentRow.Cells[11].Value);
+                Program.Costop= Convert.ToDouble(dtgProducto.CurrentRow.Cells[10].Value);
                 Program.Itbis= Convert.ToDouble(dtgProducto.CurrentRow.Cells[9].Value);
                 this.Close();
             }

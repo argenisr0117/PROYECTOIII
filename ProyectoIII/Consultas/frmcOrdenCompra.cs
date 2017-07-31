@@ -54,9 +54,7 @@ namespace ProyectoIII.Consultas
             C.Fechah = dtpFechaH.Value;
             LlenarGrid();
             txtNoDocumento.Focus();
-
         }
-
         private void txtNoDocumento_TextChanged(object sender, EventArgs e)
         {
             try
@@ -77,10 +75,8 @@ namespace ProyectoIII.Consultas
             catch(Exception ex)
             {
                 MessageBoxEx.Show(ex.Message);
-            }
-            
+            }            
         }
-
         private void btnProveedor_Click(object sender, EventArgs e)
         {
             try
@@ -95,10 +91,8 @@ namespace ProyectoIII.Consultas
             catch(Exception ex)
             {
                 MessageBoxEx.Show(ex.Message);
-            }
-            
+            }            
         }
-
         private void dtgOrdenes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Program.Documento = dtgOrdenes.CurrentRow.Cells[0].Value.ToString();

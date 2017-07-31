@@ -60,6 +60,8 @@
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itbis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costo_promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoanterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -84,7 +86,9 @@
             this.reorden,
             this.estado,
             this.costo,
-            this.itbis});
+            this.itbis,
+            this.costo_promedio,
+            this.costoanterior});
             this.dtgProducto.Dock = System.Windows.Forms.DockStyle.Left;
             this.dtgProducto.Location = new System.Drawing.Point(0, 139);
             this.dtgProducto.MultiSelect = false;
@@ -449,6 +453,20 @@
             this.itbis.ReadOnly = true;
             this.itbis.Visible = false;
             // 
+            // costo_promedio
+            // 
+            this.costo_promedio.HeaderText = "COSTOPROM";
+            this.costo_promedio.Name = "costo_promedio";
+            this.costo_promedio.ReadOnly = true;
+            this.costo_promedio.Visible = false;
+            // 
+            // costoanterior
+            // 
+            this.costoanterior.HeaderText = "COSTOANT";
+            this.costoanterior.Name = "costoanterior";
+            this.costoanterior.ReadOnly = true;
+            this.costoanterior.Visible = false;
+            // 
             // frmcProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -512,5 +530,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
         private System.Windows.Forms.DataGridViewTextBoxColumn itbis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costo_promedio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costoanterior;
     }
 }

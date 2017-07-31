@@ -1110,6 +1110,8 @@ namespace ProyectoIII {
             
             private global::System.Data.DataColumn columnnota;
             
+            private global::System.Data.DataColumn columnitbis;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public obtener_compraDataTable() {
@@ -1233,6 +1235,14 @@ namespace ProyectoIII {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn itbisColumn {
+                get {
+                    return this.columnitbis;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1268,7 +1278,7 @@ namespace ProyectoIII {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public obtener_compraRow Addobtener_compraRow(string documento, System.DateTime fecha, string factura, string referencia, string descripcion, string Unidad, double cantidad, double costo, double sub_total, string nota) {
+            public obtener_compraRow Addobtener_compraRow(string documento, System.DateTime fecha, string factura, string referencia, string descripcion, string Unidad, double cantidad, double costo, double sub_total, string nota, double itbis) {
                 obtener_compraRow rowobtener_compraRow = ((obtener_compraRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         documento,
@@ -1281,7 +1291,8 @@ namespace ProyectoIII {
                         cantidad,
                         costo,
                         sub_total,
-                        nota};
+                        nota,
+                        itbis};
                 rowobtener_compraRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowobtener_compraRow);
                 return rowobtener_compraRow;
@@ -1315,6 +1326,7 @@ namespace ProyectoIII {
                 this.columncosto = base.Columns["costo"];
                 this.columnsub_total = base.Columns["sub_total"];
                 this.columnnota = base.Columns["nota"];
+                this.columnitbis = base.Columns["itbis"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1342,6 +1354,8 @@ namespace ProyectoIII {
                 base.Columns.Add(this.columnsub_total);
                 this.columnnota = new global::System.Data.DataColumn("nota", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnota);
+                this.columnitbis = new global::System.Data.DataColumn("itbis", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitbis);
                 this.columndocumento.MaxLength = 50;
                 this.columnfactura.MaxLength = 50;
                 this.columnid_producto.AutoIncrement = true;
@@ -2165,6 +2179,22 @@ namespace ProyectoIII {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double itbis {
+                get {
+                    try {
+                        return ((double)(this[this.tableobtener_compra.itbisColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'itbis\' in table \'obtener_compra\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableobtener_compra.itbisColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsdocumentoNull() {
                 return this.IsNull(this.tableobtener_compra.documentoColumn);
             }
@@ -2281,6 +2311,18 @@ namespace ProyectoIII {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetnotaNull() {
                 this[this.tableobtener_compra.notaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsitbisNull() {
+                return this.IsNull(this.tableobtener_compra.itbisColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetitbisNull() {
+                this[this.tableobtener_compra.itbisColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2900,6 +2942,7 @@ namespace ProyectoIII.Proyecto3DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("costo", "costo");
             tableMapping.ColumnMappings.Add("sub_total", "sub_total");
             tableMapping.ColumnMappings.Add("nota", "nota");
+            tableMapping.ColumnMappings.Add("itbis", "itbis");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

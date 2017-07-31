@@ -185,5 +185,11 @@ namespace ProyectoIII
             Consultas.frmcOrdenCompra obj = new Consultas.frmcOrdenCompra();
             obj.ShowDialog();
         }
+
+        private void dEVOLUCIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.frmDevolucionC obj = new Procesos.frmDevolucionC();
+            obj.ShowDialog();
+        }
     }
 }

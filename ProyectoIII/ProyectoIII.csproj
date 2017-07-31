@@ -231,6 +231,12 @@
     <Compile Include="Procesos\frmEntradaInventario.Designer.cs">
       <DependentUpon>frmEntradaInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\frmDevolucionC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\frmDevolucionC.Designer.cs">
+      <DependentUpon>frmDevolucionC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\frmOrdenCompra2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +335,9 @@
     <EmbeddedResource Include="Procesos\frmEntradaInventario.resx">
       <DependentUpon>frmEntradaInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\frmDevolucionC.resx">
+      <DependentUpon>frmDevolucionC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Procesos\frmOrdenCompra2.resx">
       <DependentUpon>frmOrdenCompra2.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,8 +351,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\compra.rdlc" />
-    <EmbeddedResource Include="Reportes\orden_compra.rdlc" />
+    <EmbeddedResource Include="Reportes\compra.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\orden_compra.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

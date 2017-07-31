@@ -540,7 +540,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!itbis.Value</Value>
                               <Style>
                                 <Format>n2</Format>
                               </Style>
@@ -636,14 +636,174 @@
           </Border>
         </Style>
       </Tablix>
+      <Rectangle Name="Rectangle2">
+        <ReportItems>
+          <Textbox Name="fecha2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Itbis:</Value>
+                    <Style>
+                      <FontFamily>tahoma</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>fecha</rd:DefaultName>
+            <Top>0.02083in</Top>
+            <Height>0.25in</Height>
+            <Width>0.46183in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="itbis1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!itbis.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontFamily>tahoma</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>itbis1</rd:DefaultName>
+            <Top>0.02083in</Top>
+            <Left>0.46183in</Left>
+            <Height>0.25in</Height>
+            <Width>1.15623in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="fecha3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Total:</Value>
+                    <Style>
+                      <FontFamily>tahoma</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>fecha</rd:DefaultName>
+            <Top>0.27083in</Top>
+            <Height>0.25in</Height>
+            <Width>0.48738in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="sub_total1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!sub_total.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontFamily>tahoma</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>sub_total1</rd:DefaultName>
+            <Top>0.27083in</Top>
+            <Left>0.48738in</Left>
+            <Height>0.25in</Height>
+            <Width>1.13068in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>0.95708in</Top>
+        <Left>7.7661in</Left>
+        <Height>0.52083in</Height>
+        <Width>1.61806in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>Dashed</Style>
+          </Border>
+        </Style>
+      </Rectangle>
     </ReportItems>
-    <Height>1.5925in</Height>
+    <Height>1.62375in</Height>
     <Style />
   </Body>
-  <Width>9.47792in</Width>
+  <Width>9.53in</Width>
   <Page>
     <PageHeader>
-      <Height>2.84375in</Height>
+      <Height>2.04167in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -775,7 +935,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Observaciones:</Value>
+                      <Value>Nota:</Value>
                       <Style>
                         <FontFamily>tahoma</FontFamily>
                         <FontWeight>Bold</FontWeight>
@@ -792,10 +952,97 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>nota</rd:DefaultName>
-              <Top>0.20139in</Top>
-              <Left>5.22569in</Left>
+              <Top>0.05555in</Top>
               <Height>0.61458in</Height>
               <Width>3.6875in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="documento">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>No. Documento: </Value>
+                      <Style>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=First(Fields!documento.Value, "DataSet1")</Value>
+                      <Style>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>DimGray</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>documento</rd:DefaultName>
+              <Top>0.05555in</Top>
+              <Left>3.75694in</Left>
+              <Height>0.25in</Height>
+              <Width>1.91319in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="fecha">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Fecha:</Value>
+                      <Style>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style />
+                    </TextRun>
+                    <TextRun>
+                      <Value>=First(Fields!fecha.Value, "DataSet1")</Value>
+                      <Style>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                        <Format>d</Format>
+                        <Color>DimGray</Color>
+                        <Language>es-DO</Language>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>fecha</rd:DefaultName>
+              <Top>0.05555in</Top>
+              <Left>5.76167in</Left>
+              <Height>0.25in</Height>
+              <Width>2.35764in</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -810,7 +1057,7 @@
           <KeepTogether>true</KeepTogether>
           <Top>1.23833in</Top>
           <Left>0.13417in</Left>
-          <Height>1.45264in</Height>
+          <Height>0.74431in</Height>
           <Width>9.25in</Width>
           <ZIndex>4</ZIndex>
           <Style>
@@ -819,94 +1066,6 @@
             </Border>
           </Style>
         </Rectangle>
-        <Textbox Name="documento">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>No. Documento: </Value>
-                  <Style>
-                    <FontFamily>tahoma</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>=First(Fields!documento.Value, "DataSet1")</Value>
-                  <Style>
-                    <FontFamily>tahoma</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>DimGray</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>documento</rd:DefaultName>
-          <Top>0.97444in</Top>
-          <Left>3.44667in</Left>
-          <Height>0.25in</Height>
-          <Width>1.91319in</Width>
-          <ZIndex>5</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="fecha">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Fecha:</Value>
-                  <Style>
-                    <FontFamily>tahoma</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value xml:space="preserve"> </Value>
-                  <Style />
-                </TextRun>
-                <TextRun>
-                  <Value>=First(Fields!fecha.Value, "DataSet1")</Value>
-                  <Style>
-                    <FontFamily>tahoma</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                    <Format>d</Format>
-                    <Color>DimGray</Color>
-                    <Language>es-DO</Language>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>fecha</rd:DefaultName>
-          <Top>0.97444in</Top>
-          <Left>5.35986in</Left>
-          <Height>0.25in</Height>
-          <Width>2.35764in</Width>
-          <ZIndex>6</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="ReportName">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -934,7 +1093,7 @@
           <Left>7.08208in</Left>
           <Height>0.25in</Height>
           <Width>1.65625in</Width>
-          <ZIndex>7</ZIndex>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -972,7 +1131,7 @@
           <Left>7.08208in</Left>
           <Height>0.25in</Height>
           <Width>2.30208in</Width>
-          <ZIndex>8</ZIndex>
+          <ZIndex>6</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1008,7 +1167,7 @@
           <Left>1.11681in</Left>
           <Height>0.19792in</Height>
           <Width>2.11111in</Width>
-          <ZIndex>9</ZIndex>
+          <ZIndex>7</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1044,7 +1203,7 @@
           <Left>1.10292in</Left>
           <Height>0.34722in</Height>
           <Width>2.11111in</Width>
-          <ZIndex>10</ZIndex>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1085,7 +1244,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Enc. Dpto Compras</Value>
+                  <Value>Enc. Almacén</Value>
                   <Style>
                     <FontFamily>tahoma</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1131,7 +1290,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Gte. Administrativo</Value>
+                  <Value>Enc. Inventario</Value>
                   <Style>
                     <FontFamily>tahoma</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1227,6 +1386,10 @@
         <Field Name="nota">
           <DataField>nota</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="itbis">
+          <DataField>itbis</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

@@ -192,6 +192,7 @@ namespace ProyectoIII.Procesos
                 C.Idusuario = Program.Idusuario;
                 C.Idsucursal = Program.Idsucursal;
                 C.Factura = txtFactura.Text;
+                C.Documento2 = Program.Documento;
                 mensaje = C.RegistrarCompra();
                 if (mensaje == "1")
                 {
@@ -211,8 +212,7 @@ namespace ProyectoIII.Procesos
                     {
                         MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dtgEntrada.Rows.Clear();
-                        dtgEntrada.Rows.Clear();
-                        txtNota.Clear();
+                        Limpiar();
                         Autocompletar();
                         frmReporte obj = new frmReporte();
                         obj.Valor = 2;
@@ -226,6 +226,11 @@ namespace ProyectoIII.Procesos
             {
 
             }
+        }
+        private void Limpiar()
+        {
+            txtNota.Clear();
+            txtFactura.Clear();
         }
     }
 }
