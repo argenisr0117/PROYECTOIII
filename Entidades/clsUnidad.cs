@@ -12,6 +12,7 @@ namespace Entidades
     {
         private clsManejador M = new clsManejador();
         int Mid;
+        int Midproducto;
         int Mvalor;
         string Mdescripcion;
         string Mabreviacion;
@@ -23,6 +24,11 @@ namespace Entidades
         {
             get { return Mid; }
             set { Mid = value; }
+        }
+        public int Idproducto
+        {
+            get { return Midproducto; }
+            set { Midproducto = value; }
         }
         public int Valor
         {
@@ -65,6 +71,14 @@ namespace Entidades
             List<clsParametros> lst = new List<clsParametros>();
             lst.Add(new clsParametros("@estado", objEstado));
             return dt = M.Listado("listado_unidad", lst);
+        }
+        public DataTable EquivalenciaUnidad()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@abrev", Mabreviacion));
+            return dt = M.Listado("obtener_Equivalencia", lst);
 
         }
         public string Activar()

@@ -191,5 +191,11 @@ namespace ProyectoIII
             Procesos.frmDevolucionC obj = new Procesos.frmDevolucionC();
             obj.ShowDialog();
         }
+
+        private void cOMPRASToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.frmcListadoEntidades obj = new Consultas.frmcListadoEntidades();
+            obj.ShowDialog();
+        }
     }
 }

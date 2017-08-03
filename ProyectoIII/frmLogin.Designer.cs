@@ -36,12 +36,12 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.txtContrasena = new ProyectoIII.Controles.textbox(this.components);
-            this.txtUsuario = new ProyectoIII.Controles.textbox(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtContrasena = new ProyectoIII.Controles.textbox(this.components);
+            this.txtUsuario = new ProyectoIII.Controles.textbox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,31 +114,6 @@
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
-            // txtContrasena
-            // 
-            this.txtContrasena.BackColor = System.Drawing.Color.White;
-            this.txtContrasena.ForeColor = System.Drawing.Color.Black;
-            this.txtContrasena.Location = new System.Drawing.Point(198, 187);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '*';
-            this.txtContrasena.Size = new System.Drawing.Size(202, 30);
-            this.txtContrasena.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.txtContrasena, "CONTRASEÑA");
-            this.txtContrasena.UseSystemPasswordChar = true;
-            this.txtContrasena.Validar = true;
-            this.txtContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContrasena_KeyPress);
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.White;
-            this.txtUsuario.ForeColor = System.Drawing.Color.Black;
-            this.txtUsuario.Location = new System.Drawing.Point(198, 144);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(202, 30);
-            this.txtUsuario.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtUsuario, "USUARIO");
-            this.txtUsuario.Validar = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -187,6 +162,31 @@
             this.label5.Size = new System.Drawing.Size(142, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "Sistema de Facturación";
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.BackColor = System.Drawing.Color.White;
+            this.txtContrasena.ForeColor = System.Drawing.Color.Black;
+            this.txtContrasena.Location = new System.Drawing.Point(198, 187);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
+            this.txtContrasena.Size = new System.Drawing.Size(202, 30);
+            this.txtContrasena.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtContrasena, "CONTRASEÑA");
+            this.txtContrasena.UseSystemPasswordChar = true;
+            this.txtContrasena.Validar = true;
+            this.txtContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContrasena_KeyPress);
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
+            this.txtUsuario.ForeColor = System.Drawing.Color.Black;
+            this.txtUsuario.Location = new System.Drawing.Point(198, 144);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(202, 30);
+            this.txtUsuario.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtUsuario, "USUARIO");
+            this.txtUsuario.Validar = true;
             // 
             // frmLogin
             // 

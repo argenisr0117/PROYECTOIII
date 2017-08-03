@@ -454,6 +454,7 @@
             // 
             this.cOMPRASToolStripMenuItem1.Name = "cOMPRASToolStripMenuItem1";
             resources.ApplyResources(this.cOMPRASToolStripMenuItem1, "cOMPRASToolStripMenuItem1");
+            this.cOMPRASToolStripMenuItem1.Click += new System.EventHandler(this.cOMPRASToolStripMenuItem1_Click);
             // 
             // iNVENTARIOToolStripMenuItem
             // 

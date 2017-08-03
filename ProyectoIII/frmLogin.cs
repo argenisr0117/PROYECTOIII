@@ -25,9 +25,9 @@ namespace ProyectoIII
             frmMenu obj = new frmMenu();
             Program.Idsucursal = 1;
             string mensaje = VerificarLogin();
-            if (mensaje == "0")
+            if (mensaje == "0" || mensaje=="")
             {
-                MessageBoxEx.Show("Datos incorrectos!", "FactSYS", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                MessageBoxEx.Show("Datos incorrectos!", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtContrasena.Clear();
                 txtUsuario.Clear();
                 txtUsuario.Focus();

@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\frmcListadoEntidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmcListadoEntidades.Designer.cs">
+      <DependentUpon>frmcListadoEntidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmcOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="Consultas\frmcEmpleado.Designer.cs">
       <DependentUpon>frmcEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmcAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmcAlmacen.Designer.cs">
+      <DependentUpon>frmcAlmacen.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas\frmcProveedor.cs">
       <SubType>Form</SubType>
@@ -251,6 +263,9 @@
       <DependentUpon>Proyecto3DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="Consultas\frmcListadoEntidades.resx">
+      <DependentUpon>frmcListadoEntidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcOrdenCompra.resx">
       <DependentUpon>frmcOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcEmpleado.resx">
       <DependentUpon>frmcEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmcAlmacen.resx">
+      <DependentUpon>frmcAlmacen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcProveedor.resx">
       <DependentUpon>frmcProveedor.cs</DependentUpon>
@@ -354,6 +372,18 @@
     <EmbeddedResource Include="Reportes\compra.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\listado_productos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\listado_proveedores.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\listado_empleados.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\devolucion_compra.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\orden_compra.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -370,7 +400,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Recursos\engine.ico" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Proyecto3DataSet.xsc">
       <DependentUpon>Proyecto3DataSet.xsd</DependentUpon>
@@ -444,6 +476,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\save_as.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\mail.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

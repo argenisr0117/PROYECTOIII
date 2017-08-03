@@ -13,6 +13,7 @@ namespace Entidades
         private clsManejador M = new clsManejador();
         int Mid;
         int Midsucursal;
+        int Midproducto;
         int Mvalor;
         string Mdescripcion;
         string Midentificador;
@@ -29,6 +30,11 @@ namespace Entidades
         {
             get { return Midsucursal; }
             set { Midsucursal = value; }
+        }
+        public int Idproducto
+        {
+            get { return Midproducto; }
+            set { Midproducto = value; }
         }
         public int Valor
         {
@@ -73,6 +79,13 @@ namespace Entidades
             lst.Add(new clsParametros("@estado", objEstado));
             lst.Add(new clsParametros("@idsucursal", Midsucursal));
             return dt = M.Listado("listado_almacen", lst);
+        }
+        public DataTable AlmacenesProductos()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            return dt = M.Listado("obtener_almacenes_producto", lst);
 
         }
         public string Activar()

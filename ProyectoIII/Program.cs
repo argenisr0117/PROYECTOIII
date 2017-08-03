@@ -10,6 +10,7 @@ namespace ProyectoIII
     {
         public static int Evento;
         public static int Idorden;
+        public static int Iddevolucion;
         public static int Idtransaccion;
         public static int Editar;
         public static int Iddireccion;
@@ -20,19 +21,23 @@ namespace ProyectoIII
         public static int Idsucursal;
         public static int IdIdentificacion;
         public static int Idproducto;
+        public static int Idalmacen;
         public static string Idproduct;
         public static double Costo;
         public static double Costoa;
         public static double Costop;
         public static string Idproveedor;
-       // public static int Idproducto;
+        public static double Existencia;
+
+        // public static int Idproducto;
         public static int Idunidad;
         public static string Proveedor;
         public static string Empleado;
         public static string Producto;
         public static double Itbis;
         public static string Unidad;
-        public static string Documento;     
+        public static string Documento;
+        public static string Almacen;    
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

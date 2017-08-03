@@ -23,6 +23,7 @@ namespace ProyectoIII.Procesos
         clsTransacciones T = new clsTransacciones();
         clsCompras C = new clsCompras();
         clsTipos Ti = new clsTipos();
+        clsUnidad U = new clsUnidad();
         private void LlenarComboMoneda()
         {
             try
@@ -63,7 +64,7 @@ namespace ProyectoIII.Procesos
         {
             T.Tipo = 3;
             int numerodoc = T.NumeroDocumento();
-            Program.Idorden = numerodoc;
+            Program.Iddevolucion = numerodoc;
             if (numerodoc == 0)
             {
                 string var = "1".PadLeft(8, '0');
@@ -104,7 +105,7 @@ namespace ProyectoIII.Procesos
             txtProducto.Text = Program.Producto;
             LlenarComboUnidad();
             txtPrecio.Text = Program.Costo.ToString();
-            txtCantidad.Focus();
+            txtCantidad.Focus();          
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
@@ -113,6 +114,7 @@ namespace ProyectoIII.Procesos
             obj.ShowDialog();
             txtCodigoPv.Text = Program.Idproveedor.ToString();
             txtProveedor.Text = Program.Proveedor;
+            Program.Idproveedor = "";
         }
 
         private void btnAgregarPv_Click(object sender, EventArgs e)
@@ -226,6 +228,8 @@ namespace ProyectoIII.Procesos
             Program.Idproduct = "";
             Program.Unidad = "";
             Program.Costo = 0;
+            Program.Existencia = 0;
+            txtAlmacen.Clear();
         }
 
         private void AgregarProducto()
@@ -237,66 +241,83 @@ namespace ProyectoIII.Procesos
                 {
                     return;
                 }
-                double importe = 0;
-                double itbis = 0;
-                double cant_a = 0;         
-                if (Program.Evento == 0)
+                double existencia;
+                double cant;
+                cant = Convert.ToDouble(txtCantidad.Text);
+                DataTable dt = new DataTable();
+                U.Abreviacion = cbUnidad.Text;
+                U.Idproducto = Convert.ToInt32(txtCodigoP.Text);
+                dt = U.EquivalenciaUnidad();
+                cant = Convert.ToDouble(dt.Rows[0][0]);
+                existencia =Math.Round(Program.Existencia / cant,2);
+                cant = cant * (Convert.ToDouble(txtCantidad.Text));
+                if (cant > Program.Existencia)
                 {
-                    bool valor = true;
-                    if (dtgProducto.Rows.Count > 0)
+                    MessageBoxEx.Show("Solo hay ["+existencia+"] disponible", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    double importe = 0;
+                    double itbis = 0;
+                    double cant_a = 0;
+                    if (Program.Evento == 0)
                     {
-                        foreach (DataGridViewRow item in dtgProducto.Rows)
+                        bool valor = true;
+                        if (dtgProducto.Rows.Count > 0)
                         {
-                            if (item.Cells[2].Value.ToString() == txtProducto.Text)
+                            foreach (DataGridViewRow item in dtgProducto.Rows)
                             {
-                                double cantidad = Convert.ToDouble(txtCantidad.Text);
-                                cantidad = cantidad + Convert.ToDouble(item.Cells[5].Value);
+                                if (item.Cells[2].Value.ToString() == txtProducto.Text)
+                                {
+                                    double cantidad = Convert.ToDouble(txtCantidad.Text);
+                                    cantidad = cantidad + Convert.ToDouble(item.Cells[5].Value);
+                                    itbis = Convert.ToDouble(txtPrecio.Text) * Program.Itbis;
+                                    itbis = itbis * cantidad;
+                                    importe = cantidad * Convert.ToDouble(txtPrecio.Text);
+                                    importe = importe + itbis;
+                                    item.Cells[5].Value = cantidad;
+                                    item.Cells[6].Value = txtPrecio.Text;
+                                    item.Cells[7].Value = itbis;
+                                    item.Cells[8].Value = importe;
+                                    LimpiarProducto();
+                                    valor = false;
+                                    itbis = 0;
+                                    importe = 0;
+                                    break;
+                                }
+                            }
+                            if (valor == true)
+                            {
                                 itbis = Convert.ToDouble(txtPrecio.Text) * Program.Itbis;
-                                itbis = itbis * cantidad;
-                                importe = cantidad * Convert.ToDouble(txtPrecio.Text);
+                                itbis = itbis * Convert.ToDouble(txtCantidad.Text);
+                                importe = Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text);
                                 importe = importe + itbis;
-                                item.Cells[5].Value = cantidad;
-                                item.Cells[6].Value = txtPrecio.Text;
-                                item.Cells[7].Value = itbis;
-                                item.Cells[8].Value = importe;
+                                dtgProducto.Rows.Add("", txtCodigoP.Text, txtProducto.Text, cbUnidad.SelectedValue, cbUnidad.Text, txtCantidad.Text, txtPrecio.Text, itbis, importe,txtAlmacen.Text,Program.Almacen);
                                 LimpiarProducto();
-                                valor = false;
                                 itbis = 0;
                                 importe = 0;
-                                break;
                             }
                         }
-                        if(valor==true)
+                        else
                         {
                             itbis = Convert.ToDouble(txtPrecio.Text) * Program.Itbis;
                             itbis = itbis * Convert.ToDouble(txtCantidad.Text);
                             importe = Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text);
                             importe = importe + itbis;
-                            dtgProducto.Rows.Add("", txtCodigoP.Text, txtProducto.Text, cbUnidad.SelectedValue, cbUnidad.Text, txtCantidad.Text, txtPrecio.Text,itbis,importe);
+                            dtgProducto.Rows.Add("", txtCodigoP.Text, txtProducto.Text, cbUnidad.SelectedValue, cbUnidad.Text, txtCantidad.Text, txtPrecio.Text, itbis, importe, txtAlmacen.Text, Program.Almacen);
                             LimpiarProducto();
                             itbis = 0;
                             importe = 0;
-                        }               
+                        }
                     }
-                    else
+                    else if (Program.Evento == 1)
                     {
-                        itbis = Convert.ToDouble(txtPrecio.Text) * Program.Itbis;
-                        itbis = itbis * Convert.ToDouble(txtCantidad.Text);
-                        importe = Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text);
-                        importe = importe + itbis;
-                        dtgProducto.Rows.Add("", txtCodigoP.Text, txtProducto.Text, cbUnidad.SelectedValue, cbUnidad.Text, txtCantidad.Text, txtPrecio.Text,itbis,importe);
-                        LimpiarProducto();
-                        itbis = 0;
-                        importe = 0;
+                        //dtgProveedor.Rows.Add("", txtCodigoPv.Text, txtProveedor.Text);
+                        //txtCodigoPv.Clear();
+                        //txtProveedor.Clear();
                     }
-                }
-                else if (Program.Evento == 1)
-                {
-                    //dtgProveedor.Rows.Add("", txtCodigoPv.Text, txtProveedor.Text);
-                    //txtCodigoPv.Clear();
-                    //txtProveedor.Clear();
-                }
 
+                }
             }
             catch (Exception ex)
             {
@@ -394,7 +415,8 @@ namespace ProyectoIII.Procesos
                             C.Costo= Convert.ToDouble(dtgProducto.Rows[x].Cells[6].Value);
                             C.Importe= Convert.ToDouble(dtgProducto.Rows[x].Cells[8].Value);
                             C.Itbis= Convert.ToDouble(dtgProducto.Rows[x].Cells[7].Value);
-                            mensaje = C.RegistrarDevolucion();
+                            C.Idalmacen= Convert.ToInt32(dtgProducto.Rows[x].Cells[9].Value);
+                            mensaje = C.RegistrarDetalleDevolucion();
                         }
                         if (mensaje == "1")
                         {
@@ -402,11 +424,12 @@ namespace ProyectoIII.Procesos
                             dtgProducto.Rows.Clear();
                             dtgProveedor.Rows.Clear();
                             txtNota.Clear();
+                            txtFactura.Clear();
                             Autocompletar();
                             frmReporte obj = new frmReporte();
-                            obj.Valor = 1;
-                            obj.Reporte = "orden_compra.rdlc";
-                            obj.Idorden = Program.Idorden;
+                            obj.Valor = 3;
+                            obj.Reporte = "devolucion_compra.rdlc";
+                            obj.Iddevolucion = Program.Iddevolucion;
                             obj.Show();
                         }
                     }
@@ -417,6 +440,21 @@ namespace ProyectoIII.Procesos
                 MessageBoxEx.Show(ex.Message);
             }
 
+        }
+
+        private void btnAlmacen_Click(object sender, EventArgs e)
+        {
+            Consultas.frmcAlmacen obj = new Consultas.frmcAlmacen();
+            obj.ShowDialog();
+            txtAlmacen.Text = Program.Idalmacen.ToString();
+            Program.Idproduct = "";
+            Program.Idalmacen = 0;
+
+        }
+
+        private void txtCodigoP_TextChanged(object sender, EventArgs e)
+        {
+            btnAlmacen.Enabled = true;
         }
     }
 }

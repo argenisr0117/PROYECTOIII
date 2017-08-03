@@ -254,7 +254,7 @@ namespace Entidades
             lst.Add(new clsParametros("@idsucursal", Midsucursal));
             lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
             M.EjecutarSP("registrar_devolucion", ref lst);
-            mensaje = lst[7].Valor.ToString();
+            mensaje = lst[9].Valor.ToString();
             return mensaje;
         }
         public string RegistrarDetalleDevolucion()

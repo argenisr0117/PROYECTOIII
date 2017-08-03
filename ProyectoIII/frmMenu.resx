@@ -544,7 +544,7 @@
     <value>DEVOLUCION</value>
   </data>
   <data name="cOMPRASToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="cOMPRASToolStripMenuItem.Text" xml:space="preserve">
     <value>COMPRAS</value>
@@ -556,19 +556,19 @@
     <value>ENTRADA INVENTARIO</value>
   </data>
   <data name="tRANSACCIONESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="tRANSACCIONESToolStripMenuItem.Text" xml:space="preserve">
     <value>INVENTARIO</value>
   </data>
   <data name="fACTURACIONToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="fACTURACIONToolStripMenuItem.Text" xml:space="preserve">
     <value>VENTAS</value>
   </data>
   <data name="cXCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="cXCToolStripMenuItem.Text" xml:space="preserve">
     <value>CXC</value>
@@ -586,25 +586,25 @@
     <value>ImageAboveText</value>
   </data>
   <data name="cOMPRASToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="cOMPRASToolStripMenuItem1.Text" xml:space="preserve">
-    <value>COMPRAS</value>
+    <value>LISTADOS</value>
   </data>
   <data name="iNVENTARIOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="iNVENTARIOToolStripMenuItem.Text" xml:space="preserve">
     <value>INVENTARIO</value>
   </data>
   <data name="vENTASToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="vENTASToolStripMenuItem.Text" xml:space="preserve">
     <value>VENTAS</value>
   </data>
   <data name="cXCToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="cXCToolStripMenuItem1.Text" xml:space="preserve">
     <value>CXC</value>
