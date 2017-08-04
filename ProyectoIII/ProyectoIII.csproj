@@ -141,6 +141,12 @@
     <Compile Include="Mantenimientos\frmAlmacen.Designer.cs">
       <DependentUpon>frmAlmacen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\frmNcf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmNcf.Designer.cs">
+      <DependentUpon>frmNcf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,12 @@
     <Compile Include="Mantenimientos\frmDireccion.Designer.cs">
       <DependentUpon>frmDireccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\frmAbrirCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\frmAbrirCaja.Designer.cs">
+      <DependentUpon>frmAbrirCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\frmEntradaInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +320,9 @@
     <EmbeddedResource Include="Mantenimientos\frmAlmacen.resx">
       <DependentUpon>frmAlmacen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmNcf.resx">
+      <DependentUpon>frmNcf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmDireccion.resx">
       <DependentUpon>frmDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\frmAbrirCaja.resx">
+      <DependentUpon>frmAbrirCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\frmEntradaInventario.resx">
       <DependentUpon>frmEntradaInventario.cs</DependentUpon>
@@ -491,6 +509,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\mail.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\pack.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

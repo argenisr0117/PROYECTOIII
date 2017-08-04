@@ -35,6 +35,7 @@ namespace ProyectoIII
             else if (mensaje != "0")
             {
                 Program.Idusuario = Convert.ToInt32(mensaje);
+                Program.Usuario = txtUsuario.Text;
                 U.Descripcion = Environment.MachineName;
                 U.Id = Convert.ToInt32(mensaje);
                 U.RegistrarLog();

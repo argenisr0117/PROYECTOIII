@@ -34,28 +34,31 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.dtgUsuario = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.txtUsuario = new ProyectoIII.Controles.textbox(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtClave = new ProyectoIII.Controles.textbox(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbPerfil = new System.Windows.Forms.ComboBox();
-            this.txtEmpleado = new ProyectoIII.Controles.textbox(this.components);
             this.btnBuscarP = new System.Windows.Forms.Button();
-            this.txtClave2 = new ProyectoIII.Controles.textbox(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.rbInactivo = new System.Windows.Forms.RadioButton();
             this.rbActivo = new System.Windows.Forms.RadioButton();
+            this.txtClave2 = new ProyectoIII.Controles.textbox(this.components);
+            this.txtEmpleado = new ProyectoIII.Controles.textbox(this.components);
+            this.txtClave = new ProyectoIII.Controles.textbox(this.components);
+            this.txtUsuario = new ProyectoIII.Controles.textbox(this.components);
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtercero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -119,39 +122,19 @@
             this.dtgUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.descripcion,
-            this.estado});
+            this.idtercero,
+            this.estado,
+            this.perfil,
+            this.estadi});
             this.dtgUsuario.Location = new System.Drawing.Point(5, 270);
             this.dtgUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgUsuario.MultiSelect = false;
             this.dtgUsuario.Name = "dtgUsuario";
             this.dtgUsuario.ReadOnly = true;
+            this.dtgUsuario.RowHeadersWidth = 20;
             this.dtgUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgUsuario.Size = new System.Drawing.Size(406, 199);
             this.dtgUsuario.TabIndex = 25;
-            // 
-            // codigo
-            // 
-            this.codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.codigo.HeaderText = "CÓDIGO";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 96;
-            // 
-            // descripcion
-            // 
-            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.descripcion.HeaderText = "DESCRIPCIÓN";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 137;
-            // 
-            // estado
-            // 
-            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.estado.HeaderText = "ESTADO";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Width = 96;
             // 
             // btnRegistrar
             // 
@@ -173,15 +156,6 @@
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(143, 60);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(274, 27);
-            this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.Validar = true;
             // 
             // label3
             // 
@@ -239,16 +213,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(143, 91);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(274, 27);
-            this.txtClave.TabIndex = 1;
-            this.txtClave.UseSystemPasswordChar = true;
-            this.txtClave.Validar = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -291,16 +255,6 @@
             this.cbPerfil.Size = new System.Drawing.Size(274, 27);
             this.cbPerfil.TabIndex = 4;
             // 
-            // txtEmpleado
-            // 
-            this.txtEmpleado.Enabled = false;
-            this.txtEmpleado.Location = new System.Drawing.Point(143, 157);
-            this.txtEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEmpleado.Name = "txtEmpleado";
-            this.txtEmpleado.Size = new System.Drawing.Size(274, 27);
-            this.txtEmpleado.TabIndex = 4;
-            this.txtEmpleado.Validar = true;
-            // 
             // btnBuscarP
             // 
             this.btnBuscarP.BackColor = System.Drawing.Color.White;
@@ -319,16 +273,6 @@
             this.btnBuscarP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarP.UseVisualStyleBackColor = false;
             this.btnBuscarP.Click += new System.EventHandler(this.btnBuscarP_Click);
-            // 
-            // txtClave2
-            // 
-            this.txtClave2.Location = new System.Drawing.Point(143, 122);
-            this.txtClave2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtClave2.Name = "txtClave2";
-            this.txtClave2.Size = new System.Drawing.Size(274, 27);
-            this.txtClave2.TabIndex = 3;
-            this.txtClave2.UseSystemPasswordChar = true;
-            this.txtClave2.Validar = true;
             // 
             // label6
             // 
@@ -370,6 +314,88 @@
             this.rbActivo.TabStop = true;
             this.rbActivo.Text = "Activos";
             this.rbActivo.UseVisualStyleBackColor = true;
+            // 
+            // txtClave2
+            // 
+            this.txtClave2.Location = new System.Drawing.Point(143, 122);
+            this.txtClave2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtClave2.Name = "txtClave2";
+            this.txtClave2.Size = new System.Drawing.Size(274, 27);
+            this.txtClave2.TabIndex = 3;
+            this.txtClave2.UseSystemPasswordChar = true;
+            this.txtClave2.Validar = true;
+            // 
+            // txtEmpleado
+            // 
+            this.txtEmpleado.Enabled = false;
+            this.txtEmpleado.Location = new System.Drawing.Point(143, 157);
+            this.txtEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.Size = new System.Drawing.Size(274, 27);
+            this.txtEmpleado.TabIndex = 4;
+            this.txtEmpleado.Validar = true;
+            // 
+            // txtClave
+            // 
+            this.txtClave.Location = new System.Drawing.Point(143, 91);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(274, 27);
+            this.txtClave.TabIndex = 1;
+            this.txtClave.UseSystemPasswordChar = true;
+            this.txtClave.Validar = true;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(143, 60);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(274, 27);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.Validar = true;
+            // 
+            // codigo
+            // 
+            this.codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.codigo.HeaderText = "CÓDIGO";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 96;
+            // 
+            // descripcion
+            // 
+            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.descripcion.HeaderText = "USUARIO";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 104;
+            // 
+            // idtercero
+            // 
+            this.idtercero.HeaderText = "idtercero";
+            this.idtercero.Name = "idtercero";
+            this.idtercero.ReadOnly = true;
+            this.idtercero.Visible = false;
+            // 
+            // estado
+            // 
+            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.estado.HeaderText = "EMPLEADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Width = 115;
+            // 
+            // perfil
+            // 
+            this.perfil.HeaderText = "PERFIL";
+            this.perfil.Name = "perfil";
+            this.perfil.ReadOnly = true;
+            // 
+            // estadi
+            // 
+            this.estadi.HeaderText = "ESTADO";
+            this.estadi.Name = "estadi";
+            this.estadi.ReadOnly = true;
             // 
             // frmUsuario
             // 
@@ -425,9 +451,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Controles.textbox txtClave;
@@ -442,5 +465,11 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.RadioButton rbInactivo;
         private System.Windows.Forms.RadioButton rbActivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtercero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadi;
     }
 }

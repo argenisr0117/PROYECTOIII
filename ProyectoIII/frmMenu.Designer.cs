@@ -37,7 +37,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbFecha = new System.Windows.Forms.Label();
             this.lbHora = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,6 +77,8 @@
             this.tRANSACCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eNTRADAINVENTARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fACTURACIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBRIRCAJAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fACTURACIÓNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cXCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONSULTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,7 +130,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.lbFecha);
             this.panel3.Controls.Add(this.lbHora);
-            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.lbUser);
             this.panel3.Controls.Add(this.label1);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
@@ -147,12 +149,12 @@
             this.lbHora.ForeColor = System.Drawing.Color.Black;
             this.lbHora.Name = "lbHora";
             // 
-            // label2
+            // lbUser
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.lbUser, "lbUser");
+            this.lbUser.BackColor = System.Drawing.Color.White;
+            this.lbUser.ForeColor = System.Drawing.Color.Black;
+            this.lbUser.Name = "lbUser";
             // 
             // label1
             // 
@@ -431,8 +433,22 @@
             // 
             // fACTURACIONToolStripMenuItem
             // 
+            this.fACTURACIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aBRIRCAJAToolStripMenuItem,
+            this.fACTURACIÓNToolStripMenuItem});
             this.fACTURACIONToolStripMenuItem.Name = "fACTURACIONToolStripMenuItem";
             resources.ApplyResources(this.fACTURACIONToolStripMenuItem, "fACTURACIONToolStripMenuItem");
+            // 
+            // aBRIRCAJAToolStripMenuItem
+            // 
+            this.aBRIRCAJAToolStripMenuItem.Name = "aBRIRCAJAToolStripMenuItem";
+            resources.ApplyResources(this.aBRIRCAJAToolStripMenuItem, "aBRIRCAJAToolStripMenuItem");
+            this.aBRIRCAJAToolStripMenuItem.Click += new System.EventHandler(this.aBRIRCAJAToolStripMenuItem_Click);
+            // 
+            // fACTURACIÓNToolStripMenuItem
+            // 
+            this.fACTURACIÓNToolStripMenuItem.Name = "fACTURACIÓNToolStripMenuItem";
+            resources.ApplyResources(this.fACTURACIÓNToolStripMenuItem, "fACTURACIÓNToolStripMenuItem");
             // 
             // cXCToolStripMenuItem
             // 
@@ -536,7 +552,7 @@
         private System.Windows.Forms.ToolStripMenuItem cLIENTEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eMPLEADOToolStripMenuItem;
         private System.Windows.Forms.Label lbHora;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbFecha;
@@ -568,5 +584,7 @@
         private System.Windows.Forms.ToolStripMenuItem eNTRADAINVENTARIOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bACKUPBASEDATOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dEVOLUCIONToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aBRIRCAJAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fACTURACIÓNToolStripMenuItem;
     }
 }

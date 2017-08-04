@@ -39,7 +39,8 @@ namespace ProyectoIII
         public static double Itbis;
         public static string Unidad;
         public static string Documento;
-        public static string Almacen;    
+        public static string Almacen;
+        public static string Usuario;   
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

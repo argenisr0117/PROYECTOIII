@@ -23,10 +23,11 @@ namespace ProyectoIII
         private void frmMenu_Load(object sender, EventArgs e)
         {
             lbMenu.Location = new Point(500, 20);
-             lbFecha.Location = new Point(900, 13);
-             lbHora.Location = new Point(1100, 13);
+            lbFecha.Location = new Point(900, 13);
+            lbHora.Location = new Point(1100, 13);
             ObtenerHora();
             timer1.Start();
+            lbUser.Text = Program.Usuario;
         }
         private void ObtenerHora()
         {
@@ -201,6 +202,12 @@ namespace ProyectoIII
         private void cLIENTEToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Consultas.frmcCliente obj = new Consultas.frmcCliente();
+            obj.ShowDialog();
+        }
+
+        private void aBRIRCAJAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.frmAbrirCaja obj = new Procesos.frmAbrirCaja();
             obj.ShowDialog();
         }
     }

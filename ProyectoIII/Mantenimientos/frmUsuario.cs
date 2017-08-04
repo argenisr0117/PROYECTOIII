@@ -47,6 +47,9 @@ namespace ProyectoIII.Mantenimientos
                     dtgUsuario.Rows[x].Cells[0].Value = dt.Rows[x][0].ToString();
                     dtgUsuario.Rows[x].Cells[1].Value = dt.Rows[x][1].ToString();
                     dtgUsuario.Rows[x].Cells[2].Value = dt.Rows[x][2].ToString();
+                    dtgUsuario.Rows[x].Cells[3].Value = dt.Rows[x][3].ToString();
+                    dtgUsuario.Rows[x].Cells[4].Value = dt.Rows[x][4].ToString();
+                    dtgUsuario.Rows[x].Cells[5].Value = dt.Rows[x][5].ToString();
 
                 }
                 dtgUsuario.ClearSelection();
@@ -98,6 +101,7 @@ namespace ProyectoIII.Mantenimientos
                         {
                             MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Limpiar();
+                            LlenarGridCategoria();
                         }
                         else
                         {
@@ -191,7 +195,7 @@ namespace ProyectoIII.Mantenimientos
         private void frmCategoria_Load(object sender, EventArgs e)
         {
             LlenarComboPerfil();
-            //LlenarGridCategoria();
+            LlenarGridCategoria();
             Program.Evento = 0;
         }
 

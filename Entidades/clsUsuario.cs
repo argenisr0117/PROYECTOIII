@@ -100,7 +100,7 @@ namespace Entidades
             DataTable dt = new DataTable();
             List<clsParametros> lst = new List<clsParametros>();
             lst.Add(new clsParametros("@estado", objEstado));
-            return dt = M.Listado("listado_categoria", lst);
+            return dt = M.Listado("listado_usuarios", lst);
 
         }
         public DataTable ListarP()
