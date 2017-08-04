@@ -87,6 +87,12 @@
     <Compile Include="Consultas\frmcAlmacen.Designer.cs">
       <DependentUpon>frmcAlmacen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\frmcCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmcCliente.Designer.cs">
+      <DependentUpon>frmcCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmcProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,9 @@
     <EmbeddedResource Include="Consultas\frmcAlmacen.resx">
       <DependentUpon>frmcAlmacen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmcCliente.resx">
+      <DependentUpon>frmcCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcProveedor.resx">
       <DependentUpon>frmcProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +382,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\listado_productos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\listado_clientes.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\listado_proveedores.rdlc">

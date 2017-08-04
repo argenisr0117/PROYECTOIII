@@ -346,31 +346,31 @@
     <value>Tahoma, 9.75pt</value>
   </data>
   <data name="pRODUCTOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pRODUCTOToolStripMenuItem.Text" xml:space="preserve">
     <value>PRODUCTO</value>
   </data>
   <data name="pROVEEDORToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pROVEEDORToolStripMenuItem.Text" xml:space="preserve">
     <value>PROVEEDOR</value>
   </data>
   <data name="cLIENTEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="cLIENTEToolStripMenuItem.Text" xml:space="preserve">
     <value>CLIENTE</value>
   </data>
   <data name="eMPLEADOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="eMPLEADOToolStripMenuItem.Text" xml:space="preserve">
     <value>EMPLEADO</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="eNTIDADESToolStripMenuItem.Text" xml:space="preserve">
     <value>ENTIDADES</value>
@@ -478,7 +478,7 @@
     <value>DEPARTAMENTO</value>
   </data>
   <data name="gENERALESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="gENERALESToolStripMenuItem.Text" xml:space="preserve">
     <value>GENERALES</value>
@@ -496,7 +496,7 @@
     <value>SUCURSAL</value>
   </data>
   <data name="eMPRESAToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="eMPRESAToolStripMenuItem.Text" xml:space="preserve">
     <value>EMPRESA</value>
@@ -514,7 +514,7 @@
     <value>PERFIL</value>
   </data>
   <data name="aCCESOSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="aCCESOSToolStripMenuItem.Text" xml:space="preserve">
     <value>ACCESOS</value>
@@ -586,25 +586,25 @@
     <value>ImageAboveText</value>
   </data>
   <data name="cOMPRASToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="cOMPRASToolStripMenuItem1.Text" xml:space="preserve">
     <value>LISTADOS</value>
   </data>
   <data name="iNVENTARIOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="iNVENTARIOToolStripMenuItem.Text" xml:space="preserve">
     <value>INVENTARIO</value>
   </data>
   <data name="vENTASToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="vENTASToolStripMenuItem.Text" xml:space="preserve">
     <value>VENTAS</value>
   </data>
   <data name="cXCToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="cXCToolStripMenuItem1.Text" xml:space="preserve">
     <value>CXC</value>
@@ -878,9 +878,6 @@
         I9zqu33ey+DVXl8CXgQgrEAKAO3Aak8A7bglyu1eMDrAW4A3VWC3ZoEHgBmv3Sjv++yfWcDZxTYgwe4/
         /j/SDzVTgM4CvgAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>

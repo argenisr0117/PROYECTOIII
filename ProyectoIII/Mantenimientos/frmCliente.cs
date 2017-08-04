@@ -17,7 +17,8 @@ namespace ProyectoIII.Mantenimientos
     {
         clsDirecciones D = new clsDirecciones();
         clsTipos T = new clsTipos();
-        clsProveedor P = new clsProveedor();
+        clsCliente P = new clsCliente();
+        clsNacionalidad N = new clsNacionalidad();
         public frmCliente()
         {
             InitializeComponent();
@@ -64,6 +65,32 @@ namespace ProyectoIII.Mantenimientos
                 MessageBoxEx.Show(ex.Message);
             }
         }
+        private void LlenarComboNacionalidad()
+        {
+            try
+            {
+                cbNacionalidad.DataSource = N.Listar(true);
+                cbNacionalidad.DisplayMember = "DESCRIPCION";
+                cbNacionalidad.ValueMember = "ID_nacionalidad";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+        private void LlenarComboGenero()
+        {
+            try
+            {
+                cbGenero.DataSource = P.ListadoGenero();
+                cbGenero.DisplayMember = "DESCRIPCION";
+                cbGenero.ValueMember = "ID_genero";
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
         private void LlenarComboTipoC()
         {
             try
@@ -83,9 +110,9 @@ namespace ProyectoIII.Mantenimientos
             try
             {
                 T.Iddestipo = 6;
-                cbTipoProveedor.DataSource = T.ListarT(true);
-                cbTipoProveedor.DisplayMember = "DESCRIPCION";
-                cbTipoProveedor.ValueMember = "ID_TIPO";
+                cbTipoCliente.DataSource = T.ListarT(true);
+                cbTipoCliente.DisplayMember = "DESCRIPCION";
+                cbTipoCliente.ValueMember = "ID_TIPO";
             }
             catch (Exception ex)
             {
@@ -94,29 +121,43 @@ namespace ProyectoIII.Mantenimientos
         }
         private void frmProveedor_Load(object sender, EventArgs e)
         {
-            LlenarComboCiudad();
-            LlenarComboRegion();
-            LlenarComboBarrio();
-            LlenarComboTipoC();
-            LlenarComboTipoP();
-            Program.Evento = 0;
-            if(Program.Editar==1)
+            try
             {
-                LlenarCampos();
+                LlenarComboCiudad();
+                LlenarComboRegion();
+                LlenarComboBarrio();
+                LlenarComboTipoC();
+                LlenarComboTipoP();
+                LlenarComboGenero();
+                LlenarComboNacionalidad();
+                Program.Evento = 0;
+                if (Program.Editar == 1)
+                {
+                    LlenarCampos();
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
         private void LlenarCampos()
         {
             try
             {
                 Program.Evento = 1;
-                P.Idtercero = Program.Codigo;
-                DataTable dt = P.DatosProveedor();
+                P.Idcliente = Program.Codigo;
+                DataTable dt = P.DatosCliente();
                 DataTable dt2 = P.DatosContacto();
                 DataTable dt3 = P.DatosDireccion();
                 txtNombre.Text = dt.Rows[0][1].ToString();
                 txtIdentificacion.Text = dt.Rows[0][3].ToString();
-                cbTipoProveedor.SelectedValue = dt.Rows[0][4].ToString();
+                cbTipoCliente.SelectedValue = dt.Rows[0][5].ToString();
+                txtLimite.Text = dt.Rows[0][6].ToString();
+                cbGenero.SelectedValue = dt.Rows[0][2].ToString();
+                cbNacionalidad.SelectedValue = dt.Rows[0][4].ToString();
+
                 for (int x = 0; x < dt3.Rows.Count; x++)
                 {
                     dtgDireccion.Rows.Add(dt3.Rows[x][0]);
@@ -197,14 +238,12 @@ namespace ProyectoIII.Mantenimientos
                 {
                     dtgContacto.Rows.Add(Program.Id, txtContacto.Text, cbTipoContacto.SelectedValue, cbTipoContacto.Text, "");
                     txtContacto.Clear();
-                }
-                
+                }              
             }
             catch(Exception ex)
             {
                 MessageBoxEx.Show(ex.Message);
-            }
-           
+            }         
         }
 
         private void dtgContacto_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -283,16 +322,19 @@ namespace ProyectoIII.Mantenimientos
                 if (Program.Evento == 0)
                 {
                     P.Nombre = txtNombre.Text;                  
-                    P.Idtipot = Convert.ToInt32(cbTipoProveedor.SelectedValue);
+                    P.Idtipoc = Convert.ToInt32(cbTipoCliente.SelectedValue);
+                    P.Idgenero = cbGenero.SelectedValue.ToString();
+                    P.Idnacionalidad = Convert.ToInt32(cbNacionalidad.SelectedValue);
+                    P.Limite = Convert.ToDouble(txtLimite.Text);
                     mensaje = P.Registrar();
                     if(mensaje=="1")
                     {
                         P.Identificacion = txtIdentificacion.Text;
-                        if (cbTipoProveedor.Text == "Empresa")
+                        if (cbTipoCliente.Text == "Empresa")
                         {
                             P.Idtipoi = 8;
                         }
-                        else if (cbTipoProveedor.Text == "Persona")
+                        else if (cbTipoCliente.Text == "Persona")
                         {
                             P.Idtipoi = 6;
                         }
@@ -321,18 +363,21 @@ namespace ProyectoIII.Mantenimientos
                 }
                 else if (Program.Evento == 1)
                 {
-                    P.Idtercero = Program.Codigo;
+                    P.Idcliente = Program.Codigo;
                     P.Nombre = txtNombre.Text;
-                    P.Idtipot = Convert.ToInt32(cbTipoProveedor.SelectedValue);
+                    P.Idtipoc = Convert.ToInt32(cbTipoCliente.SelectedValue);
+                    P.Idgenero = cbGenero.SelectedValue.ToString();
+                    P.Idnacionalidad = Convert.ToInt32(cbNacionalidad.SelectedValue);
+                    P.Limite = Convert.ToDouble(txtLimite.Text);
                     mensaje = P.Actualizar();
                     if (mensaje == "1")
                     {
                         P.Identificacion = txtIdentificacion.Text;
-                        if (cbTipoProveedor.Text == "Empresa")
+                        if (cbTipoCliente.Text == "Empresa")
                         {
                             P.Idtipoi = 8;
                         }
-                        else if (cbTipoProveedor.Text == "Persona")
+                        else if (cbTipoCliente.Text == "Persona")
                         {
                             P.Idtipoi = 6;
                         }
@@ -377,6 +422,7 @@ namespace ProyectoIII.Mantenimientos
             txtNombre.Focus();
             dtgContacto.Rows.Clear();
             dtgDireccion.Rows.Clear();
+            txtLimite.Clear();
         }
         private void dtgDireccion_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {

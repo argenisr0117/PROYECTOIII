@@ -211,6 +211,7 @@
             // 
             this.cLIENTEToolStripMenuItem.Name = "cLIENTEToolStripMenuItem";
             resources.ApplyResources(this.cLIENTEToolStripMenuItem, "cLIENTEToolStripMenuItem");
+            this.cLIENTEToolStripMenuItem.Click += new System.EventHandler(this.cLIENTEToolStripMenuItem_Click);
             // 
             // eMPLEADOToolStripMenuItem
             // 

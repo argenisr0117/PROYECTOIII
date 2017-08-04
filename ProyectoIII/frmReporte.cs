@@ -55,6 +55,10 @@ namespace ProyectoIII
             {
                 ListadoProveedores();
             }
+            else if (Valor == 6)
+            {
+                ListadoClientes();
+            }
             else if (Valor == 7)
             {
                 ListadoProductos();
@@ -227,8 +231,36 @@ namespace ProyectoIII
             //lc.DataSources.Add(rds1);
             this.reportViewer1.RefreshReport();
         }
-
-        private void EnviarCorreo(string emailTo,string Formato)
+        private void ListadoClientes()
+        {
+            ReportParameter[] parametros = new ReportParameter[5];
+            parametros[0] = new ReportParameter("Orden1", Orden1.ToString());
+            parametros[1] = new ReportParameter("Orden2", Orden2.ToString());
+            parametros[2] = new ReportParameter("Orden3", Orden3.ToString());
+            parametros[3] = new ReportParameter("Orden4", Orden4.ToString());
+            parametros[4] = new ReportParameter("Orden5", Orden5.ToString());
+            Proyecto3DataSet ds = new Proyecto3DataSet();
+            Proyecto3DataSetTableAdapters.listado_clientesTableAdapter sta = new Proyecto3DataSetTableAdapters.listado_clientesTableAdapter();
+            //Proyecto3DataSetTableAdapters.obtener_orden_proveedorTableAdapter sta1 = new Proyecto3DataSetTableAdapters.obtener_orden_proveedorTableAdapter();
+            reportViewer1.ProcessingMode = ProcessingMode.Local;
+            lc = reportViewer1.LocalReport;
+            string ruta = "Reportes\\" + Reporte;
+            lc.ReportPath = ruta;
+            sta.Fill(ds.listado_clientes);
+            //sta1.Fill(ds.obtener_orden_proveedor,Idorden);
+            ReportDataSource rds = new ReportDataSource();
+            //ReportDataSource rds1 = new ReportDataSource();
+            rds.Name = "DataSet1";
+            rds.Value = (ds.Tables["listado_clientes"]);
+            //rds1.Name = "DataSet2";
+            //rds1.Value = (ds.Tables["obtener_orden_proveedor"]);
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.SetParameters(parametros);
+            lc.DataSources.Add(rds);
+            //lc.DataSources.Add(rds1);
+            this.reportViewer1.RefreshReport();
+        }
+        private void EnviarCorreo(string emailTo,string Formato, string extension)
         {
             try
             {
@@ -239,7 +271,7 @@ namespace ProyectoIII
                     correo.To.Add(address);
                 }
                 correo.Subject = "Reporte como Correo";
-                correo.Attachments.Add(new Attachment(new MemoryStream(bytes), "Reporte.pdf"));
+                correo.Attachments.Add(new Attachment(new MemoryStream(bytes), "Reporte"+extension));
                 using (var smtpClient = new SmtpClient("smtp.gmail.com"))
                 {
                     smtpClient.EnableSsl = true;
@@ -258,15 +290,15 @@ namespace ProyectoIII
         {
             if (rbExcel.Checked)
             {
-                EnviarCorreo(txtDestinos.Text,"EXCEL");
+                EnviarCorreo(txtDestinos.Text,"Excel",".xls");
             }
             if (rbPdf.Checked)
             {
-                EnviarCorreo(txtDestinos.Text, "PDF");
+                EnviarCorreo(txtDestinos.Text, "PDF",".pdf");
             }
             if (rbWord.Checked)
             {
-                EnviarCorreo(txtDestinos.Text, "WORD");
+                EnviarCorreo(txtDestinos.Text, "Word",".doc");
             }
             txtDestinos.Clear();
         }

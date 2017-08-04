@@ -197,5 +197,11 @@ namespace ProyectoIII
             Consultas.frmcListadoEntidades obj = new Consultas.frmcListadoEntidades();
             obj.ShowDialog();
         }
+
+        private void cLIENTEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.frmcCliente obj = new Consultas.frmcCliente();
+            obj.ShowDialog();
+        }
     }
 }

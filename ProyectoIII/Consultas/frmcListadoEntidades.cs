@@ -126,6 +126,14 @@ namespace ProyectoIII.Consultas
                     listBox1.Items[3] = "Region";
                     listBox1.Items[4] = "Tipo";
                 }
+                else if (cbEntidad.SelectedIndex == 2)
+                {
+                    listBox1.Items[0] = "Cedula/Rnc";
+                    listBox1.Items[1] = "Nombre";
+                    listBox1.Items[2] = "Codigo";
+                    listBox1.Items[3] = "Nacionalidad";
+                    listBox1.Items[4] = "Genero";
+                }
                 else if (cbEntidad.SelectedIndex == 3)
                 {
                     listBox1.Items[0] = "Referencia";

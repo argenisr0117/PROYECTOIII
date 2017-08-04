@@ -360,7 +360,6 @@ namespace Entidades
             DataTable dt = new DataTable();
             List<clsParametros> lst = new List<clsParametros>();
             return dt = M.Listado("listado_genero", lst);
-
         }
         public DataTable ListadoHorario()
         {
