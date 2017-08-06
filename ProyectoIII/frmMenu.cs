@@ -210,5 +210,11 @@ namespace ProyectoIII
             Procesos.frmAbrirCaja obj = new Procesos.frmAbrirCaja();
             obj.ShowDialog();
         }
+
+        private void nCFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmNcf obj = new Mantenimientos.frmNcf();
+            obj.ShowDialog();
+        }
     }
 }

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsCaja.cs" />
+    <Compile Include="clsNcf.cs" />
     <Compile Include="clsUsuario.cs" />
     <Compile Include="clsSucursal.cs" />
     <Compile Include="clsEmpresa.cs" />

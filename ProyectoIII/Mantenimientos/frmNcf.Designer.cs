@@ -29,24 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNcf));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textbox1 = new ProyectoIII.Controles.textbox(this.components);
-            this.textbox2 = new ProyectoIII.Controles.textbox(this.components);
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox3 = new ProyectoIII.Controles.textbox(this.components);
             this.label5 = new System.Windows.Forms.Label();
-            this.textbox4 = new ProyectoIII.Controles.textbox(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.textbox5 = new ProyectoIII.Controles.textbox(this.components);
             this.label7 = new System.Windows.Forms.Label();
-            this.textbox6 = new ProyectoIII.Controles.textbox(this.components);
             this.label8 = new System.Windows.Forms.Label();
-            this.textbox7 = new ProyectoIII.Controles.textbox(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,7 +46,11 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgNcf = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.division = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntoe = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,10 +58,15 @@
             this.tipoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secuenciai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secuenciaf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtSecuenciaf = new ProyectoIII.Controles.textbox(this.components);
+            this.txtSecuencia = new ProyectoIII.Controles.textbox(this.components);
+            this.txtTipocf = new ProyectoIII.Controles.textbox(this.components);
+            this.txtAreaimp = new ProyectoIII.Controles.textbox(this.components);
+            this.txtPuntoe = new ProyectoIII.Controles.textbox(this.components);
+            this.txtDivision = new ProyectoIII.Controles.textbox(this.components);
+            this.txtSerie = new ProyectoIII.Controles.textbox(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNcf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -101,22 +101,6 @@
             this.label3.TabIndex = 27;
             this.label3.Text = "SERIE";
             // 
-            // textbox1
-            // 
-            this.textbox1.Location = new System.Drawing.Point(17, 84);
-            this.textbox1.Name = "textbox1";
-            this.textbox1.Size = new System.Drawing.Size(38, 27);
-            this.textbox1.TabIndex = 28;
-            this.textbox1.Validar = true;
-            // 
-            // textbox2
-            // 
-            this.textbox2.Location = new System.Drawing.Point(62, 84);
-            this.textbox2.Name = "textbox2";
-            this.textbox2.Size = new System.Drawing.Size(126, 27);
-            this.textbox2.TabIndex = 30;
-            this.textbox2.Validar = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -126,14 +110,6 @@
             this.label4.Size = new System.Drawing.Size(126, 16);
             this.label4.TabIndex = 29;
             this.label4.Text = "DIVISIÓN NEGOCIOS";
-            // 
-            // textbox3
-            // 
-            this.textbox3.Location = new System.Drawing.Point(194, 84);
-            this.textbox3.Name = "textbox3";
-            this.textbox3.Size = new System.Drawing.Size(98, 27);
-            this.textbox3.TabIndex = 32;
-            this.textbox3.Validar = true;
             // 
             // label5
             // 
@@ -145,14 +121,6 @@
             this.label5.TabIndex = 31;
             this.label5.Text = "PUNTO EMISIÓN";
             // 
-            // textbox4
-            // 
-            this.textbox4.Location = new System.Drawing.Point(298, 84);
-            this.textbox4.Name = "textbox4";
-            this.textbox4.Size = new System.Drawing.Size(64, 27);
-            this.textbox4.TabIndex = 34;
-            this.textbox4.Validar = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -162,14 +130,6 @@
             this.label6.Size = new System.Drawing.Size(68, 16);
             this.label6.TabIndex = 33;
             this.label6.Text = "AREA IMP.";
-            // 
-            // textbox5
-            // 
-            this.textbox5.Location = new System.Drawing.Point(368, 84);
-            this.textbox5.Name = "textbox5";
-            this.textbox5.Size = new System.Drawing.Size(54, 27);
-            this.textbox5.TabIndex = 36;
-            this.textbox5.Validar = true;
             // 
             // label7
             // 
@@ -181,14 +141,6 @@
             this.label7.TabIndex = 35;
             this.label7.Text = "TIPO CF";
             // 
-            // textbox6
-            // 
-            this.textbox6.Location = new System.Drawing.Point(428, 84);
-            this.textbox6.Name = "textbox6";
-            this.textbox6.Size = new System.Drawing.Size(119, 27);
-            this.textbox6.TabIndex = 38;
-            this.textbox6.Validar = true;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -198,14 +150,6 @@
             this.label8.Size = new System.Drawing.Size(120, 16);
             this.label8.TabIndex = 37;
             this.label8.Text = "SECUENCIA INICIAL";
-            // 
-            // textbox7
-            // 
-            this.textbox7.Location = new System.Drawing.Point(553, 84);
-            this.textbox7.Name = "textbox7";
-            this.textbox7.Size = new System.Drawing.Size(119, 27);
-            this.textbox7.TabIndex = 40;
-            this.textbox7.Validar = true;
             // 
             // label9
             // 
@@ -287,20 +231,13 @@
             this.label16.TabIndex = 47;
             this.label16.Text = "00000001-99999999";
             // 
-            // dataGridView1
+            // dtgNcf
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgNcf.AllowUserToAddRows = false;
+            this.dtgNcf.AllowUserToDeleteRows = false;
+            this.dtgNcf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgNcf.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
             this.serie,
             this.division,
             this.puntoe,
@@ -308,21 +245,68 @@
             this.tipoc,
             this.secuenciai,
             this.secuenciaf});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 140);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 150);
-            this.dataGridView1.TabIndex = 48;
+            this.dtgNcf.Location = new System.Drawing.Point(16, 140);
+            this.dtgNcf.MultiSelect = false;
+            this.dtgNcf.Name = "dtgNcf";
+            this.dtgNcf.ReadOnly = true;
+            this.dtgNcf.RowHeadersWidth = 20;
+            this.dtgNcf.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgNcf.Size = new System.Drawing.Size(661, 150);
+            this.dtgNcf.TabIndex = 48;
+            this.dtgNcf.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNcf_CellDoubleClick);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
+            this.btnSalir.FlatAppearance.BorderSize = 3;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Image = global::ProyectoIII.Properties.Resources.salir2;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.Location = new System.Drawing.Point(683, 217);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(110, 46);
+            this.btnSalir.TabIndex = 51;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.White;
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
+            this.btnRegistrar.FlatAppearance.BorderSize = 3;
+            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrar.Image = global::ProyectoIII.Properties.Resources.save__2_;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistrar.Location = new System.Drawing.Point(683, 167);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(110, 46);
+            this.btnRegistrar.TabIndex = 49;
+            this.btnRegistrar.Text = "GUARDAR";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Visible = false;
             // 
             // serie
             // 
@@ -337,7 +321,7 @@
             this.division.HeaderText = "DIV. NEG.";
             this.division.Name = "division";
             this.division.ReadOnly = true;
-            this.division.Width = 93;
+            this.division.Width = 107;
             // 
             // puntoe
             // 
@@ -345,7 +329,7 @@
             this.puntoe.HeaderText = "P. EMISIÓN";
             this.puntoe.Name = "puntoe";
             this.puntoe.ReadOnly = true;
-            this.puntoe.Width = 102;
+            this.puntoe.Width = 118;
             // 
             // areaimp
             // 
@@ -353,7 +337,7 @@
             this.areaimp.HeaderText = "AREA IMP.";
             this.areaimp.Name = "areaimp";
             this.areaimp.ReadOnly = true;
-            this.areaimp.Width = 96;
+            this.areaimp.Width = 112;
             // 
             // tipoc
             // 
@@ -361,7 +345,7 @@
             this.tipoc.HeaderText = "TIPO CF";
             this.tipoc.Name = "tipoc";
             this.tipoc.ReadOnly = true;
-            this.tipoc.Width = 83;
+            this.tipoc.Width = 94;
             // 
             // secuenciai
             // 
@@ -369,7 +353,7 @@
             this.secuenciai.HeaderText = "SECUENCIA";
             this.secuenciai.Name = "secuenciai";
             this.secuenciai.ReadOnly = true;
-            this.secuenciai.Width = 105;
+            this.secuenciai.Width = 120;
             // 
             // secuenciaf
             // 
@@ -377,68 +361,63 @@
             this.secuenciaf.HeaderText = "SECUENCIA F.";
             this.secuenciaf.Name = "secuenciaf";
             this.secuenciaf.ReadOnly = true;
-            this.secuenciaf.Width = 120;
+            this.secuenciaf.Width = 138;
             // 
-            // btnSalir
+            // txtSecuenciaf
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.White;
-            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
-            this.btnSalir.FlatAppearance.BorderSize = 3;
-            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Image = global::ProyectoIII.Properties.Resources.salir2;
-            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.Location = new System.Drawing.Point(683, 243);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(110, 46);
-            this.btnSalir.TabIndex = 51;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.txtSecuenciaf.Location = new System.Drawing.Point(553, 84);
+            this.txtSecuenciaf.Name = "txtSecuenciaf";
+            this.txtSecuenciaf.Size = new System.Drawing.Size(119, 27);
+            this.txtSecuenciaf.TabIndex = 6;
+            this.txtSecuenciaf.Validar = true;
             // 
-            // btnEditar
+            // txtSecuencia
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.White;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
-            this.btnEditar.FlatAppearance.BorderSize = 3;
-            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Image = global::ProyectoIII.Properties.Resources.edit__2_;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.Location = new System.Drawing.Point(683, 193);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(110, 46);
-            this.btnEditar.TabIndex = 50;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.UseVisualStyleBackColor = false;
+            this.txtSecuencia.Location = new System.Drawing.Point(428, 84);
+            this.txtSecuencia.Name = "txtSecuencia";
+            this.txtSecuencia.Size = new System.Drawing.Size(119, 27);
+            this.txtSecuencia.TabIndex = 5;
+            this.txtSecuencia.Validar = true;
             // 
-            // btnRegistrar
+            // txtTipocf
             // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.White;
-            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
-            this.btnRegistrar.FlatAppearance.BorderSize = 3;
-            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrar.Image = global::ProyectoIII.Properties.Resources.save__2_;
-            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistrar.Location = new System.Drawing.Point(683, 143);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(110, 46);
-            this.btnRegistrar.TabIndex = 49;
-            this.btnRegistrar.Text = "GUARDAR";
-            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.txtTipocf.Location = new System.Drawing.Point(368, 84);
+            this.txtTipocf.Name = "txtTipocf";
+            this.txtTipocf.Size = new System.Drawing.Size(54, 27);
+            this.txtTipocf.TabIndex = 4;
+            this.txtTipocf.Validar = true;
+            // 
+            // txtAreaimp
+            // 
+            this.txtAreaimp.Location = new System.Drawing.Point(298, 84);
+            this.txtAreaimp.Name = "txtAreaimp";
+            this.txtAreaimp.Size = new System.Drawing.Size(64, 27);
+            this.txtAreaimp.TabIndex = 3;
+            this.txtAreaimp.Validar = true;
+            // 
+            // txtPuntoe
+            // 
+            this.txtPuntoe.Location = new System.Drawing.Point(194, 84);
+            this.txtPuntoe.Name = "txtPuntoe";
+            this.txtPuntoe.Size = new System.Drawing.Size(98, 27);
+            this.txtPuntoe.TabIndex = 2;
+            this.txtPuntoe.Validar = true;
+            // 
+            // txtDivision
+            // 
+            this.txtDivision.Location = new System.Drawing.Point(62, 84);
+            this.txtDivision.Name = "txtDivision";
+            this.txtDivision.Size = new System.Drawing.Size(126, 27);
+            this.txtDivision.TabIndex = 1;
+            this.txtDivision.Validar = true;
+            // 
+            // txtSerie
+            // 
+            this.txtSerie.Location = new System.Drawing.Point(17, 84);
+            this.txtSerie.Name = "txtSerie";
+            this.txtSerie.Size = new System.Drawing.Size(38, 27);
+            this.txtSerie.TabIndex = 0;
+            this.txtSerie.Validar = true;
             // 
             // frmNcf
             // 
@@ -446,9 +425,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 302);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgNcf);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -456,19 +434,19 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textbox7);
+            this.Controls.Add(this.txtSecuenciaf);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textbox6);
+            this.Controls.Add(this.txtSecuencia);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textbox5);
+            this.Controls.Add(this.txtTipocf);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textbox4);
+            this.Controls.Add(this.txtAreaimp);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textbox3);
+            this.Controls.Add(this.txtPuntoe);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textbox2);
+            this.Controls.Add(this.txtDivision);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textbox1);
+            this.Controls.Add(this.txtSerie);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -480,7 +458,9 @@
             this.MaximizeBox = false;
             this.Name = "frmNcf";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmNcf_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNcf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,18 +471,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private Controles.textbox textbox1;
-        private Controles.textbox textbox2;
+        private Controles.textbox txtSerie;
+        private Controles.textbox txtDivision;
         private System.Windows.Forms.Label label4;
-        private Controles.textbox textbox3;
+        private Controles.textbox txtPuntoe;
         private System.Windows.Forms.Label label5;
-        private Controles.textbox textbox4;
+        private Controles.textbox txtAreaimp;
         private System.Windows.Forms.Label label6;
-        private Controles.textbox textbox5;
+        private Controles.textbox txtTipocf;
         private System.Windows.Forms.Label label7;
-        private Controles.textbox textbox6;
+        private Controles.textbox txtSecuencia;
         private System.Windows.Forms.Label label8;
-        private Controles.textbox textbox7;
+        private Controles.textbox txtSecuenciaf;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -511,7 +491,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgNcf;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn serie;
         private System.Windows.Forms.DataGridViewTextBoxColumn division;
         private System.Windows.Forms.DataGridViewTextBoxColumn puntoe;
@@ -519,8 +503,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn secuenciai;
         private System.Windows.Forms.DataGridViewTextBoxColumn secuenciaf;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnRegistrar;
     }
 }

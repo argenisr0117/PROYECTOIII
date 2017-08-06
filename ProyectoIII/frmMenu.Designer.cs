@@ -87,6 +87,7 @@
             this.cXCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.uTILIDADESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bACKUPBASEDATOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nCFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -234,7 +235,8 @@
             this.cARGOToolStripMenuItem,
             this.tIPOSToolStripMenuItem,
             this.aSIGNARALMACENToolStripMenuItem,
-            this.dEPARTAMENTOToolStripMenuItem});
+            this.dEPARTAMENTOToolStripMenuItem,
+            this.nCFToolStripMenuItem});
             this.gENERALESToolStripMenuItem.Name = "gENERALESToolStripMenuItem";
             resources.ApplyResources(this.gENERALESToolStripMenuItem, "gENERALESToolStripMenuItem");
             // 
@@ -501,6 +503,12 @@
             this.bACKUPBASEDATOSToolStripMenuItem.Name = "bACKUPBASEDATOSToolStripMenuItem";
             resources.ApplyResources(this.bACKUPBASEDATOSToolStripMenuItem, "bACKUPBASEDATOSToolStripMenuItem");
             // 
+            // nCFToolStripMenuItem
+            // 
+            this.nCFToolStripMenuItem.Name = "nCFToolStripMenuItem";
+            resources.ApplyResources(this.nCFToolStripMenuItem, "nCFToolStripMenuItem");
+            this.nCFToolStripMenuItem.Click += new System.EventHandler(this.nCFToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             resources.ApplyResources(this, "$this");
@@ -586,5 +594,6 @@
         private System.Windows.Forms.ToolStripMenuItem dEVOLUCIONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBRIRCAJAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fACTURACIÓNToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nCFToolStripMenuItem;
     }
 }
