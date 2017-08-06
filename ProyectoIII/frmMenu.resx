@@ -483,6 +483,12 @@
   <data name="nCFToolStripMenuItem.Text" xml:space="preserve">
     <value>NCF</value>
   </data>
+  <data name="aSIGNARPRECIOSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="aSIGNARPRECIOSToolStripMenuItem.Text" xml:space="preserve">
+    <value>ASIGNAR PRECIOS</value>
+  </data>
   <data name="gENERALESToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
@@ -897,6 +903,9 @@
         /j/SDzVTgM4CvgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
@@ -1053,6 +1062,18 @@
   <data name="&gt;&gt;dEPARTAMENTOToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;nCFToolStripMenuItem.Name" xml:space="preserve">
+    <value>nCFToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nCFToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aSIGNARPRECIOSToolStripMenuItem.Name" xml:space="preserve">
+    <value>aSIGNARPRECIOSToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aSIGNARPRECIOSToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;eMPRESAToolStripMenuItem.Name" xml:space="preserve">
     <value>eMPRESAToolStripMenuItem</value>
   </data>
@@ -1189,12 +1210,6 @@
     <value>bACKUPBASEDATOSToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;bACKUPBASEDATOSToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nCFToolStripMenuItem.Name" xml:space="preserve">
-    <value>nCFToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;nCFToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

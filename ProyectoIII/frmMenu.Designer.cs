@@ -64,6 +64,8 @@
             this.fACTURAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aSIGNARALMACENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dEPARTAMENTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nCFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aSIGNARPRECIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eMPRESAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eMPRESAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sUCURSALToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,7 +89,6 @@
             this.cXCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.uTILIDADESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bACKUPBASEDATOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nCFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -236,7 +237,8 @@
             this.tIPOSToolStripMenuItem,
             this.aSIGNARALMACENToolStripMenuItem,
             this.dEPARTAMENTOToolStripMenuItem,
-            this.nCFToolStripMenuItem});
+            this.nCFToolStripMenuItem,
+            this.aSIGNARPRECIOSToolStripMenuItem});
             this.gENERALESToolStripMenuItem.Name = "gENERALESToolStripMenuItem";
             resources.ApplyResources(this.gENERALESToolStripMenuItem, "gENERALESToolStripMenuItem");
             // 
@@ -349,6 +351,18 @@
             resources.ApplyResources(this.dEPARTAMENTOToolStripMenuItem, "dEPARTAMENTOToolStripMenuItem");
             this.dEPARTAMENTOToolStripMenuItem.Click += new System.EventHandler(this.dEPARTAMENTOToolStripMenuItem_Click);
             // 
+            // nCFToolStripMenuItem
+            // 
+            this.nCFToolStripMenuItem.Name = "nCFToolStripMenuItem";
+            resources.ApplyResources(this.nCFToolStripMenuItem, "nCFToolStripMenuItem");
+            this.nCFToolStripMenuItem.Click += new System.EventHandler(this.nCFToolStripMenuItem_Click);
+            // 
+            // aSIGNARPRECIOSToolStripMenuItem
+            // 
+            this.aSIGNARPRECIOSToolStripMenuItem.Name = "aSIGNARPRECIOSToolStripMenuItem";
+            resources.ApplyResources(this.aSIGNARPRECIOSToolStripMenuItem, "aSIGNARPRECIOSToolStripMenuItem");
+            this.aSIGNARPRECIOSToolStripMenuItem.Click += new System.EventHandler(this.aSIGNARPRECIOSToolStripMenuItem_Click);
+            // 
             // eMPRESAToolStripMenuItem
             // 
             this.eMPRESAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -451,6 +465,7 @@
             // 
             this.fACTURACIÓNToolStripMenuItem.Name = "fACTURACIÓNToolStripMenuItem";
             resources.ApplyResources(this.fACTURACIÓNToolStripMenuItem, "fACTURACIÓNToolStripMenuItem");
+            this.fACTURACIÓNToolStripMenuItem.Click += new System.EventHandler(this.fACTURACIÓNToolStripMenuItem_Click);
             // 
             // cXCToolStripMenuItem
             // 
@@ -502,12 +517,6 @@
             // 
             this.bACKUPBASEDATOSToolStripMenuItem.Name = "bACKUPBASEDATOSToolStripMenuItem";
             resources.ApplyResources(this.bACKUPBASEDATOSToolStripMenuItem, "bACKUPBASEDATOSToolStripMenuItem");
-            // 
-            // nCFToolStripMenuItem
-            // 
-            this.nCFToolStripMenuItem.Name = "nCFToolStripMenuItem";
-            resources.ApplyResources(this.nCFToolStripMenuItem, "nCFToolStripMenuItem");
-            this.nCFToolStripMenuItem.Click += new System.EventHandler(this.nCFToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -595,5 +604,6 @@
         private System.Windows.Forms.ToolStripMenuItem aBRIRCAJAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fACTURACIÓNToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nCFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aSIGNARPRECIOSToolStripMenuItem;
     }
 }

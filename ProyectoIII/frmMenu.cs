@@ -216,5 +216,17 @@ namespace ProyectoIII
             Mantenimientos.frmNcf obj = new Mantenimientos.frmNcf();
             obj.ShowDialog();
         }
+
+        private void fACTURACIÓNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.frmFacturacion obj = new Procesos.frmFacturacion();
+            obj.ShowDialog();
+        }
+
+        private void aSIGNARPRECIOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmAsignarPrecios obj = new Mantenimientos.frmAsignarPrecios();
+            obj.ShowDialog();
+        }
     }
 }

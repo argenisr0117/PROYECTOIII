@@ -55,6 +55,25 @@ namespace Entidades
             numero = Convert.ToInt32(lst[1].Valor);
             return numero;
         }
+        public string [] NumeroNCF()
+        {
+            string[] numero= new string[2];
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@tipo", Mtipo));
+            lst.Add(new clsParametros("@numero", "", SqlDbType.Int, ParameterDirection.Output, 50));
+            lst.Add(new clsParametros("@ncf", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            M.EjecutarSP("obtener_numero_ncf", ref lst);
+            numero[0] = lst[1].Valor.ToString();
+            numero[1] = lst[2].Valor.ToString();
+            return numero;
+        }
+        public DataTable ListadoMoneda()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            return dt = M.Listado("listado_moneda", lst);
+
+        }
 
     }
 }

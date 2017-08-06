@@ -40,6 +40,30 @@ namespace Entidades
         string Munidad;
         double Mequivalencia;
 
+        double Mrangoi;
+        double Mrangof;
+        int Midprecio;
+        double Mutilidad;
+        public double Rangoi
+        {
+            get { return Mrangoi; }
+            set { Mrangoi = value; }
+        }
+        public double Rangof
+        {
+            get { return Mrangof; }
+            set { Mrangof = value; }
+        }
+        public int Idprecio
+        {
+            get { return Midprecio; }
+            set { Midprecio = value; }
+        }
+        public double Utilidad
+        {
+            get { return Mutilidad; }
+            set { Mutilidad = value; }
+        }
         public int Idequivalencia
         {
             get { return Midequivalencia; }
@@ -365,6 +389,41 @@ namespace Entidades
             lst.Add(new clsParametros("@idproducto", Midproducto));
             return dt = M.Listado("obtener_unidades_producto", lst);
 
+        }
+        public DataTable ListadoPrecios()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            return dt = M.Listado("listado_producto_precios", lst);
+
+        }
+        public string RegistrarPrecios()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@rangoi", Mrangoi));
+            lst.Add(new clsParametros("@rangof", Mrangof));
+            lst.Add(new clsParametros("@utilidad", Mutilidad));
+            M.EjecutarSP("registrar_precios", ref lst);
+            mensaje = lst[0].Valor.ToString();
+            return mensaje;
+        }
+        public string ActualizarPrecios()
+        {
+            string mensaje = "";
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+            lst.Add(new clsParametros("@idprecio", Midprecio));
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            lst.Add(new clsParametros("@rangoi", Mrangoi));
+            lst.Add(new clsParametros("@rangof", Mrangof));
+            lst.Add(new clsParametros("@utilidad", Mutilidad));
+            M.EjecutarSP("actualizar_precios", ref lst);
+            mensaje = lst[0].Valor.ToString();
+            return mensaje;
         }
     }
 }

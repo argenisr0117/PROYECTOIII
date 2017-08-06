@@ -56,6 +56,7 @@ namespace ProyectoIII.Consultas
                     dtgCliente.Rows[x].Cells[5].Value = dt.Rows[x][4].ToString();
                     dtgCliente.Rows[x].Cells[6].Value = dt.Rows[x][5].ToString();
                     dtgCliente.Rows[x].Cells[7].Value = dt.Rows[x][6].ToString();
+                    dtgCliente.Rows[x].Cells[8].Value = dt.Rows[x][7].ToString();
 
                 }
                 dtgCliente.ClearSelection();
@@ -179,6 +180,7 @@ namespace ProyectoIII.Consultas
                 Program.Codigo = Convert.ToInt32(dtgCliente.CurrentRow.Cells[1].Value);
                 Program.Idcliente = dtgCliente.CurrentRow.Cells[1].Value.ToString();
                 Program.Cliente = dtgCliente.CurrentRow.Cells[2].Value.ToString();
+                Program.Limite = Convert.ToDouble(dtgCliente.CurrentRow.Cells[8].Value);
                 this.Close();
             }
             else
