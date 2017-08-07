@@ -76,7 +76,7 @@ namespace Entidades
             mensaje = Convert.ToBoolean(lst[0].Valor);
             return mensaje;
         }
-
+       
         public DataTable Listar(Boolean objEstado)
         {
             DataTable dt = new DataTable();
@@ -84,6 +84,13 @@ namespace Entidades
             lst.Add(new clsParametros("@estado", objEstado));
             return dt = M.Listado("listado_caja", lst);
 
+        }
+        public DataTable VerificarCajaAbierta()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idusuario", Midusuario));
+            return dt = M.Listado("verificar_caja_abierta", lst);
         }
         public string Activar()
         {

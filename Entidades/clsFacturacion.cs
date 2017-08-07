@@ -11,5 +11,8 @@ namespace Entidades
     public class clsFacturacion
     {
         private clsManejador M = new clsManejador();
+        int Midcaja;
+        int Midusuario;
+        
     }
 }

@@ -35,12 +35,6 @@
             this.btnBuscarP = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dtgPrecio = new System.Windows.Forms.DataGridView();
-            this.idprecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.almacen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.utilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtProducto = new ProyectoIII.Controles.textbox(this.components);
             this.txtInicial1 = new ProyectoIII.Controles.textboxn(this.components);
@@ -51,6 +45,12 @@
             this.txtUtilidad = new ProyectoIII.Controles.textboxn(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.btnAgregarD = new System.Windows.Forms.Button();
+            this.idprecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.almacen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.utilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -125,52 +125,6 @@
             this.dtgPrecio.Size = new System.Drawing.Size(504, 158);
             this.dtgPrecio.TabIndex = 48;
             this.dtgPrecio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPrecio_CellDoubleClick);
-            // 
-            // idprecio
-            // 
-            this.idprecio.HeaderText = "idprecio";
-            this.idprecio.Name = "idprecio";
-            this.idprecio.ReadOnly = true;
-            this.idprecio.Visible = false;
-            // 
-            // idproducto
-            // 
-            this.idproducto.HeaderText = "IDPRODUCTO";
-            this.idproducto.Name = "idproducto";
-            this.idproducto.ReadOnly = true;
-            this.idproducto.Visible = false;
-            // 
-            // almacen
-            // 
-            this.almacen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.almacen.HeaderText = "CANT. INICIAL";
-            this.almacen.Name = "almacen";
-            this.almacen.ReadOnly = true;
-            this.almacen.Width = 132;
-            // 
-            // eliminar
-            // 
-            this.eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.eliminar.HeaderText = "CANT. FINAL";
-            this.eliminar.Name = "eliminar";
-            this.eliminar.ReadOnly = true;
-            this.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.eliminar.Width = 119;
-            // 
-            // utilidad
-            // 
-            this.utilidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.utilidad.HeaderText = "UTILIDAD";
-            this.utilidad.Name = "utilidad";
-            this.utilidad.ReadOnly = true;
-            this.utilidad.Width = 108;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "ESTADO";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Visible = false;
             // 
             // errorProvider1
             // 
@@ -273,6 +227,52 @@
             this.btnAgregarD.UseVisualStyleBackColor = false;
             this.btnAgregarD.Click += new System.EventHandler(this.btnAgregarD_Click);
             // 
+            // idprecio
+            // 
+            this.idprecio.HeaderText = "idprecio";
+            this.idprecio.Name = "idprecio";
+            this.idprecio.ReadOnly = true;
+            this.idprecio.Visible = false;
+            // 
+            // idproducto
+            // 
+            this.idproducto.HeaderText = "IDPRODUCTO";
+            this.idproducto.Name = "idproducto";
+            this.idproducto.ReadOnly = true;
+            this.idproducto.Visible = false;
+            // 
+            // almacen
+            // 
+            this.almacen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.almacen.HeaderText = "CANT. INICIAL";
+            this.almacen.Name = "almacen";
+            this.almacen.ReadOnly = true;
+            this.almacen.Width = 132;
+            // 
+            // eliminar
+            // 
+            this.eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.eliminar.HeaderText = "CANT. FINAL";
+            this.eliminar.Name = "eliminar";
+            this.eliminar.ReadOnly = true;
+            this.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.eliminar.Width = 119;
+            // 
+            // utilidad
+            // 
+            this.utilidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.utilidad.HeaderText = "% UTILIDAD";
+            this.utilidad.Name = "utilidad";
+            this.utilidad.ReadOnly = true;
+            this.utilidad.Width = 118;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Visible = false;
+            // 
             // frmAsignarPrecios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -325,12 +325,12 @@
         private System.Windows.Forms.Label label3;
         private Controles.textboxn txtInicial1;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnAgregarD;
         private System.Windows.Forms.DataGridViewTextBoxColumn idprecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn idproducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn almacen;
         private System.Windows.Forms.DataGridViewTextBoxColumn eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn utilidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.Button btnAgregarD;
     }
 }

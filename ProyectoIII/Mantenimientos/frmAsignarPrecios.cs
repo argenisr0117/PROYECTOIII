@@ -75,7 +75,6 @@ namespace ProyectoIII.Mantenimientos
                 MessageBoxEx.Show(ex.Message, "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void frmAsignarAlmacen_Load(object sender, EventArgs e)
         {
             Program.Evento = 0;

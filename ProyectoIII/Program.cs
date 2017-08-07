@@ -32,6 +32,7 @@ namespace ProyectoIII
         public static string Cliente;
         public static int Idfactura;
         public static double Limite;
+        public static double Precio;
 
         // public static int Idproducto;
         public static int Idunidad;

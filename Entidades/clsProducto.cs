@@ -398,6 +398,14 @@ namespace Entidades
             return dt = M.Listado("listado_producto_precios", lst);
 
         }
+        public DataTable ObtenerPrecios()
+        {
+            DataTable dt = new DataTable();
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@idproducto", Midproducto));
+            return dt = M.Listado("obtener_precios_producto", lst);
+
+        }
         public string RegistrarPrecios()
         {
             string mensaje = "";

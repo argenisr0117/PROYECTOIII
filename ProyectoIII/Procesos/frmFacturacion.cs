@@ -18,6 +18,10 @@ namespace ProyectoIII.Procesos
         clsTipos T = new clsTipos();
         clsTransacciones Tr = new clsTransacciones();
         clsProducto P = new clsProducto();
+        clsCaja C = new clsCaja();
+        clsUnidad U = new clsUnidad();
+        public DataTable dtPrecios = new DataTable();
+        public double Equiv = 0;
         private void LlenarComboTipo()
         {
             try
@@ -84,7 +88,9 @@ namespace ProyectoIII.Procesos
             LlenarMetodoP();
             LlenarMoneda();
             Autocompletar();
-            ObtenerNumeroNCF();
+            //ObtenerNumeroNCF();
+            VerificarCajaAbierta();
+            Program.Evento = 0;
 
         }
 
@@ -194,7 +200,31 @@ namespace ProyectoIII.Procesos
                 this.Close();
             }
         }
+        private void VerificarCajaAbierta()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                C.Idusuario = Program.Idusuario;
+                dt = C.VerificarCajaAbierta();
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBoxEx.Show("Usuario no tiene una caja abierta\n No podra facturar.", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnAgregarCliente.Enabled = false;
+                    btnRegistrar.Enabled = false;
+                    btnProducto.Enabled = false;
+                }
+                else
+                {
+                    txtCaja.Text = dt.Rows[0][0].ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+        }
         private void btnProducto_Click(object sender, EventArgs e)
         {
             try
@@ -204,6 +234,9 @@ namespace ProyectoIII.Procesos
                 txtCodigoP.Text = Program.Idproduct;
                 txtProducto.Text = Program.Producto;
                 LlenarComboUnidad();
+                ObtenerPrecioProducto();
+                ObtenerExistencia();
+                txtCantidad.Focus();
             }
             catch (Exception ex)
             {
@@ -211,6 +244,47 @@ namespace ProyectoIII.Procesos
             }
         }
 
+        private void ObtenerExistencia()
+        {
+            try
+            {
+                double existencia;
+                double cant;
+                //cant = Convert.ToDouble(txtCantidad.Text);
+                DataTable dt = new DataTable();
+                if (cbUnidad.SelectedValue.ToString() !="System.Data.DataRowView")
+                {
+                    U.Abreviacion = cbUnidad.Text;
+                    U.Idproducto = Convert.ToInt32(Program.Idproduct);
+                    dt = U.EquivalenciaUnidad();
+                    cant = Convert.ToDouble(dt.Rows[0][0]);
+                    Equiv= Convert.ToDouble(dt.Rows[0][0]); 
+                    existencia = Math.Round(Program.Existencia / cant, 2);
+                    //cant = cant * (Convert.ToDouble(txtCantidad.Text));
+                    lbExistencia.Text = existencia.ToString();
+                    lbUnidad.Text = cbUnidad.Text;
+                }
+               
+            }
+            catch(Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+           
+        }
+        private void ObtenerPrecioProducto ()
+        {
+            P.Idproducto = Convert.ToInt32(Program.Idproduct);
+            dtPrecios.Rows.Clear();
+            try
+            {
+                dtPrecios=P.ObtenerPrecios();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void dtgFacturacion_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             try
@@ -233,5 +307,250 @@ namespace ProyectoIII.Procesos
                 MessageBoxEx.Show(ex.Message);
             }
         }
+
+        private void chbNCF_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!chbNCF.Checked)
+                {
+                    txtNcf.Text = "";
+                }
+                else
+                {
+                    ObtenerNumeroNCF();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void CalcularPrecio()
+        {
+            double cantidad = 0;
+            double precio = 0;
+            double impuesto = 0;
+            double rangoi=0;
+            double rangof=0;
+            if (!string.IsNullOrEmpty(txtCantidad.Text))
+            {
+                cantidad = Convert.ToDouble(txtCantidad.Text) * Equiv;
+            }
+            else
+            {
+                cantidad = 0;
+            }
+            for (int x=0; x < dtPrecios.Rows.Count; x++)
+            {
+                rangoi = Convert.ToDouble(dtPrecios.Rows[x][0]);
+                rangof = Convert.ToDouble(dtPrecios.Rows[x][1]);
+                if (cantidad>=rangoi && cantidad <=rangof )
+                {                   
+                    precio = Program.Costo * Convert.ToDouble(dtPrecios.Rows[x][2]);
+                    precio = Program.Costo + precio;
+                    precio = precio * Equiv;
+                    Program.Precio = precio;
+                    impuesto = precio * Convert.ToDouble(dtPrecios.Rows[x][3]);
+                    Program.Itbis = impuesto;
+                    precio = precio + impuesto;
+                    txtPrecio.Text = precio.ToString("N2");
+                }
+                else if(txtCantidad.Text=="")
+                {
+                    txtPrecio.Clear();
+                }
+            }
+        }
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CalcularPrecio();
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+
+        private void cbUnidad_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbUnidad.DataSource != null)
+                {
+                    ObtenerExistencia();
+                    CalcularPrecio();
+                }
+                
+
+            }
+            catch(Exception ex)
+            {
+                return;
+            }
+        }
+
+        private void AgregarProducto()
+        {
+            try
+            {
+                errorProvider1.Clear();
+                if (Utilidades.ValidarForm2(pnProducto, errorProvider1) == false)
+                {
+                    return;
+                }
+                if (Utilidades.ValidarForm(this, errorProvider1) == false)
+                {
+                    return;
+                }
+                double existencia;
+                double cant;
+                cant = Convert.ToDouble(txtCantidad.Text);
+                DataTable dt = new DataTable();
+                U.Abreviacion = cbUnidad.Text;
+                U.Idproducto = Convert.ToInt32(txtCodigoP.Text);
+                dt = U.EquivalenciaUnidad();
+                cant = Convert.ToDouble(dt.Rows[0][0]);
+                existencia = Math.Round(Program.Existencia / cant, 2);
+                cant = cant * (Convert.ToDouble(txtCantidad.Text));
+                if (cant > Program.Existencia)
+                {
+                    MessageBoxEx.Show("Solo hay [" + existencia + "] disponible", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    double importe = 0;
+                    double itbis = 0;
+                    double total = 0;
+                    double precio = 0;
+                    double impuesto = 0;
+                    double rangoi = 0;
+                    double rangof = 0;
+                    if (Program.Evento == 0)
+                    {
+                        bool valor = true;
+                        if (dtgFacturacion.Rows.Count > 0)
+                        {
+                            foreach (DataGridViewRow item in dtgFacturacion.Rows)
+                            {
+                                if (item.Cells[5].Value.ToString() == txtProducto.Text)
+                                {
+                                    double cantidad = Convert.ToDouble(txtCantidad.Text);
+                                    cantidad = cantidad + Convert.ToDouble(item.Cells[2].Value);
+
+                                    for (int x = 0; x < dtPrecios.Rows.Count; x++)
+                                    {
+                                        rangoi = Convert.ToDouble(dtPrecios.Rows[x][0]);
+                                        rangof = Convert.ToDouble(dtPrecios.Rows[x][1]);
+                                        if (cantidad >= rangoi && cantidad <= rangof)
+                                        {
+                                            precio = Program.Costo * Convert.ToDouble(dtPrecios.Rows[x][2]);
+                                            precio = Program.Costo + precio;
+                                            precio = precio * Equiv;
+                                            Program.Precio = precio;
+                                            impuesto = precio * Convert.ToDouble(dtPrecios.Rows[x][3]);
+                                            Program.Itbis = impuesto;
+                                            txtPrecio.Text = precio.ToString("N2");
+                                        }
+                                    }
+
+                                    itbis = cantidad * Program.Itbis;
+                                    importe = cantidad * Program.Precio;
+                                    total = importe + itbis;
+                                    item.Cells[2].Value = cantidad;
+                                    item.Cells[6].Value = txtPrecio.Text;
+                                    item.Cells[7].Value = importe.ToString("N2");
+                                    item.Cells[8].Value = itbis.ToString("N2");
+                                    Limpiar();
+                                    valor = false;
+                                    itbis = 0;
+                                    importe = 0;
+                                    total = 0;
+                                    break;
+                                }
+                            }
+                            if (valor == true)
+                            {
+                                itbis = Program.Itbis;
+                                itbis = itbis * Convert.ToDouble(txtCantidad.Text);
+                                importe = Convert.ToDouble(txtCantidad.Text) * Program.Precio;
+                                total = importe + itbis;
+                                precio = Program.Precio;
+                                dtgFacturacion.Rows.Add("", txtCodigoP.Text, txtCantidad.Text, cbUnidad.SelectedValue, cbUnidad.Text, txtProducto.Text, precio, importe, itbis, total);
+                                Limpiar();
+                                itbis = 0;
+                                importe = 0;
+                                total = 0;
+                            }
+                        }
+                        else
+                        {
+                            itbis = Program.Itbis;
+                            itbis = itbis * Convert.ToDouble(txtCantidad.Text);
+                            importe = Convert.ToDouble(txtCantidad.Text) * Program.Precio;
+                            total = importe+itbis;
+                            precio = Program.Precio;
+                            dtgFacturacion.Rows.Add("", txtCodigoP.Text, txtCantidad.Text, cbUnidad.SelectedValue, cbUnidad.Text, txtProducto.Text, precio.ToString("N2"), importe.ToString("N2"), itbis.ToString("N2"), total.ToString("N2"));
+                            Limpiar();
+                            itbis = 0;
+                            importe = 0;
+                            total = 0;
+                        }
+                    }
+                    else if (Program.Evento == 1)
+                    {
+                        //dtgProveedor.Rows.Add("", txtCodigoPv.Text, txtProveedor.Text);
+                        //txtCodigoPv.Clear();
+                        //txtProveedor.Clear();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+
+        private void Limpiar ()
+        {
+            txtProducto.Clear();
+            txtCodigoP.Clear();
+            txtCantidad.Clear();
+            txtPrecio.Clear();
+            dtPrecios.Rows.Clear();
+            Program.Existencia = 0;
+            Program.Itbis = 0;
+            Program.Idproduct = "";
+            Program.Precio = 0;
+            lbExistencia.Text = "0.00";
+            lbUnidad.Text = "--";
+            //cbUnidad.SelectedValue = "System.Data.DataRowView";
+            cbUnidad.DataSource = null;
+            cbUnidad.Items.Clear();
+            
+        }
+        private void txtCantidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                AgregarProducto();
+                CalcularTotal();
+            }
+        }
+
+        private void CalcularTotal()
+        {
+            double total = 0;
+            for(int y =0; y < dtgFacturacion.Rows.Count; y++)
+            {
+                total = total +Convert.ToDouble(dtgFacturacion.Rows[y].Cells[9].Value);
+            }
+            lbTotal.Text =cbMoneda.Text+" "+ total.ToString("N2");
+        }
+    
     }
 }

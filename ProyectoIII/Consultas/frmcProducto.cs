@@ -112,6 +112,7 @@ namespace ProyectoIII.Consultas
                 Program.Costoa= Convert.ToDouble(dtgProducto.CurrentRow.Cells[11].Value);
                 Program.Costop= Convert.ToDouble(dtgProducto.CurrentRow.Cells[10].Value);
                 Program.Itbis= Convert.ToDouble(dtgProducto.CurrentRow.Cells[9].Value);
+                Program.Existencia= Convert.ToDouble(dtgProducto.CurrentRow.Cells[5].Value);
                 this.Close();
             }
             else
