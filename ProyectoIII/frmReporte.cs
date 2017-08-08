@@ -24,6 +24,7 @@ namespace ProyectoIII
         public LocalReport lc;
         public int Valor;
         public int Idorden;
+        public int Idfactura;
         public int Iddevolucion;
         public int Idcompra;
         public string Reporte;
@@ -63,6 +64,10 @@ namespace ProyectoIII
             {
                 ListadoProductos();
             }
+            else if (Valor == 8)
+            {
+                Factura();
+            }
         }
         private void Orden_Compra()
         {
@@ -87,6 +92,35 @@ namespace ProyectoIII
             rds.Value = (ds.Tables["obtener_orden"]);
             rds1.Name = "DataSet2";
             rds1.Value = (ds.Tables["obtener_orden_proveedor"]);
+            reportViewer1.LocalReport.DataSources.Clear();
+            //reportViewer1.LocalReport.SetParameters(parametros);
+            lc.DataSources.Add(rds);
+            lc.DataSources.Add(rds1);
+            this.reportViewer1.RefreshReport();
+        }
+        private void Factura()
+        {
+
+            //ReportParameter[] parametros = new ReportParameter[4];
+            //parametros[0] = new ReportParameter("Itbis", itbis.ToString());
+            //parametros[1] = new ReportParameter("Total", total.ToString());
+            //parametros[2] = new ReportParameter("Descuento", descuento.ToString());
+            //parametros[3] = new ReportParameter("Subtotal", subtotal.ToString());
+            Proyecto3DataSet ds = new Proyecto3DataSet();
+            Proyecto3DataSetTableAdapters.obtener_facturaTableAdapter sta = new Proyecto3DataSetTableAdapters.obtener_facturaTableAdapter();
+            Proyecto3DataSetTableAdapters.obtener_cliente_facturaTableAdapter sta1 = new Proyecto3DataSetTableAdapters.obtener_cliente_facturaTableAdapter();
+            reportViewer1.ProcessingMode = ProcessingMode.Local;
+            lc = reportViewer1.LocalReport;
+            string ruta = "Reportes\\" + Reporte;
+            lc.ReportPath = ruta;
+            sta.Fill(ds.obtener_factura, Idfactura);
+            sta1.Fill(ds.obtener_cliente_factura, Idfactura);
+            ReportDataSource rds = new ReportDataSource();
+            ReportDataSource rds1 = new ReportDataSource();
+            rds.Name = "DataSet1";
+            rds.Value = (ds.Tables["obtener_factura"]);
+            rds1.Name = "DataSet2";
+            rds1.Value = (ds.Tables["obtener_cliente_factura"]);
             reportViewer1.LocalReport.DataSources.Clear();
             //reportViewer1.LocalReport.SetParameters(parametros);
             lc.DataSources.Add(rds);

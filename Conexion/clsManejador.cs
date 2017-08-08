@@ -69,8 +69,8 @@ namespace Conexion
         public void EjecutarSP(String NombreSP, ref List<clsParametros> lst)
         {
             SqlCommand cmd;
-            try
-            {
+            //try
+            //{
                 Conectar();
                 cmd = new SqlCommand(NombreSP, conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -90,11 +90,11 @@ namespace Conexion
                             lst[i].Valor = cmd.Parameters[i].Value;
                     }
                 }
-            }
-            catch (SqlException ex)
-            {
-                //throw ex;
-            }
+            //}
+            //catch (SqlException ex)
+            //{
+            //    //throw ex;
+            //}
             Desconectar();
         }
     }

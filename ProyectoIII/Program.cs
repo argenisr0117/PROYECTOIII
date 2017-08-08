@@ -34,6 +34,7 @@ namespace ProyectoIII
         public static double Limite;
         public static double Precio;
 
+        public static string Ncf;
         // public static int Idproducto;
         public static int Idunidad;
         public static int Idprecio;

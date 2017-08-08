@@ -20,8 +20,13 @@ namespace ProyectoIII.Procesos
         clsProducto P = new clsProducto();
         clsCaja C = new clsCaja();
         clsUnidad U = new clsUnidad();
+        clsFacturacion F = new clsFacturacion();
+        clsAlmacen A = new clsAlmacen();
+        clsNcf N = new clsNcf();
+        clsCxcobrar Cc = new clsCxcobrar();
         public DataTable dtPrecios = new DataTable();
         public double Equiv = 0;
+        public double total1=0.00;
         private void LlenarComboTipo()
         {
             try
@@ -84,6 +89,7 @@ namespace ProyectoIII.Procesos
 
         private void frmFacturacion_Load(object sender, EventArgs e)
         {
+            F.Ncf = "0";
             LlenarComboTipo();
             LlenarMetodoP();
             LlenarMoneda();
@@ -111,38 +117,46 @@ namespace ProyectoIII.Procesos
         private void Autocompletar()
         {
             Tr.Tipo = 4;
-            int numerodoc = Tr.NumeroDocumento();
-            Program.Idfactura= numerodoc;
+            int numerodoc = Tr.NumeroDocumento();       
             if (numerodoc == 0)
             {
                 string var = "1".PadLeft(8, '0');
                 txtDocumento.Text = var;
+                numerodoc++;
+                Program.Idfactura = numerodoc;
             }
             else if (numerodoc <= 9)
             {
                 numerodoc++;
                 string var = numerodoc.ToString().PadLeft(8, '0');
                 txtDocumento.Text = var;
+                Program.Idfactura = numerodoc;
             }
             else if (numerodoc > 9 && numerodoc < 100)
             {
                 numerodoc++;
                 string var = numerodoc.ToString().PadLeft(8, '0');
                 txtDocumento.Text = var;
+                Program.Idfactura = numerodoc;
+
             }
             else if (numerodoc > 99 && numerodoc <= 999)
             {
                 numerodoc++;
                 string var = numerodoc.ToString().PadLeft(7, '0');
                 txtDocumento.Text = var;
+                Program.Idfactura = numerodoc;
+
             }
             else if (numerodoc > 999 && numerodoc <= 9999)
             {
                 numerodoc++;
                 string var = numerodoc.ToString().PadLeft(6, '0');
                 txtDocumento.Text = var;
+                Program.Idfactura = numerodoc;
             }
-
+            //MessageBox.Show(Program.Idfactura.ToString());
+            //MessageBox.Show(numerodoc.ToString());
         }
         private void ObtenerNumeroNCF()
         {
@@ -154,34 +168,47 @@ namespace ProyectoIII.Procesos
                 {
                     string var = "1".PadLeft(8, '0');
                     txtNcf.Text = numero[1] + var;
+                    Program.Ncf= "2".PadLeft(8, '0');
                 }
                 else if (Convert.ToInt32(numero[0]) <= 9)
                 {
-                    int num = Convert.ToInt32(numero[0]) + 1;
+                    int num = Convert.ToInt32(numero[0]);
                     string var = num.ToString().PadLeft(8, '0');
                     txtNcf.Text = numero[1] + var;
-
+                    num = num + 1;
+                    var= num.ToString().PadLeft(8, '0');
+                    Program.Ncf = var;
                 }
                 else if (Convert.ToInt32(numero[0]) > 9 && Convert.ToInt32(numero[0]) < 100)
                 {
-                    int num = Convert.ToInt32(numero[0]) + 1;
+                    int num = Convert.ToInt32(numero[0]);
                     string var = num.ToString().PadLeft(8, '0');
                     txtNcf.Text = numero[1] + var;
+                    num = num + 1;
+                    var = num.ToString().PadLeft(8, '0');
+                    Program.Ncf = var;
 
                 }
                 else if (Convert.ToInt32(numero[0]) > 99 && Convert.ToInt32(numero[0]) <= 999)
                 {
-                    int num = Convert.ToInt32(numero[0]) + 1;
-                    string var = num.ToString().PadLeft(7, '0');
+                    int num = Convert.ToInt32(numero[0]);
+                    string var = num.ToString().PadLeft(8, '0');
                     txtNcf.Text = numero[1] + var;
+                    num = num + 1;
+                    var = num.ToString().PadLeft(8, '0');
+                    Program.Ncf = var;
 
                 }
                 else if (Convert.ToInt32(numero[0]) > 999 && Convert.ToInt32(numero[0]) <= 9999)
                 {
-                    int num = Convert.ToInt32(numero[0]) + 1;
-                    string var = num.ToString().PadLeft(6, '0');
+                    int num = Convert.ToInt32(numero[0]);
+                    string var = num.ToString().PadLeft(8, '0');
                     txtNcf.Text = numero[1] + var;
-                }
+                    num = num + 1;
+                    var = num.ToString().PadLeft(8, '0');
+                    Program.Ncf = var;
+                }                
+
             }
             else
             {
@@ -315,10 +342,13 @@ namespace ProyectoIII.Procesos
                 if (!chbNCF.Checked)
                 {
                     txtNcf.Text = "";
+                    F.Ncf = "0";
                 }
                 else
                 {
                     ObtenerNumeroNCF();
+                    F.Ncf = txtNcf.Text;
+
                 }
             }
             catch(Exception ex)
@@ -438,6 +468,7 @@ namespace ProyectoIII.Procesos
                             {
                                 if (item.Cells[5].Value.ToString() == txtProducto.Text)
                                 {
+                                    //recalcular precio si un producto ya habia sido agregado al grid
                                     double cantidad = Convert.ToDouble(txtCantidad.Text);
                                     cantidad = cantidad + Convert.ToDouble(item.Cells[2].Value);
 
@@ -456,7 +487,7 @@ namespace ProyectoIII.Procesos
                                             txtPrecio.Text = precio.ToString("N2");
                                         }
                                     }
-
+                                    ////
                                     itbis = cantidad * Program.Itbis;
                                     importe = cantidad * Program.Precio;
                                     total = importe + itbis;
@@ -544,13 +575,137 @@ namespace ProyectoIII.Procesos
 
         private void CalcularTotal()
         {
-            double total = 0;
+            double total = 0.00;
             for(int y =0; y < dtgFacturacion.Rows.Count; y++)
             {
                 total = total +Convert.ToDouble(dtgFacturacion.Rows[y].Cells[9].Value);
+                total1 = total;
             }
             lbTotal.Text =cbMoneda.Text+" "+ total.ToString("N2");
         }
-    
+
+        private void dtgFacturacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    if (Program.Evento == 0)
+                    {
+                        dtgFacturacion.Rows.RemoveAt(e.RowIndex);
+                        CalcularTotal();
+                    }
+                    else if (Program.Evento == 1)
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            dtgFacturacion.Rows.Clear();
+            txtCodigoCliente.Clear();
+            txtCliente.Clear();
+            txtNota.Clear();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                errorProvider1.Clear();
+                if (Utilidades.ValidarForm(this, errorProvider1) == false)
+                {
+                    return;
+                }
+                string mensaje = "";
+                DataTable dt = new DataTable();
+                if (dtgFacturacion.Rows.Count > 0)
+                {
+                    F.Fecha = dtpFecha.Value;
+                    F.Documento = txtDocumento.Text;
+                    F.Nota = txtNota.Text;
+                    F.Idcaja = Convert.ToInt16(txtCaja.Text);
+                    F.Idusuario = Program.Idusuario;
+                    F.Idmoneda = Convert.ToInt16(cbMoneda.SelectedValue);
+                    F.Idtipof = Convert.ToInt16(cbTipoF.SelectedValue);
+                    F.Idmetodop = Convert.ToInt16(cbMetodop.SelectedValue);
+                    F.Idcliente = Convert.ToInt16(txtCodigoCliente.Text);
+                    F.Idsucursal = Program.Idsucursal;
+                    mensaje = F.RegistrarFactura();
+                    if(mensaje=="1")
+                    {
+                        for (int x = 0; x < dtgFacturacion.Rows.Count; x++)
+                        {
+                            A.Idproducto=Convert.ToInt16(dtgFacturacion.Rows[x].Cells[1].Value);
+                            dt = A.AlmacenesProductos();
+                            F.Idfactura = Program.Idfactura;
+                            F.Idproducto = Convert.ToInt32(dtgFacturacion.Rows[x].Cells[1].Value);
+                            F.Idalmacen = Convert.ToInt32(dt.Rows[0][0]);
+                            F.Idunidad = Convert.ToInt32(dtgFacturacion.Rows[x].Cells[3].Value);
+                            F.Cantidad = Convert.ToDouble(dtgFacturacion.Rows[x].Cells[2].Value);
+                            F.Precio = Convert.ToDouble(dtgFacturacion.Rows[x].Cells[6].Value);
+                            F.Importe = Convert.ToDouble(dtgFacturacion.Rows[x].Cells[7].Value);
+                            F.Itbis = Convert.ToDouble(dtgFacturacion.Rows[x].Cells[8].Value);
+                            mensaje = F.RegistrarDetalleFactura();
+                            dt.Rows.Clear();
+                        }
+                        if (mensaje == "1")
+                        {
+                            MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dtgFacturacion.Rows.Clear();
+                            Limpiar();
+                            txtNota.Clear();
+                            if (chbNCF.Checked == true)
+                            {
+                                N.Tipocf = "2";
+                                N.Secuencia = Program.Ncf;
+                                N.ActualizarSecuencia();
+                            }
+
+                            chbNCF.Checked = false;
+                            if (cbTipoF.Text == "Credito")
+                            {
+                                Cc.Idcliente = Convert.ToInt16(txtCodigoCliente.Text);
+                                Cc.Idfactura = Program.Idfactura;
+                                Cc.Monto = total1;
+                                Cc.Registrar();
+                            }
+                            else
+                            {
+                                C.Idcaja = Convert.ToInt16(txtCaja.Text);
+                                C.Idusuario = Program.Idusuario;
+                                C.Monto = total1;
+                                C.Tipo = Convert.ToInt16(cbMetodop.SelectedValue);
+                                C.Idmoneda = Convert.ToInt16(cbMoneda.SelectedValue);
+                                C.RegistrarActualizarCuadreCaja();
+                            }
+                            txtCodigoCliente.Clear();
+                            txtCliente.Clear();
+                            frmReporte obj = new frmReporte();
+                            obj.Valor = 8;
+                            obj.Reporte = "factura.rdlc";
+                            obj.Idfactura = Program.Idfactura;
+                            lbTotal.Text = "0.00";
+                            Autocompletar();
+                            obj.ShowDialog();
+                        }
+                    }
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            }
     }
 }

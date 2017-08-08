@@ -71,6 +71,8 @@
             this.lbExistencia = new System.Windows.Forms.Label();
             this.lbUnidad = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.txtNcf = new ProyectoIII.Controles.textbox(this.components);
             this.txtPrecio = new ProyectoIII.Controles.textboxn(this.components);
             this.txtCantidad = new ProyectoIII.Controles.textboxn(this.components);
@@ -81,8 +83,6 @@
             this.txtCodigoCliente = new ProyectoIII.Controles.textboxn(this.components);
             this.txtNota = new ProyectoIII.Controles.textbox(this.components);
             this.txtDocumento = new ProyectoIII.Controles.textboxn(this.components);
-            this.lbTotal = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.pnProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgFacturacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -371,10 +371,13 @@
             this.itbis,
             this.total});
             this.dtgFacturacion.Location = new System.Drawing.Point(0, 341);
+            this.dtgFacturacion.MultiSelect = false;
             this.dtgFacturacion.Name = "dtgFacturacion";
             this.dtgFacturacion.ReadOnly = true;
+            this.dtgFacturacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgFacturacion.Size = new System.Drawing.Size(926, 183);
             this.dtgFacturacion.TabIndex = 92;
+            this.dtgFacturacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgFacturacion_CellContentClick);
             this.dtgFacturacion.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgFacturacion_CellPainting);
             // 
             // eliminar
@@ -489,6 +492,7 @@
             this.btnEditar.Text = "CANCELAR";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnRegistrar
             // 
@@ -509,6 +513,7 @@
             this.btnRegistrar.Text = "REGISTRAR";
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // label13
             // 
@@ -589,6 +594,32 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.BackColor = System.Drawing.Color.White;
+            this.lbTotal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbTotal.Location = new System.Drawing.Point(124, 544);
+            this.lbTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(44, 19);
+            this.lbTotal.TabIndex = 104;
+            this.lbTotal.Text = "0.00";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.White;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.DimGray;
+            this.label17.Location = new System.Drawing.Point(13, 545);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(116, 16);
+            this.label17.TabIndex = 103;
+            this.label17.Text = "TOTAL A PAGAR:";
             // 
             // txtNcf
             // 
@@ -734,32 +765,6 @@
             this.txtDocumento.TabIndex = 75;
             this.txtDocumento.Validar = false;
             this.txtDocumento.Valor = ProyectoIII.Controles.textboxn.Tipo.Números;
-            // 
-            // lbTotal
-            // 
-            this.lbTotal.AutoSize = true;
-            this.lbTotal.BackColor = System.Drawing.Color.White;
-            this.lbTotal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbTotal.Location = new System.Drawing.Point(124, 544);
-            this.lbTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(44, 19);
-            this.lbTotal.TabIndex = 104;
-            this.lbTotal.Text = "0.00";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.DimGray;
-            this.label17.Location = new System.Drawing.Point(13, 545);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(116, 16);
-            this.label17.TabIndex = 103;
-            this.label17.Text = "TOTAL A PAGAR:";
             // 
             // frmFacturacion
             // 

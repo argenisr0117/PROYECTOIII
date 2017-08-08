@@ -12,12 +12,12 @@ namespace Entidades
     {
         private clsManejador M = new clsManejador();
         int Mid;
+        int Midmoneda;
+        int Mtipo;
         int Mvalor;
         string Mdescripcion;
         string Mdetalle;
         Boolean Mestado;
-        string Mcampo = "id_cargo";
-        string Mtabla = "Cargo";
         int Midcaja;
         int Midusuario;
         double Mmonto;
@@ -26,6 +26,16 @@ namespace Entidades
         {
             get { return Mid; }
             set { Mid = value; }
+        }
+        public int Idmoneda
+        {
+            get { return Midmoneda; }
+            set { Midmoneda = value; }
+        }
+        public int Tipo
+        {
+            get { return Mtipo; }
+            set { Mtipo = value; }
         }
         public int Idusuario
         {
@@ -92,18 +102,32 @@ namespace Entidades
             lst.Add(new clsParametros("@idusuario", Midusuario));
             return dt = M.Listado("verificar_caja_abierta", lst);
         }
-        public string Activar()
+        public void RegistrarActualizarCuadreCaja()
         {
-            string mensaje = "";
+            //bool mensaje = false;
             List<clsParametros> lst = new List<clsParametros>();
-            lst.Add(new clsParametros("@id", Mid));
-            lst.Add(new clsParametros("@valor", Mestado));
-            lst.Add(new clsParametros("@table", Mtabla));
-            lst.Add(new clsParametros("@campo", Mcampo));
-            lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
-            M.EjecutarSP("actdes_entidades", ref lst);
-            mensaje = lst[4].Valor.ToString();
-            return mensaje;
+            //lst.Add(new clsParametros("@mensaje", "", SqlDbType.Bit, ParameterDirection.Output, 1));
+            lst.Add(new clsParametros("@idcaja", Midcaja));
+            lst.Add(new clsParametros("@idusuario", Midusuario));
+            lst.Add(new clsParametros("@monto", Mmonto));
+            lst.Add(new clsParametros("@tipo", Mtipo));
+            lst.Add(new clsParametros("@idmoneda", Midmoneda));
+            M.EjecutarSP("registrar_actualizar_cuadre_caja", ref lst);
+            //mensaje = Convert.ToBoolean(lst[0].Valor);
+            //return mensaje;
         }
+        //public string Activar()
+        //{
+        //    string mensaje = "";
+        //    List<clsParametros> lst = new List<clsParametros>();
+        //    lst.Add(new clsParametros("@id", Mid));
+        //    lst.Add(new clsParametros("@valor", Mestado));
+        //    lst.Add(new clsParametros("@table", Mtabla));
+        //    lst.Add(new clsParametros("@campo", Mcampo));
+        //    lst.Add(new clsParametros("@mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+        //    M.EjecutarSP("actdes_entidades", ref lst);
+        //    mensaje = lst[4].Valor.ToString();
+        //    return mensaje;
+        //}
     }
 }

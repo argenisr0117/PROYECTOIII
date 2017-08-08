@@ -103,6 +103,14 @@ namespace Entidades
             mensaje = Convert.ToBoolean(lst[0].Valor);
             return mensaje;
         }
+        public void ActualizarSecuencia()
+        {
+            List<clsParametros> lst = new List<clsParametros>();
+            lst.Add(new clsParametros("@tipo", Mtipocf));
+            lst.Add(new clsParametros("@secuencia", Msecuencia));
+            M.EjecutarSP("actualizar_secuencia_inicial_ncf", ref lst);
+            //mensaje = Convert.ToBoolean(lst[0].Valor);
+        }
         public DataTable Listar()
         {
             DataTable dt = new DataTable();

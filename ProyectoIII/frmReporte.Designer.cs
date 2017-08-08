@@ -32,24 +32,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporte));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEnviar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbPdf = new System.Windows.Forms.RadioButton();
-            this.rbExcel = new System.Windows.Forms.RadioButton();
-            this.rbWord = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtDestinos = new ProyectoIII.Controles.textbox(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbWord = new System.Windows.Forms.RadioButton();
+            this.rbExcel = new System.Windows.Forms.RadioButton();
+            this.rbPdf = new System.Windows.Forms.RadioButton();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.Location = new System.Drawing.Point(0, 50);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1007, 436);
+            this.reportViewer1.Size = new System.Drawing.Size(1007, 499);
             this.reportViewer1.TabIndex = 0;
             // 
             // panel1
@@ -64,6 +64,71 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1007, 50);
             this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(217, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.TabIndex = 72;
+            this.label1.Text = "ENVIAR A:";
+            // 
+            // txtDestinos
+            // 
+            this.txtDestinos.Location = new System.Drawing.Point(291, 15);
+            this.txtDestinos.Name = "txtDestinos";
+            this.txtDestinos.Size = new System.Drawing.Size(532, 27);
+            this.txtDestinos.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtDestinos, "ESCRIBIR DESTINOS Y SEPARAR CON ;");
+            this.txtDestinos.Validar = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbWord);
+            this.groupBox1.Controls.Add(this.rbExcel);
+            this.groupBox1.Controls.Add(this.rbPdf);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(10, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 40);
+            this.groupBox1.TabIndex = 70;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "FORMATO";
+            // 
+            // rbWord
+            // 
+            this.rbWord.AutoSize = true;
+            this.rbWord.Location = new System.Drawing.Point(129, 17);
+            this.rbWord.Name = "rbWord";
+            this.rbWord.Size = new System.Drawing.Size(63, 20);
+            this.rbWord.TabIndex = 2;
+            this.rbWord.TabStop = true;
+            this.rbWord.Text = "WORD";
+            this.rbWord.UseVisualStyleBackColor = true;
+            // 
+            // rbExcel
+            // 
+            this.rbExcel.AutoSize = true;
+            this.rbExcel.Location = new System.Drawing.Point(61, 17);
+            this.rbExcel.Name = "rbExcel";
+            this.rbExcel.Size = new System.Drawing.Size(62, 20);
+            this.rbExcel.TabIndex = 1;
+            this.rbExcel.TabStop = true;
+            this.rbExcel.Text = "EXCEL";
+            this.rbExcel.UseVisualStyleBackColor = true;
+            // 
+            // rbPdf
+            // 
+            this.rbPdf.AutoSize = true;
+            this.rbPdf.Location = new System.Drawing.Point(7, 17);
+            this.rbPdf.Name = "rbPdf";
+            this.rbPdf.Size = new System.Drawing.Size(48, 20);
+            this.rbPdf.TabIndex = 0;
+            this.rbPdf.TabStop = true;
+            this.rbPdf.Text = "PDF";
+            this.rbPdf.UseVisualStyleBackColor = true;
             // 
             // btnEnviar
             // 
@@ -86,76 +151,11 @@
             this.btnEnviar.UseVisualStyleBackColor = false;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbWord);
-            this.groupBox1.Controls.Add(this.rbExcel);
-            this.groupBox1.Controls.Add(this.rbPdf);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(10, 8);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 40);
-            this.groupBox1.TabIndex = 70;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "FORMATO";
-            // 
-            // rbPdf
-            // 
-            this.rbPdf.AutoSize = true;
-            this.rbPdf.Location = new System.Drawing.Point(7, 17);
-            this.rbPdf.Name = "rbPdf";
-            this.rbPdf.Size = new System.Drawing.Size(48, 20);
-            this.rbPdf.TabIndex = 0;
-            this.rbPdf.TabStop = true;
-            this.rbPdf.Text = "PDF";
-            this.rbPdf.UseVisualStyleBackColor = true;
-            // 
-            // rbExcel
-            // 
-            this.rbExcel.AutoSize = true;
-            this.rbExcel.Location = new System.Drawing.Point(61, 17);
-            this.rbExcel.Name = "rbExcel";
-            this.rbExcel.Size = new System.Drawing.Size(62, 20);
-            this.rbExcel.TabIndex = 1;
-            this.rbExcel.TabStop = true;
-            this.rbExcel.Text = "EXCEL";
-            this.rbExcel.UseVisualStyleBackColor = true;
-            // 
-            // rbWord
-            // 
-            this.rbWord.AutoSize = true;
-            this.rbWord.Location = new System.Drawing.Point(129, 17);
-            this.rbWord.Name = "rbWord";
-            this.rbWord.Size = new System.Drawing.Size(63, 20);
-            this.rbWord.TabIndex = 2;
-            this.rbWord.TabStop = true;
-            this.rbWord.Text = "WORD";
-            this.rbWord.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(217, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
-            this.label1.TabIndex = 72;
-            this.label1.Text = "ENVIAR A:";
-            // 
-            // txtDestinos
-            // 
-            this.txtDestinos.Location = new System.Drawing.Point(291, 15);
-            this.txtDestinos.Name = "txtDestinos";
-            this.txtDestinos.Size = new System.Drawing.Size(532, 27);
-            this.txtDestinos.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtDestinos, "ESCRIBIR DESTINOS Y SEPARAR CON ;");
-            this.txtDestinos.Validar = false;
-            // 
             // frmReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 496);
+            this.ClientSize = new System.Drawing.Size(1007, 549);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
