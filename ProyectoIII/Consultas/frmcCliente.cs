@@ -181,6 +181,7 @@ namespace ProyectoIII.Consultas
                 Program.Idcliente = dtgCliente.CurrentRow.Cells[1].Value.ToString();
                 Program.Cliente = dtgCliente.CurrentRow.Cells[2].Value.ToString();
                 Program.Limite = Convert.ToDouble(dtgCliente.CurrentRow.Cells[8].Value);
+                Program.seleccion = 3;
                 this.Close();
             }
             else

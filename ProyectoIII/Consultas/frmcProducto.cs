@@ -102,24 +102,33 @@ namespace ProyectoIII.Consultas
         }
         private void btnElegir_Click(object sender, EventArgs e)
         {
-            if (dtgProducto.SelectedRows.Count>0)
+            try
             {
-                Program.Idproducto = Convert.ToInt32(dtgProducto.CurrentRow.Cells[1].Value);
-                Program.Idproduct = dtgProducto.CurrentRow.Cells[1].Value.ToString();
-                Program.Producto = dtgProducto.CurrentRow.Cells[2].Value.ToString();
-                Program.Unidad= dtgProducto.CurrentRow.Cells[4].Value.ToString();
-                Program.Costo= Convert.ToDouble(dtgProducto.CurrentRow.Cells[8].Value);
-                Program.Costoa= Convert.ToDouble(dtgProducto.CurrentRow.Cells[11].Value);
-                Program.Costop= Convert.ToDouble(dtgProducto.CurrentRow.Cells[10].Value);
-                Program.Itbis= Convert.ToDouble(dtgProducto.CurrentRow.Cells[9].Value);
-                Program.Existencia= Convert.ToDouble(dtgProducto.CurrentRow.Cells[5].Value);
-                this.Close();
-            }
-            else
-            {
-                MessageBoxEx.Show("Debe seleccionar un registro", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (dtgProducto.SelectedRows.Count > 0)
+                {
+                    Program.Idproducto = Convert.ToInt32(dtgProducto.CurrentRow.Cells[1].Value);
+                    Program.Idproduct = dtgProducto.CurrentRow.Cells[1].Value.ToString();
+                    Program.Producto = dtgProducto.CurrentRow.Cells[2].Value.ToString();
+                    Program.Unidad = dtgProducto.CurrentRow.Cells[4].Value.ToString();
+                    Program.Costo = Convert.ToDouble(dtgProducto.CurrentRow.Cells[8].Value);
+                    Program.Costoa = Convert.ToDouble(dtgProducto.CurrentRow.Cells[11].Value);
+                    Program.Costop = Convert.ToDouble(dtgProducto.CurrentRow.Cells[10].Value);
+                    Program.Itbis = Convert.ToDouble(dtgProducto.CurrentRow.Cells[9].Value);
+                    Program.Existencia = Convert.ToDouble(dtgProducto.CurrentRow.Cells[5].Value);
+                    Program.seleccion = 1;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBoxEx.Show("Debe seleccionar un registro", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void dtgProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)

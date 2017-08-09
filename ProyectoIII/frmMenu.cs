@@ -228,5 +228,11 @@ namespace ProyectoIII
             Mantenimientos.frmAsignarPrecios obj = new Mantenimientos.frmAsignarPrecios();
             obj.ShowDialog();
         }
+
+        private void bALANCEPENDIENTEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.frmcCxCobrar obj = new Consultas.frmcCxCobrar();
+            obj.ShowDialog();
+        }
     }
 }

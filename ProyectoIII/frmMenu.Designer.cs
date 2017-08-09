@@ -89,6 +89,7 @@
             this.cXCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.uTILIDADESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bACKUPBASEDATOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bALANCEPENDIENTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -502,6 +503,8 @@
             // 
             // cXCToolStripMenuItem1
             // 
+            this.cXCToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bALANCEPENDIENTEToolStripMenuItem});
             this.cXCToolStripMenuItem1.Name = "cXCToolStripMenuItem1";
             resources.ApplyResources(this.cXCToolStripMenuItem1, "cXCToolStripMenuItem1");
             // 
@@ -517,6 +520,12 @@
             // 
             this.bACKUPBASEDATOSToolStripMenuItem.Name = "bACKUPBASEDATOSToolStripMenuItem";
             resources.ApplyResources(this.bACKUPBASEDATOSToolStripMenuItem, "bACKUPBASEDATOSToolStripMenuItem");
+            // 
+            // bALANCEPENDIENTEToolStripMenuItem
+            // 
+            this.bALANCEPENDIENTEToolStripMenuItem.Name = "bALANCEPENDIENTEToolStripMenuItem";
+            resources.ApplyResources(this.bALANCEPENDIENTEToolStripMenuItem, "bALANCEPENDIENTEToolStripMenuItem");
+            this.bALANCEPENDIENTEToolStripMenuItem.Click += new System.EventHandler(this.bALANCEPENDIENTEToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -605,5 +614,6 @@
         private System.Windows.Forms.ToolStripMenuItem fACTURACIÓNToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nCFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aSIGNARPRECIOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bALANCEPENDIENTEToolStripMenuItem;
     }
 }

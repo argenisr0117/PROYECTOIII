@@ -101,19 +101,29 @@ namespace ProyectoIII.Procesos
         {
             Consultas.frmcProducto obj = new Consultas.frmcProducto();
             obj.ShowDialog();
-            txtCodigoP.Text = Program.Idproduct;
-            txtProducto.Text = Program.Producto;
-            LlenarComboUnidad();
-            txtPrecio.Text = Program.Costo.ToString();
-            txtCantidad.Focus();
+            if(Program.seleccion==1)
+            {
+                txtCodigoP.Text = Program.Idproduct;
+                txtProducto.Text = Program.Producto;
+                LlenarComboUnidad();
+                txtPrecio.Text = Program.Costo.ToString();
+                txtCantidad.Focus();
+            }
+            Program.seleccion = 0;
+            
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
             Consultas.frmcProveedor obj = new Consultas.frmcProveedor();
             obj.ShowDialog();
-            txtCodigoPv.Text = Program.Idproveedor.ToString();
-            txtProveedor.Text = Program.Proveedor;
+            if (Program.seleccion == 2)
+            {
+                txtCodigoPv.Text = Program.Idproveedor.ToString();
+                txtProveedor.Text = Program.Proveedor;
+            }
+            Program.seleccion = 0;
+      
         }
 
         private void btnAgregarPv_Click(object sender, EventArgs e)

@@ -27,6 +27,9 @@ namespace ProyectoIII
         public int Idfactura;
         public int Iddevolucion;
         public int Idcompra;
+        public int Idcliente;
+        public DateTime Fechah;
+        public DateTime Fechad;
         public string Reporte;
         public string Orden1;
         public string Orden2;
@@ -67,6 +70,10 @@ namespace ProyectoIII
             else if (Valor == 8)
             {
                 Factura();
+            }
+            else if (Valor == 9)
+            {
+                CuentasxCobrar();
             }
         }
         private void Orden_Compra()
@@ -286,6 +293,32 @@ namespace ProyectoIII
             //ReportDataSource rds1 = new ReportDataSource();
             rds.Name = "DataSet1";
             rds.Value = (ds.Tables["listado_clientes"]);
+            //rds1.Name = "DataSet2";
+            //rds1.Value = (ds.Tables["obtener_orden_proveedor"]);
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.SetParameters(parametros);
+            lc.DataSources.Add(rds);
+            //lc.DataSources.Add(rds1);
+            this.reportViewer1.RefreshReport();
+        }
+        private void CuentasxCobrar()
+        {
+            ReportParameter[] parametros = new ReportParameter[2];
+            parametros[0] = new ReportParameter("Fechad", Fechad.ToShortDateString());
+            parametros[1] = new ReportParameter("Fechah", Fechah.ToShortDateString());
+            Proyecto3DataSet ds = new Proyecto3DataSet();
+            Proyecto3DataSetTableAdapters.obtener_facturas_pendientesTableAdapter sta = new Proyecto3DataSetTableAdapters.obtener_facturas_pendientesTableAdapter();
+            //Proyecto3DataSetTableAdapters.obtener_orden_proveedorTableAdapter sta1 = new Proyecto3DataSetTableAdapters.obtener_orden_proveedorTableAdapter();
+            reportViewer1.ProcessingMode = ProcessingMode.Local;
+            lc = reportViewer1.LocalReport;
+            string ruta = "Reportes\\" + Reporte;
+            lc.ReportPath = ruta;
+            sta.Fill(ds.obtener_facturas_pendientes,Fechad,Fechah,Idcliente);
+            //sta1.Fill(ds.obtener_orden_proveedor,Idorden);
+            ReportDataSource rds = new ReportDataSource();
+            //ReportDataSource rds1 = new ReportDataSource();
+            rds.Name = "DataSet1";
+            rds.Value = (ds.Tables["obtener_facturas_pendientes"]);
             //rds1.Name = "DataSet2";
             //rds1.Value = (ds.Tables["obtener_orden_proveedor"]);
             reportViewer1.LocalReport.DataSources.Clear();

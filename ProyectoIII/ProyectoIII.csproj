@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\frmcCxCobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmcCxCobrar.Designer.cs">
+      <DependentUpon>frmcCxCobrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmcListadoEntidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +299,9 @@
       <DependentUpon>Proyecto3DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="Consultas\frmcCxCobrar.resx">
+      <DependentUpon>frmcCxCobrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcListadoEntidades.resx">
       <DependentUpon>frmcListadoEntidades.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,6 +426,9 @@
     <EmbeddedResource Include="Reportes\compra.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\facturas_cxc.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\listado_productos.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -533,6 +545,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\pack.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\save2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\print_preview.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

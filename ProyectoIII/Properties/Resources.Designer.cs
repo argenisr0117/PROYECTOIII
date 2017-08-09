@@ -233,6 +233,16 @@ namespace ProyectoIII.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap print_preview {
+            get {
+                object obj = ResourceManager.GetObject("print_preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap refresh__3_ {
             get {
                 object obj = ResourceManager.GetObject("refresh (3)", resourceCulture);
@@ -266,6 +276,16 @@ namespace ProyectoIII.Properties {
         internal static System.Drawing.Bitmap save_as {
             get {
                 object obj = ResourceManager.GetObject("save_as", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save2 {
+            get {
+                object obj = ResourceManager.GetObject("save2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

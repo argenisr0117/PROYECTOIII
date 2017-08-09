@@ -36,7 +36,7 @@ namespace ProyectoIII
 
         public static string Ncf;
         // public static int Idproducto;
-        public static int Idunidad;
+        public static int seleccion=0;
         public static int Idprecio;
         public static string Proveedor;
         public static string Empleado;

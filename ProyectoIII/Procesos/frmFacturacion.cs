@@ -106,8 +106,13 @@ namespace ProyectoIII.Procesos
             {
                 Consultas.frmcCliente obj = new Consultas.frmcCliente();
                 obj.ShowDialog();
-                txtCodigoCliente.Text = Program.Idcliente;
-                txtCliente.Text = Program.Cliente;
+                if(Program.seleccion==3)
+                {
+                    txtCodigoCliente.Text = Program.Idcliente;
+                    txtCliente.Text = Program.Cliente;
+                }
+                Program.seleccion = 0;
+              
             }
             catch(Exception ex)
             {
@@ -258,12 +263,16 @@ namespace ProyectoIII.Procesos
             {
                 Consultas.frmcProducto obj = new Consultas.frmcProducto();
                 obj.ShowDialog();
-                txtCodigoP.Text = Program.Idproduct;
-                txtProducto.Text = Program.Producto;
-                LlenarComboUnidad();
-                ObtenerPrecioProducto();
-                ObtenerExistencia();
-                txtCantidad.Focus();
+                if (Program.seleccion == 1)
+                {
+                    txtCodigoP.Text = Program.Idproduct;
+                    txtProducto.Text = Program.Producto;
+                    LlenarComboUnidad();
+                    ObtenerPrecioProducto();
+                    ObtenerExistencia();
+                    txtCantidad.Focus();
+                }
+                Program.seleccion = 0;
             }
             catch (Exception ex)
             {
