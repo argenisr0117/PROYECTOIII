@@ -17,11 +17,12 @@ namespace ProyectoIII.Procesos
     {
         clsCompras C = new clsCompras();
         clsTransacciones T = new clsTransacciones();
+        clsCxpagar Cp = new clsCxpagar();
         public frmEntradaInventario()
         {
             InitializeComponent();
         }
-
+        public double total1 = 0;
         private void frmEntradaInventario_Load(object sender, EventArgs e)
         {
             Autocompletar();
@@ -175,7 +176,16 @@ namespace ProyectoIII.Procesos
                 this.Close();
             }
         }
-
+        private void CalcularTotal()
+        {
+            double total = 0.00;
+            for (int y = 0; y < dtgEntrada.Rows.Count; y++)
+            {
+                total = total + Convert.ToDouble(dtgEntrada.Rows[y].Cells[7].Value);
+                total1 = total;
+            }
+            
+        }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             string mensaje = "";
@@ -186,6 +196,7 @@ namespace ProyectoIII.Procesos
             }
             try
             {
+                CalcularTotal();
                 C.Documento = txtDocumento.Text;
                 C.Nota = txtNota.Text;
                 C.Fecha = dtpFecha.Value;
@@ -212,6 +223,10 @@ namespace ProyectoIII.Procesos
                     {
                         MessageBoxEx.Show("Registrado con éxito", "FactSYS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dtgEntrada.Rows.Clear();
+                        Cp.Idcompra = Program.Idtransaccion;
+                        Cp.Monto = total1;
+                        Cp.Documento = Program.Documento;
+                        Cp.Registrar();
                         Limpiar();
                         Autocompletar();
                         frmReporte obj = new frmReporte();
@@ -224,7 +239,7 @@ namespace ProyectoIII.Procesos
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
         private void Limpiar()

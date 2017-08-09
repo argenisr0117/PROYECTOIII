@@ -87,9 +87,11 @@
             this.iNVENTARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cXCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bALANCEPENDIENTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uTILIDADESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bACKUPBASEDATOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bALANCEPENDIENTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cXPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bALANCEPORPAGARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -479,7 +481,8 @@
             this.cOMPRASToolStripMenuItem1,
             this.iNVENTARIOToolStripMenuItem,
             this.vENTASToolStripMenuItem,
-            this.cXCToolStripMenuItem1});
+            this.cXCToolStripMenuItem1,
+            this.cXPToolStripMenuItem});
             this.cONSULTASToolStripMenuItem.Image = global::ProyectoIII.Properties.Resources.file_find;
             resources.ApplyResources(this.cONSULTASToolStripMenuItem, "cONSULTASToolStripMenuItem");
             this.cONSULTASToolStripMenuItem.Name = "cONSULTASToolStripMenuItem";
@@ -508,6 +511,12 @@
             this.cXCToolStripMenuItem1.Name = "cXCToolStripMenuItem1";
             resources.ApplyResources(this.cXCToolStripMenuItem1, "cXCToolStripMenuItem1");
             // 
+            // bALANCEPENDIENTEToolStripMenuItem
+            // 
+            this.bALANCEPENDIENTEToolStripMenuItem.Name = "bALANCEPENDIENTEToolStripMenuItem";
+            resources.ApplyResources(this.bALANCEPENDIENTEToolStripMenuItem, "bALANCEPENDIENTEToolStripMenuItem");
+            this.bALANCEPENDIENTEToolStripMenuItem.Click += new System.EventHandler(this.bALANCEPENDIENTEToolStripMenuItem_Click);
+            // 
             // uTILIDADESToolStripMenuItem
             // 
             this.uTILIDADESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -521,11 +530,18 @@
             this.bACKUPBASEDATOSToolStripMenuItem.Name = "bACKUPBASEDATOSToolStripMenuItem";
             resources.ApplyResources(this.bACKUPBASEDATOSToolStripMenuItem, "bACKUPBASEDATOSToolStripMenuItem");
             // 
-            // bALANCEPENDIENTEToolStripMenuItem
+            // cXPToolStripMenuItem
             // 
-            this.bALANCEPENDIENTEToolStripMenuItem.Name = "bALANCEPENDIENTEToolStripMenuItem";
-            resources.ApplyResources(this.bALANCEPENDIENTEToolStripMenuItem, "bALANCEPENDIENTEToolStripMenuItem");
-            this.bALANCEPENDIENTEToolStripMenuItem.Click += new System.EventHandler(this.bALANCEPENDIENTEToolStripMenuItem_Click);
+            this.cXPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bALANCEPORPAGARToolStripMenuItem});
+            this.cXPToolStripMenuItem.Name = "cXPToolStripMenuItem";
+            resources.ApplyResources(this.cXPToolStripMenuItem, "cXPToolStripMenuItem");
+            // 
+            // bALANCEPORPAGARToolStripMenuItem
+            // 
+            this.bALANCEPORPAGARToolStripMenuItem.Name = "bALANCEPORPAGARToolStripMenuItem";
+            resources.ApplyResources(this.bALANCEPORPAGARToolStripMenuItem, "bALANCEPORPAGARToolStripMenuItem");
+            this.bALANCEPORPAGARToolStripMenuItem.Click += new System.EventHandler(this.bALANCEPORPAGARToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -615,5 +631,7 @@
         private System.Windows.Forms.ToolStripMenuItem nCFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aSIGNARPRECIOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bALANCEPENDIENTEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cXPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bALANCEPORPAGARToolStripMenuItem;
     }
 }

@@ -12,9 +12,9 @@ using DevComponents.DotNetBar;
 
 namespace ProyectoIII.Consultas
 {
-    public partial class frmcCxCobrar : MetroForm
+    public partial class frmcCxPagar : MetroForm
     {
-        public frmcCxCobrar()
+        public frmcCxPagar()
         {
             InitializeComponent();
         }
@@ -30,8 +30,8 @@ namespace ProyectoIII.Consultas
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtCliente.Clear();
-            txtCodigoCliente.Clear();
+            txtProveedor.Clear();
+            txtCodigo.Clear();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -45,18 +45,18 @@ namespace ProyectoIII.Consultas
                 else
                 {
                     frmReporte obj = new frmReporte();
-                    if (string.IsNullOrEmpty(txtCodigoCliente.Text))
+                    if (string.IsNullOrEmpty(txtCodigo.Text))
                     {
-                        obj.Idcliente = 0;
+                        obj.Idproveedor = 0;
                     }
                     else
                     {
-                        obj.Idcliente = Convert.ToInt16(txtCodigoCliente.Text);
+                        obj.Idproveedor = Convert.ToInt16(txtCodigo.Text);
                     }
                     obj.Fechad = dtpFechad.Value;
                     obj.Fechah = dtpFechah.Value;
-                    obj.Valor = 9;
-                    obj.Reporte = "facturas_cxc.rdlc";
+                    obj.Valor = 10;
+                    obj.Reporte = "facturas_cxp.rdlc";
                     obj.ShowDialog();
                 }
             }
@@ -70,12 +70,12 @@ namespace ProyectoIII.Consultas
         {
             try
             {
-                Consultas.frmcCliente obj = new Consultas.frmcCliente();
+                frmcProveedor obj = new frmcProveedor();
                 obj.ShowDialog();
                 if (Program.seleccion == 3)
                 {
-                    txtCodigoCliente.Text = Program.Idcliente;
-                    txtCliente.Text = Program.Cliente;
+                    txtCodigo.Text = Program.Idproveedor;
+                    txtProveedor.Text = Program.Proveedor;
                 }
                 Program.seleccion = 0;
 

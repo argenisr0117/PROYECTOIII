@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\frmcCxPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmcCxPagar.Designer.cs">
+      <DependentUpon>frmcCxPagar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmcCxCobrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +305,9 @@
       <DependentUpon>Proyecto3DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="Consultas\frmcCxPagar.resx">
+      <DependentUpon>frmcCxPagar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcCxCobrar.resx">
       <DependentUpon>frmcCxCobrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -424,6 +433,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes\compra.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\facturas_cxp.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\facturas_cxc.rdlc">

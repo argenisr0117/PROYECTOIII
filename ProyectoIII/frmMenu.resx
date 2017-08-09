@@ -639,6 +639,18 @@
   <data name="cXCToolStripMenuItem1.Text" xml:space="preserve">
     <value>CXC</value>
   </data>
+  <data name="bALANCEPORPAGARToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="bALANCEPORPAGARToolStripMenuItem.Text" xml:space="preserve">
+    <value>BALANCE POR PAGAR</value>
+  </data>
+  <data name="cXPToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="cXPToolStripMenuItem.Text" xml:space="preserve">
+    <value>CXP</value>
+  </data>
   <data name="cONSULTASToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -908,6 +920,9 @@
         I9zqu33ey+DVXl8CXgQgrEAKAO3Aak8A7bglyu1eMDrAW4A3VWC3ZoEHgBmv3Sjv++yfWcDZxTYgwe4/
         /j/SDzVTgM4CvgAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -1203,6 +1218,12 @@
   <data name="&gt;&gt;cXCToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;bALANCEPENDIENTEToolStripMenuItem.Name" xml:space="preserve">
+    <value>bALANCEPENDIENTEToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;bALANCEPENDIENTEToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;uTILIDADESToolStripMenuItem.Name" xml:space="preserve">
     <value>uTILIDADESToolStripMenuItem</value>
   </data>
@@ -1215,10 +1236,16 @@
   <data name="&gt;&gt;bACKUPBASEDATOSToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;bALANCEPENDIENTEToolStripMenuItem.Name" xml:space="preserve">
-    <value>bALANCEPENDIENTEToolStripMenuItem</value>
+  <data name="&gt;&gt;cXPToolStripMenuItem.Name" xml:space="preserve">
+    <value>cXPToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;bALANCEPENDIENTEToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;cXPToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bALANCEPORPAGARToolStripMenuItem.Name" xml:space="preserve">
+    <value>bALANCEPORPAGARToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;bALANCEPORPAGARToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

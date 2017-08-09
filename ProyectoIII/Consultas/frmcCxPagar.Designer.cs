@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIII.Consultas
 {
-    partial class frmcCxCobrar
+    partial class frmcCxPagar
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcCxCobrar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcCxPagar));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFechad = new System.Windows.Forms.DateTimePicker();
@@ -41,8 +41,8 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
-            this.txtCliente = new ProyectoIII.Controles.textboxn(this.components);
-            this.txtCodigoCliente = new ProyectoIII.Controles.textboxn(this.components);
+            this.txtProveedor = new ProyectoIII.Controles.textboxn(this.components);
+            this.txtCodigo = new ProyectoIII.Controles.textboxn(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -52,9 +52,9 @@
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(35, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(437, 23);
+            this.label1.Size = new System.Drawing.Size(421, 23);
             this.label1.TabIndex = 24;
-            this.label1.Text = "CONSULTA BALANCE PENDIENTE A COBRAR";
+            this.label1.Text = "CONSULTA BALANCE PENDIENTE A PAGAR";
             // 
             // label2
             // 
@@ -128,9 +128,9 @@
             this.label10.Location = new System.Drawing.Point(96, 155);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 18);
+            this.label10.Size = new System.Drawing.Size(91, 18);
             this.label10.TabIndex = 89;
-            this.label10.Text = "CLIENTE";
+            this.label10.Text = "PROVEEDOR";
             // 
             // btnBuscar
             // 
@@ -214,35 +214,35 @@
             this.btnAgregarCliente.UseVisualStyleBackColor = false;
             this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
-            // txtCliente
+            // txtProveedor
             // 
-            this.txtCliente.BackColor = System.Drawing.Color.White;
-            this.txtCliente.Enabled = false;
-            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.ForeColor = System.Drawing.Color.Black;
-            this.txtCliente.Location = new System.Drawing.Point(100, 207);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(321, 26);
-            this.txtCliente.TabIndex = 91;
-            this.txtCliente.Validar = true;
-            this.txtCliente.Valor = ProyectoIII.Controles.textboxn.Tipo.Letras;
+            this.txtProveedor.BackColor = System.Drawing.Color.White;
+            this.txtProveedor.Enabled = false;
+            this.txtProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProveedor.ForeColor = System.Drawing.Color.Black;
+            this.txtProveedor.Location = new System.Drawing.Point(100, 207);
+            this.txtProveedor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Size = new System.Drawing.Size(321, 26);
+            this.txtProveedor.TabIndex = 91;
+            this.txtProveedor.Validar = true;
+            this.txtProveedor.Valor = ProyectoIII.Controles.textboxn.Tipo.Letras;
             // 
-            // txtCodigoCliente
+            // txtCodigo
             // 
-            this.txtCodigoCliente.BackColor = System.Drawing.Color.White;
-            this.txtCodigoCliente.Enabled = false;
-            this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoCliente.ForeColor = System.Drawing.Color.Black;
-            this.txtCodigoCliente.Location = new System.Drawing.Point(100, 177);
-            this.txtCodigoCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCodigoCliente.Name = "txtCodigoCliente";
-            this.txtCodigoCliente.Size = new System.Drawing.Size(86, 26);
-            this.txtCodigoCliente.TabIndex = 90;
-            this.txtCodigoCliente.Validar = true;
-            this.txtCodigoCliente.Valor = ProyectoIII.Controles.textboxn.Tipo.Números;
+            this.txtCodigo.BackColor = System.Drawing.Color.White;
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.ForeColor = System.Drawing.Color.Black;
+            this.txtCodigo.Location = new System.Drawing.Point(100, 177);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(86, 26);
+            this.txtCodigo.TabIndex = 90;
+            this.txtCodigo.Validar = true;
+            this.txtCodigo.Valor = ProyectoIII.Controles.textboxn.Tipo.Números;
             // 
-            // frmcCxCobrar
+            // frmcCxPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -251,8 +251,8 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnAgregarCliente);
-            this.Controls.Add(this.txtCliente);
-            this.Controls.Add(this.txtCodigoCliente);
+            this.Controls.Add(this.txtProveedor);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dtpFechah);
             this.Controls.Add(this.label3);
@@ -266,7 +266,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "frmcCxCobrar";
+            this.Name = "frmcCxPagar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.frmcCxCobrar_Load);
             this.ResumeLayout(false);
@@ -283,8 +283,8 @@
         private System.Windows.Forms.DateTimePicker dtpFechah;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAgregarCliente;
-        private Controles.textboxn txtCliente;
-        private Controles.textboxn txtCodigoCliente;
+        private Controles.textboxn txtProveedor;
+        private Controles.textboxn txtCodigo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnSalir;

@@ -234,5 +234,11 @@ namespace ProyectoIII
             Consultas.frmcCxCobrar obj = new Consultas.frmcCxCobrar();
             obj.ShowDialog();
         }
+
+        private void bALANCEPORPAGARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.frmcCxPagar obj = new Consultas.frmcCxPagar();
+            obj.ShowDialog();
+        }
     }
 }
